@@ -395,6 +395,21 @@ def _municipios_frecuentes(
     return vc.loc[vc >= minimo].head(top).index.tolist()
 
 
+def _parroquias_frecuentes(
+    df: pd.DataFrame,
+    *,
+    estados: list[str] | None = None,
+    municipios: list[str] | None = None,
+    minimo: int = 5,
+    top: int = 40,
+) -> list[str]:
+    from filters_analisis import _parroquias_opts
+
+    return _parroquias_opts(
+        df, estados=estados, municipios=municipios, minimo=minimo, top=top
+    )
+
+
 def _usos_frecuentes(df: pd.DataFrame) -> list[str]:
     if "uso_n" not in df.columns:
         return []
@@ -573,13 +588,14 @@ def _aplicar_filtros_dimension(
     st.markdown(f"##### {titulo}")
     estados: list[str] = []
     municipios: list[str] = []
+    parroquias: list[str] = []
     usos: list[str] = []
     materiales: list[str] = []
 
     if con_territorio:
         est_opts = _estados_frecuentes(work)
-        c1, c2, c3, c4 = st.columns(4)
-        with c1:
+        t1, t2, t3 = st.columns(3)
+        with t1:
             estados = st.multiselect(
                 "Estado (más frecuentes)",
                 est_opts,
@@ -588,7 +604,7 @@ def _aplicar_filtros_dimension(
                 help=f"Estados con ≥{MIN_N_ESTADO_FILTRO} inspecciones (criterio similar a las tortas).",
             )
         df_m = work if not estados else work.loc[work["estado_n"].isin(estados)]
-        with c2:
+        with t2:
             mun_opts = _municipios_frecuentes(df_m, estados=estados or None)
             municipios = st.multiselect(
                 "Municipio (más frecuentes)",
@@ -597,6 +613,21 @@ def _aplicar_filtros_dimension(
                 key=f"{key_prefix}_mun",
                 help=f"Municipios con ≥{MIN_N_MUN_FILTRO} insp. en el corte de estado.",
             )
+        df_p = df_m if not municipios else df_m.loc[df_m["municipio_n"].isin(municipios)]
+        with t3:
+            par_opts = _parroquias_frecuentes(
+                df_p,
+                estados=estados or None,
+                municipios=municipios or None,
+            )
+            parroquias = st.multiselect(
+                "Parroquia",
+                par_opts,
+                default=[],
+                key=f"{key_prefix}_parroquia",
+                help="Cascada: parroquias del estado/municipio elegido (≥5 insp.).",
+            )
+        c3, c4 = st.columns(2)
         with c3:
             usos = st.multiselect(
                 "Uso agrupado",
@@ -638,6 +669,9 @@ def _aplicar_filtros_dimension(
     if municipios:
         dff = dff.loc[dff["municipio_n"].isin(municipios)]
         partes.append("municipio: " + ", ".join(municipios))
+    if parroquias and "parroquia_n" in dff.columns:
+        dff = dff.loc[dff["parroquia_n"].isin(parroquias)]
+        partes.append("parroquia: " + ", ".join(parroquias))
     if usos and "uso_n" in dff.columns:
         dff = dff.loc[dff["uso_n"].isin(usos)]
         partes.append("uso: " + ", ".join(usos))

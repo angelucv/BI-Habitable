@@ -16,9 +16,44 @@ from stats_asociacion import BANDAS_ANIO, banda_anio
 class FiltrosAnalisis:
     estados: tuple[str, ...]
     municipios: tuple[str, ...]
+    parroquias: tuple[str, ...]
     usos: tuple[str, ...]
     materiales: tuple[str, ...]
     bandas_anio: tuple[str, ...]
+
+
+_PARROQUIA_BAN = {
+    "",
+    "SIN EVALUAR",
+    "Sin Evaluar",
+    "NAN",
+    "nan",
+    "(SIN PARROQUIA)",
+}
+
+
+def _parroquias_opts(
+    df: pd.DataFrame,
+    *,
+    estados: list[str] | None = None,
+    municipios: list[str] | None = None,
+    minimo: int = 5,
+    top: int = 50,
+) -> list[str]:
+    """Parroquias del recorte territorial (cascada estado → municipio)."""
+    if "parroquia_n" not in df.columns:
+        return []
+    sub = df
+    if estados:
+        sub = sub.loc[sub["estado_n"].isin(estados)]
+    if municipios:
+        sub = sub.loc[sub["municipio_n"].isin(municipios)]
+    s = sub["parroquia_n"].dropna().astype(str).str.strip()
+    s = s.loc[~s.isin(_PARROQUIA_BAN)]
+    if s.empty:
+        return []
+    vc = s.value_counts()
+    return vc.loc[vc >= minimo].head(top).index.tolist()
 
 
 def _anios(df: pd.DataFrame) -> pd.Series:
@@ -56,7 +91,7 @@ def render_filtros_analisis(
     filtro_cruzado: str = "uso",
     key_prefix: str = "fa",
 ) -> FiltrosAnalisis:
-    """Bloque de filtros (cascada estado → municipio).
+    """Bloque de filtros (cascada estado → municipio → parroquia).
 
     ``filtro_cruzado``: dimensión adicional (no la del eje analizado).
     - ``uso`` → multiselect Uso agrupado
@@ -64,9 +99,9 @@ def render_filtros_analisis(
     """
     work = asegurar_banda_anio(df)
     st.markdown(f"##### {titulo}")
-    c1, c2, c3, c4 = st.columns(4)
 
-    with c1:
+    t1, t2, t3 = st.columns(3)
+    with t1:
         est_opts = sorted(
             x
             for x in work["estado_n"].dropna().astype(str).unique().tolist()
@@ -80,7 +115,7 @@ def render_filtros_analisis(
         )
 
     df_m = work if not estados else work.loc[work["estado_n"].isin(estados)]
-    with c2:
+    with t2:
         mun_opts = sorted(
             x
             for x in df_m["municipio_n"].dropna().astype(str).unique().tolist()
@@ -93,8 +128,24 @@ def render_filtros_analisis(
             key=f"{key_prefix}_mun",
         )
 
+    df_p = df_m if not municipios else df_m.loc[df_m["municipio_n"].isin(municipios)]
+    with t3:
+        par_opts = _parroquias_opts(
+            df_p,
+            estados=estados or None,
+            municipios=municipios or None,
+        )
+        parroquias = st.multiselect(
+            "Parroquia",
+            par_opts,
+            default=[],
+            key=f"{key_prefix}_parroquia",
+            help="Cascada: se listan parroquias del estado/municipio elegido.",
+        )
+
     usos: list[str] = []
     materiales: list[str] = []
+    c3, c4 = st.columns(2)
     with c3:
         if filtro_cruzado == "material":
             work_mat = _asegurar_material_capa(work)
@@ -137,6 +188,7 @@ def render_filtros_analisis(
     return FiltrosAnalisis(
         estados=tuple(estados),
         municipios=tuple(municipios),
+        parroquias=tuple(parroquias),
         usos=tuple(usos),
         materiales=tuple(materiales),
         bandas_anio=tuple(bandas),
@@ -149,6 +201,8 @@ def aplicar_filtros_analisis(df: pd.DataFrame, f: FiltrosAnalisis) -> pd.DataFra
         out = out.loc[out["estado_n"].isin(f.estados)]
     if f.municipios:
         out = out.loc[out["municipio_n"].isin(f.municipios)]
+    if f.parroquias and "parroquia_n" in out.columns:
+        out = out.loc[out["parroquia_n"].isin(f.parroquias)]
     if f.usos and "uso_n" in out.columns:
         out = out.loc[out["uso_n"].isin(f.usos)]
     if f.materiales:
