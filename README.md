@@ -121,8 +121,8 @@ Alineado a la lógica de **efectos en activos físicos** (PDNA Volume A) y a la 
 #### Matriz y costos
 
 - Filtro territorial (estado / municipio).
-- **Esquemas de tipología** (la hoja Excel es ejemplo, no catálogo cerrado):
-  - Ejemplo plantilla Excel (12 filas).
+- **Esquemas de tipología** (bandas de pisos configurables):
+  - Plantilla sectorial (12 tipologías).
   - Ampliado: más bandas de pisos.
   - Dinámico: solo combinaciones presentes en el corte.
 - KPIs PDNA: unidades físicas, daño infraestructura, daño contenidos, **necesidades de recuperación (BBB)**.
@@ -134,7 +134,7 @@ Alineado a la lógica de **efectos en activos físicos** (PDNA Volume A) y a la 
 
 - Flujo del cálculo paso a paso.
 - Qué **calibrar** (USD/m², m²/piso, factores semáforo, contenidos) vs qué son salidas.
-- Checklist y ejemplo numérico.
+- Checklist y recorrido numérico de una vivienda.
 
 Archivos: `src/page_pdna.py`, `src/page_pdna_guia.py`, `src/pdna_costs.py`, tipologías en `src/process_habitable.py`.
 

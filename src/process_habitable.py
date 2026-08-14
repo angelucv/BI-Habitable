@@ -131,13 +131,13 @@ def _uso_pdna(uso: Any) -> str | None:
     return None
 
 
-# Esquemas de tipología PDNA (la plantilla Excel es un ejemplo, no un catálogo cerrado).
-ESQUEMA_PDNA_EXCEL = "excel_ejemplo"
+# Esquemas de tipología PDNA (ejes fijos; bandas de pisos configurables).
+ESQUEMA_PDNA_EXCEL = "excel_plantilla"
 ESQUEMA_PDNA_DETALLADO = "altura_detallada"
 ESQUEMA_PDNA_OBSERVADO = "solo_observadas"
 
 ESQUEMAS_PDNA_LABELS: dict[str, str] = {
-    ESQUEMA_PDNA_EXCEL: "Ejemplo plantilla Excel (12 filas)",
+    ESQUEMA_PDNA_EXCEL: "Plantilla sectorial (12 tipologías)",
     ESQUEMA_PDNA_DETALLADO: "Ampliado: más bandas de pisos",
     ESQUEMA_PDNA_OBSERVADO: "Dinámico: solo combinaciones del corte",
 }
@@ -151,7 +151,7 @@ MATERIALES_PDNA: tuple[str, ...] = (
 
 
 def _banda_pisos_pdna(tipo: str, pisos: float, *, esquema: str) -> str | None:
-    """Banda de altura según esquema. La plantilla Excel es solo una referencia."""
+    """Banda de altura según el esquema de tipologías activo."""
     if tipo == "casa":
         if esquema == ESQUEMA_PDNA_EXCEL:
             return "1-2 pisos"
@@ -188,8 +188,8 @@ def tipologia_pdna(
 ) -> str | None:
     """Etiqueta tipológica PDNA vivienda: material × uso × banda de pisos.
 
-    El esquema «excel_ejemplo» reproduce la hoja de referencia (12 filas).
-    Otros esquemas generan más combinaciones cuando la altura se trata con más detalle.
+    El esquema «excel_plantilla» usa las 12 tipologías de la hoja sectorial
+    (casas 1-2 pisos; edificios menor a 5 / ≥ 5). Otros esquemas abren más bandas de altura.
     """
     mat = _material_pdna(material)
     tipo = _uso_pdna(uso)
@@ -231,9 +231,13 @@ def aplicar_tipologia_pdna(
     df: pd.DataFrame,
     *,
     esquema: str = ESQUEMA_PDNA_EXCEL,
+    copy: bool = True,
 ) -> pd.DataFrame:
-    """Recalcula ``tipologia_pdna`` según esquema (sin rehacer el mart)."""
-    out = df.copy()
+    """Recalcula ``tipologia_pdna`` según esquema (sin rehacer el mart).
+
+    Si ``copy=False``, muta el DataFrame recibido (usar solo sobre marcos ya ligeros).
+    """
+    out = df.copy() if copy else df
     uso_src = out["uso_raw_n"] if "uso_raw_n" in out.columns else out.get("uso_n", out.get("uso"))
     mat_src = out["material_n"] if "material_n" in out.columns else out.get("material")
     pisos_src = out.get("num_pisos")

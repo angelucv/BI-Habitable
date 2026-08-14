@@ -149,7 +149,7 @@ La diferencia entre ambas es el “extra” de resiliencia, no un error de suma.
         "**estimación preliminar / escenario de trabajo**, no como cifra oficial de movilización."
     )
 
-    with st.expander("Ejemplo numérico rápido (una vivienda)", expanded=False):
+    with st.expander("Cálculo ilustrativo (una vivienda)", expanded=False):
         st.markdown(
             """
 Suponga una casa de **concreto**, **2 pisos**, etiqueta **Rojo**:

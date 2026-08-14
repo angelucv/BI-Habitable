@@ -389,7 +389,12 @@ def inject_executive_css() -> None:
             box-shadow: 0 1px 0 rgba(15, 41, 66, 0.04);
         }}
         .kpi-card.tone-hero .kpi-label {{ color: {ACCENT}; }}
-        .kpi-card.tone-hero .kpi-value {{ color: {NAVY}; font-size: 1.7rem; }}
+        .kpi-card.tone-hero .kpi-value {{
+            color: {NAVY};
+            font-size: 1.15rem;
+            white-space: normal;
+            line-height: 1.2;
+        }}
         .pdna-exec-summary {{
             background: {SURFACE};
             border: 1px solid {LINE};
@@ -416,6 +421,12 @@ def inject_executive_css() -> None:
             color: {INK};
             font-size: 0.95rem;
             line-height: 1.45;
+        }}
+        div[data-testid="stDataFrame"] thead th {{
+            white-space: normal !important;
+            word-break: break-word;
+            line-height: 1.2;
+            vertical-align: bottom;
         }}
         .pdna-guide-grid {{
             display: grid;

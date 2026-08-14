@@ -9,7 +9,7 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 from charts_habitable import opts_barras_costo, opts_barras_tipologia
-from export_utils import download_csv_button, fmt_es_int, fmt_es_money
+from export_utils import download_csv_button, fmt_es_int
 from pdna_costs import (
     AREA_MINIMA_DEFAULT,
     COSTO_M2_DEFAULT,
@@ -17,7 +17,7 @@ from pdna_costs import (
     FACTORES_VIVIENDA_DEFAULT,
     M2_POR_PISO_DEFAULT,
     RATIO_CONTENIDOS_DEFAULT,
-    kpis_pdna,
+    marco_pdna_ligero,
     matriz_pdna_completa,
     proyectar_pdna,
     resumen_pdna_territorio,
@@ -64,20 +64,36 @@ def _filtros_territorio(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _selector_esquema_tipologia() -> str:
-    st.markdown("##### Esquema de tipologías de la matriz")
-    st.caption(
-        "La plantilla Excel es una **referencia de presentación**, no un catálogo cerrado. "
-        "Las variables del cruce son material × uso (casa/edificio) × banda de pisos × semáforo. "
-        "Los pisos sí son variables: puede usar el ejemplo de 12 filas o bandas más detalladas."
-    )
+    st.markdown("##### Esquema de tipologías")
+    prev = st.session_state.get("pdna_esquema_tip")
+    if prev == "excel_ejemplo" or (prev is not None and prev not in ESQUEMAS_PDNA_LABELS):
+        st.session_state["pdna_esquema_tip"] = ESQUEMA_PDNA_EXCEL
+
     opciones = list(ESQUEMAS_PDNA_LABELS.keys())
-    st.session_state.setdefault("pdna_esquema_tip", ESQUEMA_PDNA_EXCEL)
-    return st.radio(
+    cortos = {
+        ESQUEMA_PDNA_EXCEL: "Plantilla (12)",
+        ESQUEMA_PDNA_DETALLADO: "Ampliado",
+        ESQUEMA_PDNA_OBSERVADO: "Dinámico",
+    }
+    # Control segmentado horizontal (ahorro de espacio vertical)
+    esquema = st.radio(
         "Combinaciones de filas",
         opciones,
-        format_func=lambda k: ESQUEMAS_PDNA_LABELS[k],
-        horizontal=False,
+        format_func=lambda k: cortos.get(k, ESQUEMAS_PDNA_LABELS[k]),
+        horizontal=True,
         key="pdna_esquema_tip",
+        label_visibility="collapsed",
+        help="Plantilla · Ampliado (más bandas) · Dinámico (solo presentes)",
+    )
+    return str(esquema)
+
+
+def _caption_esquema(esquema: str, mat: pd.DataFrame, n_tips_distintas: int) -> None:
+    label = ESQUEMAS_PDNA_LABELS.get(esquema, esquema)
+    n_filas = int(len(mat)) if mat is not None and not mat.empty else 0
+    st.caption(
+        f"Esquema: {label} · {fmt_es_int(n_filas)} filas en matriz · "
+        f"{fmt_es_int(n_tips_distintas)} tipologías en datos"
     )
 
 
@@ -194,36 +210,31 @@ def _panel_parametros() -> None:
             st.number_input("Cont. negro", min_value=0.0, max_value=1.5, format="%.2f", key="pdna_cn")
 
 
-def _fmt_money_plain(n: float) -> str:
-    return fmt_es_int(n)
-
-
 def _sintesis_html(
     *,
     n_inspecciones: int,
-    total_dano: float,
-    total_necesidades: float,
-    tipologia_mas_costosa: str,
-    porcentaje_costo: float,
+    n_criticos: int,
+    tasa_critica: float,
+    n_verde: int,
+    tipologia_mas_afectada: str,
+    pct_tipologia: float,
 ) -> str:
-    tip = html.escape(tipologia_mas_costosa)
+    tip = html.escape(tipologia_mas_afectada)
     return f"""
 <div class="pdna-exec-summary">
-  <h3>Resumen de Necesidades de Recuperación (PDNA)</h3>
-  <p>En el corte territorial seleccionado, se han cuantificado los efectos sobre los activos
-  físicos de <strong>{fmt_es_int(n_inspecciones)}</strong> unidades habitacionales.</p>
-  <p>Utilizando el costo de reposición parametrizado, el <strong>Daño Físico Directo</strong>
-  (infraestructura + contenidos) se estima en
-  <strong>USD {_fmt_money_plain(total_dano)}</strong>.
-  Al incorporar los factores de mitigación de riesgo y mejoras estructurales requeridas por
-  la metodología internacional (<em>Build Back Better</em>), las
-  <strong>Necesidades Totales de Recuperación</strong> para el sector vivienda ascienden a
-  <strong>USD {_fmt_money_plain(total_necesidades)}</strong>.</p>
+  <h3>Resumen de afectación física (insumo PDNA)</h3>
+  <p>En el corte territorial seleccionado se cuantificaron
+  <strong>{fmt_es_int(n_inspecciones)}</strong> unidades habitacionales con tipología asignada.
+  De ellas, <strong>{fmt_es_int(n_criticos)}</strong>
+  (<strong>{tasa_critica:.1f}%</strong>) presentan daño crítico
+  (Rojo o pérdida total), mientras que <strong>{fmt_es_int(n_verde)}</strong> permanecen en Verde.</p>
   <ul>
-    <li><strong>Foco de Inversión:</strong> el modelo financiero indica que la mayor
-    concentración de capital deberá destinarse a la recuperación de estructuras de
-    <strong>{tip}</strong>, las cuales representan el
-    <strong>{porcentaje_costo:.1f}%</strong> del presupuesto total estimado.</li>
+    <li><strong>Foco operativo:</strong> la tipología con mayor volumen de daño crítico es
+    <strong>{tip}</strong>
+    (<strong>{pct_tipologia:.1f}%</strong> de las unidades críticas del corte).</li>
+    <li>Los <strong>montos estimados</strong> (vivienda, contenidos y necesidades con BBB)
+    se calculan con el modelo de valoración y se muestran en la
+    <strong>matriz agregada</strong> y en la pestaña territorial — no en estos KPIs.</li>
   </ul>
 </div>
 """
@@ -245,7 +256,7 @@ def _matriz_para_export(mat: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([mat, pd.DataFrame([pie])], ignore_index=True)
 
 
-def _render_matriz_con_databars(mat: pd.DataFrame) -> None:
+def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -> None:
     export_df = _matriz_para_export(mat)
     show = export_df.rename(
         columns={
@@ -271,45 +282,56 @@ def _render_matriz_con_databars(mat: pd.DataFrame) -> None:
     max_cont = max(float(mat["dano_contenidos_usd"].sum()), 1.0)
     max_tot = max(float(mat["costo_total_usd"].sum()), 1.0)
 
+    # Encabezados con salto de línea (word-wrap en cabecera de Streamlit)
+    col_cfg = {
+        "Tipología": st.column_config.TextColumn("Tipología", width="large"),
+        "Verde": st.column_config.NumberColumn("Verde", format="%d"),
+        "Amarillo": st.column_config.NumberColumn("Amarillo", format="%d"),
+        "Rojo": st.column_config.NumberColumn("Rojo", format="%d"),
+        "Negro": st.column_config.NumberColumn("Negro", format="%d"),
+        "Total": st.column_config.NumberColumn("Total", format="%d"),
+        "Daño físico infraestructura (USD)": st.column_config.ProgressColumn(
+            "Daño físico\ninfraestructura (USD)",
+            help="Pase el cursor para ver el monto. Daño directo en vivienda (sin prima BBB).",
+            format="USD %d",
+            min_value=0,
+            max_value=max_viv,
+        ),
+        "Daño a contenidos (USD)": st.column_config.ProgressColumn(
+            "Daño a\ncontenidos (USD)",
+            help="Pase el cursor para ver el monto. Mobiliario y enseres.",
+            format="USD %d",
+            min_value=0,
+            max_value=max_cont,
+        ),
+        "Necesidades de recuperación (USD)": st.column_config.ProgressColumn(
+            "Necesidades de\nrecuperación (USD)",
+            help="Pase el cursor para ver el monto. Incluye Build Back Better.",
+            format="USD %d",
+            min_value=0,
+            max_value=max_tot,
+        ),
+    }
+
+    h1, h2 = st.columns([3, 1])
+    with h1:
+        st.markdown("##### Matriz agregada · tipología × semáforo")
+        st.caption("Insumo PDNA/ONU. Barras = peso financiero relativo; el valor exacto aparece al pasar el cursor.")
+    with h2:
+        st.markdown("<div style='height:0.55rem'></div>", unsafe_allow_html=True)
+        download_csv_button(
+            export_df,
+            filename=f"pdna_matriz_agregada_{key_suffix}.csv",
+            key=f"dl_pdna_mat_{key_suffix}",
+            label="Exportar matriz (CSV)",
+        )
+
     st.dataframe(
         show,
         width="stretch",
         hide_index=True,
-        column_config={
-            "Tipología": st.column_config.TextColumn("Tipología", width="large"),
-            "Verde": st.column_config.NumberColumn("Verde", format="%d"),
-            "Amarillo": st.column_config.NumberColumn("Amarillo", format="%d"),
-            "Rojo": st.column_config.NumberColumn("Rojo", format="%d"),
-            "Negro": st.column_config.NumberColumn("Negro", format="%d"),
-            "Total": st.column_config.NumberColumn("Total", format="%d"),
-            "Daño físico infraestructura (USD)": st.column_config.ProgressColumn(
-                "Daño físico infraestructura (USD)",
-                help="Daño directo en vivienda (sin prima BBB). Barra = peso sobre el total.",
-                format="USD %.0f",
-                min_value=0,
-                max_value=max_viv,
-            ),
-            "Daño a contenidos (USD)": st.column_config.ProgressColumn(
-                "Daño a contenidos (USD)",
-                help="Mobiliario y enseres. Barra = peso sobre el total.",
-                format="USD %.0f",
-                min_value=0,
-                max_value=max_cont,
-            ),
-            "Necesidades de recuperación (USD)": st.column_config.ProgressColumn(
-                "Necesidades de recuperación (USD)",
-                help="Incluye Build Back Better. Barra = peso sobre el presupuesto total.",
-                format="USD %.0f",
-                min_value=0,
-                max_value=max_tot,
-            ),
-        },
-    )
-    download_csv_button(
-        export_df,
-        filename="pdna_matriz_agregada.csv",
-        key="dl_pdna_mat",
-        label="Exportar matriz agregada (CSV)",
+        key=f"pdna_df_matriz_{key_suffix}",
+        column_config=col_cfg,
     )
 
 
@@ -321,9 +343,10 @@ def page_pdna(df: pd.DataFrame) -> None:
 
     work = _filtros_territorio(df)
     esquema = _selector_esquema_tipologia()
-    # Recalcular tipología según esquema (la del mart sigue siendo el ejemplo Excel).
+    # Marco estrecho: una sola copia ligera (no duplicar las ~80 columnas del mart).
+    work = marco_pdna_ligero(work)
     esquema_calc = ESQUEMA_PDNA_EXCEL if esquema == ESQUEMA_PDNA_EXCEL else ESQUEMA_PDNA_DETALLADO
-    work = aplicar_tipologia_pdna(work, esquema=esquema_calc)
+    work = aplicar_tipologia_pdna(work, esquema=esquema_calc, copy=False)
     params = _params_from_session()
 
     with st.spinner("Calculando efectos y necesidades…"):
@@ -335,17 +358,19 @@ def page_pdna(df: pd.DataFrame) -> None:
             ratio_contenidos=params["ratio_contenidos"],
             m2_por_piso=params["m2_por_piso"],
             area_minima=params["area_minima"],
+            slim=False,  # work ya es ligero; no volver a recortar/copiar
         )
 
-    proj_ok = proj.loc[
-        proj["tipologia_pdna"].notna()
-        & proj["etiqueta_n"].isin(("VERDE", "AMARILLO", "ROJO", "NEGRO"))
-    ].copy()
-    k = kpis_pdna(proj_ok)
+    mask_ok = proj["tipologia_pdna"].notna() & proj["etiqueta_n"].isin(
+        ("VERDE", "AMARILLO", "ROJO", "NEGRO")
+    )
+    proj_ok = proj.loc[mask_ok]
 
     orden = tipos_pdna_orden(esquema_calc)
     solo_obs = esquema == ESQUEMA_PDNA_OBSERVADO
-    incluir_vacias = esquema == ESQUEMA_PDNA_EXCEL
+    # Plantilla y Ampliado muestran el catálogo completo (ceros incluidos);
+    # Dinámico solo filas con unidades en el corte.
+    incluir_vacias = esquema in (ESQUEMA_PDNA_EXCEL, ESQUEMA_PDNA_DETALLADO)
     mat = matriz_pdna_completa(
         proj,
         orden_tipologias=orden,
@@ -353,38 +378,51 @@ def page_pdna(df: pd.DataFrame) -> None:
         incluir_filas_vacias=incluir_vacias,
     )
 
-    n_unidades = int(k["n_con_tipologia"])
+    n_tips_distintas = int(proj_ok["tipologia_pdna"].nunique()) if not proj_ok.empty else 0
+    _caption_esquema(esquema, mat, n_tips_distintas)
+
+    n_unidades = int(len(proj_ok))
+
+    et = proj_ok["etiqueta_n"].astype(str).str.upper() if not proj_ok.empty else pd.Series(dtype=str)
+    n_verde = int((et == "VERDE").sum())
+    n_amarillo = int((et == "AMARILLO").sum())
+    n_rojo = int((et == "ROJO").sum())
+    n_negro = int((et == "NEGRO").sum())
+    n_criticos = n_rojo + n_negro
+    tasa_critica = 100.0 * n_criticos / max(n_unidades, 1)
+
     tip_foco = "—"
-    pct_foco = 0.0
-    if not mat.empty and float(mat["costo_total_usd"].sum()) > 0:
-        top = mat.sort_values("costo_total_usd", ascending=False).iloc[0]
-        tip_foco = str(top["tipologia"])
-        pct_foco = 100.0 * float(top["costo_total_usd"]) / float(mat["costo_total_usd"].sum())
+    pct_tip = 0.0
+    if not mat.empty and n_criticos > 0:
+        crit_por_tip = (mat["rojo"].astype(int) + mat["negro"].astype(int)).astype(int)
+        idx = int(crit_por_tip.idxmax())
+        tip_foco = str(mat.loc[idx, "tipologia"])
+        pct_tip = 100.0 * float(crit_por_tip.loc[idx]) / float(n_criticos)
 
     render_kpi_strip(
         [
             {
                 "label": "Unidades físicas (muestra)",
                 "value": fmt_es_int(n_unidades),
-                "hint": "Unidades habitacionales cuantificadas",
+                "hint": "Con tipología PDNA en el corte",
             },
             {
-                "label": "Daño físico (infraestructura)",
-                "value": fmt_es_money(k["dano_vivienda_directo"]),
+                "label": "Daño crítico (Rojo + pérdida total)",
+                "value": fmt_es_int(n_criticos),
                 "tone": "warning",
-                "hint": "Reposición vivienda · sin prima BBB",
+                "hint": f"Rojo {fmt_es_int(n_rojo)} · Negro {fmt_es_int(n_negro)}",
             },
             {
-                "label": "Daño a contenidos",
-                "value": fmt_es_money(k["dano_contenidos"]),
-                "tone": "flag",
-                "hint": "Mobiliario y enseres",
+                "label": "Tasa de daño crítico",
+                "value": f"{tasa_critica:.1f}%",
+                "tone": "flag" if tasa_critica >= 15 else "muted",
+                "hint": f"Verde {fmt_es_int(n_verde)} · Amarillo {fmt_es_int(n_amarillo)}",
             },
             {
-                "label": "Necesidades de recuperación (incluye BBB)",
-                "value": fmt_es_money(k["necesidades_recuperacion"]),
+                "label": "Tipología más afectada",
+                "value": tip_foco if len(tip_foco) <= 42 else tip_foco[:40] + "…",
                 "tone": "hero",
-                "hint": "Cifra clave para movilización de recursos",
+                "hint": f"{pct_tip:.1f}% de las unidades críticas",
             },
         ]
     )
@@ -392,13 +430,45 @@ def page_pdna(df: pd.DataFrame) -> None:
     st.markdown(
         _sintesis_html(
             n_inspecciones=n_unidades,
-            total_dano=float(k["dano_fisico_directo"]),
-            total_necesidades=float(k["necesidades_recuperacion"]),
-            tipologia_mas_costosa=tip_foco,
-            porcentaje_costo=pct_foco,
+            n_criticos=n_criticos,
+            tasa_critica=tasa_critica,
+            n_verde=n_verde,
+            tipologia_mas_afectada=tip_foco,
+            pct_tipologia=pct_tip,
         ),
         unsafe_allow_html=True,
     )
+
+    # Gráficos horizontales inmediatamente bajo la síntesis (antes de la tabla)
+    if not mat.empty:
+        resumen_counts = resumen_danos_pdna(work)
+        n_rows_chart = max(len(mat), 8)
+        chart_h = int(min(56 + n_rows_chart * 28, 720))
+        g1, g2 = st.columns(2)
+        with g1:
+            st.markdown("##### Distribución física por tipología")
+            if not resumen_counts.empty:
+                opts = opts_barras_tipologia(resumen_counts, horizontal=True)
+                if opts:
+                    st_echarts(opts, height=f"{chart_h}px", key=f"pdna-barras-tip-h-{esquema}")
+        with g2:
+            st.markdown("##### Necesidades de recuperación por tipología")
+            cost_bar = mat.loc[mat["total"] > 0, ["tipologia", "costo_total_usd"]].rename(
+                columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
+            )
+            if cost_bar.empty:
+                cost_bar = mat[["tipologia", "costo_total_usd"]].rename(
+                    columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
+                )
+            opts_c = opts_barras_costo(
+                cost_bar,
+                col_cat="cat",
+                col_val="costo_pdna_usd",
+                top=min(16, len(cost_bar)),
+                horizontal=True,
+            )
+            if opts_c:
+                st_echarts(opts_c, height=f"{chart_h}px", key=f"pdna-barras-cost-h-{esquema}")
 
     tab_mat, tab_geo, tab_guia, tab_met = st.tabs(
         [
@@ -410,28 +480,10 @@ def page_pdna(df: pd.DataFrame) -> None:
     )
 
     with tab_mat:
-        st.markdown("##### Matriz agregada · tipología × semáforo")
-        st.caption(
-            f"Esquema activo: **{ESQUEMAS_PDNA_LABELS.get(esquema, esquema)}**. "
-            "Insumo para el equipo PDNA/ONU. Las barras indican el peso financiero relativo."
-        )
         if mat.empty:
             st.warning("No hay filas con tipología PDNA y semáforo válido en este corte.")
         else:
-            _render_matriz_con_databars(mat)
-            resumen_counts = resumen_danos_pdna(work)
-            if not resumen_counts.empty:
-                with st.expander("Distribución física (gráfico)", expanded=False):
-                    opts = opts_barras_tipologia(resumen_counts)
-                    if opts:
-                        st_echarts(opts, height="420px", key="pdna-barras-tip")
-            cost_bar = mat[["tipologia", "costo_total_usd"]].rename(
-                columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
-            )
-            opts_c = opts_barras_costo(cost_bar, col_cat="cat", col_val="costo_pdna_usd", top=12)
-            if opts_c:
-                with st.expander("Necesidades por tipología (gráfico)", expanded=False):
-                    st_echarts(opts_c, height="380px", key="pdna-barras-cost-tip")
+            _render_matriz_con_databars(mat, key_suffix=str(esquema))
 
     with tab_geo:
         st.markdown("##### Agregación territorial")
@@ -489,23 +541,19 @@ def page_pdna(df: pd.DataFrame) -> None:
         render_guia_modelo_valoracion(embebida=True)
 
     with tab_met:
-        st.markdown("##### ¿Las 12 filas del Excel son las únicas?")
+        st.markdown("##### Tipologías de la matriz")
         st.markdown(
             """
-No. La hoja dice explícitamente que es una **referencia de cómo presentar** resultados,
-no un listado cerrado que haya que llenar a mano.
+Las filas de la matriz se arman con estos **ejes**:
 
-**Lo que sí es estable (ejes del cruce):**
-- Material: concreto, acero, mampostería formal / informal  
-- Uso: casa vs edificio  
-- Pisos: **variable** (el Excel solo muestra un ejemplo de bandas)  
-- Semáforo: verde / amarillo / rojo / negro  
-- Costos: daño vivienda + contenidos (y aquí, necesidades con BBB)
+- **Material:** concreto, acero, mampostería formal / informal  
+- **Uso:** casa vs edificio  
+- **Pisos:** banda de altura (configurable según esquema)  
+- **Semáforo:** verde / amarillo / rojo / negro  
 
-**Pisos en el ejemplo Excel:** casas siempre «1-2 pisos»; edificios «menor a 5» o «≥ 5».
-Eso comprime la altura real. Con el esquema **Ampliado** la matriz abre más bandas
-(casas 1 / 2 / 3+; edificios menor a 5 / 5–8 / 9–12 / 13+). Con **Dinámico** solo salen
-combinaciones presentes en el corte territorial.
+**Plantilla sectorial (12 tipologías):** casas en «1-2 pisos»; edificios en «menor a 5» o «≥ 5».  
+**Ampliado:** casas 1 / 2 / 3+; edificios menor a 5 / 5–8 / 9–12 / 13+.  
+**Dinámico:** solo combinaciones presentes en el corte territorial.
             """
         )
         st.markdown("##### Catálogo del esquema activo")
@@ -528,7 +576,7 @@ combinaciones presentes en el corte territorial.
                 """
 **Efectos en infraestructura y activos físicos:** se cuantifican en unidades físicas y se
 valoran a **costo de reposición**. La desagregación tipológica la define el sector vivienda
-según el parque edificado local; Volume A no fija las 12 filas del Excel de ejemplo.
+según el parque edificado local.
 
 **Daño físico (infraestructura):** factor de semáforo acotado a 100 % del valor de reposición.
 

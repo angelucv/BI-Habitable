@@ -75,6 +75,28 @@ def _familia_desde_tipologia(tipologia: Any) -> str:
     return "otro"
 
 
+COLS_PDNA_BASE: tuple[str, ...] = (
+    "id",
+    "etiqueta_n",
+    "estado_n",
+    "municipio_n",
+    "parroquia_n",
+    "tipologia_pdna",
+    "material_n",
+    "num_pisos",
+    "uso_n",
+    "uso_raw_n",
+)
+
+
+def marco_pdna_ligero(df: pd.DataFrame) -> pd.DataFrame:
+    """Copia solo columnas necesarias para PDNA (evita duplicar el mart completo)."""
+    cols = [c for c in COLS_PDNA_BASE if c in df.columns]
+    if not cols:
+        return pd.DataFrame(index=df.index)
+    return df.loc[:, cols].copy()
+
+
 def proyectar_pdna(
     df: pd.DataFrame,
     *,
@@ -85,6 +107,7 @@ def proyectar_pdna(
     ratio_contenidos: float = RATIO_CONTENIDOS_DEFAULT,
     m2_por_piso: float = M2_POR_PISO_DEFAULT,
     area_minima: float = AREA_MINIMA_DEFAULT,
+    slim: bool = True,
 ) -> pd.DataFrame:
     """Añade valoración de reposición y daños PDNA por inspección.
 
@@ -93,6 +116,9 @@ def proyectar_pdna(
     - dano_vivienda_usd: daño estructural + no estructural
     - dano_contenidos_usd: daño en contenidos
     - costo_pdna_usd: suma de ambos (efecto monetario total estimado)
+
+    Con ``slim=True`` (default) no duplica las ~80 columnas del mart: trabaja sobre
+    un marco reducido. Use ``slim=False`` solo si necesita conservar todo el ancho.
     """
     costos = {**COSTO_M2_DEFAULT, **(costo_m2 or {})}
     fac_viv = {
@@ -103,41 +129,58 @@ def proyectar_pdna(
     fac_cont = {**FACTORES_CONTENIDOS_DEFAULT, **(factores_contenidos or {})}
     ratio = max(float(ratio_contenidos), 0.0)
 
-    out = df.copy()
+    out = marco_pdna_ligero(df) if slim else df.copy()
+    if out.empty and len(df) > 0:
+        out = df.iloc[:, :0].copy()
+        out["etiqueta_n"] = df["etiqueta_n"] if "etiqueta_n" in df.columns else "OTRO"
+
     if "tipologia_pdna" in out.columns:
-        fam_tip = [_familia_desde_tipologia(x) for x in out["tipologia_pdna"]]
+        tip = out["tipologia_pdna"]
+        fam_tip = tip.map(_familia_desde_tipologia)
     else:
+        tip = None
         fam_tip = None
-    mat = out.get("material_n", pd.Series([""] * len(out)))
-    fam_mat = [_familia_material(x) for x in mat]
-    out["familia_material"] = fam_tip if fam_tip is not None else fam_mat
-    # Preferir familia de tipología cuando exista; si tipología nula, material
-    if fam_tip is not None:
-        out["familia_material"] = [
-            ft if str(t) not in {"None", "nan", ""} and t is not None else fm
-            for t, ft, fm in zip(out["tipologia_pdna"], fam_tip, fam_mat, strict=False)
-        ]
 
-    out["usd_m2"] = out["familia_material"].map(lambda x: float(costos.get(x, costos["otro"])))
-    pisos = pd.to_numeric(out.get("num_pisos"), errors="coerce").fillna(1.0).clip(lower=1.0)
-    out["area_m2_est"] = (pisos * float(m2_por_piso)).clip(lower=float(area_minima))
-    out["valor_reposicion_usd"] = out["usd_m2"] * out["area_m2_est"]
-    out["valor_contenidos_usd"] = out["valor_reposicion_usd"] * ratio
+    if "material_n" in out.columns:
+        fam_mat = out["material_n"].map(_familia_material)
+    else:
+        fam_mat = pd.Series(["otro"] * len(out), index=out.index)
 
-    et = out.get("etiqueta_n", pd.Series(["OTRO"] * len(out))).astype(str).str.upper()
-    out["factor_vivienda"] = et.map(lambda e: float(fac_viv.get(e, 0.0)))
-    out["factor_contenidos"] = et.map(lambda e: float(fac_cont.get(e, 0.0)))
-    out["factor_pdna"] = out["factor_vivienda"]  # compat páginas previas
+    if fam_tip is not None and tip is not None:
+        tip_ok = tip.notna() & tip.astype(str).str.strip().ne("") & tip.astype(str).ne("None")
+        out["familia_material"] = fam_mat.where(~tip_ok, fam_tip)
+    else:
+        out["familia_material"] = fam_mat
 
-    # Daño físico directo: factor acotado a 1 (reposición, sin prima BBB)
+    out["usd_m2"] = out["familia_material"].map(lambda x: float(costos.get(x, costos["otro"]))).astype("float64")
+    if "num_pisos" in out.columns:
+        pisos = pd.to_numeric(out["num_pisos"], errors="coerce")
+    else:
+        pisos = pd.Series(np.nan, index=out.index)
+    pisos = pisos.fillna(1.0).clip(lower=1.0)
+    out["area_m2_est"] = (pisos * float(m2_por_piso)).clip(lower=float(area_minima)).astype("float64")
+    out["valor_reposicion_usd"] = (out["usd_m2"] * out["area_m2_est"]).astype("float64")
+    out["valor_contenidos_usd"] = (out["valor_reposicion_usd"] * ratio).astype("float64")
+
+    if "etiqueta_n" in out.columns:
+        et = out["etiqueta_n"].astype(str).str.upper()
+    else:
+        et = pd.Series(["OTRO"] * len(out), index=out.index)
+    out["factor_vivienda"] = et.map(lambda e: float(fac_viv.get(e, 0.0))).astype("float64")
+    out["factor_contenidos"] = et.map(lambda e: float(fac_cont.get(e, 0.0))).astype("float64")
+    out["factor_pdna"] = out["factor_vivienda"]
+
     fac_dir = out["factor_vivienda"].clip(upper=1.0)
-    out["dano_vivienda_directo_usd"] = out["valor_reposicion_usd"] * fac_dir
-    out["premium_bbb_usd"] = out["valor_reposicion_usd"] * (out["factor_vivienda"] - fac_dir).clip(lower=0.0)
-    # Necesidades de recuperación (vivienda): incluyen BBB cuando factor > 1
-    out["dano_vivienda_usd"] = out["valor_reposicion_usd"] * out["factor_vivienda"]
-    out["dano_contenidos_usd"] = out["valor_contenidos_usd"] * out["factor_contenidos"]
-    out["costo_pdna_usd"] = out["dano_vivienda_usd"] + out["dano_contenidos_usd"]
-    out["dano_fisico_directo_usd"] = out["dano_vivienda_directo_usd"] + out["dano_contenidos_usd"]
+    out["dano_vivienda_directo_usd"] = (out["valor_reposicion_usd"] * fac_dir).astype("float64")
+    out["premium_bbb_usd"] = (
+        out["valor_reposicion_usd"] * (out["factor_vivienda"] - fac_dir).clip(lower=0.0)
+    ).astype("float64")
+    out["dano_vivienda_usd"] = (out["valor_reposicion_usd"] * out["factor_vivienda"]).astype("float64")
+    out["dano_contenidos_usd"] = (out["valor_contenidos_usd"] * out["factor_contenidos"]).astype("float64")
+    out["costo_pdna_usd"] = (out["dano_vivienda_usd"] + out["dano_contenidos_usd"]).astype("float64")
+    out["dano_fisico_directo_usd"] = (
+        out["dano_vivienda_directo_usd"] + out["dano_contenidos_usd"]
+    ).astype("float64")
     return out
 
 
@@ -161,42 +204,57 @@ def matriz_pdna_completa(
         ]
         return pd.DataFrame(columns=cols)
 
-    work = df_pdna.copy()
-    if "tipologia_pdna" not in work.columns:
+    if "tipologia_pdna" not in df_pdna.columns or "etiqueta_n" not in df_pdna.columns:
         return pd.DataFrame()
 
-    mask = work["etiqueta_n"].isin(ETIQUETAS)
+    mask = df_pdna["etiqueta_n"].isin(ETIQUETAS)
     if not incluir_sin_tipologia:
-        mask = mask & work["tipologia_pdna"].notna()
-    sub = work.loc[mask].copy()
+        mask = mask & df_pdna["tipologia_pdna"].notna()
+
+    need = [
+        c
+        for c in (
+            "tipologia_pdna",
+            "etiqueta_n",
+            "dano_vivienda_usd",
+            "dano_contenidos_usd",
+            "costo_pdna_usd",
+            "dano_vivienda_directo_usd",
+        )
+        if c in df_pdna.columns
+    ]
+    # Una sola selección estrecha (sin .copy() del mart completo)
+    sub = df_pdna.loc[mask, need]
     if sub.empty:
         return pd.DataFrame()
 
-    sub["tipologia_pdna"] = sub["tipologia_pdna"].fillna("Sin tipología").astype(str)
+    tip = sub["tipologia_pdna"].fillna("Sin tipología").astype(str)
+    etiq = sub["etiqueta_n"]
 
-    ct = pd.crosstab(sub["tipologia_pdna"], sub["etiqueta_n"])
+    ct = pd.crosstab(tip, etiq)
     for e in ETIQUETAS:
         if e not in ct.columns:
             ct[e] = 0
     ct = ct.reindex(columns=list(ETIQUETAS), fill_value=0)
 
-    cost_cols = {
+    cost_src = {
         "dano_vivienda_usd": "dano_vivienda_usd",
         "dano_contenidos_usd": "dano_contenidos_usd",
         "costo_total_usd": "costo_pdna_usd",
     }
     if "dano_vivienda_directo_usd" in sub.columns:
-        cost_cols["dano_vivienda_directo_usd"] = "dano_vivienda_directo_usd"
+        cost_src["dano_vivienda_directo_usd"] = "dano_vivienda_directo_usd"
+
+    tmp = sub.assign(tipologia_pdna=tip)
     costs = (
-        sub.groupby("tipologia_pdna", dropna=False)
-        .agg(**{alias: (src, "sum") for alias, src in cost_cols.items()})
+        tmp.groupby("tipologia_pdna", dropna=False)
+        .agg(**{alias: (src, "sum") for alias, src in cost_src.items()})
         .reindex(ct.index)
         .fillna(0.0)
     )
 
     out = ct.join(costs)
     out["total"] = out[list(ETIQUETAS)].sum(axis=1)
-    # Columna «daño vivienda» = daño físico directo (sin prima BBB).
     if "dano_vivienda_directo_usd" in out.columns:
         out["dano_vivienda_usd"] = out["dano_vivienda_directo_usd"]
         out = out.drop(columns=["dano_vivienda_directo_usd"])
@@ -224,7 +282,7 @@ def matriz_pdna_completa(
         out[e] = out[e].astype(int)
     out["total"] = out["total"].astype(int)
 
-    out = out.reset_index().rename(columns={"tipologia_pdna": "tipologia"})
+    out = out.reset_index()
     if out.columns[0] != "tipologia":
         out = out.rename(columns={out.columns[0]: "tipologia"})
     rename_sem = {e: e.lower() for e in ETIQUETAS}

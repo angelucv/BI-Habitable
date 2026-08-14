@@ -133,7 +133,11 @@ def opts_apilado_territorio(df: pd.DataFrame, col: str, *, top: int = 12) -> dic
     )
 
 
-def opts_barras_tipologia(resumen: pd.DataFrame) -> dict[str, Any] | None:
+def opts_barras_tipologia(
+    resumen: pd.DataFrame,
+    *,
+    horizontal: bool = False,
+) -> dict[str, Any] | None:
     if resumen is None or resumen.empty:
         return None
     cats = resumen["tipologia"].astype(str).tolist()
@@ -141,18 +145,56 @@ def opts_barras_tipologia(resumen: pd.DataFrame) -> dict[str, Any] | None:
     for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO"):
         if e not in resumen.columns:
             continue
+        vals = [int(v) for v in resumen[e].tolist()]
         series.append(
             {
                 "name": etiqueta_label(e),
                 "type": "bar",
                 "stack": "pdna",
                 "itemStyle": {"color": ETIQUETA_COLORS[e]},
-                "data": [int(v) for v in resumen[e].tolist()],
+                "data": list(reversed(vals)) if horizontal else vals,
+                "emphasis": {"focus": "series"},
             }
+        )
+    legend = {
+        "top": 8,
+        "data": [
+            etiqueta_label(e)
+            for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO")
+            if e in resumen.columns
+        ],
+    }
+    if horizontal:
+        cats_h = list(reversed(cats))
+        n = max(len(cats_h), 1)
+        return _base_opts(
+            tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
+            legend=legend,
+            grid={
+                "left": 8,
+                "right": 48,
+                "top": 48,
+                "bottom": 24,
+                "containLabel": True,
+            },
+            yAxis={
+                "type": "category",
+                "data": cats_h,
+                "axisLabel": {
+                    "fontSize": 11,
+                    "interval": 0,
+                    "width": 220,
+                    "overflow": "truncate",
+                },
+                "axisTick": {"show": False},
+            },
+            xAxis={"type": "value", "name": "Unidades", "splitLine": {"show": True}},
+            series=series,
+            # altura dinámica la controla el caller
         )
     return _base_opts(
         tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
-        legend={"top": 28, "data": [etiqueta_label(e) for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO") if e in resumen.columns]},
+        legend=legend,
         grid={"left": 16, "right": 24, "top": 64, "bottom": 120, "containLabel": True},
         xAxis={
             "type": "category",
@@ -161,6 +203,66 @@ def opts_barras_tipologia(resumen: pd.DataFrame) -> dict[str, Any] | None:
         },
         yAxis={"type": "value", "name": "Inspecciones"},
         series=series,
+    )
+
+
+def opts_barras_costo(
+    df: pd.DataFrame,
+    *,
+    col_cat: str,
+    col_val: str,
+    top: int = 15,
+    horizontal: bool = False,
+) -> dict[str, Any] | None:
+    if df is None or df.empty or col_cat not in df.columns or col_val not in df.columns:
+        return None
+    g = (
+        df.groupby(col_cat, as_index=False)[col_val]
+        .sum()
+        .sort_values(col_val, ascending=False)
+        .head(top)
+    )
+    if horizontal:
+        # Ascendente: la mayor queda arriba en eje categoría ECharts
+        g = g.sort_values(col_val, ascending=True)
+        return _base_opts(
+            tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
+            legend={"show": False},
+            grid={"left": 8, "right": 56, "top": 28, "bottom": 24, "containLabel": True},
+            yAxis={
+                "type": "category",
+                "data": g[col_cat].astype(str).tolist(),
+                "axisLabel": {"fontSize": 11, "interval": 0, "width": 220, "overflow": "truncate"},
+                "axisTick": {"show": False},
+            },
+            xAxis={"type": "value", "name": "USD"},
+            series=[
+                {
+                    "type": "bar",
+                    "data": [round(float(x), 0) for x in g[col_val].tolist()],
+                    "itemStyle": {"color": STEEL},
+                    "label": {"show": True, "position": "right", "fontSize": 10},
+                    "barMaxWidth": 22,
+                }
+            ],
+        )
+    return _base_opts(
+        tooltip={"trigger": "axis"},
+        legend={"show": False},
+        grid={"left": 16, "right": 24, "top": 40, "bottom": 80, "containLabel": True},
+        xAxis={
+            "type": "category",
+            "data": g[col_cat].astype(str).tolist(),
+            "axisLabel": {"rotate": 35, "fontSize": 10},
+        },
+        yAxis={"type": "value", "name": "USD"},
+        series=[
+            {
+                "type": "bar",
+                "data": [round(float(x), 0) for x in g[col_val].tolist()],
+                "itemStyle": {"color": STEEL},
+            }
+        ],
     )
 
 
@@ -263,31 +365,6 @@ def opts_sankey_anio_material_etiqueta(df_cat: pd.DataFrame) -> dict[str, Any] |
                 "links": link_list,
                 "lineStyle": {"color": "gradient", "curveness": 0.4},
                 "label": {"fontSize": 10},
-            }
-        ],
-    )
-
-
-def opts_barras_costo(df: pd.DataFrame, *, col_cat: str, col_val: str, top: int = 15) -> dict[str, Any] | None:
-    if df is None or df.empty or col_cat not in df.columns or col_val not in df.columns:
-        return None
-    g = df.groupby(col_cat, as_index=False)[col_val].sum().sort_values(col_val, ascending=False).head(top)
-    return _base_opts(
-        tooltip={"trigger": "axis"},
-        legend={"show": False},
-        grid={"left": 16, "right": 24, "top": 40, "bottom": 80, "containLabel": True},
-        xAxis={
-            "type": "category",
-            "data": g[col_cat].astype(str).tolist(),
-            "axisLabel": {"rotate": 35, "fontSize": 10},
-        },
-        yAxis={"type": "value", "name": "USD"},
-        series=[
-            {
-                "type": "bar",
-                "data": [round(float(x), 0) for x in g[col_val].tolist()],
-                "itemStyle": {"color": STEEL},
-                "barMaxWidth": 36,
             }
         ],
     )
