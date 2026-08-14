@@ -1,4 +1,4 @@
-"""Sección Análisis dimensional: flujo · año · pisos · uso · material."""
+"""Sección Análisis dimensional: año · pisos · uso · material · flujo."""
 
 from __future__ import annotations
 
@@ -12,11 +12,11 @@ from page_ejecutivo import _inject_css, _tab_elementos
 from ui_theme import render_section
 
 _DIM_OPTS: tuple[tuple[str, str], ...] = (
-    ("dim_elementos", "1 · Flujo"),
-    ("dim_anio", "2 · Año"),
-    ("dim_pisos", "3 · Pisos"),
-    ("dim_uso", "4 · Uso"),
-    ("dim_material", "5 · Material"),
+    ("dim_anio", "1 · Año"),
+    ("dim_pisos", "2 · Pisos"),
+    ("dim_uso", "3 · Uso"),
+    ("dim_material", "4 · Material"),
+    ("dim_elementos", "5 · Flujo"),
 )
 
 
@@ -29,7 +29,7 @@ def page_analisis_dimensional(df: pd.DataFrame, *, initial_tab: str | None = Non
     )
 
     ids = [i for i, _ in _DIM_OPTS]
-    st.session_state.setdefault("ad_choice", "dim_elementos")
+    st.session_state.setdefault("ad_choice", "dim_anio")
     # Solo alinear con el menú lateral cuando cambia el ítem de nav.
     if initial_tab in ids and st.session_state.get("_ad_nav_sync") != initial_tab:
         st.session_state["ad_choice"] = initial_tab

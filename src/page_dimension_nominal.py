@@ -199,7 +199,7 @@ def render_dimension_uso(df: pd.DataFrame) -> None:
     _render_capa_nominal(
         work,
         col_cat="uso_capa",
-        titulo="Capa 4 · Uso agrupado",
+        titulo="3 · Uso agrupado",
         subtitulo="Asociación nominal entre uso de la edificación y daño crítico (Rojo + pérdida total).",
         titulo_sintesis="📝 Resumen del Perfil de Riesgo",
         eje_nombre="uso de la edificación",
@@ -214,7 +214,7 @@ def render_dimension_material(df: pd.DataFrame) -> None:
     _render_capa_nominal(
         work,
         col_cat="material_capa",
-        titulo="Capa 5 · Material agrupado",
+        titulo="4 · Material agrupado",
         subtitulo="Asociación nominal entre tipología constructiva y daño crítico (Rojo + pérdida total).",
         titulo_sintesis="📝 Resumen del Perfil de Riesgo",
         eje_nombre="material estructural",

@@ -26,13 +26,8 @@ NAV_SECTIONS: tuple[NavSection, ...] = (
     NavSection(
         id="analisis_dimensional",
         label="Análisis dimensional",
-        blurb="Flujo ANIH, año, pisos, uso y material (nominal).",
+        blurb="Año, pisos, uso, material y flujo ANIH.",
         items=(
-            NavItem(
-                "dim_elementos",
-                "Flujo de decisión",
-                "Embudo ANIH: salidas tempranas y pasos de daño.",
-            ),
             NavItem(
                 "dim_anio",
                 "Año de construcción",
@@ -46,12 +41,17 @@ NAV_SECTIONS: tuple[NavSection, ...] = (
             NavItem(
                 "dim_uso",
                 "Uso agrupado",
-                "Capa 4 · Chi² / Cramer / OR vs Casa.",
+                "Chi² / Cramer / OR vs Casa.",
             ),
             NavItem(
                 "dim_material",
                 "Material agrupado",
-                "Capa 5 · Chi² / Cramer / OR vs Concreto.",
+                "Chi² / Cramer / OR vs Concreto.",
+            ),
+            NavItem(
+                "dim_elementos",
+                "Flujo de decisión",
+                "Embudo ANIH: salidas tempranas y pasos de daño.",
             ),
         ),
     ),
