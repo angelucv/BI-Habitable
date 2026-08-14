@@ -9,7 +9,7 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 from charts_habitable import opts_barras_costo, opts_barras_tipologia
-from export_utils import download_csv_button, fmt_es_int
+from export_utils import download_csv_button, download_excel_button, fmt_es_int
 from pdna_costs import (
     AREA_MINIMA_DEFAULT,
     COSTO_M2_DEFAULT,
@@ -22,13 +22,15 @@ from pdna_costs import (
     proyectar_pdna,
     resumen_pdna_territorio,
 )
+from pdna_export import construir_export_pdna_fisico, matriz_fisica_desglosada
 from process_habitable import (
     ESQUEMA_PDNA_DETALLADO,
     ESQUEMA_PDNA_EXCEL,
     ESQUEMA_PDNA_OBSERVADO,
     ESQUEMAS_PDNA_LABELS,
     aplicar_tipologia_pdna,
-    resumen_danos_pdna,
+    bandas_pisos_catalogo,
+    desglosar_tipologia_pdna,
     tipos_pdna_orden,
 )
 from ui_theme import render_kpi_strip, render_section
@@ -241,9 +243,6 @@ def _sintesis_html(
 """
 
 
-_COLS_FISICAS = ("tipologia", "verde", "amarillo", "rojo", "negro", "total")
-
-
 def _matriz_para_export(mat: pd.DataFrame) -> pd.DataFrame:
     """Matriz completa (conteos + USD) + fila TOTAL."""
     pie = {
@@ -260,33 +259,163 @@ def _matriz_para_export(mat: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([mat, pd.DataFrame([pie])], ignore_index=True)
 
 
-def _matriz_fisica_para_export(mat: pd.DataFrame) -> pd.DataFrame:
-    """Solo tipología × semáforo (sin USD): insumo para estimaciones propias del equipo PDNA."""
-    base = mat.loc[:, list(_COLS_FISICAS)].copy()
-    pie = {
-        "tipologia": "TOTAL",
-        "verde": int(base["verde"].sum()),
-        "amarillo": int(base["amarillo"].sum()),
-        "rojo": int(base["rojo"].sum()),
-        "negro": int(base["negro"].sum()),
-        "total": int(base["total"].sum()),
-    }
-    out = pd.concat([base, pd.DataFrame([pie])], ignore_index=True)
-    return out.rename(
-        columns={
-            "tipologia": "Tipologia",
-            "verde": "Verde",
-            "amarillo": "Amarillo",
-            "rojo": "Rojo",
-            "negro": "Negro_perdida_total",
-            "total": "Total",
-        }
+def _agregar_matriz_por_tip_corta(mat: pd.DataFrame) -> pd.DataFrame:
+    """Colapsa tipologías a material×uso (sin banda) sumando conteos y USD."""
+    if mat is None or mat.empty:
+        return mat
+    rows = []
+    for _, r in mat.iterrows():
+        m, u, _b = desglosar_tipologia_pdna(r["tipologia"])
+        tip = f"{m} ({u})" if m and u else str(r["tipologia"])
+        rows.append(
+            {
+                "tipologia": tip,
+                "verde": int(r["verde"]),
+                "amarillo": int(r["amarillo"]),
+                "rojo": int(r["rojo"]),
+                "negro": int(r["negro"]),
+                "total": int(r["total"]),
+                "dano_vivienda_usd": float(r.get("dano_vivienda_usd", 0) or 0),
+                "dano_contenidos_usd": float(r.get("dano_contenidos_usd", 0) or 0),
+                "costo_total_usd": float(r.get("costo_total_usd", 0) or 0),
+            }
+        )
+    raw = pd.DataFrame(rows)
+    return (
+        raw.groupby("tipologia", as_index=False)
+        .sum(numeric_only=True)
+        .sort_values("total", ascending=False)
+        .reset_index(drop=True)
     )
 
 
-def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -> None:
+def _selector_banda_grafico(mat: pd.DataFrame, *, esquema: str) -> tuple[str, pd.DataFrame]:
+    """Selector de banda de pisos para gráficos; devuelve (banda|TODAS, matriz filtrada/colapsada)."""
+    if mat is None or mat.empty:
+        return "TODAS", mat
+
+    # Solo tipologías con unidades (evita barras vacías del catálogo ampliado)
+    base = mat.loc[mat["total"].astype(int) > 0].copy()
+    if base.empty:
+        base = mat.copy()
+
+    tmp = base.copy()
+    tmp["_banda"] = [desglosar_tipologia_pdna(t)[2] for t in tmp["tipologia"]]
+    presentes = [b for b in tmp["_banda"].dropna().astype(str).unique().tolist() if b]
+    catalogo = list(bandas_pisos_catalogo(esquema))
+    opciones_bandas = [b for b in catalogo if b in presentes] + sorted(
+        set(presentes) - set(catalogo)
+    )
+    if not opciones_bandas:
+        return "TODAS", _agregar_matriz_por_tip_corta(base)
+
+    # Banda por defecto: la de mayor volumen (gráficos legibles)
+    vol = tmp.groupby("_banda", dropna=False)["total"].sum().sort_values(ascending=False)
+    default_banda = str(vol.index[0]) if len(vol) else opciones_bandas[0]
+    labels = ["Todas (material × uso)"] + opciones_bandas
+    prev = st.session_state.get("pdna_banda_graf")
+    if prev not in labels:
+        st.session_state["pdna_banda_graf"] = (
+            default_banda if default_banda in labels else labels[0]
+        )
+
+    st.markdown("##### Vista de gráficos por banda de pisos")
+    banda = st.selectbox(
+        "Banda de pisos",
+        labels,
+        key="pdna_banda_graf",
+        help="Filtra los gráficos a una banda para leer material × uso sin saturar el eje.",
+    )
+    if banda == "Todas (material × uso)":
+        return "TODAS", _agregar_matriz_por_tip_corta(base)
+
+    filtrada = tmp.loc[tmp["_banda"].astype(str) == str(banda)].drop(columns=["_banda"])
+    # Etiqueta corta: material (uso) — la banda ya está fijada en el selector
+    rows = []
+    for _, r in filtrada.iterrows():
+        m, u, _b = desglosar_tipologia_pdna(r["tipologia"])
+        tip = f"{m} ({u})" if m and u else str(r["tipologia"])
+        row = r.to_dict()
+        row["tipologia"] = tip
+        rows.append(row)
+    if not rows:
+        return str(banda), filtrada
+    out = pd.DataFrame(rows)
+    out = (
+        out.groupby("tipologia", as_index=False)
+        .sum(numeric_only=True)
+        .sort_values("total", ascending=False)
+        .reset_index(drop=True)
+    )
+    return str(banda), out
+
+
+def _render_graficos_pdna(mat: pd.DataFrame, *, esquema: str) -> None:
+    if mat is None or mat.empty:
+        return
+    banda_sel, mat_g = _selector_banda_grafico(mat, esquema=esquema)
+    if mat_g is None or mat_g.empty:
+        st.info("Sin tipologías para la banda seleccionada.")
+        return
+
+    resumen_counts = mat_g.rename(
+        columns={
+            "verde": "VERDE",
+            "amarillo": "AMARILLO",
+            "rojo": "ROJO",
+            "negro": "NEGRO",
+        }
+    )
+    n_rows_chart = max(len(mat_g), 4)
+    chart_h = int(min(64 + n_rows_chart * 36, 560))
+    titulo_banda = (
+        "todas las bandas (agregado material × uso)"
+        if banda_sel == "TODAS"
+        else f"banda «{banda_sel}»"
+    )
+    st.caption(f"Gráficos para {titulo_banda}.")
+
+    g1, g2 = st.columns(2)
+    with g1:
+        st.markdown("##### Distribución física por tipología")
+        opts = opts_barras_tipologia(resumen_counts, horizontal=True)
+        if opts:
+            st_echarts(
+                opts,
+                height=f"{chart_h}px",
+                key=f"pdna-barras-tip-h-{esquema}-{banda_sel}",
+            )
+    with g2:
+        st.markdown("##### Necesidades de recuperación por tipología")
+        cost_bar = mat_g.loc[mat_g["total"] > 0, ["tipologia", "costo_total_usd"]].rename(
+            columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
+        )
+        if cost_bar.empty:
+            cost_bar = mat_g[["tipologia", "costo_total_usd"]].rename(
+                columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
+            )
+        opts_c = opts_barras_costo(
+            cost_bar,
+            col_cat="cat",
+            col_val="costo_pdna_usd",
+            top=min(16, len(cost_bar)),
+            horizontal=True,
+        )
+        if opts_c:
+            st_echarts(
+                opts_c,
+                height=f"{chart_h}px",
+                key=f"pdna-barras-cost-h-{esquema}-{banda_sel}",
+            )
+
+
+def _render_matriz_con_databars(
+    mat: pd.DataFrame,
+    *,
+    key_suffix: str = "mat",
+    export_sheets: dict[str, pd.DataFrame] | None = None,
+) -> None:
     export_df = _matriz_para_export(mat)
-    export_fisica = _matriz_fisica_para_export(mat)
     show = export_df.rename(
         columns={
             "tipologia": "Tipología",
@@ -311,7 +440,6 @@ def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -
     max_cont = max(float(mat["dano_contenidos_usd"].sum()), 1.0)
     max_tot = max(float(mat["costo_total_usd"].sum()), 1.0)
 
-    # Encabezados con salto de línea (word-wrap en cabecera de Streamlit)
     col_cfg = {
         "Tipología": st.column_config.TextColumn("Tipología", width="large"),
         "Verde": st.column_config.NumberColumn("Verde", format="%d"),
@@ -344,23 +472,25 @@ def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -
 
     st.markdown("##### Matriz agregada · tipología × semáforo")
     st.caption(
-        "Insumo PDNA/ONU. Use la **matriz física** para que el equipo PDNA aplique sus propios "
-        "costos; la exportación con USD usa el escenario de valoración de esta pantalla."
+        "Descargue el **Excel físico** (sin costos) con estado, municipio, parroquia, "
+        "material, uso, banda y tipo de daño en columnas separadas, más totales por semáforo."
     )
+    sheets = dict(export_sheets or {})
+    sheets.setdefault("Matriz_tipologia_vista", matriz_fisica_desglosada(mat))
     d1, d2 = st.columns(2)
     with d1:
-        download_csv_button(
-            export_fisica,
-            filename=f"pdna_matriz_fisica_{key_suffix}.csv",
-            key=f"dl_pdna_mat_fisica_{key_suffix}",
-            label="Matriz física (sin costos)",
+        download_excel_button(
+            sheets,
+            filename=f"pdna_matriz_fisica_{key_suffix}.xlsx",
+            key=f"dl_pdna_mat_xlsx_{key_suffix}",
+            label="Excel físico (sin costos)",
         )
     with d2:
         download_csv_button(
             export_df,
             filename=f"pdna_matriz_con_usd_{key_suffix}.csv",
             key=f"dl_pdna_mat_usd_{key_suffix}",
-            label="Matriz con estimación USD",
+            label="Matriz con estimación USD (CSV)",
         )
 
     st.dataframe(
@@ -378,12 +508,14 @@ def page_pdna(df: pd.DataFrame) -> None:
         "Insumos agregados para el equipo sectorial: unidades físicas, daño y necesidades de recuperación.",
     )
 
-    work = _filtros_territorio(df)
+    work_geo = _filtros_territorio(df)
     esquema = _selector_esquema_tipologia()
     # Marco estrecho: una sola copia ligera (no duplicar las ~80 columnas del mart).
-    work = marco_pdna_ligero(work)
+    work = marco_pdna_ligero(work_geo)
     esquema_calc = ESQUEMA_PDNA_EXCEL if esquema == ESQUEMA_PDNA_EXCEL else ESQUEMA_PDNA_DETALLADO
     work = aplicar_tipologia_pdna(work, esquema=esquema_calc, copy=False)
+    # Tipología también en el marco territorial completo (export Excel / daño estructural).
+    work_geo = aplicar_tipologia_pdna(work_geo, esquema=esquema_calc, copy=True)
     params = _params_from_session()
 
     with st.spinner("Calculando efectos y necesidades…"):
@@ -476,36 +608,11 @@ def page_pdna(df: pd.DataFrame) -> None:
         unsafe_allow_html=True,
     )
 
-    # Gráficos horizontales inmediatamente bajo la síntesis (antes de la tabla)
+    # Gráficos por banda (legibles) inmediatamente bajo la síntesis
     if not mat.empty:
-        resumen_counts = resumen_danos_pdna(work)
-        n_rows_chart = max(len(mat), 8)
-        chart_h = int(min(56 + n_rows_chart * 28, 720))
-        g1, g2 = st.columns(2)
-        with g1:
-            st.markdown("##### Distribución física por tipología")
-            if not resumen_counts.empty:
-                opts = opts_barras_tipologia(resumen_counts, horizontal=True)
-                if opts:
-                    st_echarts(opts, height=f"{chart_h}px", key=f"pdna-barras-tip-h-{esquema}")
-        with g2:
-            st.markdown("##### Necesidades de recuperación por tipología")
-            cost_bar = mat.loc[mat["total"] > 0, ["tipologia", "costo_total_usd"]].rename(
-                columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
-            )
-            if cost_bar.empty:
-                cost_bar = mat[["tipologia", "costo_total_usd"]].rename(
-                    columns={"tipologia": "cat", "costo_total_usd": "costo_pdna_usd"}
-                )
-            opts_c = opts_barras_costo(
-                cost_bar,
-                col_cat="cat",
-                col_val="costo_pdna_usd",
-                top=min(16, len(cost_bar)),
-                horizontal=True,
-            )
-            if opts_c:
-                st_echarts(opts_c, height=f"{chart_h}px", key=f"pdna-barras-cost-h-{esquema}")
+        _render_graficos_pdna(mat, esquema=esquema_calc)
+
+    export_sheets = construir_export_pdna_fisico(work_geo)
 
     tab_mat, tab_geo, tab_guia, tab_met = st.tabs(
         [
@@ -520,7 +627,11 @@ def page_pdna(df: pd.DataFrame) -> None:
         if mat.empty:
             st.warning("No hay filas con tipología PDNA y semáforo válido en este corte.")
         else:
-            _render_matriz_con_databars(mat, key_suffix=str(esquema))
+            _render_matriz_con_databars(
+                mat,
+                key_suffix=str(esquema),
+                export_sheets=export_sheets,
+            )
 
     with tab_geo:
         st.markdown("##### Agregación territorial")

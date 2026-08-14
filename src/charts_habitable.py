@@ -32,11 +32,47 @@ def etiqueta_label(code: str) -> str:
     return ETIQUETA_LABEL.get(str(code).strip().upper(), str(code))
 
 
+def _fmt_es_compact(n: float | int, *, money: bool = False) -> str:
+    """Etiquetas cortas para ejes/barras (evita solapamiento de ceros)."""
+    x = float(n)
+    sign = "-" if x < 0 else ""
+    x = abs(x)
+    if x >= 1_000_000_000:
+        s = f"{x / 1_000_000_000:.1f}".rstrip("0").rstrip(".") + " mil M"
+    elif x >= 1_000_000:
+        s = f"{x / 1_000_000:.1f}".rstrip("0").rstrip(".") + " M"
+    elif x >= 10_000:
+        s = f"{x / 1_000:.0f} mil"
+    else:
+        s = f"{int(round(x)):,}".replace(",", ".")
+    if money:
+        return f"{sign}USD {s}"
+    return f"{sign}{s}"
+
+
+def _legend_semaforo(present: list[str] | tuple[str, ...]) -> dict[str, Any]:
+    """Leyenda semáforo abajo al centro (no choca con toolbox)."""
+    return {
+        "orient": "horizontal",
+        "left": "center",
+        "bottom": 2,
+        "itemGap": 16,
+        "itemWidth": 14,
+        "itemHeight": 10,
+        "icon": "roundRect",
+        "padding": [2, 8],
+        "textStyle": {"fontSize": 12, "fontWeight": 600, "color": "#0F172A"},
+        "data": [etiqueta_label(e) for e in present],
+    }
+
+
 def _toolbox() -> dict[str, Any]:
     return {
         "show": True,
-        "right": 12,
-        "top": 0,
+        "right": 4,
+        "top": 2,
+        "itemSize": 14,
+        "itemGap": 8,
         "feature": {
             "saveAsImage": {"title": "Guardar imagen", "pixelRatio": 2},
             "restore": {"title": "Restablecer"},
@@ -141,10 +177,9 @@ def opts_barras_tipologia(
     if resumen is None or resumen.empty:
         return None
     cats = resumen["tipologia"].astype(str).tolist()
+    presentes = [e for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO") if e in resumen.columns]
     series = []
-    for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO"):
-        if e not in resumen.columns:
-            continue
+    for e in presentes:
         vals = [int(v) for v in resumen[e].tolist()]
         series.append(
             {
@@ -154,27 +189,25 @@ def opts_barras_tipologia(
                 "itemStyle": {"color": ETIQUETA_COLORS[e]},
                 "data": list(reversed(vals)) if horizontal else vals,
                 "emphasis": {"focus": "series"},
+                "barMaxWidth": 22,
             }
         )
-    legend = {
-        "top": 8,
-        "data": [
-            etiqueta_label(e)
-            for e in ("VERDE", "AMARILLO", "ROJO", "NEGRO")
-            if e in resumen.columns
-        ],
+    legend = _legend_semaforo(presentes)
+    tooltip = {
+        "trigger": "axis",
+        "axisPointer": {"type": "shadow"},
+        "confine": True,
     }
     if horizontal:
         cats_h = list(reversed(cats))
-        n = max(len(cats_h), 1)
         return _base_opts(
-            tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
+            tooltip=tooltip,
             legend=legend,
             grid={
                 "left": 8,
-                "right": 48,
-                "top": 48,
-                "bottom": 24,
+                "right": 36,
+                "top": 28,
+                "bottom": 44,
                 "containLabel": True,
             },
             yAxis={
@@ -183,19 +216,43 @@ def opts_barras_tipologia(
                 "axisLabel": {
                     "fontSize": 11,
                     "interval": 0,
-                    "width": 220,
+                    "width": 160,
                     "overflow": "truncate",
+                    "color": "#334155",
                 },
                 "axisTick": {"show": False},
             },
-            xAxis={"type": "value", "name": "Unidades", "splitLine": {"show": True}},
+            xAxis={
+                "type": "value",
+                "name": "Unidades",
+                "nameLocation": "middle",
+                "nameGap": 28,
+                "nameTextStyle": {"fontSize": 11, "color": "#64748B"},
+                "splitLine": {"show": True, "lineStyle": {"color": "#E2E8F0"}},
+                "axisLabel": {
+                    "hideOverlap": True,
+                    "fontSize": 10,
+                    "color": "#64748B",
+                    # Etiquetas ya cortas vía formatter de plantilla ECharts
+                    "formatter": "{value}",
+                },
+            },
             series=series,
-            # altura dinámica la controla el caller
         )
     return _base_opts(
-        tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
-        legend=legend,
-        grid={"left": 16, "right": 24, "top": 64, "bottom": 120, "containLabel": True},
+        tooltip=tooltip,
+        legend={
+            "orient": "horizontal",
+            "left": "center",
+            "top": 8,
+            "itemGap": 16,
+            "itemWidth": 14,
+            "itemHeight": 10,
+            "icon": "roundRect",
+            "textStyle": {"fontSize": 12, "fontWeight": 600, "color": "#0F172A"},
+            "data": [etiqueta_label(e) for e in presentes],
+        },
+        grid={"left": 16, "right": 24, "top": 56, "bottom": 100, "containLabel": True},
         xAxis={
             "type": "category",
             "data": cats,
@@ -225,23 +282,62 @@ def opts_barras_costo(
     if horizontal:
         # Ascendente: la mayor queda arriba en eje categoría ECharts
         g = g.sort_values(col_val, ascending=True)
+        vals = [float(x) for x in g[col_val].tolist()]
+        # Eje en millones USD para no saturar con ceros
+        vals_m = [v / 1_000_000.0 for v in vals]
+        data_pts = [
+            {
+                "value": round(vm, 2),
+                "label": {
+                    "show": True,
+                    "position": "right",
+                    "fontSize": 10,
+                    "color": "#0F172A",
+                    "formatter": _fmt_es_compact(v, money=True),
+                },
+            }
+            for v, vm in zip(vals, vals_m, strict=True)
+        ]
         return _base_opts(
-            tooltip={"trigger": "axis", "axisPointer": {"type": "shadow"}},
+            tooltip={
+                "trigger": "axis",
+                "axisPointer": {"type": "shadow"},
+                "confine": True,
+            },
             legend={"show": False},
-            grid={"left": 8, "right": 56, "top": 28, "bottom": 24, "containLabel": True},
+            grid={"left": 8, "right": 96, "top": 28, "bottom": 40, "containLabel": True},
             yAxis={
                 "type": "category",
                 "data": g[col_cat].astype(str).tolist(),
-                "axisLabel": {"fontSize": 11, "interval": 0, "width": 220, "overflow": "truncate"},
+                "axisLabel": {
+                    "fontSize": 11,
+                    "interval": 0,
+                    "width": 160,
+                    "overflow": "truncate",
+                    "color": "#334155",
+                },
                 "axisTick": {"show": False},
             },
-            xAxis={"type": "value", "name": "USD"},
+            xAxis={
+                "type": "value",
+                "name": "Millones USD",
+                "nameLocation": "middle",
+                "nameGap": 30,
+                "nameTextStyle": {"fontSize": 11, "color": "#64748B"},
+                "splitNumber": 4,
+                "axisLabel": {
+                    "hideOverlap": True,
+                    "fontSize": 10,
+                    "color": "#64748B",
+                },
+                "splitLine": {"show": True, "lineStyle": {"color": "#E2E8F0"}},
+            },
             series=[
                 {
+                    "name": "Necesidades de recuperación",
                     "type": "bar",
-                    "data": [round(float(x), 0) for x in g[col_val].tolist()],
-                    "itemStyle": {"color": STEEL},
-                    "label": {"show": True, "position": "right", "fontSize": 10},
+                    "data": data_pts,
+                    "itemStyle": {"color": STEEL, "borderRadius": [0, 4, 4, 0]},
                     "barMaxWidth": 22,
                 }
             ],

@@ -1,0 +1,16 @@
+# Blueprint Render — BI Habitable (PDNA / inspecciones)
+# Tras el push: New → Blueprint → conectar este repo, o crear Web Service Docker a mano.
+
+services:
+  - type: web
+    name: bi-habitable
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: BI_ENV
+        value: "production"
+      - key: MALLOC_ARENA_MAX
+        value: "2"

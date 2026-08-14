@@ -1,8 +1,8 @@
-"""Utilidades de exportación CSV (UTF-8 sin índice)."""
+"""Utilidades de exportación CSV / Excel (UTF-8 sin índice)."""
 
 from __future__ import annotations
 
-from typing import Any
+from io import BytesIO
 
 import pandas as pd
 import streamlit as st
@@ -24,6 +24,37 @@ def download_csv_button(
         data=csv,
         file_name=filename,
         mime="text/csv",
+        key=key,
+    )
+
+
+def download_excel_button(
+    sheets: dict[str, pd.DataFrame] | pd.DataFrame,
+    *,
+    filename: str,
+    label: str = "Descargar Excel",
+    key: str,
+) -> None:
+    """Descarga .xlsx; ``sheets`` puede ser un DataFrame o {nombre_hoja: df}."""
+    if isinstance(sheets, pd.DataFrame):
+        if sheets is None or sheets.empty:
+            return
+        book: dict[str, pd.DataFrame] = {"Datos": sheets}
+    else:
+        book = {k: v for k, v in sheets.items() if v is not None and not v.empty}
+        if not book:
+            return
+
+    buf = BytesIO()
+    with pd.ExcelWriter(buf, engine="openpyxl") as writer:
+        for name, df in book.items():
+            safe = str(name).replace("/", "-")[:31] or "Hoja"
+            df.to_excel(writer, sheet_name=safe, index=False)
+    st.download_button(
+        label=label,
+        data=buf.getvalue(),
+        file_name=filename if filename.lower().endswith(".xlsx") else f"{filename}.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         key=key,
     )
 

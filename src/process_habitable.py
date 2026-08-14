@@ -205,6 +205,62 @@ def tipologia_pdna(
     return f"{mat} ({tipo}), {banda}"
 
 
+_TIP_RE = re.compile(
+    r"^(?P<material>.+?) \((?P<uso>casa|edificio)\), (?P<banda>.+)$",
+    re.IGNORECASE,
+)
+
+
+def desglosar_tipologia_pdna(tipologia: Any) -> tuple[str | None, str | None, str | None]:
+    """Separa «material (uso), banda» en tres campos (no concatenados)."""
+    m = _TIP_RE.match(str(tipologia or "").strip())
+    if not m:
+        return None, None, None
+    return (
+        m.group("material").strip(),
+        m.group("uso").strip().lower(),
+        m.group("banda").strip(),
+    )
+
+
+def bandas_pisos_catalogo(esquema: str = ESQUEMA_PDNA_EXCEL) -> tuple[str, ...]:
+    """Bandas de pisos posibles según esquema (orden de lectura)."""
+    if esquema == ESQUEMA_PDNA_EXCEL:
+        return ("1-2 pisos", "< 5 pisos", ">= 5 pisos")
+    return (
+        "1 piso",
+        "2 pisos",
+        "3 o más pisos",
+        "< 5 pisos",
+        "5 a 8 pisos",
+        "9 a 12 pisos",
+        "13 o más pisos",
+        "pisos s/d",
+    )
+
+
+def enriquecer_desglose_tipologia(df: pd.DataFrame) -> pd.DataFrame:
+    """Añade material_pdna / uso_pdna / banda_pisos_pdna / tip_corta a partir de tipologia_pdna."""
+    out = df
+    if "tipologia_pdna" not in out.columns:
+        out = out.copy()
+        out["material_pdna"] = None
+        out["uso_pdna"] = None
+        out["banda_pisos_pdna"] = None
+        out["tipologia_corta"] = None
+        return out
+    parts = out["tipologia_pdna"].map(desglosar_tipologia_pdna)
+    out = out.copy()
+    out["material_pdna"] = [p[0] for p in parts]
+    out["uso_pdna"] = [p[1] for p in parts]
+    out["banda_pisos_pdna"] = [p[2] for p in parts]
+    out["tipologia_corta"] = [
+        f"{m} ({u})" if m and u else None
+        for m, u, _ in parts
+    ]
+    return out
+
+
 def tipos_pdna_orden(esquema: str = ESQUEMA_PDNA_EXCEL) -> tuple[str, ...]:
     """Filas canónicas esperadas para un esquema (antes de filtrar por presencia)."""
     if esquema == ESQUEMA_PDNA_EXCEL:
