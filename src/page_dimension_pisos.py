@@ -493,12 +493,12 @@ def _bloque_or_vs_baja(
             f"¿Qué franja se separa más de «{BANDA_ALTURA_BAJA}»?",
             "Razón de momios (Odds Ratio) vs banda rígida de referencia",
         )
+        st.info(lectura_didactica_or(or_tab))
         st.metric("OR máximo vs baja", f"{top['OR vs ref.']:.2f}")
         st.caption(
             f"Banda de mayor contraste: **{top['Banda']}** · "
             f"IC95 {top['IC95 lo']:.2f}–{top['IC95 hi']:.2f}"
         )
-        st.info(lectura_didactica_or(or_tab))
     with st.expander(f"Tabla OR por banda (vs {BANDA_ALTURA_BAJA})", expanded=False):
         st.dataframe(or_tab, use_container_width=True, hide_index=True)
     return or_tab
@@ -676,12 +676,12 @@ def _render_tab_anio_vs_dano(work: pd.DataFrame) -> None:
             "¿Qué tan ligada está la banda de altura con la pérdida total?",
             "V de Cramer (asociación categórica · sin asumir linealidad)",
         )
+        st.info(lectura_didactica_cramer(v=v, p=p, n_neg=n_neg, n=len(sub)))
         st.metric("Fuerza del vínculo (0–1)", f"{v:.3f}")
         st.caption(
             f"χ² = {chi2:.1f} · p = {p:.4g} · n = {fmt_es_int(n_ct)} · "
             "banda de altura × pérdida total sí/no"
         )
-        st.info(lectura_didactica_cramer(v=v, p=p, n_neg=n_neg, n=len(sub)))
     with c2:
         or_tab = _bloque_or_vs_baja(tab, num_or=2)
 
