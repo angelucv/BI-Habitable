@@ -25,6 +25,7 @@ Python · Streamlit · Pandas/Parquet · ECharts · Perspective · deploy Render
 
 | Fecha | Tema | Git |
 |-------|------|-----|
+| **14/08/2026** | PDNA: **piso a piso** (1–20 + 21+); usos turismo/comercio (oficina⊂comercio); turismo ampliado en nombre/obs. **En push** `fdebd18`. | `fdebd18` |
 | **14/08/2026** | PDNA: análisis 2.º nivel (matriz + gráficos + Excel); guía parámetros con bandas; USD con miles; dimensional (parroquia, uso×material, % año a año, Flujo al final). **En prod.** | `6998418` (+ commits del día) |
 | **13–14/08** | PDNA Ampliado por defecto; Excel físico sin costos; gráficos por banda; Dockerfile/Render | `eb26f39` … `8256f0a` |
 
