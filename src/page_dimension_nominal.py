@@ -56,12 +56,16 @@ def _render_capa_nominal(
     categoria_base: str,
     orden_grupos: tuple[str, ...],
     key_prefix: str,
-    con_filtro_uso: bool = True,
+    filtro_cruzado: str = "uso",
 ) -> None:
-    _ = con_filtro_uso
     render_section(titulo, subtitulo)
 
-    filtros = render_filtros_analisis(df, titulo="Filtros de este análisis")
+    filtros = render_filtros_analisis(
+        df,
+        titulo="Filtros de este análisis",
+        filtro_cruzado=filtro_cruzado,
+        key_prefix=key_prefix,
+    )
     dff = aplicar_filtros_analisis(df, filtros)
     st.caption(
         f"Corte activo: **{fmt_es_int(len(dff))}** de **{fmt_es_int(len(df))}** · "
@@ -195,7 +199,7 @@ def _render_capa_nominal(
 
 
 def render_dimension_uso(df: pd.DataFrame) -> None:
-    work = _prep_uso(df)
+    work = _prep_material(_prep_uso(df))
     _render_capa_nominal(
         work,
         col_cat="uso_capa",
@@ -206,11 +210,12 @@ def render_dimension_uso(df: pd.DataFrame) -> None:
         categoria_base="Casa",
         orden_grupos=USO_CAPA_GRUPOS,
         key_prefix="dim-uso-capa",
+        filtro_cruzado="material",
     )
 
 
 def render_dimension_material(df: pd.DataFrame) -> None:
-    work = _prep_material(df)
+    work = _prep_uso(_prep_material(df))
     _render_capa_nominal(
         work,
         col_cat="material_capa",
@@ -221,4 +226,5 @@ def render_dimension_material(df: pd.DataFrame) -> None:
         categoria_base="Concreto",
         orden_grupos=MATERIAL_CAPA_GRUPOS,
         key_prefix="dim-mat-capa",
+        filtro_cruzado="uso",
     )
