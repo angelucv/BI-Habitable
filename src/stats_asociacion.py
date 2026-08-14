@@ -115,15 +115,16 @@ QUINQUENIOS_ANIO = (
 
 
 # Pisos: uno a uno hasta este umbral; arriba se consolida la cola alta.
-PISOS_HASTA_INDIVIDUAL = 12
+# p99 del mart ~20; por encima suele ser error (años de construcción, typos).
+PISOS_HASTA_INDIVIDUAL = 20
 # Por encima: probable error de captura (p. ej. 1985) → Sin dato
 PISOS_MAX_PLAUSIBLE = 60
 
 
 def banda_pisos(n_pisos: Any) -> str:
     """
-    Altura casi sin agrupar: 1, 2, …, 12 pisos por separado;
-    cola alta consolidada en «13 o más»; inválidos → Sin dato.
+    Altura casi sin agrupar: 1, 2, …, 20 pisos por separado;
+    cola alta consolidada en «21 o más»; inválidos / >60 → Sin dato.
     """
     try:
         n = float(n_pisos)

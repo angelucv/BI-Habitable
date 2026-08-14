@@ -1,6 +1,6 @@
 {
   "fuente": "habitable_inspecciones_2026-08-13_21-31-18.csv",
-  "corte_generado_en": "2026-08-13T18:50:53-04:00",
+  "corte_generado_en": "2026-08-14T16:37:25-04:00",
   "n_inspecciones": 57974,
   "n_con_gps": 57583,
   "n_geo_valida": 57583,
@@ -12,7 +12,7 @@
     "ROJO": 8939,
     "NEGRO": 1521
   },
-  "n_tipologia_pdna": 47609,
+  "n_tipologia_pdna": 50967,
   "estados_top": {
     "DISTRITO CAPITAL": 27535,
     "LA GUAIRA": 16261,
@@ -28,19 +28,20 @@
     "BARINAS": 21
   },
   "uso_grupos": {
-    "Edificio": 24801,
-    "Casa": 23594,
-    "Comercio / oficina": 3664,
-    "Otros": 1794,
+    "Edificio": 24701,
+    "Casa": 23541,
+    "Comercio": 3529,
+    "Otros": 1738,
     "Educativo": 1607,
-    "Institucional": 982,
-    "Mixto": 623,
-    "Salud": 403,
+    "Institucional": 984,
+    "Mixto": 617,
+    "Salud": 398,
     "Industrial": 382,
+    "Establecimientos turísticos": 353,
     "Vivienda sin dato de pisos": 124
   },
   "uso_cardinalidad_antes": 641,
-  "uso_cardinalidad_despues": 10,
+  "uso_cardinalidad_despues": 11,
   "uso_pareto": [
     {
       "categoria": "VIVIENDA",
@@ -193,6 +194,7 @@
       "fase": "Después (grupo)"
     }
   ],
-  "fase": "v3-casa-edificio-pisos",
-  "corte_uso_retipificado_en": "2026-08-13T22:32:40-04:00"
+  "fase": "v3-piso-a-piso-turismo-comercio",
+  "corte_uso_retipificado_en": "2026-08-13T22:32:40-04:00",
+  "nota_turismo": "clasificacion ampliada: uso+nombre+observaciones+direccion"
 }

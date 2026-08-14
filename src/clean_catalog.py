@@ -19,7 +19,8 @@ USO_GRUPOS: tuple[str, ...] = (
     "Edificio",
     "Vivienda sin dato de pisos",
     "Mixto",
-    "Comercio / oficina",
+    "Establecimientos turísticos",
+    "Comercio",
     "Salud",
     "Educativo",
     "Institucional",
@@ -66,6 +67,41 @@ def lex_upper(val: Any, *, fill: str = "SIN EVALUAR") -> str:
     return t.upper()
 
 
+# Señales fuertes de alojamiento turístico (evitar «turístico» suelto: da FP en nombres cívicos)
+_TURISMO_KEYS: tuple[str, ...] = (
+    "hotel",
+    "posada",
+    "hostal",
+    "hostel",
+    "hospedaje",
+    "hosped ",
+    "motel",
+    "resort",
+    "aparthotel",
+    "alojamiento",
+    "pension",  # fold_ascii quita tilde de pensión
+    "casa hotel",
+    "casa hospedaje",
+    "local hospedaje",
+    "guest house",
+    "guesthouse",
+    "boutique hotel",
+)
+
+
+def _sugiere_turismo(texto: Any) -> bool:
+    """True si el texto menciona hotel/posada/hospedaje/etc."""
+    n = fold_ascii(texto)
+    if not n:
+        return False
+    if any(k in n for k in _TURISMO_KEYS):
+        return True
+    # Abreviatura frecuente en campo
+    if re.search(r"\bhtl\b", n):
+        return True
+    return False
+
+
 def clasificar_uso(val: Any) -> str:
     """Reduce entropía de uso libre → supercategoría léxica (vivienda genérica queda pendiente de pisos)."""
     n = fold_ascii(val)
@@ -75,15 +111,19 @@ def clasificar_uso(val: Any) -> str:
     if any(
         k in n
         for k in (
-            "hosp",
+            "hospital",
             "clin",
             "medic",
             "asistencial",
             "ambulator",
             "dispens",
             "centro de salud",
+            "cds ",
         )
     ):
+        return "Salud"
+    # «hosp» suelto (sin hospedaje/hotel) — p. ej. «hosp. central»
+    if "hosp" in n and "hosped" not in n and "hotel" not in n and "hostal" not in n:
         return "Salud"
 
     if any(k in n for k in ("educ", "escuel", "coleg", "univers", "liceo", "preescolar", "bibliotec")):
@@ -91,13 +131,6 @@ def clasificar_uso(val: Any) -> str:
 
     if any(k in n for k in ("industr", "taller", "fabrica", "galpon", "deposito", "almacen")):
         return "Industrial"
-
-    tiene_viv = any(k in n for k in ("vivienda", "resid", "apto", "apart", "casa"))
-    tiene_com = any(k in n for k in ("comerc", "oficina", "local", "negocio", "peluquer", "tintorer", "gimnasi"))
-    if tiene_viv and tiene_com:
-        return "Mixto"
-    if "mixto" in n:
-        return "Mixto"
 
     if any(
         k in n
@@ -118,8 +151,54 @@ def clasificar_uso(val: Any) -> str:
     ):
         return "Institucional"
 
-    if any(k in n for k in ("comerc", "oficina", "hotel", "estacionamiento", "posada", "hostal")):
-        return "Comercio / oficina"
+    # Turismo antes que mixto/comercio (hoteles/posadas/pensiones)
+    if _sugiere_turismo(n):
+        return "Establecimientos turísticos"
+
+    tiene_viv = any(k in n for k in ("vivienda", "resid", "apto", "apart", "casa"))
+    tiene_com = any(
+        k in n
+        for k in (
+            "comerc",
+            "oficina",
+            "local",
+            "negocio",
+            "peluquer",
+            "tintorer",
+            "gimnasi",
+        )
+    )
+    if tiene_viv and tiene_com:
+        return "Mixto"
+    if "mixto" in n:
+        return "Mixto"
+
+    if any(
+        k in n
+        for k in (
+            "comerc",
+            "tienda",
+            "negocio",
+            "mercado",
+            "bazar",
+            "farmacia",
+            "peluquer",
+            "tintorer",
+            "gimnasi",
+            "local comercial",
+            "centro comercial",
+            "mall",
+            "oficina",
+            "estacionamiento",
+            "despacho",
+            "consultorio administrativo",
+        )
+    ):
+        return "Comercio"
+
+    # Local genérico sin vivienda → comercio
+    if re.search(r"\blocal\b", n) and not tiene_viv:
+        return "Comercio"
 
     # Edificio / multifamiliar (incluye typos frecuentes de campo)
     if any(
@@ -156,6 +235,30 @@ def clasificar_uso(val: Any) -> str:
         return "Otros"
 
     return "Otros"
+
+
+_USOS_NO_SOBRESCRIBIR_TURISMO = frozenset(
+    {"Salud", "Educativo", "Institucional", "Industrial"}
+)
+
+
+def clasificar_uso_ampliado(
+    uso: Any,
+    *,
+    nombre: Any = None,
+    observaciones: Any = None,
+    direccion: Any = None,
+) -> str:
+    """Clasifica uso mirando también nombre, observaciones y dirección (turismo)."""
+    base = clasificar_uso(uso)
+    blob = " ".join(
+        fold_ascii(x)
+        for x in (uso, nombre, observaciones, direccion)
+        if x is not None and str(x).strip() and str(x).lower() != "nan"
+    )
+    if _sugiere_turismo(blob) and base not in _USOS_NO_SOBRESCRIBIR_TURISMO:
+        return "Establecimientos turísticos"
+    return base
 
 
 def tipificar_uso_con_pisos(uso_grupo: Any, num_pisos: Any) -> str:
@@ -214,7 +317,8 @@ _SIN_MATERIAL = frozenset(
 USO_CAPA_GRUPOS: tuple[str, ...] = (
     "Casa",
     "Edificio/Multifamiliar",
-    "Comercio/Oficina",
+    "Establecimientos turísticos",
+    "Comercio",
     "Educativo/Asistencial",
     "Otros",
 )
@@ -230,7 +334,12 @@ MATERIAL_CAPA_GRUPOS: tuple[str, ...] = (
 _USO_CAPA_FROM_GRUPO: dict[str, str] = {
     "Casa": "Casa",
     "Edificio": "Edificio/Multifamiliar",
-    "Comercio / oficina": "Comercio/Oficina",
+    "Establecimientos turísticos": "Establecimientos turísticos",
+    "Comercio": "Comercio",
+    # Compatibilidad con marts / capas antiguas
+    "Oficina": "Comercio",
+    "Comercio / oficina": "Comercio",
+    "Comercio/Oficina": "Comercio",
     "Educativo": "Educativo/Asistencial",
     "Salud": "Educativo/Asistencial",
     "Institucional": "Otros",
@@ -419,19 +528,37 @@ def geo_en_venezuela(lat: float, lng: float) -> bool:
 
 
 def _lexico_uso_para_tipificar(out: pd.DataFrame) -> pd.Series:
-    """Fuente léxica: texto libre `uso`, o `uso_raw_n`, o etiquetas legacy de `uso_n`."""
-    if "uso" in out.columns:
-        return out["uso"].map(clasificar_uso)
-    if "uso_raw_n" in out.columns:
-        return out["uso_raw_n"].map(clasificar_uso)
-    if "uso_n" in out.columns:
-        legacy = {
-            "Unifamiliar": "Casa",
-            "Multifamiliar": "Edificio",
-            "Vivienda (sin tipificar)": _USO_VIVIENDA_PENDIENTE,
-        }
-        return out["uso_n"].map(lambda x: legacy.get(str(x), str(x)))
-    return pd.Series([_USO_VIVIENDA_PENDIENTE] * len(out), index=out.index)
+    """Fuente léxica: uso + nombre + observaciones + dirección (turismo ampliado)."""
+    uso = out["uso"] if "uso" in out.columns else out.get("uso_raw_n", out.get("uso_n"))
+    nom = out["nombre_edificacion"] if "nombre_edificacion" in out.columns else None
+    obs = out["observaciones"] if "observaciones" in out.columns else None
+    dire = out["direccion"] if "direccion" in out.columns else None
+    if uso is None:
+        return pd.Series([_USO_VIVIENDA_PENDIENTE] * len(out), index=out.index)
+
+    rows = []
+    for i in out.index:
+        u = uso.loc[i] if hasattr(uso, "loc") else uso
+        n = nom.loc[i] if nom is not None else None
+        o = obs.loc[i] if obs is not None else None
+        d = dire.loc[i] if dire is not None else None
+        # legacy labels
+        su = str(u or "")
+        if su in {"Unifamiliar", "Multifamiliar", "Vivienda (sin tipificar)"}:
+            legacy = {
+                "Unifamiliar": "Casa",
+                "Multifamiliar": "Edificio",
+                "Vivienda (sin tipificar)": _USO_VIVIENDA_PENDIENTE,
+            }
+            # aún así, turismo en nombre/obs gana
+            g = legacy[su]
+            if _sugiere_turismo(" ".join(fold_ascii(x) for x in (n, o, d) if x is not None)):
+                if g not in _USOS_NO_SOBRESCRIBIR_TURISMO:
+                    g = "Establecimientos turísticos"
+            rows.append(g)
+            continue
+        rows.append(clasificar_uso_ampliado(u, nombre=n, observaciones=o, direccion=d))
+    return pd.Series(rows, index=out.index)
 
 
 def aplicar_limpieza_categorica(df: pd.DataFrame) -> pd.DataFrame:

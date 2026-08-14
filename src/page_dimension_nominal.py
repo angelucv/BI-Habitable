@@ -17,7 +17,9 @@ from clean_catalog import (
     MATERIAL_CAPA_GRUPOS,
     USO_CAPA_GRUPOS,
     clasificar_material_capa,
+    clasificar_uso_ampliado,
     clasificar_uso_capa,
+    tipificar_uso_con_pisos,
 )
 from export_utils import fmt_es_int
 from filters_analisis import aplicar_filtros_analisis, render_filtros_analisis
@@ -26,10 +28,32 @@ from ui_theme import render_kpi_strip, render_section
 
 def _prep_uso(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
-    if "uso_n" in out.columns:
-        out["uso_capa"] = out["uso_n"].map(clasificar_uso_capa)
-    elif "uso" in out.columns:
-        out["uso_capa"] = out["uso"].map(clasificar_uso_capa)
+    # Preferir texto crudo + nombre/obs para reclasificar Turismo en vivo
+    uso_src = (
+        out["uso"]
+        if "uso" in out.columns
+        else out["uso_raw_n"]
+        if "uso_raw_n" in out.columns
+        else out.get("uso_n")
+    )
+    if uso_src is not None:
+        nom = out["nombre_edificacion"] if "nombre_edificacion" in out.columns else None
+        obs = out["observaciones"] if "observaciones" in out.columns else None
+        dire = out["direccion"] if "direccion" in out.columns else None
+        grupos = []
+        for i, u in enumerate(uso_src):
+            idx = uso_src.index[i] if hasattr(uso_src, "index") else i
+            n = nom.loc[idx] if nom is not None else None
+            o = obs.loc[idx] if obs is not None else None
+            d = dire.loc[idx] if dire is not None else None
+            grupos.append(clasificar_uso_ampliado(u, nombre=n, observaciones=o, direccion=d))
+        out["uso_grupo"] = grupos
+        pisos = out.get("num_pisos", pd.Series(index=out.index))
+        out["uso_grupo"] = [
+            tipificar_uso_con_pisos(g, p) for g, p in zip(out["uso_grupo"], pisos, strict=False)
+        ]
+        out["uso_n"] = out["uso_grupo"]
+        out["uso_capa"] = out["uso_grupo"].map(clasificar_uso_capa)
     else:
         out["uso_capa"] = "Otros"
     return out
@@ -204,7 +228,10 @@ def render_dimension_uso(df: pd.DataFrame) -> None:
         work,
         col_cat="uso_capa",
         titulo="3 · Uso agrupado",
-        subtitulo="Asociación nominal entre uso de la edificación y daño crítico (Rojo + pérdida total).",
+        subtitulo=(
+            "Asociación nominal entre uso de la edificación y daño crítico "
+            "(incluye establecimientos turísticos y comercio como categorías propias)."
+        ),
         titulo_sintesis="📝 Resumen del Perfil de Riesgo",
         eje_nombre="uso de la edificación",
         categoria_base="Casa",

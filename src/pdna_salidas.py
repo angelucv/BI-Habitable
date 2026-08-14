@@ -30,10 +30,25 @@ _ORDEN_EST = list(_COLOR_EST.keys())
 
 
 def _tipologia_inmueble(df: pd.DataFrame) -> pd.Series:
-    uso = df["uso_raw_n"] if "uso_raw_n" in df.columns else df.get("uso_n", df.get("uso"))
+    """casa · edificio · turismo · comercio · otros."""
+    uso = df["uso"] if "uso" in df.columns else (
+        df["uso_raw_n"] if "uso_raw_n" in df.columns else df.get("uso_n")
+    )
+    pisos = df.get("num_pisos")
+    nom = df["nombre_edificacion"] if "nombre_edificacion" in df.columns else None
+    obs = df["observaciones"] if "observaciones" in df.columns else None
+    dire = df["direccion"] if "direccion" in df.columns else None
     if uso is None:
         return pd.Series("otros", index=df.index)
-    return uso.map(lambda u: _uso_pdna(u) or "otros")
+    rows = []
+    for i, u in enumerate(uso):
+        idx = uso.index[i] if hasattr(uso, "index") else i
+        p = pisos.loc[idx] if pisos is not None else None
+        n = nom.loc[idx] if nom is not None else None
+        o = obs.loc[idx] if obs is not None else None
+        d = dire.loc[idx] if dire is not None else None
+        rows.append(_uso_pdna(u, p, nombre=n, observaciones=o, direccion=d) or "otros")
+    return pd.Series(rows, index=df.index)
 
 
 def _tiene_dano_estructural(df: pd.DataFrame) -> pd.Series:

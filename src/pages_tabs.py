@@ -29,7 +29,10 @@ MULT_USO_PDNA: dict[str, float] = {
     "Educativo": 2.2,
     "Institucional": 2.0,
     "Industrial": 1.8,
-    "Comercio / oficina": 1.5,
+    "Establecimientos turísticos": 1.8,
+    "Comercio": 1.5,
+    "Oficina": 1.5,  # compat → se fusiona con Comercio
+    "Comercio / oficina": 1.5,  # compat marts antiguos
     "Mixto": 1.35,
     "Edificio": 1.25,
     "Casa": 1.0,

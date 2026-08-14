@@ -27,6 +27,7 @@ from process_habitable import (
     ESQUEMA_PDNA_DETALLADO,
     ESQUEMA_PDNA_EXCEL,
     ESQUEMA_PDNA_OBSERVADO,
+    ESQUEMA_PDNA_PISO_A_PISO,
     ESQUEMAS_PDNA_LABELS,
     aplicar_tipologia_pdna,
     bandas_pisos_catalogo,
@@ -68,17 +69,19 @@ def _filtros_territorio(df: pd.DataFrame) -> pd.DataFrame:
 def _selector_esquema_tipologia() -> str:
     st.markdown("##### Esquema de tipologías")
     prev = st.session_state.get("pdna_esquema_tip")
-    # Por defecto: Ampliado (más bandas de pisos). Migra claves viejas / inválidas.
+    # Por defecto: piso a piso. Migra claves viejas / inválidas.
     if prev is None or prev == "excel_ejemplo" or prev not in ESQUEMAS_PDNA_LABELS:
-        st.session_state["pdna_esquema_tip"] = ESQUEMA_PDNA_DETALLADO
+        st.session_state["pdna_esquema_tip"] = ESQUEMA_PDNA_PISO_A_PISO
+    # Migrar «Ampliado» previo solo si el usuario no había elegido otra cosa explícita
+    # (si ya tiene Ampliado guardado, se respeta).
 
     opciones = list(ESQUEMAS_PDNA_LABELS.keys())
     cortos = {
-        ESQUEMA_PDNA_DETALLADO: "Ampliado (recomendado)",
+        ESQUEMA_PDNA_PISO_A_PISO: "Piso a piso (recomendado)",
+        ESQUEMA_PDNA_DETALLADO: "Ampliado (bandas)",
         ESQUEMA_PDNA_EXCEL: "Plantilla (12)",
         ESQUEMA_PDNA_OBSERVADO: "Dinámico",
     }
-    # Control segmentado horizontal (ahorro de espacio vertical)
     esquema = st.radio(
         "Combinaciones de filas",
         opciones,
@@ -86,7 +89,10 @@ def _selector_esquema_tipologia() -> str:
         horizontal=True,
         key="pdna_esquema_tip",
         label_visibility="collapsed",
-        help="Ampliado (más bandas, recomendado) · Plantilla · Dinámico (solo presentes)",
+        help=(
+            "Piso a piso (1–20 + 21 o más) · Ampliado (bandas) · Plantilla · "
+            "Dinámico (solo presentes en el corte)"
+        ),
     )
     return str(esquema)
 
@@ -572,7 +578,13 @@ def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
     esquema = _selector_esquema_tipologia()
     # Marco estrecho: una sola copia ligera (no duplicar las ~80 columnas del mart).
     work = marco_pdna_ligero(work_geo)
-    esquema_calc = ESQUEMA_PDNA_EXCEL if esquema == ESQUEMA_PDNA_EXCEL else ESQUEMA_PDNA_DETALLADO
+    if esquema == ESQUEMA_PDNA_EXCEL:
+        esquema_calc = ESQUEMA_PDNA_EXCEL
+    elif esquema == ESQUEMA_PDNA_PISO_A_PISO:
+        esquema_calc = ESQUEMA_PDNA_PISO_A_PISO
+    else:
+        # Dinámico y Ampliado comparten reglas de altura; dinámico solo recorta filas.
+        esquema_calc = ESQUEMA_PDNA_DETALLADO
     work = aplicar_tipologia_pdna(work, esquema=esquema_calc, copy=False)
     # Tipología también en el marco territorial completo (export Excel / daño estructural).
     work_geo = aplicar_tipologia_pdna(work_geo, esquema=esquema_calc, copy=True)
@@ -596,9 +608,9 @@ def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
     proj_ok = proj.loc[mask_ok]
 
     orden = tipos_pdna_orden(esquema_calc)
-    solo_obs = esquema == ESQUEMA_PDNA_OBSERVADO
+    solo_obs = esquema in (ESQUEMA_PDNA_OBSERVADO, ESQUEMA_PDNA_PISO_A_PISO)
     # Plantilla y Ampliado muestran el catálogo completo (ceros incluidos);
-    # Dinámico solo filas con unidades en el corte.
+    # Piso a piso y Dinámico solo filas con unidades en el corte (evita cientos de filas vacías).
     incluir_vacias = esquema in (ESQUEMA_PDNA_EXCEL, ESQUEMA_PDNA_DETALLADO)
     mat = matriz_pdna_completa(
         proj,
@@ -771,14 +783,15 @@ def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
 Las filas de la matriz se arman con estos **ejes**:
 
 - **Material:** concreto, acero, mampostería formal / informal  
-- **Uso:** casa vs edificio  
-- **Pisos:** banda de altura (configurable según esquema)  
+- **Uso:** casa · edificio · turismo · comercio (oficina incluida en comercio)  
+- **Pisos:** piso a piso (1–20) o bandas, según esquema; valores &gt;60 se tratan como s/d  
 - **Semáforo:** verde / amarillo / rojo / negro  
 
-**Ampliado (recomendado):** casas 1 / 2 / 3+; edificios menor a 5 / 5–8 / 9–12 / 13+.  
+**Piso a piso (recomendado):** 1, 2, …, 20 pisos y cola «21 o más» (solo filas con unidades).  
+**Ampliado:** casas 1 / 2 / 3+; edificios &lt;5 / 5–8 / 9–12 / 13+.  
 **Plantilla sectorial (12 tipologías):** casas en «1-2 pisos»; edificios en «menor a 5» o «≥ 5».  
 **Dinámico:** solo combinaciones presentes en el corte territorial.  
-La descarga **Matriz física (sin costos)** entrega tipología × semáforo para que el equipo PDNA estime con sus propios parámetros.
+La descarga **Matriz física (sin costos)** entrega Material × Uso × Pisos × semáforo para que el equipo PDNA estime con sus propios parámetros.
             """
         )
         st.markdown("##### Catálogo del esquema activo")

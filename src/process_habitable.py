@@ -13,7 +13,15 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import pandas as pd
 
-from clean_catalog import aplicar_limpieza_categorica, diagnostico_uso, normalizar_municipio
+from clean_catalog import (  # noqa: E402
+    aplicar_limpieza_categorica,
+    clasificar_uso_ampliado,
+    diagnostico_uso,
+    normalizar_municipio,
+    tipificar_uso_con_pisos,
+    _USO_VIVIENDA_PENDIENTE,
+)
+from stats_asociacion import PISOS_HASTA_INDIVIDUAL, PISOS_MAX_PLAUSIBLE, banda_pisos  # noqa: E402
 
 TZ = ZoneInfo("America/Caracas")
 ETIQUETAS = ("VERDE", "AMARILLO", "ROJO", "NEGRO")
@@ -118,26 +126,41 @@ def _material_pdna(material: Any) -> str | None:
     return None
 
 
-def _uso_pdna(uso: Any) -> str | None:
-    n = _fold(uso)
-    if not n or n in {"sin evaluar", "desconocido"}:
-        return None
-    if "edificio" in n or "multifamiliar" in n:
-        return "edificio"
-    if "casa" in n or n == "vivienda" or n.startswith("vivienda "):
-        if "edificio" in n:
-            return "edificio"
-        return "casa"
-    return None
+def _uso_pdna(
+    uso: Any,
+    num_pisos: Any = None,
+    *,
+    nombre: Any = None,
+    observaciones: Any = None,
+    direccion: Any = None,
+) -> str | None:
+    """Uso PDNA: casa · edificio · turismo · comercio."""
+    g = clasificar_uso_ampliado(
+        uso, nombre=nombre, observaciones=observaciones, direccion=direccion
+    )
+    if g == _USO_VIVIENDA_PENDIENTE:
+        g = tipificar_uso_con_pisos(g, num_pisos)
+    # Compatibilidad marts viejos
+    if g in {"Comercio / oficina", "Oficina"}:
+        g = "Comercio"
+    mapeo = {
+        "Casa": "casa",
+        "Edificio": "edificio",
+        "Establecimientos turísticos": "turismo",
+        "Comercio": "comercio",
+    }
+    return mapeo.get(g)
 
 
-# Esquemas de tipología PDNA (ejes fijos; bandas de pisos configurables).
+# Esquemas de tipología PDNA (ejes fijos; bandas / piso a piso configurables).
 ESQUEMA_PDNA_EXCEL = "excel_plantilla"
 ESQUEMA_PDNA_DETALLADO = "altura_detallada"
+ESQUEMA_PDNA_PISO_A_PISO = "piso_a_piso"
 ESQUEMA_PDNA_OBSERVADO = "solo_observadas"
 
 ESQUEMAS_PDNA_LABELS: dict[str, str] = {
-    ESQUEMA_PDNA_DETALLADO: "Ampliado: más bandas de pisos (recomendado)",
+    ESQUEMA_PDNA_PISO_A_PISO: "Piso a piso (1–20 + 21 o más) · recomendado",
+    ESQUEMA_PDNA_DETALLADO: "Ampliado: bandas de pisos",
     ESQUEMA_PDNA_EXCEL: "Plantilla sectorial (12 tipologías)",
     ESQUEMA_PDNA_OBSERVADO: "Dinámico: solo combinaciones del corte",
 }
@@ -149,9 +172,27 @@ MATERIALES_PDNA: tuple[str, ...] = (
     "mampostería informal",
 )
 
+USOS_PDNA: tuple[str, ...] = (
+    "casa",
+    "edificio",
+    "turismo",
+    "comercio",
+)
+
+USO_PDNA_LABEL: dict[str, str] = {
+    "casa": "casa",
+    "edificio": "edificio",
+    "turismo": "turismo",
+    "comercio": "comercio",
+}
+
 
 def _banda_pisos_pdna(tipo: str, pisos: float, *, esquema: str) -> str | None:
-    """Banda de altura según el esquema de tipologías activo."""
+    """Banda / piso individual según el esquema de tipologías activo."""
+    if esquema == ESQUEMA_PDNA_PISO_A_PISO:
+        # Misma lógica para todos los usos: 1…20 + cola 21+; >60 → s/d
+        return banda_pisos(pisos).replace("Sin dato", "pisos s/d")
+
     if tipo == "casa":
         if esquema == ESQUEMA_PDNA_EXCEL:
             return "1-2 pisos"
@@ -163,12 +204,18 @@ def _banda_pisos_pdna(tipo: str, pisos: float, *, esquema: str) -> str | None:
             return "2 pisos"
         return "3 o más pisos"
 
-    # edificio
+    # edificio / no vivienda en esquemas antiguos de bandas
     if esquema == ESQUEMA_PDNA_EXCEL:
         if pisos == pisos and pisos >= 5:
             return ">= 5 pisos"
         return "< 5 pisos"
     if pisos != pisos:
+        return "pisos s/d"
+    try:
+        ni = int(float(pisos))
+    except (TypeError, ValueError):
+        return "pisos s/d"
+    if ni > PISOS_MAX_PLAUSIBLE:
         return "pisos s/d"
     if pisos < 5:
         return "< 5 pisos"
@@ -185,14 +232,19 @@ def tipologia_pdna(
     num_pisos: Any,
     *,
     esquema: str = ESQUEMA_PDNA_EXCEL,
+    nombre: Any = None,
+    observaciones: Any = None,
+    direccion: Any = None,
 ) -> str | None:
-    """Etiqueta tipológica PDNA vivienda: material × uso × banda de pisos.
-
-    El esquema «excel_plantilla» usa las 12 tipologías de la hoja sectorial
-    (casas 1-2 pisos; edificios menor a 5 / ≥ 5). Otros esquemas abren más bandas de altura.
-    """
+    """Etiqueta tipológica PDNA: material × uso × pisos (banda o piso a piso)."""
     mat = _material_pdna(material)
-    tipo = _uso_pdna(uso)
+    tipo = _uso_pdna(
+        uso,
+        num_pisos,
+        nombre=nombre,
+        observaciones=observaciones,
+        direccion=direccion,
+    )
     if mat is None or tipo is None:
         return None
     try:
@@ -206,7 +258,7 @@ def tipologia_pdna(
 
 
 _TIP_RE = re.compile(
-    r"^(?P<material>.+?) \((?P<uso>casa|edificio)\), (?P<banda>.+)$",
+    r"^(?P<material>.+?) \((?P<uso>casa|edificio|turismo|comercio|oficina)\), (?P<banda>.+)$",
     re.IGNORECASE,
 )
 
@@ -216,17 +268,25 @@ def desglosar_tipologia_pdna(tipologia: Any) -> tuple[str | None, str | None, st
     m = _TIP_RE.match(str(tipologia or "").strip())
     if not m:
         return None, None, None
+    uso = m.group("uso").strip().lower()
+    if uso == "oficina":
+        uso = "comercio"  # fusión operativa: oficinas → comercio
     return (
         m.group("material").strip(),
-        m.group("uso").strip().lower(),
+        uso,
         m.group("banda").strip(),
     )
 
 
 def bandas_pisos_catalogo(esquema: str = ESQUEMA_PDNA_EXCEL) -> tuple[str, ...]:
-    """Bandas de pisos posibles según esquema (orden de lectura)."""
+    """Bandas / niveles de pisos posibles según esquema (orden de lectura)."""
     if esquema == ESQUEMA_PDNA_EXCEL:
         return ("1-2 pisos", "< 5 pisos", ">= 5 pisos")
+    if esquema == ESQUEMA_PDNA_PISO_A_PISO:
+        return tuple(
+            ["1 piso", *[f"{i} pisos" for i in range(2, PISOS_HASTA_INDIVIDUAL + 1)],
+             f"{PISOS_HASTA_INDIVIDUAL + 1} o más", "pisos s/d"]
+        )
     return (
         "1 piso",
         "2 pisos",
@@ -265,6 +325,14 @@ def tipos_pdna_orden(esquema: str = ESQUEMA_PDNA_EXCEL) -> tuple[str, ...]:
     """Filas canónicas esperadas para un esquema (antes de filtrar por presencia)."""
     if esquema == ESQUEMA_PDNA_EXCEL:
         return TIPOS_PDNA_ORDEN
+    if esquema == ESQUEMA_PDNA_PISO_A_PISO:
+        bandas = bandas_pisos_catalogo(ESQUEMA_PDNA_PISO_A_PISO)
+        filas: list[str] = []
+        for mat in MATERIALES_PDNA:
+            for uso in USOS_PDNA:
+                for b in bandas:
+                    filas.append(f"{mat} ({uso}), {b}")
+        return tuple(filas)
     # Ampliado / dinámico: catálogo completo posible; el dinámico luego se recorta a observadas.
     bandas_casa = ("1 piso", "2 pisos", "3 o más pisos", "pisos s/d")
     bandas_edificio = (
@@ -274,7 +342,7 @@ def tipos_pdna_orden(esquema: str = ESQUEMA_PDNA_EXCEL) -> tuple[str, ...]:
         "13 o más pisos",
         "pisos s/d",
     )
-    filas: list[str] = []
+    filas = []
     for mat in MATERIALES_PDNA:
         for b in bandas_casa:
             filas.append(f"{mat} (casa), {b}")
@@ -297,15 +365,28 @@ def aplicar_tipologia_pdna(
     uso_src = out["uso_raw_n"] if "uso_raw_n" in out.columns else out.get("uso_n", out.get("uso"))
     mat_src = out["material_n"] if "material_n" in out.columns else out.get("material")
     pisos_src = out.get("num_pisos")
+    nom_src = out["nombre_edificacion"] if "nombre_edificacion" in out.columns else None
+    obs_src = out["observaciones"] if "observaciones" in out.columns else None
+    dir_src = out["direccion"] if "direccion" in out.columns else None
     if uso_src is None or mat_src is None:
         out["tipologia_pdna"] = None
         return out
     if pisos_src is None:
         pisos_src = pd.Series(np.nan, index=out.index)
-    out["tipologia_pdna"] = [
-        tipologia_pdna(u, m, p, esquema=esquema)
-        for u, m, p in zip(uso_src, mat_src, pisos_src, strict=False)
-    ]
+    tips = []
+    for idx in out.index:
+        tips.append(
+            tipologia_pdna(
+                uso_src.loc[idx],
+                mat_src.loc[idx],
+                pisos_src.loc[idx],
+                esquema=esquema,
+                nombre=nom_src.loc[idx] if nom_src is not None else None,
+                observaciones=obs_src.loc[idx] if obs_src is not None else None,
+                direccion=dir_src.loc[idx] if dir_src is not None else None,
+            )
+        )
+    out["tipologia_pdna"] = tips
     return out
 
 
@@ -402,12 +483,8 @@ def procesar_dataframe(df: pd.DataFrame, *, fuente: str) -> tuple[pd.DataFrame, 
         else:
             work[flag] = False
 
-    # Tipología PDNA usa texto de uso original tipificado, no solo el grupo
-    uso_pdna_src = work["uso_raw_n"] if "uso_raw_n" in work.columns else work["uso_n"]
-    work["tipologia_pdna"] = [
-        tipologia_pdna(u, m, p)
-        for u, m, p in zip(uso_pdna_src, work["material_n"], work["num_pisos"], strict=False)
-    ]
+    # Tipología PDNA (uso + nombre + observaciones + dirección para turismo)
+    work = aplicar_tipologia_pdna(work, esquema=ESQUEMA_PDNA_PISO_A_PISO, copy=False)
     work["created_at"] = pd.to_datetime(work.get("created_at"), errors="coerce", format="mixed")
 
     counts = work["etiqueta_n"].value_counts()

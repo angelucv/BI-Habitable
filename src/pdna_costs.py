@@ -86,6 +86,10 @@ COLS_PDNA_BASE: tuple[str, ...] = (
     "num_pisos",
     "uso_n",
     "uso_raw_n",
+    "uso_grupo",
+    "nombre_edificacion",
+    "observaciones",
+    "direccion",
 )
 
 

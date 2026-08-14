@@ -76,11 +76,12 @@ def construir_export_pdna_fisico(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
     )
     sub["Material"] = sub["material_pdna"].fillna("(Sin material)").astype(str)
     sub["Uso"] = sub["uso_pdna"].fillna("(Sin uso)").astype(str)
-    sub["Banda_pisos"] = sub["banda_pisos_pdna"].fillna("(Sin banda)").astype(str)
+    # Nivel de altura: en esquema piso a piso es «N pisos»; en otros, banda.
+    sub["Pisos"] = sub["banda_pisos_pdna"].fillna("(Sin dato)").astype(str)
     sub["Tipo_dano"] = clasificar_tipo_dano(sub)
     sub["Semaforo"] = sub["etiqueta_n"].astype(str)
 
-    dims_terr = ["Estado", "Municipio", "Parroquia", "Material", "Uso", "Banda_pisos", "Tipo_dano"]
+    dims_terr = ["Estado", "Municipio", "Parroquia", "Material", "Uso", "Pisos", "Tipo_dano"]
     ct_terr = (
         pd.crosstab(
             index=[sub[c] for c in dims_terr],
@@ -104,13 +105,13 @@ def construir_export_pdna_fisico(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             "NEGRO": "Negro_perdida_total",
         }
     ).sort_values(
-        ["Estado", "Municipio", "Parroquia", "Material", "Uso", "Banda_pisos", "Tipo_dano"],
+        ["Estado", "Municipio", "Parroquia", "Material", "Uso", "Pisos", "Tipo_dano"],
         kind="mergesort",
     )
     por_territorio = por_territorio.reset_index(drop=True)
     por_territorio.index.name = None
 
-    dims_tip = ["Material", "Uso", "Banda_pisos", "Tipo_dano"]
+    dims_tip = ["Material", "Uso", "Pisos", "Tipo_dano"]
     ct_tip = (
         pd.crosstab(
             index=[sub[c] for c in dims_tip],
@@ -133,7 +134,7 @@ def construir_export_pdna_fisico(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
             "ROJO": "Rojo",
             "NEGRO": "Negro_perdida_total",
         }
-    ).sort_values(["Material", "Uso", "Banda_pisos", "Tipo_dano"], kind="mergesort")
+    ).sort_values(["Material", "Uso", "Pisos", "Tipo_dano"], kind="mergesort")
     por_tipologia = por_tipologia.reset_index(drop=True)
     por_tipologia.index.name = None
 
@@ -172,13 +173,13 @@ def construir_export_pdna_fisico(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
 
 
 def matriz_fisica_desglosada(mat: pd.DataFrame) -> pd.DataFrame:
-    """Matriz tipología × semáforo con Material/Uso/Banda en columnas aparte (+ TOTAL)."""
+    """Matriz tipología × semáforo con Material/Uso/Pisos en columnas aparte (+ TOTAL)."""
     if mat is None or mat.empty or "tipologia" not in mat.columns:
         return pd.DataFrame(
             columns=[
                 "Material",
                 "Uso",
-                "Banda_pisos",
+                "Pisos",
                 "Verde",
                 "Amarillo",
                 "Rojo",
@@ -193,7 +194,7 @@ def matriz_fisica_desglosada(mat: pd.DataFrame) -> pd.DataFrame:
             {
                 "Material": mat_n or "",
                 "Uso": uso_n or "",
-                "Banda_pisos": banda_n or "",
+                "Pisos": banda_n or "",
                 "Verde": int(r.get("verde", 0)),
                 "Amarillo": int(r.get("amarillo", 0)),
                 "Rojo": int(r.get("rojo", 0)),
@@ -205,7 +206,7 @@ def matriz_fisica_desglosada(mat: pd.DataFrame) -> pd.DataFrame:
     pie = {
         "Material": "TOTAL",
         "Uso": "",
-        "Banda_pisos": "",
+        "Pisos": "",
         "Verde": int(out["Verde"].sum()),
         "Amarillo": int(out["Amarillo"].sum()),
         "Rojo": int(out["Rojo"].sum()),
