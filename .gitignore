@@ -1,0 +1,32 @@
+# BI Habitable
+
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.cursor/
+*.egg-info/
+dist/
+build/
+
+# Secretos y entorno local
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Cargas crudas (el mart procesado sí puede versionarse de referencia)
+data/uploads/*
+!data/uploads/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+
+# Extracciones documentales voluminosas / temporales
+data/processed/doc_extract/
+*.log

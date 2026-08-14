@@ -1,0 +1,198 @@
+{
+  "fuente": "habitable_inspecciones_2026-08-13_21-31-18.csv",
+  "corte_generado_en": "2026-08-13T18:50:53-04:00",
+  "n_inspecciones": 57974,
+  "n_con_gps": 57583,
+  "n_geo_valida": 57583,
+  "n_sin_gps_o_fuera_ve": 391,
+  "n_validadas": 918,
+  "semaforo": {
+    "VERDE": 34002,
+    "AMARILLO": 13512,
+    "ROJO": 8939,
+    "NEGRO": 1521
+  },
+  "n_tipologia_pdna": 47609,
+  "estados_top": {
+    "DISTRITO CAPITAL": 27535,
+    "LA GUAIRA": 16261,
+    "MIRANDA": 10562,
+    "CARABOBO": 2342,
+    "ARAGUA": 740,
+    "FALCON": 163,
+    "LARA": 126,
+    "NAN": 48,
+    "ZULIA": 43,
+    "YARACUY": 41,
+    "TACHIRA": 28,
+    "BARINAS": 21
+  },
+  "uso_grupos": {
+    "Edificio": 24801,
+    "Casa": 23594,
+    "Comercio / oficina": 3664,
+    "Otros": 1794,
+    "Educativo": 1607,
+    "Institucional": 982,
+    "Mixto": 623,
+    "Salud": 403,
+    "Industrial": 382,
+    "Vivienda sin dato de pisos": 124
+  },
+  "uso_cardinalidad_antes": 641,
+  "uso_cardinalidad_despues": 10,
+  "uso_pareto": [
+    {
+      "categoria": "VIVIENDA",
+      "conteo": 25635,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "VIVIENDA EDIFICIO",
+      "conteo": 13865,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "VIVIENDA CASA",
+      "conteo": 7884,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "COMERCIO / OFICINA",
+      "conteo": 3321,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "EDUCATIVO",
+      "conteo": 1579,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "OTRO",
+      "conteo": 1553,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "VIVIENDA MULTIFAMILIAR",
+      "conteo": 778,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "GUBERNAMENTAL",
+      "conteo": 413,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "INDUSTRIAL",
+      "conteo": 299,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "MÉDICO / ASISTENCIAL",
+      "conteo": 282,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "RELIGIOSO",
+      "conteo": 258,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "CULTURAL / RECREATIVO",
+      "conteo": 220,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "VIVIENDA Y COMERCIO",
+      "conteo": 124,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "RESIDENCIAL",
+      "conteo": 104,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "SIN EVALUAR",
+      "conteo": 89,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "MEDICO / ASISTENCIAL",
+      "conteo": 87,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "OFICINA",
+      "conteo": 71,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "COMERCIO",
+      "conteo": 67,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "COMERCIO Y VIVIENDA",
+      "conteo": 48,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "SEGURIDAD",
+      "conteo": 43,
+      "fase": "Antes (texto libre)"
+    },
+    {
+      "categoria": "Edificio",
+      "conteo": 24801,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Casa",
+      "conteo": 23594,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Comercio / oficina",
+      "conteo": 3664,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Otros",
+      "conteo": 1794,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Educativo",
+      "conteo": 1607,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Institucional",
+      "conteo": 982,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Mixto",
+      "conteo": 623,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Salud",
+      "conteo": 403,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Industrial",
+      "conteo": 382,
+      "fase": "Después (grupo)"
+    },
+    {
+      "categoria": "Vivienda sin dato de pisos",
+      "conteo": 124,
+      "fase": "Después (grupo)"
+    }
+  ],
+  "fase": "v3-casa-edificio-pisos",
+  "corte_uso_retipificado_en": "2026-08-13T22:32:40-04:00"
+}
