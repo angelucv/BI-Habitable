@@ -839,12 +839,14 @@ def _render_tab_anio_vs_dano(work: pd.DataFrame) -> None:
         )
         st.info(lectura_didactica_cramer(v=v, p=p, n_neg=n_neg, n=len(sub)))
 
-    st.markdown("##### Tabla % pérdida total por quinquenio (corte activo)")
-    if not tab.empty:
-        tab_ui = tab.rename(
+    st.markdown("##### Tabla % pérdida total por año (corte activo)")
+    if not serie.empty:
+        tab_ui = serie.rename(
             columns={"NEGRO": "Pérdida total", "% NEGRO": "% pérdida total"}
         )
         st.dataframe(tab_ui, use_container_width=True, hide_index=True)
+    else:
+        st.info("No hay serie anual suficiente en este corte.")
 
     with st.expander("¿Qué significan estas pruebas? (guía)", expanded=False):
         st.markdown(_markdown_guia_periodo())
