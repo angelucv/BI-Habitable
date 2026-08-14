@@ -66,13 +66,14 @@ def _filtros_territorio(df: pd.DataFrame) -> pd.DataFrame:
 def _selector_esquema_tipologia() -> str:
     st.markdown("##### Esquema de tipologías")
     prev = st.session_state.get("pdna_esquema_tip")
-    if prev == "excel_ejemplo" or (prev is not None and prev not in ESQUEMAS_PDNA_LABELS):
-        st.session_state["pdna_esquema_tip"] = ESQUEMA_PDNA_EXCEL
+    # Por defecto: Ampliado (más bandas de pisos). Migra claves viejas / inválidas.
+    if prev is None or prev == "excel_ejemplo" or prev not in ESQUEMAS_PDNA_LABELS:
+        st.session_state["pdna_esquema_tip"] = ESQUEMA_PDNA_DETALLADO
 
     opciones = list(ESQUEMAS_PDNA_LABELS.keys())
     cortos = {
+        ESQUEMA_PDNA_DETALLADO: "Ampliado (recomendado)",
         ESQUEMA_PDNA_EXCEL: "Plantilla (12)",
-        ESQUEMA_PDNA_DETALLADO: "Ampliado",
         ESQUEMA_PDNA_OBSERVADO: "Dinámico",
     }
     # Control segmentado horizontal (ahorro de espacio vertical)
@@ -83,7 +84,7 @@ def _selector_esquema_tipologia() -> str:
         horizontal=True,
         key="pdna_esquema_tip",
         label_visibility="collapsed",
-        help="Plantilla · Ampliado (más bandas) · Dinámico (solo presentes)",
+        help="Ampliado (más bandas, recomendado) · Plantilla · Dinámico (solo presentes)",
     )
     return str(esquema)
 
@@ -240,8 +241,11 @@ def _sintesis_html(
 """
 
 
+_COLS_FISICAS = ("tipologia", "verde", "amarillo", "rojo", "negro", "total")
+
+
 def _matriz_para_export(mat: pd.DataFrame) -> pd.DataFrame:
-    """12 filas canónicas + fila TOTAL (insumo ONU / PDNA)."""
+    """Matriz completa (conteos + USD) + fila TOTAL."""
     pie = {
         "tipologia": "TOTAL",
         "verde": int(mat["verde"].sum()),
@@ -256,8 +260,33 @@ def _matriz_para_export(mat: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([mat, pd.DataFrame([pie])], ignore_index=True)
 
 
+def _matriz_fisica_para_export(mat: pd.DataFrame) -> pd.DataFrame:
+    """Solo tipología × semáforo (sin USD): insumo para estimaciones propias del equipo PDNA."""
+    base = mat.loc[:, list(_COLS_FISICAS)].copy()
+    pie = {
+        "tipologia": "TOTAL",
+        "verde": int(base["verde"].sum()),
+        "amarillo": int(base["amarillo"].sum()),
+        "rojo": int(base["rojo"].sum()),
+        "negro": int(base["negro"].sum()),
+        "total": int(base["total"].sum()),
+    }
+    out = pd.concat([base, pd.DataFrame([pie])], ignore_index=True)
+    return out.rename(
+        columns={
+            "tipologia": "Tipologia",
+            "verde": "Verde",
+            "amarillo": "Amarillo",
+            "rojo": "Rojo",
+            "negro": "Negro_perdida_total",
+            "total": "Total",
+        }
+    )
+
+
 def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -> None:
     export_df = _matriz_para_export(mat)
+    export_fisica = _matriz_fisica_para_export(mat)
     show = export_df.rename(
         columns={
             "tipologia": "Tipología",
@@ -313,17 +342,25 @@ def _render_matriz_con_databars(mat: pd.DataFrame, *, key_suffix: str = "mat") -
         ),
     }
 
-    h1, h2 = st.columns([3, 1])
-    with h1:
-        st.markdown("##### Matriz agregada · tipología × semáforo")
-        st.caption("Insumo PDNA/ONU. Barras = peso financiero relativo; el valor exacto aparece al pasar el cursor.")
-    with h2:
-        st.markdown("<div style='height:0.55rem'></div>", unsafe_allow_html=True)
+    st.markdown("##### Matriz agregada · tipología × semáforo")
+    st.caption(
+        "Insumo PDNA/ONU. Use la **matriz física** para que el equipo PDNA aplique sus propios "
+        "costos; la exportación con USD usa el escenario de valoración de esta pantalla."
+    )
+    d1, d2 = st.columns(2)
+    with d1:
+        download_csv_button(
+            export_fisica,
+            filename=f"pdna_matriz_fisica_{key_suffix}.csv",
+            key=f"dl_pdna_mat_fisica_{key_suffix}",
+            label="Matriz física (sin costos)",
+        )
+    with d2:
         download_csv_button(
             export_df,
-            filename=f"pdna_matriz_agregada_{key_suffix}.csv",
-            key=f"dl_pdna_mat_{key_suffix}",
-            label="Exportar matriz (CSV)",
+            filename=f"pdna_matriz_con_usd_{key_suffix}.csv",
+            key=f"dl_pdna_mat_usd_{key_suffix}",
+            label="Matriz con estimación USD",
         )
 
     st.dataframe(
@@ -551,9 +588,10 @@ Las filas de la matriz se arman con estos **ejes**:
 - **Pisos:** banda de altura (configurable según esquema)  
 - **Semáforo:** verde / amarillo / rojo / negro  
 
+**Ampliado (recomendado):** casas 1 / 2 / 3+; edificios menor a 5 / 5–8 / 9–12 / 13+.  
 **Plantilla sectorial (12 tipologías):** casas en «1-2 pisos»; edificios en «menor a 5» o «≥ 5».  
-**Ampliado:** casas 1 / 2 / 3+; edificios menor a 5 / 5–8 / 9–12 / 13+.  
-**Dinámico:** solo combinaciones presentes en el corte territorial.
+**Dinámico:** solo combinaciones presentes en el corte territorial.  
+La descarga **Matriz física (sin costos)** entrega tipología × semáforo para que el equipo PDNA estime con sus propios parámetros.
             """
         )
         st.markdown("##### Catálogo del esquema activo")

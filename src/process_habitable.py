@@ -137,8 +137,8 @@ ESQUEMA_PDNA_DETALLADO = "altura_detallada"
 ESQUEMA_PDNA_OBSERVADO = "solo_observadas"
 
 ESQUEMAS_PDNA_LABELS: dict[str, str] = {
+    ESQUEMA_PDNA_DETALLADO: "Ampliado: más bandas de pisos (recomendado)",
     ESQUEMA_PDNA_EXCEL: "Plantilla sectorial (12 tipologías)",
-    ESQUEMA_PDNA_DETALLADO: "Ampliado: más bandas de pisos",
     ESQUEMA_PDNA_OBSERVADO: "Dinámico: solo combinaciones del corte",
 }
 
