@@ -9,7 +9,8 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 from charts_habitable import opts_barras_costo, opts_barras_tipologia
-from export_utils import download_csv_button, download_excel_button, fmt_es_int, fmt_es_money
+from export_utils import download_csv_button, fmt_es_int, fmt_es_money
+from pdna_excel_ejecutivo import bytes_excel_pdna_ejecutivo
 from pdna_costs import (
     AREA_MINIMA_DEFAULT,
     COSTO_M2_DEFAULT,
@@ -22,7 +23,6 @@ from pdna_costs import (
     proyectar_pdna,
     resumen_pdna_territorio,
 )
-from pdna_export import construir_export_pdna_fisico, matriz_fisica_desglosada
 from process_habitable import (
     ESQUEMA_PDNA_DETALLADO,
     ESQUEMA_PDNA_EXCEL,
@@ -492,7 +492,8 @@ def _render_matriz_con_databars(
     mat: pd.DataFrame,
     *,
     key_suffix: str = "mat",
-    export_sheets: dict[str, pd.DataFrame] | None = None,
+    df_export: pd.DataFrame | None = None,
+    esquema_export: str = ESQUEMA_PDNA_PISO_A_PISO,
 ) -> None:
     export_df = _matriz_para_export(mat)
     show = export_df.rename(
@@ -538,19 +539,21 @@ def _render_matriz_con_databars(
 
     st.markdown("##### Matriz agregada · tipología × semáforo")
     st.caption(
-        "Descargue el **Excel físico** (sin costos) con estado, municipio, parroquia, "
-        "material, uso, banda y tipo de daño en columnas separadas, más totales por semáforo."
+        "Descargue el **Excel ejecutivo** para remisión al equipo PDNA "
+        "(resumen, cruces territoriales, tipología piso a piso y análisis 2.º nivel; sin costos USD)."
     )
-    sheets = dict(export_sheets or {})
-    sheets.setdefault("Matriz_tipologia_vista", matriz_fisica_desglosada(mat))
     d1, d2 = st.columns(2)
     with d1:
-        download_excel_button(
-            sheets,
-            filename=f"pdna_matriz_fisica_{key_suffix}.xlsx",
-            key=f"dl_pdna_mat_xlsx_{key_suffix}",
-            label="Excel físico (sin costos)",
-        )
+        if df_export is not None and not df_export.empty:
+            st.download_button(
+                label="Excel ejecutivo PDNA",
+                data=bytes_excel_pdna_ejecutivo(df_export, esquema=esquema_export),
+                file_name=f"PDNA_Habitable_insumo_fisico_{key_suffix}.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                key=f"dl_pdna_ejecutivo_{key_suffix}",
+            )
+        else:
+            st.caption("Sin datos para exportar.")
     with d2:
         download_csv_button(
             export_df,
@@ -684,8 +687,6 @@ def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
     if not mat.empty:
         _render_graficos_pdna(mat, esquema=esquema_calc)
 
-    export_sheets = construir_export_pdna_fisico(work_geo)
-
     tab_mat, tab_geo, tab_inf, tab_guia_sal, tab_guia, tab_met = st.tabs(
         [
             "Matriz de afectación y costos",
@@ -704,7 +705,8 @@ def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
             _render_matriz_con_databars(
                 mat,
                 key_suffix=str(esquema),
-                export_sheets=export_sheets,
+                df_export=work_geo,
+                esquema_export=esquema_calc,
             )
 
     with tab_geo:
