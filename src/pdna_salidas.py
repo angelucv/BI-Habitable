@@ -273,38 +273,6 @@ def construir_matriz_2do_nivel(df: pd.DataFrame) -> pd.DataFrame:
     ).reset_index(drop=True)
 
 
-def matriz_2do_nivel_ancha(mat: pd.DataFrame) -> pd.DataFrame:
-    """Versión ancha (territorio × tipología × pisos) con columnas por estratificación."""
-    if mat is None or mat.empty:
-        return pd.DataFrame()
-    keys = ["estado", "municipio", "parroquia", "tipologia", "num_pisos"]
-    piv = (
-        mat.pivot_table(
-            index=keys,
-            columns="estratificacion",
-            values="inspecciones",
-            aggfunc="sum",
-            fill_value=0,
-        )
-        .reset_index()
-    )
-    piv.columns.name = None
-    for c in _ORDEN_EST:
-        if c not in piv.columns:
-            piv[c] = 0
-    extra = [c for c in piv.columns if c not in keys and c not in _ORDEN_EST]
-    ordered = keys + [c for c in _ORDEN_EST if c in piv.columns] + extra
-    piv = piv[ordered]
-    piv["total_edificaciones"] = piv[[c for c in _ORDEN_EST if c in piv.columns]].sum(axis=1)
-    pers = (
-        mat.groupby(keys, dropna=False, observed=True)["personas"]
-        .sum()
-        .reset_index()
-        .rename(columns={"personas": "total_personas"})
-    )
-    return piv.merge(pers, on=keys, how="left")
-
-
 def _opts_apilado(
     tab: pd.DataFrame,
     *,
@@ -596,10 +564,8 @@ def render_informe_ejecutivo_pdna(
     )
     st.dataframe(show, width="stretch", hide_index=True, height=420)
 
-    ancha = matriz_2do_nivel_ancha(view)
     sheets = {
-        "Matriz_larga": view,
-        "Matriz_ancha": ancha,
+        "Matriz_2do_nivel": view,
         "Resumen_estratificacion": (
             view.groupby("estratificacion", dropna=False)
             .agg(inspecciones=("inspecciones", "sum"), personas=("personas", "sum"))
@@ -618,11 +584,11 @@ def render_informe_ejecutivo_pdna(
     with d2:
         download_csv_button(
             view,
-            filename="analisis_2do_nivel_larga.csv",
-            label="Descargar matriz larga (CSV)",
+            filename="analisis_2do_nivel.csv",
+            label="Descargar matriz (CSV)",
             key="dl_pdna_2n_csv",
         )
     st.caption(
         "Filas: estado · municipio · parroquia · tipología · pisos · semáforo · estratificación · elementos. "
-        "La hoja ancha pivota la estratificación en columnas (estilo Excel de 2.º nivel)."
+        "Una sola hoja de matriz (sin duplicar en formato ancho)."
     )
