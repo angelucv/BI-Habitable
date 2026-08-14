@@ -58,7 +58,7 @@ NAV_SECTIONS: tuple[NavSection, ...] = (
     NavSection(
         id="pdna",
         label="PDNA",
-        blurb="Matriz tipología × semáforo y costos estimados (vivienda + contenidos).",
+        blurb="Matriz tipología × semáforo, salidas PNUD e informe ejecutivo resumido.",
         items=(
             NavItem(
                 "pdna_matriz",

@@ -121,7 +121,7 @@ def main() -> None:
         if not tiene:
             st.info("Todavía no hay mart. Abra **Cargar información** en el menú.")
             return
-        page_pdna(df)
+        page_pdna(df, summary=summary)
         return
 
     if active == "explorar_perspective":

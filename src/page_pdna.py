@@ -9,7 +9,7 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 
 from charts_habitable import opts_barras_costo, opts_barras_tipologia
-from export_utils import download_csv_button, download_excel_button, fmt_es_int
+from export_utils import download_csv_button, download_excel_button, fmt_es_int, fmt_es_money
 from pdna_costs import (
     AREA_MINIMA_DEFAULT,
     COSTO_M2_DEFAULT,
@@ -159,7 +159,70 @@ def _panel_parametros() -> None:
             "Abra solo para estresar el modelo o cambiar premisas. "
             "Los resultados de arriba se recalculan al modificar un valor."
         )
+        st.markdown(
+            """
+<div class="pdna-exec-summary">
+  <h3>Cómo usar estos parámetros (lectura rápida)</h3>
+  <p>No son precios oficiales: son <strong>premisas de trabajo</strong>. Al subir un número,
+  suben los totales en USD; al bajarlo, bajan. Use <strong>+</strong> / <strong>−</strong>
+  o el deslizador. Los valores por defecto son un <strong>escenario de partida</strong>;
+  las bandas indican rangos habituales de calibración sectorial (no límites rígidos).</p>
+
+  <p><strong>1. Costo de reposición (USD/m²)</strong> — cuánto cuesta reponer 1&nbsp;m² según material.
+  Ordene de mayor a menor costo: acero ≥ concreto ≥ mamp. formal ≥ mamp. informal.</p>
+  <ul>
+    <li><strong>Concreto:</strong> partida <em>450</em> · banda sugerida <strong>350–550</strong>.</li>
+    <li><strong>Acero:</strong> partida <em>520</em> · banda <strong>420–650</strong>.</li>
+    <li><strong>Mamp. formal:</strong> partida <em>320</em> · banda <strong>250–400</strong>.</li>
+    <li><strong>Mamp. informal:</strong> partida <em>220</em> · banda <strong>150–280</strong>.</li>
+  </ul>
+
+  <p><strong>2. Área estimada</strong> — Habitable no trae m² fiables en todas las fichas.
+  Área ≈ max(pisos × m²/piso, área mínima).</p>
+  <ul>
+    <li><strong>m² por piso:</strong> partida <em>80</em> · banda <strong>60–100</strong>
+      (casas populares hacia abajo; viviendas amplias / plantas tipicas de edificio hacia arriba).</li>
+    <li><strong>Área mínima:</strong> partida <em>40</em> · banda <strong>25–50</strong>
+      (evita subestimar unidades de 1 piso muy pequeñas).</li>
+  </ul>
+
+  <p><strong>3. Factores de daño en vivienda</strong> — fracción del valor de reposición
+  que se cuenta como daño. <em>0,25</em> = 25&nbsp;%. Mantenga el orden
+  Verde &lt; Amarillo &lt; Rojo ≤ 1 ≤ Negro.</p>
+  <ul>
+    <li><strong>Verde:</strong> partida <em>0,02</em> · banda <strong>0,01–0,05</strong> (daños menores / cosméticos).</li>
+    <li><strong>Amarillo:</strong> partida <em>0,25</em> · banda <strong>0,15–0,40</strong> (reparación parcial).</li>
+    <li><strong>Rojo:</strong> partida <em>0,65</em> · banda <strong>0,50–0,85</strong> (reparación mayor / casi reposición).</li>
+    <li><strong>Negro:</strong> partida <em>1,15</em> · banda <strong>1,00–1,25</strong>
+      (1,00 = solo reponer; &gt;1 = prima <em>Build Back Better</em>; p.&nbsp;ej. 1,15 = +15&nbsp;%).</li>
+  </ul>
+
+  <p><strong>4. Contenidos</strong> — mobiliario y enseres.</p>
+  <ul>
+    <li><strong>% inventario:</strong> partida <em>20&nbsp;%</em> · banda <strong>10–30&nbsp;%</strong>
+      (hogares modestos ~10–15&nbsp;%; parque más amueblado ~25–30&nbsp;%). Evite &gt;40&nbsp;% salvo estudio propio.</li>
+    <li><strong>Cont. verde:</strong> partida <em>0,05</em> · banda <strong>0,02–0,10</strong>.</li>
+    <li><strong>Cont. amarillo:</strong> partida <em>0,35</em> · banda <strong>0,20–0,50</strong>.</li>
+    <li><strong>Cont. rojo:</strong> partida <em>0,80</em> · banda <strong>0,60–0,95</strong>.</li>
+    <li><strong>Cont. negro:</strong> partida <em>1,00</em> · banda <strong>0,90–1,00</strong> (pérdida casi total del inventario).</li>
+  </ul>
+
+  <p><strong>Cálculo en una frase:</strong>
+  daño vivienda ≈ valor × factor vivienda del color;
+  daño contenidos ≈ (valor × % inventario) × factor contenidos del color;
+  necesidades ≈ ambos (con BBB si el factor de vivienda &gt; 1).</p>
+  <p><strong>Ejemplo:</strong> casa concreto, 2 pisos, Rojo → área 160&nbsp;m² → valor 72.000&nbsp;USD →
+  daño vivienda 46.800 · contenidos (20&nbsp;%) 14.400 × 0,80 = 11.520 · total ≈ 58.320&nbsp;USD.</p>
+  <p>Checklist completo: pestaña <strong>Guía del modelo</strong>.</p>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
         st.markdown("**Costo de reposición de vivienda (USD/m²)**")
+        st.caption(
+            "Partida: concreto 450 · acero 520 · mamp. formal 320 · informal 220. "
+            "Bandas típicas: 350–550 · 420–650 · 250–400 · 150–280."
+        )
         c1, c2, c3, c4 = st.columns(4)
         with c1:
             st.number_input("Concreto", min_value=50.0, step=10.0, key="pdna_usd_conc")
@@ -175,9 +238,14 @@ def _panel_parametros() -> None:
             st.number_input("m² estimados por piso", min_value=20.0, step=5.0, key="pdna_m2_piso")
         with a2:
             st.number_input("Área mínima (m²)", min_value=20.0, step=5.0, key="pdna_area_min")
+        st.caption("Partida: 80 m²/piso · mínimo 40 m². Bandas típicas: 60–100 y 25–50.")
 
         st.markdown("**Factores de daño en vivienda** (estructural + no estructural)")
-        st.caption("Negro > 1 incorpora Build Back Better en las necesidades de recuperación.")
+        st.caption(
+            "Partida: V 0,02 · A 0,25 · R 0,65 · N 1,15. "
+            "Bandas: 0,01–0,05 · 0,15–0,40 · 0,50–0,85 · 1,00–1,25. "
+            "Negro > 1 = prima Build Back Better en necesidades."
+        )
         f1, f2, f3, f4 = st.columns(4)
         with f1:
             st.number_input("Verde", min_value=0.0, max_value=2.0, format="%.2f", key="pdna_fv")
@@ -195,6 +263,11 @@ def _panel_parametros() -> None:
             )
 
         st.markdown("**Contenidos de la vivienda**")
+        st.caption(
+            "Inventario partida 20 % (banda 10–30 %). "
+            "Factores Cont. partida: 0,05 · 0,35 · 0,80 · 1,00. "
+            "Bandas: 0,02–0,10 · 0,20–0,50 · 0,60–0,95 · 0,90–1,00."
+        )
         st.slider(
             "Inventario de contenidos (% del valor de reposición)",
             min_value=0,
@@ -434,11 +507,7 @@ def _render_matriz_con_databars(
         "Daño a contenidos (USD)",
         "Necesidades de recuperación (USD)",
     ):
-        show[col] = show[col].map(lambda x: float(round(float(x), 0)))
-
-    max_viv = max(float(mat["dano_vivienda_usd"].sum()), 1.0)
-    max_cont = max(float(mat["dano_contenidos_usd"].sum()), 1.0)
-    max_tot = max(float(mat["costo_total_usd"].sum()), 1.0)
+        show[col] = show[col].map(lambda x: fmt_es_money(float(round(float(x), 0))))
 
     col_cfg = {
         "Tipología": st.column_config.TextColumn("Tipología", width="large"),
@@ -447,26 +516,17 @@ def _render_matriz_con_databars(
         "Rojo": st.column_config.NumberColumn("Rojo", format="%d"),
         "Negro": st.column_config.NumberColumn("Negro", format="%d"),
         "Total": st.column_config.NumberColumn("Total", format="%d"),
-        "Daño físico infraestructura (USD)": st.column_config.ProgressColumn(
+        "Daño físico infraestructura (USD)": st.column_config.TextColumn(
             "Daño físico\ninfraestructura (USD)",
-            help="Pase el cursor para ver el monto. Daño directo en vivienda (sin prima BBB).",
-            format="USD %d",
-            min_value=0,
-            max_value=max_viv,
+            help="Daño directo en vivienda (sin prima BBB).",
         ),
-        "Daño a contenidos (USD)": st.column_config.ProgressColumn(
+        "Daño a contenidos (USD)": st.column_config.TextColumn(
             "Daño a\ncontenidos (USD)",
-            help="Pase el cursor para ver el monto. Mobiliario y enseres.",
-            format="USD %d",
-            min_value=0,
-            max_value=max_cont,
+            help="Mobiliario y enseres.",
         ),
-        "Necesidades de recuperación (USD)": st.column_config.ProgressColumn(
+        "Necesidades de recuperación (USD)": st.column_config.TextColumn(
             "Necesidades de\nrecuperación (USD)",
-            help="Pase el cursor para ver el monto. Incluye Build Back Better.",
-            format="USD %d",
-            min_value=0,
-            max_value=max_tot,
+            help="Incluye Build Back Better.",
         ),
     }
 
@@ -502,7 +562,7 @@ def _render_matriz_con_databars(
     )
 
 
-def page_pdna(df: pd.DataFrame) -> None:
+def page_pdna(df: pd.DataFrame, summary: dict | None = None) -> None:
     render_section(
         "Evaluación de necesidades post-desastre (PDNA)",
         "Insumos agregados para el equipo sectorial: unidades físicas, daño y necesidades de recuperación.",
@@ -614,10 +674,12 @@ def page_pdna(df: pd.DataFrame) -> None:
 
     export_sheets = construir_export_pdna_fisico(work_geo)
 
-    tab_mat, tab_geo, tab_guia, tab_met = st.tabs(
+    tab_mat, tab_geo, tab_inf, tab_guia_sal, tab_guia, tab_met = st.tabs(
         [
             "Matriz de afectación y costos",
             "Por territorio",
+            "Análisis 2.º nivel",
+            "Guía de salidas",
             "Guía del modelo",
             "Método",
         ]
@@ -667,7 +729,7 @@ def page_pdna(df: pd.DataFrame) -> None:
                 "Valor reposición (USD)",
             ):
                 if col in show.columns:
-                    show[col] = show[col].map(lambda x: round(float(x), 0))
+                    show[col] = show[col].map(lambda x: fmt_es_money(float(round(float(x), 0))))
             st.dataframe(show, width="stretch", hide_index=True)
             opts = opts_barras_costo(
                 res.rename(columns={nivel: "cat"}),
@@ -682,6 +744,20 @@ def page_pdna(df: pd.DataFrame) -> None:
                 key="dl_pdna_geo",
                 label="Exportar agregación territorial (CSV)",
             )
+
+    with tab_inf:
+        from pdna_salidas import render_informe_ejecutivo_pdna
+
+        render_informe_ejecutivo_pdna(
+            work_geo,
+            summary=summary or {},
+            embebida=True,
+        )
+
+    with tab_guia_sal:
+        from pdna_salidas import render_guia_salidas_reportes
+
+        render_guia_salidas_reportes(embebida=True)
 
     with tab_guia:
         from page_pdna_guia import render_guia_modelo_valoracion
