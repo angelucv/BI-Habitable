@@ -253,10 +253,12 @@
 
 .cpeh-auth-program {
   font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ve-amarillo) !important;
+  font-weight: 700;
+  color: #ffcc00 !important;
   text-align: center;
   line-height: 1.35;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.01em;
 }
 
 .cpeh-hero-logo {
@@ -387,6 +389,46 @@
   color: #2c3440 !important;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.cpeh-hero-guia-pdf {
+  margin-top: 0.35rem;
+}
+
+.cpeh-btn-guia-pdf {
+  font-weight: 600;
+  color: var(--ve-azul-oscuro) !important;
+  border: 1px solid #c5d0e3;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cpeh-btn-guia-pdf:hover {
+  background: #eef4ff !important;
+  color: var(--ve-azul) !important;
+}
+
+.cpeh-badge-status {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.cpeh-badge-draft {
+  background: #fff3cd;
+  color: #7a4b00;
+  border: 1px solid #f0c040;
+}
+
+.cpeh-badge-ok {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #28a745;
 }
 
 .cpeh-dev-body {
@@ -727,6 +769,15 @@ textarea.vLargeTextField {
   background: var(--cpeh-surface) !important;
 }
 
+/* Jazzmin duplica logo fuera de la tarjeta CPEH — ocultar (logo va dentro del header) */
+.login-page .login-logo {
+  display: none !important;
+}
+
+.login-page .login-box .card-body {
+  padding: 0 !important;
+}
+
 .login-page .login-box,
 .login-page .card {
   width: 100%;
@@ -755,6 +806,25 @@ textarea.vLargeTextField {
   color: #fff;
   padding: 1.1rem 1.25rem 1rem;
   text-align: center;
+}
+
+.cpeh-auth-header .cpeh-institutional-logo {
+  border: 2px solid rgba(255, 204, 0, 0.75);
+  background: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.cpeh-auth-header .cpeh-name-lg,
+.cpeh-auth-header .cpeh-name-sm {
+  color: #fff !important;
+}
+
+.cpeh-auth-header .cpeh-name-sm {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.cpeh-auth-header .cpeh-name-star {
+  color: var(--ve-amarillo) !important;
 }
 
 .cpeh-auth-eyebrow {

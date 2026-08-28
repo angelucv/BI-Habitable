@@ -4,8 +4,13 @@
 
 {% block content %}
 <div class="cpeh-auth-card">
+  <div class="ve-tricolor-bar" aria-hidden="true">
+    <span class="ve-amarillo"></span>
+    <span class="ve-azul"></span>
+    <span class="ve-rojo"></span>
+  </div>
   <div class="cpeh-auth-header">
-    {% include "includes/cpeh_nombre_institucional.html" with compact=True %}
+    {% include "includes/cpeh_nombre_institucional.html" with compact=True show_logo=True %}
     <p class="cpeh-auth-program mt-2 mb-0">Seguimiento inspecciones ROJO — Fase II</p>
   </div>
   <div class="cpeh-auth-body">

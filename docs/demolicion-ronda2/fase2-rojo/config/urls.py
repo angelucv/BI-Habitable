@@ -9,7 +9,7 @@ from inspecciones.export_views import (
     export_excel_informes_multiples,
     export_excel_lote,
 )
-from inspecciones.views import casos_geojson, health, mapa_casos, ver_informe_pdf_adjunto
+from inspecciones.views import casos_geojson, guia_usuario_pdf, health, mapa_casos, ver_informe_pdf_adjunto
 
 admin.site.site_header = "CPEH — Seguimiento ROJO Fase II"
 admin.site.site_title = "CPEH Fase II"
@@ -19,6 +19,7 @@ urlpatterns = [
     path("api/health/", health),
     path("api/casos/geojson/", casos_geojson, name="casos_geojson"),
     path("informes/pdf/<int:pk>/", ver_informe_pdf_adjunto, name="ver_informe_pdf_adjunto"),
+    path("guia/usuario.pdf", guia_usuario_pdf, name="guia_usuario_pdf"),
     path("mapa/", mapa_casos, name="mapa_casos"),
     path("asignacion/", tablero_asignacion, name="tablero_asignacion"),
     path("export/excel/informe/<int:pk>/", export_excel_informe, name="export_excel_informe"),

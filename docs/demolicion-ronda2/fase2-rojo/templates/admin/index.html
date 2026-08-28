@@ -15,19 +15,25 @@
         {% include "includes/cpeh_nombre_institucional.html" %}
         <div class="cpeh-hero-program">
           <h2 class="cpeh-hero-title mb-1">Seguimiento inspecciones ROJO — Fase II</h2>
-          <p class="cpeh-hero-sub mb-0">
+          <p class="cpeh-hero-sub mb-2">
             Panel de control para la 2.ª ronda de verificación de edificaciones con etiqueta ROJO
             tras el sismo del 24-jun-2026.
           </p>
+          <div class="cpeh-hero-guia-pdf">
+            <a href="{% url 'guia_usuario_pdf' %}" class="btn btn-sm btn-light cpeh-btn-guia-pdf" target="_blank" rel="noopener">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i>
+              Guía de usuario (PDF)
+              {% if guia_usuario_aprobada %}
+              <span class="cpeh-badge-status cpeh-badge-ok">Aprobada</span>
+              {% else %}
+              <span class="cpeh-badge-status cpeh-badge-draft">Borrador</span>
+              {% endif %}
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  {% include "includes/cpeh_guia_fase.html" %}
-  {% include "includes/cpeh_guia_tutorial_sistema.html" %}
-  {% include "includes/cpeh_guia_informe.html" %}
-  {% include "includes/cpeh_guia_desarrolladores.html" %}
 
   <div class="cpeh-kpi-strip mb-3">
     {% for kpi in dashboard_kpis %}
@@ -78,6 +84,11 @@
     </div>
   </div>
   {% endif %}
+
+  {% include "includes/cpeh_guia_fase.html" %}
+  {% include "includes/cpeh_guia_tutorial_sistema.html" %}
+  {% include "includes/cpeh_guia_informe.html" %}
+  {% include "includes/cpeh_guia_desarrolladores.html" %}
 </div>
 
 <div class="cpeh-admin-modules">

@@ -1,8 +1,8 @@
 {% load static %}
 <div class="cpeh-institutional-name{% if compact %} cpeh-institutional-name--compact{% endif %}">
-  {% if show_logo %}
+  {% if show_logo or compact %}
   <img
-    src="{% static 'img/logo-cpeh-redes.svg' %}"
+    src="{% static 'img/logo-cpeh-sidebar.svg' %}"
     alt="Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras"
     class="cpeh-institutional-logo{% if compact %} cpeh-institutional-logo--sm{% endif %}"
     width="{% if compact %}56{% else %}104{% endif %}"

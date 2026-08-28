@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from django.contrib import admin
+from django.conf import settings
 
 from inspecciones import choices as ch
 from inspecciones.models import CasoRojo
@@ -73,6 +74,7 @@ def get_dashboard_context() -> dict:
         ],
         "dashboard_recientes": qs.order_by("-updated_at")[:8],
         "dashboard_total": total,
+        "guia_usuario_aprobada": getattr(settings, "GUIA_USUARIO_PDF_APROBADA", False),
     }
 
 

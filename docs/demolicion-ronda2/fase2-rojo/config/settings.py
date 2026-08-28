@@ -115,3 +115,6 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG
+
+# Guía PDF usuario: False = marca «BORRADOR EN REVISIÓN» hasta aprobación gerencial
+GUIA_USUARIO_PDF_APROBADA = os.environ.get("GUIA_USUARIO_PDF_APROBADA", "0") == "1"
