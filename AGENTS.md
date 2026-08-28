@@ -25,7 +25,7 @@ Python · Streamlit · Pandas/Parquet · ECharts · Perspective · deploy Render
 
 | Fecha | Tema | Git |
 |-------|------|-----|
-| **28/08/2026** | **Fase II ROJO:** guía PDF usuario (borrador + `/guia/usuario.pdf`); portada admin KPIs arriba; fix login/logout (logo + contraste); `LEVANTAR-FASE2-ROJO-LOCAL.md`; sync Drive laptop. | (push BI-Habitable) |
+| **28/08/2026** | **Fase II ROJO:** guía PDF usuario (borrador + `/guia/usuario.pdf`); portada admin KPIs arriba; fix login/logout (logo + contraste); `LEVANTAR-FASE2-ROJO-LOCAL.md`; sync Drive laptop. | `2296832` |
 | **27/08/2026** | **Fase II ROJO Django** (190.169.110.9): import PDF enriquecido 36 cruce; ranking nacional `--todas-hojas`; manual ejecutivo; guía dev §10; systemd + `deploy_sprint_operativo.py`. App en `docs/demolicion-ronda2/fase2-rojo/`. | `6398488` |
 | **20/08/2026** | **2.ª ronda ROJO / demolición:** cruce PDF×Habitable; score gravedad; formato Word + vaciado Excel ejemplo (Franco Mar); Excel operativo Ranking_ROJO único + Control_2da_ronda. Paquete a remitir Habitable. Docs en `docs/demolicion-ronda2/`. | (docs locales; sync D-CPEH) |
 | **14/08/2026** | PDNA: **piso a piso** (1–20 + 21+); usos turismo/comercio (oficina⊂comercio); turismo ampliado en nombre/obs. **En push** `fdebd18`. | `fdebd18` |
