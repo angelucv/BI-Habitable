@@ -1,0 +1,127 @@
+INFORME TÉCNICO DE INSPECCIÓN 
+RESIDENCIAS PARQUE AZUL 
+Ingenieros: 
+Beatriz Tamaronys C.I. 8.401.401 (E1) 
+Valentina Perdomo C.I 15.867.974 (E1) 
+Yorgelys Alvarado C.I. 22.048.007 (E2) 
+Deniter Díaz C.I 11.048.865 (E2  
+ 
+FECHA:11-08-2026 
+ 
+ESTATUS DE LA EDIFICACIÓN: ETIQUETA ROJA — PELIGRO INMINENTE / NO 
+ENTRE NI OCUPE 
+Edificación: Residencias Parque Azul 
+Ubicación: Avenida La Playa con Calle Jardín Botánico, Sector Tanaguarenas / 
+Caraballeda, Edo. La Guaira 
+ 
+INSPECCIÓN PRELIMINAR 
+Datos Generales 
+Planilla de Inspección N°:
+1526181704320261816
+Fecha de Inspección:
+17/07/2026
+Inspector Responsable:
+Ing. Frank Rojas (CIV)
+Coordenadas de Ubicación:
+10.612802° N, -66.825240° O
+ 
+1. DATOS GENERALES DE LA EDIFICACIÓN — CONFIGURACIÓN ESTRUCTURAL 
+ 
+Se trata de una estructura de 9 niveles originales (planta baja + 8 niveles superiores) y un sótano, con 
+un sistema estructural compuesto por pórticos de concreto armado. Con un área de ocupación 
+aproximada de 445 m², actualmente se visualizan solo 6 plantas ya que la edificación presenta 
+actualmente un estado de colapso severo de las primeras 3 plantas con obstrucción de acceso al 
+sótano.   
+2. INSPECCIÓN VISUAL Y DESCRIPCIÓN DE LA FALLA 
+ 
+Tipos de Fallas Identificadas 
+ 
+ 
+Compresión y corte de columnas: Se evidencia un aparente fallo frágil por compresión y cortante 
+en las columnas principales de los niveles inferiores. La deformaciones plásticas severas y pandeo 
+visible debido probablemente a la pérdida del confinamiento de los estribos y la alta solicitación de 
+carga axial. 
+
+ 
+Efecto "Pancake" (Colapso progresivo): Se observa el colapso por aplastamiento vertical de los 
+niveles inferiores (aproximadamente los primeros 3 niveles colapsados hacia el sótano), 
+provocando el apilamiento de las losas superiores. 
+ 
+ 
+Corte: Se visualizan agrietamientos diagonales severos y fracturas por esfuerzo cortante en 
+elementos verticales y de soporte, indicando una incapacidad de la estructura para disipar la 
+energía sísmica lateral. 
+ 
+ 
+Comportamiento del suelo y asentamiento: La estructura presenta una inclinación aproximada de 
+30 grados en dirección norte, respecto a la vertical y afectación directa en la entrada del 
+estacionamiento, lo que sugiere posibles problemas de amplificación dinámica o pérdida de 
+capacidad portante en el nivel de fundación. 
+ 
+ 
+Falla de Mampostería y Ductos de Servicios: Se observa el aplastamiento de bloques de arcilla de 
+friso/cerramiento y la deformación plástica severa de la tubería PVC azul de instalaciones 
+hidráulicas/eléctricas aprisionada entre los elementos estructurales. 
+ 
+ 
+Pérdida de Continuidad: Inexistencia de soporte vertical libre en esta sección, confirmando que la 
+masa de los niveles superiores permanece sostenida únicamente por el amontonamiento 
+heterogéneo de escombros y vigas fracturadas. 
+ 
+ 
+3. JUSTIFICACIÓN DE LA DEMOLICIÓN 
+ 
+ 
+Perdida de la capacidad resistente: La estructura ha sufrido un daño severo e irreversible 
+con pérdida de sección crítica en elementos principales de soporte (columnas de los niveles 
+1 al 3), lo que imposibilita cualquier labor de rehabilitación o apuntalamiento seguro. 
+ 
+ 
+Mecanismo de falla (Formación de rótulas plásticas): Se formó un mecanismo de entrepiso 
+débil (soft story), concentrando las demandas de ductilidad y deformación en los niveles 
+inferiores, generando rótulas plásticas prematuras y el colapso subsiguiente. 
+ 
+ 
+Riesgo a la vida humana: La edificación se encuentra en condición de inestabilidad global 
+crítica con desplazamiento lateral y riesgo inminente de colapso adicional, amenazando las 
+edificaciones colindantes y vías circundantes. 
+ 
+4. PLAN DE ACCION 
+ 
+ 
+El edificio Parque Azul presenta un colapso parcial severo que compromete de manera 
+irreversible su estabilidad global tras el sismo del 24 de junio de 2026. 
+ 
+ 
+Las fallas predominantes corresponden a corte y compresión en columnas de los primeros niveles, 
+acompañadas de pandeo de barras de refuerzo y un marcado colapso tipo "pancake". 
+ 
+ 
+Se dictamina la demolición inmediata y controlada de la estructura remanente debido al alto 
+riesgo de colapso súbito y peligro latente para las personas y edificaciones vecinas. 
+ 
+ 
+Recomendación Operativa: Demolición mecánica controlada mediante el método Top-Down 
+(desmontaje secuencial superior a inferior) con maquinaria de largo alcance, tras aislar la red de 
+servicios e instrumentar el perímetro de seguridad. 
+ 
+ 
+
+ 
+5. SOPORTE FOTOGRÁFICO 
+ 
+ 
+Planilla de registro Fase 2 
+ 
+ 
+ 
+Fachada principal de edificio, donde se evidencia la inclinación del mismo (Izq), y el 
+Colpaso de los primeros 3 pisos marcados por los equipos de rescate (Der) 
+ 
+
+ 
+Detalle de falla por compresión, corte severo y pandeo de armadura en columnas 
+ 
+Panorámica de los que evidencia asentamiento  
+ 
+Etiqueta Previa 

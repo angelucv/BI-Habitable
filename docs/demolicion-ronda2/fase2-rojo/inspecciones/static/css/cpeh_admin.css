@@ -1,0 +1,1144 @@
+/* CPEH Fase II — identidad portal web CPEH (bandera VE + logo oficial) */
+:root {
+  --ve-amarillo: #ffcc00;
+  --ve-azul: #00247d;
+  --ve-azul-oscuro: #001a5c;
+  --ve-rojo: #cf142b;
+  --ve-rojo-oscuro: #a81024;
+  --cpeh-surface: #f4f6f9;
+  --cpeh-success: #2d6a4f;
+}
+
+.main-header.navbar,
+.navbar-dark,
+.sidebar-dark-primary,
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: var(--ve-azul) !important;
+}
+
+.main-header.navbar {
+  border-bottom: 3px solid var(--ve-amarillo) !important;
+}
+
+.brand-link .brand-image,
+.brand-image-cpeh {
+  border: 2px solid rgba(255, 204, 0, 0.55) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+
+.login-logo img,
+.brand-image,
+.brand-image-cpeh {
+  max-height: 52px !important;
+}
+
+/* Sidebar — cabecera marca (logo + texto) */
+.main-sidebar .brand-link {
+  height: auto !important;
+  min-height: 4.25rem;
+  max-height: none !important;
+  padding: 0.7rem 0.65rem !important;
+  display: flex !important;
+  align-items: center;
+  gap: 0.55rem;
+  overflow: visible !important;
+  white-space: normal !important;
+  line-height: 1.25;
+  border-bottom: 2px solid var(--ve-amarillo) !important;
+}
+
+.main-sidebar .brand-link .brand-image,
+.main-sidebar .brand-link .brand-image-cpeh {
+  max-height: 44px !important;
+  width: 44px !important;
+  min-width: 44px;
+  margin: 0 !important;
+  float: none !important;
+  flex-shrink: 0;
+}
+
+.main-sidebar .brand-link .brand-text {
+  font-size: 0.82rem !important;
+  font-weight: 700;
+  white-space: normal !important;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.main-sidebar .sidebar {
+  padding-top: 0 !important;
+}
+
+.main-sidebar .user-panel {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 0 !important;
+}
+
+.ve-tricolor-bar {
+  display: flex;
+  height: 6px;
+  width: 100%;
+}
+
+.ve-tricolor-bar span {
+  flex: 1;
+}
+
+.ve-tricolor-bar .ve-amarillo { background: var(--ve-amarillo); }
+.ve-tricolor-bar .ve-azul { background: var(--ve-azul); }
+.ve-tricolor-bar .ve-rojo { background: var(--ve-rojo); }
+
+.ve-tricolor-bar--footer {
+  height: 8px;
+}
+
+.ve-footer-stars {
+  background: var(--ve-azul);
+  color: #fff;
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.22rem;
+  padding: 0.35rem 0;
+}
+
+.cpeh-footer-bandera {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cpeh-guides-footer {
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 36, 125, 0.08);
+  background: #fff;
+}
+
+.cpeh-page-footer-bandera {
+  margin: 0;
+  width: 100%;
+}
+
+.cpeh-page-footer-bandera .ve-tricolor-bar--footer {
+  height: 10px;
+}
+
+.cpeh-app-footer {
+  background: var(--ve-azul-oscuro) !important;
+  color: #e8eef8 !important;
+  border-top: none !important;
+  padding-top: 0.65rem !important;
+}
+
+.cpeh-auth-card .cpeh-footer-bandera {
+  border-radius: 0 0 10px 10px;
+}
+
+.ve-hero-stars {
+  background: var(--ve-azul);
+  color: #fff;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.22rem;
+  padding: 0.35rem 0;
+}
+
+.cpeh-hero-body {
+  background: linear-gradient(180deg, #fff 0%, var(--cpeh-surface) 100%);
+  padding: 1.25rem 1.5rem !important;
+}
+
+.cpeh-hero-card {
+  overflow: hidden;
+}
+
+.cpeh-hero-card .ve-tricolor-bar {
+  border-radius: 0;
+}
+
+.cpeh-hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cpeh-hero-brand--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cpeh-hero-brand--stacked .cpeh-hero-program {
+  min-width: 0;
+  width: 100%;
+}
+
+.cpeh-hero-program {
+  flex: 1;
+  min-width: 16rem;
+}
+
+.cpeh-institutional-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cpeh-institutional-logo {
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 36, 125, 0.2);
+}
+
+.cpeh-institutional-logo--sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cpeh-institutional-text {
+  line-height: 1.15;
+}
+
+.cpeh-name-lg {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ve-azul-oscuro);
+  letter-spacing: -0.01em;
+}
+
+.cpeh-name-star {
+  color: var(--ve-rojo);
+  font-size: 0.85em;
+  margin-right: 0.15rem;
+}
+
+.cpeh-name-sm {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #3d4654;
+}
+
+.cpeh-institutional-name--compact {
+  flex-direction: column;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.cpeh-institutional-name:not(.cpeh-institutional-name--compact) .cpeh-name-lg {
+  font-size: 1.5rem;
+}
+
+.cpeh-institutional-name:not(.cpeh-institutional-name--compact) .cpeh-name-sm {
+  font-size: 0.95rem;
+  color: #2c3440 !important;
+}
+
+.cpeh-institutional-name--compact .cpeh-name-star {
+  color: var(--ve-rojo);
+}
+
+.cpeh-institutional-name--compact .cpeh-name-lg {
+  font-size: 1.05rem;
+  color: #fff !important;
+}
+
+.cpeh-institutional-name--compact .cpeh-name-sm {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.cpeh-auth-program {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ve-amarillo) !important;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.cpeh-hero-logo {
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 36, 125, 0.2);
+  border: 2px solid rgba(255, 204, 0, 0.5);
+}
+
+.cpeh-hero-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ve-azul) !important;
+  font-weight: 600;
+}
+
+.cpeh-hero-title {
+  color: var(--ve-azul-oscuro);
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.cpeh-about-list strong {
+  color: var(--ve-azul-oscuro);
+}
+
+.cpeh-about-ordered {
+  list-style: decimal;
+  padding-left: 1.35rem;
+}
+
+/* ── Acordeones plegables (portada) ── */
+.cpeh-accordion {
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 36, 125, 0.08);
+}
+
+.cpeh-accordion-header {
+  background: var(--ve-azul) !important;
+  color: #fff !important;
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--ve-amarillo);
+  user-select: none;
+}
+
+.cpeh-accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.cpeh-accordion-header::after {
+  content: "▾";
+  margin-left: auto;
+  font-size: 1rem;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+.cpeh-accordion[open] > .cpeh-accordion-header::after {
+  transform: rotate(180deg);
+}
+
+.cpeh-accordion-header:hover {
+  background: var(--ve-azul-oscuro) !important;
+}
+
+.cpeh-accordion-body {
+  padding: 1.25rem 1.5rem;
+  background: #fff !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-guide-block {
+  margin-bottom: 1.15rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8eef8;
+}
+
+.cpeh-guide-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cpeh-guide-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ve-azul-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.cpeh-guide-code {
+  display: inline-block;
+  background: var(--ve-azul);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2em 0.55em;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+/* ── Portada: contraste forzado (independiente del tema Jazzmin) ── */
+.content-header h1 {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cpeh-dashboard-wrap,
+.cpeh-dashboard-wrap .card,
+.cpeh-admin-modules .card {
+  color: #1a2332;
+}
+
+.cpeh-hero-sub {
+  font-size: 0.95rem;
+  max-width: 42rem;
+  color: #2c3440 !important;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.cpeh-dev-body {
+  background: #fff !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-dev-body .cpeh-about-heading {
+  color: #001a5c !important;
+}
+
+.cpeh-dev-body .cpeh-about-text,
+.cpeh-dev-body .cpeh-about-list,
+.cpeh-dev-body .cpeh-guide-title {
+  color: #3d4654 !important;
+}
+
+.cpeh-dev-body .cpeh-about-list strong {
+  color: #001a5c !important;
+}
+
+.cpeh-dev-alert {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-left: 4px solid #cf142b;
+  color: #5c4a00;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.cpeh-dev-body code {
+  background: #eef2f8;
+  color: #001a5c;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.82em;
+}
+
+.cpeh-dev-code {
+  background: #1a2332;
+  color: #e8eef8;
+  padding: 0.75rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--ve-amarillo);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cpeh-dev-table {
+  font-size: 0.82rem;
+  background: #fff !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-dev-body .table-responsive {
+  background: #fff !important;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cpeh-dev-table thead th {
+  background: #eef2f8 !important;
+  color: #001a5c !important;
+  font-weight: 700;
+  border-color: #c5d0e3 !important;
+}
+
+.cpeh-dev-table tbody tr {
+  background: #fff !important;
+}
+
+.cpeh-dev-table tbody tr:nth-child(even) {
+  background: #f8fafc !important;
+}
+
+.cpeh-dev-table tbody tr:hover td {
+  background: #eef4ff !important;
+}
+
+.cpeh-dev-table td,
+.cpeh-dev-table th {
+  border-color: #d0d7e2 !important;
+  color: #1a2332 !important;
+  vertical-align: top;
+  background-color: inherit !important;
+}
+
+.cpeh-dev-table td code {
+  background: #eef2f8 !important;
+  color: #001a5c !important;
+}
+
+.cpeh-dev-table th {
+  width: 28%;
+}
+
+.cpeh-dev-accordion .cpeh-accordion-header {
+  background: #343a40 !important;
+  border-bottom-color: var(--ve-amarillo);
+}
+
+.cpeh-dev-accordion .cpeh-accordion-header:hover {
+  background: #23272b !important;
+}
+
+.cpeh-kpi-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.4rem;
+  align-items: stretch;
+}
+
+.cpeh-kpi-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.55rem;
+  min-height: 1.85rem;
+  max-height: 2.4rem;
+  background: #fff !important;
+  border-radius: 5px;
+  border-left: 3px solid var(--ve-azul);
+  box-shadow: 0 1px 3px rgba(0, 36, 125, 0.1);
+  color: #1a2332 !important;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  transition: box-shadow 0.12s ease, transform 0.12s ease;
+}
+
+.cpeh-kpi-chip:hover {
+  box-shadow: 0 2px 6px rgba(0, 36, 125, 0.16);
+  transform: translateY(-1px);
+  color: var(--ve-azul-oscuro) !important;
+}
+
+.cpeh-kpi-chip-icon {
+  font-size: 0.7rem;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.cpeh-kpi-chip-value {
+  font-weight: 700;
+  font-size: 0.88rem;
+  min-width: 1.1rem;
+  text-align: center;
+  flex-shrink: 0;
+  color: #1a2332 !important;
+}
+
+.cpeh-kpi-chip-label {
+  color: #3d4654 !important;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 9rem;
+}
+
+.kpi-blue.cpeh-kpi-chip { border-left-color: var(--ve-azul); }
+.kpi-blue .cpeh-kpi-chip-icon { color: var(--ve-azul); }
+
+.kpi-red.cpeh-kpi-chip { border-left-color: var(--ve-rojo); }
+.kpi-red .cpeh-kpi-chip-icon { color: var(--ve-rojo); }
+
+.kpi-yellow.cpeh-kpi-chip { border-left-color: var(--ve-amarillo); }
+.kpi-yellow .cpeh-kpi-chip-icon { color: #b8860b; }
+
+.kpi-green.cpeh-kpi-chip { border-left-color: var(--cpeh-success); }
+.kpi-green .cpeh-kpi-chip-icon { color: var(--cpeh-success); }
+
+.kpi-neutral.cpeh-kpi-chip { border-left-color: #6c757d; }
+.kpi-neutral .cpeh-kpi-chip-icon { color: #6c757d; }
+
+.cpeh-kpi-label {
+  font-size: 0.78rem;
+  color: #3d4654 !important;
+  margin-top: 0.25rem;
+  line-height: 1.25;
+}
+
+.cpeh-recent-table tbody td {
+  background: #fff !important;
+  color: #1a2332 !important;
+  border-color: #dee2e6 !important;
+  vertical-align: middle;
+}
+
+.cpeh-recent-table tbody tr:hover td {
+  background: #f0f4fa !important;
+}
+
+.cpeh-recent-table a {
+  color: var(--ve-azul) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cpeh-recent-table a:hover {
+  color: var(--ve-rojo) !important;
+}
+
+.badge-cpeh {
+  background: #e8eef8 !important;
+  color: var(--ve-azul-oscuro) !important;
+  font-weight: 600;
+  white-space: normal;
+  text-align: left;
+  padding: 0.35em 0.65em;
+}
+
+.badge-cpeh-d1 {
+  background: #2d6a4f !important;
+  color: #fff !important;
+}
+
+.badge-cpeh-d2 {
+  background: #457b9d !important;
+  color: #fff !important;
+}
+
+.badge-cpeh-d3 {
+  background: #b8860b !important;
+  color: #fff !important;
+}
+
+.badge-cpeh-d4 {
+  background: #e85d04 !important;
+  color: #fff !important;
+}
+
+.badge-cpeh-d4 {
+  background: var(--ve-rojo) !important;
+  color: #fff !important;
+}
+
+.badge-cpeh-pending {
+  background: #6c757d !important;
+  color: #fff !important;
+}
+
+.cpeh-admin-modules {
+  margin-top: 0.5rem;
+}
+
+.cpeh-admin-modules .card,
+.cpeh-admin-modules .card-outline {
+  background: #fff !important;
+  border: 1px solid #d0d7e2 !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-admin-modules .card-header,
+.cpeh-admin-modules .card-header a {
+  background: var(--ve-azul) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.cpeh-admin-modules .card-body,
+.cpeh-admin-modules .card-body table,
+.cpeh-admin-modules .card-body td,
+.cpeh-admin-modules .card-body th {
+  background: #fff !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-admin-modules .card-body a:not(.btn) {
+  color: var(--ve-azul) !important;
+  font-weight: 600;
+}
+
+.cpeh-admin-modules .card-body a:not(.btn):hover {
+  color: var(--ve-rojo) !important;
+}
+
+.cpeh-admin-modules .recent-actions,
+.cpeh-admin-modules #recent-actions-module {
+  background: #fff !important;
+  color: #1a2332 !important;
+}
+
+.cpeh-admin-modules .recent-actions h2,
+.cpeh-admin-modules #recent-actions-module h2 {
+  background: var(--ve-azul) !important;
+  color: #fff !important;
+}
+
+.cpeh-admin-modules .actionlist li {
+  color: #1a2332 !important;
+  border-color: #dee2e6 !important;
+}
+
+.main-footer {
+  color: #cbd5e1 !important;
+}
+
+.main-footer a {
+  color: var(--ve-amarillo) !important;
+}
+
+.cpeh-card-header {
+  background: var(--ve-azul) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--ve-amarillo);
+}
+
+.cpeh-recent-table thead th {
+  background: #e8eef8 !important;
+  color: var(--ve-azul-oscuro) !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-top: none;
+}
+
+fieldset.collapsed h2 {
+  background: var(--ve-azul) !important;
+}
+
+.content-header h1 {
+  font-size: 1.35rem;
+}
+
+textarea.vLargeTextField {
+  min-height: 120px;
+}
+
+.login-page {
+  background: var(--cpeh-surface) !important;
+}
+
+.login-page .login-box,
+.login-page .card {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.login-page .login-box-msg {
+  display: none !important;
+}
+
+.cpeh-auth-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 36, 125, 0.18);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.cpeh-auth-header {
+  background: var(--ve-azul);
+  color: #fff;
+  padding: 1.1rem 1.25rem 1rem;
+  text-align: center;
+}
+
+.cpeh-auth-eyebrow {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ve-amarillo) !important;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cpeh-auth-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff !important;
+  line-height: 1.35;
+}
+
+.cpeh-auth-body {
+  padding: 1.25rem 1.35rem 1.35rem;
+  background: #fff;
+  color: #1a2332;
+}
+
+.cpeh-auth-lead,
+.cpeh-auth-message {
+  color: #3d4654 !important;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.cpeh-auth-link {
+  color: var(--ve-azul) !important;
+  font-weight: 600;
+}
+
+.cpeh-auth-btn {
+  background: var(--ve-azul) !important;
+  border-color: var(--ve-azul) !important;
+  font-weight: 600;
+}
+
+.cpeh-auth-btn:hover {
+  background: var(--ve-azul-oscuro) !important;
+  border-color: var(--ve-azul-oscuro) !important;
+}
+
+.cpeh-about-body {
+  background: #fff;
+  color: #1a2332;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.cpeh-about-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ve-azul-oscuro);
+  margin-bottom: 0.65rem;
+}
+
+.cpeh-about-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #3d4654;
+  margin-bottom: 0.75rem;
+}
+
+.cpeh-about-list {
+  padding-left: 1.15rem;
+  color: #3d4654;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.cpeh-about-list li {
+  margin-bottom: 0.45rem;
+}
+
+/* ── Guía asignación: roles + flujograma ── */
+.cpeh-guia-asignacion {
+  margin-bottom: 1rem;
+}
+
+.cpeh-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.cpeh-role-card {
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: #f8fafc;
+}
+
+.cpeh-role-card .cpeh-about-heading {
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+.cpeh-role-coord { border-top: 4px solid #f59e0b; }
+.cpeh-role-insp { border-top: 4px solid #2563eb; }
+.cpeh-role-rev { border-top: 4px solid #16a34a; }
+
+.cpeh-flowchart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.35rem;
+  padding: 1rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.cpeh-flow-step {
+  flex: 1 1 7.5rem;
+  min-width: 7rem;
+  max-width: 9.5rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.55rem 0.5rem;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cpeh-flow-step strong {
+  color: #001a5c;
+  font-size: 0.78rem;
+}
+
+.cpeh-flow-step small {
+  color: #64748b;
+  font-size: 0.68rem;
+}
+
+.cpeh-flow-num {
+  display: inline-block;
+  width: 1.35rem;
+  height: 1.35rem;
+  line-height: 1.35rem;
+  border-radius: 50%;
+  background: #00247d;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin: 0 auto 0.15rem;
+}
+
+.cpeh-flow-actor {
+  margin-top: auto;
+  padding: 0.15rem 0.35rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.cpeh-flow-actor-coord { background: #fef3c7; color: #92400e; }
+.cpeh-flow-actor-insp { background: #dbeafe; color: #1e40af; }
+.cpeh-flow-actor-rev { background: #dcfce7; color: #166534; }
+
+.cpeh-flow-arrow {
+  align-self: center;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cpeh-flow-precarga { border-color: #94a3b8; }
+.cpeh-flow-asign { border-color: #f59e0b; background: #fffbeb; }
+.cpeh-flow-insp { border-color: #93c5fd; }
+.cpeh-flow-rev { border-color: #86efac; }
+.cpeh-flow-coord { border-color: #fcd34d; }
+.cpeh-flow-final { border-color: #00247d; background: #eff6ff; }
+
+.cpeh-flow-return {
+  font-size: 0.82rem;
+  color: #475569;
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .cpeh-flowchart {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cpeh-flow-arrow {
+    transform: rotate(90deg);
+  }
+  .cpeh-flow-step {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ── Tutorial del sistema ── */
+.cpeh-mt-md { margin-top: 0.75rem; }
+.cpeh-mt-lg { margin-top: 1.25rem; }
+
+.cpeh-tutorial-phases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.cpeh-tutorial-phase {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  border-left: 4px solid var(--ve-azul);
+}
+
+.cpeh-tutorial-phase-num {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--ve-azul);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.cpeh-tutorial-phase strong {
+  display: block;
+  color: var(--ve-azul-oscuro);
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
+}
+
+.cpeh-tutorial-phase p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.cpeh-tutorial-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cpeh-tutorial-path {
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cpeh-tutorial-path > summary {
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  font-size: 0.92rem;
+  color: #1e293b;
+  background: #f1f5f9;
+  list-style: none;
+}
+
+.cpeh-tutorial-path > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cpeh-tutorial-path > summary::after {
+  content: "▸";
+  float: right;
+  color: #64748b;
+}
+
+.cpeh-tutorial-path[open] > summary::after {
+  content: "▾";
+}
+
+.cpeh-tutorial-path > summary:hover {
+  background: #e2e8f0;
+}
+
+.cpeh-tutorial-path > ol {
+  margin: 0;
+  padding: 0.75rem 1rem 0.85rem 2.25rem;
+}
+
+.cpeh-tutorial-path-coord { border-top: 3px solid #f59e0b; }
+.cpeh-tutorial-path-insp { border-top: 3px solid #2563eb; }
+.cpeh-tutorial-path-rev { border-top: 3px solid #16a34a; }
+
+.cpeh-guia-tutorial .table-responsive {
+  background: #fff !important;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cpeh-tutorial-table {
+  font-size: 0.88rem;
+  background: #fff !important;
+  color: #1a2332 !important;
+  margin-bottom: 0 !important;
+}
+
+.cpeh-tutorial-table thead th {
+  background: #eef2f8 !important;
+  color: #001a5c !important;
+  font-weight: 700;
+  border-color: #c5d0e3 !important;
+  border-top: none;
+}
+
+.cpeh-tutorial-table tbody tr {
+  background: #fff !important;
+}
+
+.cpeh-tutorial-table tbody tr:nth-child(even) {
+  background: #f8fafc !important;
+}
+
+.cpeh-tutorial-table tbody tr:hover td {
+  background: #eef4ff !important;
+}
+
+.cpeh-tutorial-table td,
+.cpeh-tutorial-table th {
+  border-color: #d0d7e2 !important;
+  color: #1a2332 !important;
+  vertical-align: top;
+  background-color: inherit !important;
+}
+
+.cpeh-tutorial-table td a {
+  color: var(--ve-azul) !important;
+  font-weight: 600;
+}
+
+.cpeh-tutorial-table td a:hover {
+  color: var(--ve-rojo) !important;
+}
+
+.cpeh-guia-tutorial > .cpeh-accordion-header {
+  background: linear-gradient(90deg, #eff6ff 0%, #fff 100%);
+  border-left: 4px solid var(--ve-azul);
+}
+
+.cpeh-decision-box {
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+}
+
+.cpeh-decision-list li {
+  margin-bottom: 0.55rem;
+}
+
+.cpeh-decision-note {
+  font-size: 0.86rem;
+  color: #78350f;
+  background: #fff;
+  border: 1px dashed #fcd34d;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+}

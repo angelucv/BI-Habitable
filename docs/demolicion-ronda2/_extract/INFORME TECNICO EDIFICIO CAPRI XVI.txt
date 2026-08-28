@@ -1,0 +1,216 @@
+DGPS_INF-F2-Tanaguarena /11/08/2026-002 
+____________________________________________________________________________ 
+INFORME TÉCNICO DE INGENIERÍA ESTRUCTURAL 
+EVALUACIÓN POSTSÍSMICA DETALLADA  
+Edificación Inspeccionada: EDIFICIO CAPRI CLUB XVI 
+Ubicación: Avenida Costanera La Llanada, Mun. Vargas Caraballeda, Estado La Guaira  
+Coordenadas GPS de Control: Latitud N 10.610953, Longitud W-66.866996 
+Evaluación: 11 de agosto de 2026. 
+Equipo de Ingenieros Evaluadores:  
+Ing. Luis Burgos (C.I 4357927)  
+Ing. José García (C.I 6913241) 
+Ing Daniel Arana (C.I 18.289.044) 
+Ing Antonio de Nicolo (C.I) 6.152.062) 
+Ingeniero Supervisor Institucional: Ing. Aura Quintero. 
+ 
+ 
+1. Datos Generales 
+El presente informe de inspección técnica de nivel 2 detalla de forma exhaustiva el estado 
+actual de vulnerabilidad, daño estructural severo y riesgo inminente de la edificación 
+denominada "Residencias Capri Club XVI". Esta inspección se originó a partir del violento 
+movimiento sísmico registrado el pasado 24 de junio de 2026 en el Estado La Guaira. La 
+evaluación in situ fue efectuada por este equipo de ingeniería el día 11 de agosto de 2026, con 
+el objeto de cuantificar de forma rigurosa las patologías estructurales críticas presentes en la 
+edificación y dictaminar de forma perentoria las medidas necesarias para resguardar las vidas 
+humanas y la seguridad de las zonas urbanas adyacentes. 
+Configuración Estructural: 
+Estructura compuesta por pórticos de concreto armado 
+diseñados de forma ortogonal. Posee un total aproximado 
+de dieciocho (18) columnas perimetrales y doce (12) 
+columnas interiores. 
+Dimensiones y Niveles: 
+Área de planta aproximada de 450 metros cuadrados (450 
+m²). Consta de catorce (14) pisos de altura de 
+superestructura y dos (2) niveles de sótano. 
+ 
+
+Clasificación Externa: 
+Daño estructural severo extremo e irreversible. El primer 
+nivel (Nivel 1) presenta aplastamiento catastrófico de 
+columnas, catalogado como "Piso Crítico" de la estructura. 
+Se evidencia pérdida irreparable de la verticalidad global y 
+fisuración severa en vigas principales de enlace. 
+ 
+Clasificación de Riesgo: 
+ALTO RIESGO DE COLAPSO TOTAL INMINENTE. 
+Estructura completamente inestable e inhabitable, con 
+peligro de volcamiento lateral o asentamiento dinámico 
+súbito que amenaza de forma directa las edificaciones 
+residenciales vecinas y las vías de tránsito circundantes. 
+ 
+2. Inspección Visual y Análisis de Causa Raíz de los Daños. 
+ 
+Durante la inspección de nivel 2, de carácter analítico y detallado, se detectaron fallas 
+estructurales catastróficas localizadas principalmente en la parte inferior de la edificación, 
+las cuales comprometen de forma directa e irreversible la capacidad de la estructura para 
+sostener su propio peso y responder ante cualquier carga lateral dinámica adicional. Los 
+hallazgos más determinantes se listan a continuación: 
+ 
+•  Falla por Compresión en Piso Crítico (Nivel 1): Se constató que en más del 50% de las 
+columnas (perimetrales e interiores) del nivel 1 (piso de transición sobre planta baja) se 
+produjeron roturas severas, agrietamientos explosivos y grietas longitudinales de más de 10 
+cm de espesor. Esta patología se caracteriza por el desprendimiento superior al 50% de la 
+sección transversal del núcleo de concreto de la columna, lo cual ha provocado la pérdida 
+completa de confinamiento lateral y ha dejado expuestas las barras de refuerzo 
+longitudinales, las cuales presentan pandeo plástico severo por sobrecarga axial extrema. 
+ 
+•  Reducción Drástica de Altura de Entre-piso: Como consecuencia directa del 
+aplastamiento y la falla por compresión masiva descrita en las columnas del Nivel 1, la losa 
+superior experimentó un asentamiento violento. Esto se traduce en una notable reducción 
+de la altura útil del entrepiso en este nivel. Este aplastamiento vertical ha transferido cargas 
+gravitacionales imprevistas a elementos no estructurales de mampostería (paredes de 
+cerramiento, tabiquería de ladrillos de arcilla), provocando su compresión violenta, estallido 
+y colapso estructural parcial. 
+ 
+•  Pérdida Crítica de Verticalidad Estructural: El colapso asimétrico de los elementos de 
+soporte vertical en el Nivel 1 ha desencadenado una visible y alarmante pérdida de 
+verticalidad (inclinación lateral general de la torre de 14 pisos). Este desalineamiento 
+introduce de forma inmediata efectos de segundo orden (efectos P-Delta) de gran 
+magnitud, para los cuales la estructura remanente no cuenta con ninguna reserva de rigidez 
+lateral, manteniendo al edificio en un equilibrio inestable de potencial colapso ante cargas 
+ambientales mínimas (como vientos) o posibles réplicas sísmicas. 
+
+ 
+•  Agrietamiento por Esfuerzo de Corte en Vigas de Enlace: Se evidenció la presencia 
+de grietas diagonales severas a aproximadamente 45 grados por esfuerzo cortante (falla 
+por tensión diagonal) en las vigas principales de enlace de hasta cinco (5) niveles de la 
+edificación. Estas grietas reflejan la masiva redistribución de esfuerzos dinámicos y 
+momentos flectores generados por la pérdida de apoyos rígidos en la base. 
+ 
+ 
+⚠ ALERTA DE SEGURIDAD ESTRUCTURAL EXTREMA 
+La coincidencia de más del 50% de columnas perimetrales e interiores falladas 
+catastróficamente en un mismo nivel (Nivel 1), combinada con la pérdida 
+demostrada de verticalidad e inclinación visible hacia las parcelas vecinas, 
+sitúa al Edificio Capri Club XVI en un estado irreversible de inestabilidad global. 
+No existe viabilidad técnica de apuntalamiento seguro, ya que el edificio carece 
+de apoyos estructurales sanos para transferir cargas. 
+3. Justificación Técnica de Demolición 
+ 
+Desde la rigurosa perspectiva de la ingeniería estructural y la dinámica sismorresistente, la 
+demolición del Edificio Capri Club XVI es la única acción de mitigación viable. Se fundamenta 
+técnicamente en los siguientes puntos: 
+Inviabilidad de Reparación o Reforzamiento: Cuando una estructura pierde más de la 
+mitad de su sección transversal de concreto en más de la mitad de sus apoyos verticales en 
+planta baja, su capacidad portante residual es nula. Intentar un recalce de cimentaciones o 
+la reconstrucción de camisas de concreto requeriría que los operarios trabajen directamente 
+bajo una masa de 14 pisos suspendida en un equilibrio inestable. El riesgo de colapso 
+súbito durante estas maniobras es sumamente elevado e inaceptable bajo estándares de 
+seguridad ocupacional e ingeniería civil. 
+Efectos P-Delta Acoplados por Pérdida de Plomo: La pérdida de verticalidad del edificio 
+desplaza la línea de acción de la fuerza gravitacional fuera del eje original. Esto genera un 
+momento flector excéntrico continuo y acumulativo (efecto de segundo orden). Como el 
+concreto del piso crítico ya se encuentra triturado e incapacitado para resistir momentos o 
+compresión excéntrica, cualquier vibración menor en el entorno (viento, sismo secundario o 
+tráfico vehicular pesado) puede desencadenar de manera instantánea un colapso total. 
+Peligro de Afectación Crítica a las Edificaciones Aledañas: El Edificio Capri Club XVI se 
+sitúa en la Avenida Costanera de La Llanada, Caraballeda. Esta es una zona densamente 
+poblada con residencias unifamiliares y multifamiliares colindantes, además de ser una vía con 
+tránsito continuo de personas. Un derrumbe de tipo lateral o volcamiento de la torre de 14 pisos 
+causaría la destrucción total de las viviendas vecinas, cortes catastróficos de los servicios 
+públicos esenciales en el sector y, con máxima probabilidad, pérdidas de vidas humanas. La 
+
+demolición planificada y controlada es la única garantía para contener el daño al espacio 
+interno de la parcela 
+4. Conclusiones y Plan de Acción 
+4.1 Conclusiones 
+1.  El Edificio Capri Club XVI presenta una condición irreversible de colapso potencial 
+inminente, con un nivel de riesgo estructural catalogado como extremo. 
+2.  Las fallas críticas se concentran en el primer nivel (piso crítico), donde más del 50% de 
+las columnas están rotas con pérdida superior al 50% de su sección de núcleo de concreto 
+armado, lo cual ha causado la pérdida de verticalidad de la torre de 14 pisos y la reducción 
+física de la altura del entrepiso. 
+3.  Se constató daño secundario pero de alta relevancia en vigas de enlace en cinco (5) 
+niveles de la edificación, indicando el agotamiento de la rigidez torsional y de flexión global. 
+4.  Existe un riesgo severo de daño catastrófico a las edificaciones residenciales 
+colindantes y a la vía pública (Avenida Costanera de La Llanada) en caso de un desplome 
+descontrolado. 
+4.2 Recomendaciones 
+1.  DEMOLICIÓN RÁPIDA, ACELERADA Y CONTROLADA: Se recomienda como acción 
+técnica de carácter prioritario y urgente el inicio del proceso de demolición del Edificio Capri 
+Club XVI. La demolición debe llevarse a cabo de forma mecánica progresiva de arriba hacia 
+abajo para disminuir las vibraciones transmitidas a las cimentaciones y anular la posibilidad 
+de un volcamiento de la torre hacia los linderos perimetrales. 
+2.  MANTENER EL ACORDONAMIENTO DE EXCLUSIÓN TOTAL: De acuerdo a lo 
+estipulado por la etiqueta roja colocada en la fachada, se debe restringir de manera 
+absoluta el paso peatonal o vehicular en las adyacencias inmediatas del edificio y prohibir 
+terminantemente el ingreso de personas al inmueble bajo riesgo de pérdida de vida. 
+3.  Monitoreo de estructuras vecinas durante las maniobras de demolición mediante 
+instrumentación geodésica para detectar cualquier asentamiento o vibración anómala en los 
+cimientos de las viviendas colindantes. 
+ 
+ 
+ 
+
+5. Registro Fotográfico 
+A continuación, se detalla el catálogo de evidencias recopiladas que justifican la declaración del 
+estado de ruina e inhabitabilidad. Los recuadros grises representan las áreas exactas donde el 
+usuario debe insertar y ajustar las fotografías correspondientes en Microsoft Word, siguiendo el 
+mapeo técnico con sus respectivas descripciones explicativas: 
+EVIDENCIA FOTOGRÁFICA N° 1: Etiqueta Roja de Inspección de Habitabilidad y 
+Seguridad (Capri Club XVI) 
+. 
+Descripción - Foto 1: Registro del cartel oficial de 'Etiqueta Roja' colocado en la fachada 
+posterior/lateral del Edificio Capri Club XVI con fecha de inspección preliminar 16/07/2026. El cartel 
+indica claramente 'PELIGRO - NO ENTRE NI OCUPE' debido a daños severos y riesgo de colapso, 
+constituyendo la base de la restricción absoluta de habitabilidad. 
+
+EVIDENCIA FOTOGRÁFICA N° 2: Vista de Planta Baja (Piso Crítico) y Superestructura 
+Colapsante 
+ 
+Descripción - Foto 2: Vista panorámica frontal de la sección de apartamentos que evidencia la 
+deformación plástica acumulada y el colapso estructural. Se destaca la planta baja/primer nivel (piso 
+crítico) que ha cedido verticalmente de forma asimétrica, arrastrando los cerramientos y tabiquería 
+adyacente. 
+
+EVIDENCIA FOTOGRÁFICA N° 3: Vista Detallada de Piso Crítico (Planta Baja / Nivel 1) 
+ 
+Descripción - Foto 3: Detalle de la losa del primer nivel mostrando grietas longitudinales continuas y 
+fractura del concreto. La drástica reducción de la altura de entrepiso en este nivel es el resultado directo 
+del aplastamiento de los núcleos de concreto de los soportes. 
+EVIDENCIA FOTOGRÁFICA N° 4: Falla por Compresión Crítica en Columnas Principales 
+ 
+
+Descripción - Foto 4: Registro de cuatro (4) columnas estructurales principales situadas en la planta 
+de transición del nivel 1 que exhiben falla clásica por compresión pura y aplastamiento. Se observa el 
+desprendimiento de más del 50% del recubrimiento exterior y del núcleo, provocando el pandeo de las 
+barras de acero longitudinales. 
+EVIDENCIA FOTOGRÁFICA N° 5: Fractura Severa de Columnas con Desplazamiento 
+Horizontal 
+ 
+Descripción - Foto 5: Vista de columna en el Nivel 1 con fractura cortante explosiva. Se documenta 
+un desplazamiento horizontal relativo de la sección superior respecto a la base, lo cual es la causa 
+principal de la pérdida de verticalidad del edificio Capri Club XVI y el peligro de vuelco lateral. 
+
+ 
+EVIDENCIA FOTOGRÁFICA N° 6: Aplastamiento y Pandeo en Columna Trasera 
+ 
+Descripción - Foto 6: Detalle técnico de columna ubicada en la fachada posterior que evidencia la falla 
+catastrófica de concreto. La trituración del núcleo de concreto por sobrecarga vertical asimétrica 
+imposibilita cualquier reparación por encamisado o inyección. 
+
+EVIDENCIA FOTOGRÁFICA N° 7: Pérdida de Confinamiento en Eje de Columnas del 
+Norte 
+ 
+Descripción - Foto 7: Registro fotográfico de las columnas del eje norte que han perdido 
+completamente el concreto de recubrimiento y confinamiento. Se aprecia el pandeo severo de las barras 
+longitudinales de refuerzo bajo la carga gravitacional de los 14 pisos de la estructura. 
+
+ 
+EVIDENCIA FOTOGRÁFICA N° 8: Mapeo de Planta Estructural con Columnas Falladas 
+ 
+Descripción - Foto 8: Representación de la planta de distribución ortogonal (7 columnas a lo largo por 
+3 columnas a lo ancho, totalizando 30 columnas, de las cuales 12 de planta baja registran falla total de 
+compresión y pérdida de capacidad portante superior al 50%). Este mapeo confirma que la afectación 
+supera el 50% de las columnas en el piso crítico. 
+ 

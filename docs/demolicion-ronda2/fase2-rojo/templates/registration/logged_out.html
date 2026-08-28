@@ -1,0 +1,18 @@
+{% extends "registration/base.html" %}
+
+{% load i18n static %}
+
+{% block content %}
+<div class="cpeh-auth-card">
+  <div class="cpeh-auth-header">
+    {% include "includes/cpeh_nombre_institucional.html" with compact=True %}
+    <p class="cpeh-auth-program mt-2 mb-0">Seguimiento inspecciones ROJO — Fase II</p>
+  </div>
+  <div class="cpeh-auth-body">
+    <p class="cpeh-auth-message">{% trans "Gracias por usar el sistema. Su sesión ha finalizado correctamente." %}</p>
+    <a href="{% url 'admin:index' %}" class="btn btn-primary btn-block cpeh-auth-btn">
+      {% trans "Iniciar sesión de nuevo" %}
+    </a>
+  </div>
+</div>
+{% endblock %}

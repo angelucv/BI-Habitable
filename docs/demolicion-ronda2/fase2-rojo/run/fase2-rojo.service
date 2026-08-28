@@ -1,0 +1,15 @@
+[Unit]
+Description=CPEH Fase II ROJO - Gunicorn
+After=network.target postgresql.service
+
+[Service]
+User=cph
+Group=cph
+WorkingDirectory=/home/cph/apps/fase2-rojo
+EnvironmentFile=/home/cph/apps/fase2-rojo/.env
+ExecStart=/home/cph/apps/fase2-rojo/.venv/bin/gunicorn config.wsgi:application -c /home/cph/apps/fase2-rojo/gunicorn.conf.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

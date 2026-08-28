@@ -1,0 +1,131 @@
+INFORME TÉCNICO VOLUNTARIOS PNUD 
+EVALUACIÓN POSTSÍSMICA DETALLADA DE CAMPO – PARROQUIA CARABALLEDA 
+1.- DATOS GENERALES 
+ 
+N° (corresponde al número de unidades 
+evaluadas en el día): 
+2
+Fecha de la evaluación:
+[ 11 / 08 / 2026 ]
+Nombre de la edificación y/o N° de la 
+vivienda: 
+EDIFICIO OPPPE30 – TORRE A Y TORRE B
+Ubicación:
+Calle/No/Sector OPPPE30, Los Ramos, Caraballeda, 
+Municipio Vargas, Estado La Guaira 
+Coordenadas GPS:
+Latitud: 10.611338, Longitud: -66.865450 
+Supervisor:
+ING. AURA CECILIA QUINTERO D´JESÚS
+Evaluadores:
+•  Gino Gonzales Aponte (C.I. 22.646.968) 
+•  Jean Carlos Cariel (C.I. 11.549.638) 
+•  José Ramón Tomas (C.I. 4.713.399) 
+N° de la Etiqueta (Dictamen):
+INSEGURO (Tarjeta Roja)
+Antecedentes y condición previa:
+ Dictamen previo (Fase 1): INSEGURO (Rojo) 
+ Año de construcción: 2001-2019 
+ Uso ocupacional principal: Habitación / Departamentos 
+ Posición en manzana: Esquina 
+ Zona geotécnica / tipo de suelo: Zona II (Roca Blanda / Suelos 
+Duros) 
+ Características geométricas: 12 Niveles y 0 Sótanos. 
+Dimensiones de Planta: 40.61 m x 21.00 m (Área Total: 853.00 
+m²). Sistema estructural base: Pórticos de Concreto Armado. 
+Daños por sismo:
+Daño severo masivo concentrado en el entrepiso crítico (Planta 
+Baja / Nivel PB), con más del 30% de las columnas exteriores e 
+interiores clasificadas en Grado IV (Grave) y alta probabilidad de 
+fallas ocultas en Grado V (Crítico/Falla). Inclinación global 
+pronunciada con distorsión del 2%.  Δ = 2 cm en H = 1 m. 
+
+2.- INSPECCIÓN VISUAL Y DESCRIPCIÓN TÉCNICA DE FALLAS POR EL SISMO 
+ 
+ Entrepiso Crítico Analizado: Planta Baja (PB - Mayor Daño) / 5 PC. 
+ Columnas Exteriores (Total: 39): Daño Grado IV (Grave) en más del 30% de los elementos 
+(Clasificación C). 
+ Columnas Interiores (Total: 36): Daño Grado IV (Grave) en más del 30% de los elementos 
+(Clasificación C). 
+ Inclinación Global / Desplome: Distorsión del 2%  Delta = 2 cm H = 1 m. 
+ Elementos No Estructurales y Riesgos Locales: 
+ 
+Fachadas, Vidrios y Acabados: Riesgo Alto (C). 
+ 
+Escaleras y Rutas de Evacuación: Riesgo Alto (C). 
+ 
+Elevadores / Cajón de Maquinaria: Riesgo Alto (C). 
+ 
+Tanques / Equipos en Azotea: Riesgo Alto (C). 
+ 
+Muros Divisorios / Plafones: Riesgo Medio. 
+ 
+Instalaciones de Gas / Electricidad: Riesgo Medio. 
+ 
+Balcones y Antepechos: Riesgo Bajo. 
+ 
+Riesgo por Colindancia (Golpeo): Riesgo Bajo. 
+ 
+3.- JUSTIFICACIÓN TÉCNICA 
+La edificación se dictamina irrecuperable con la etiqueta INSEGURO (TARJETA ROJA) bajo la 
+metodología ATC-20 y la UNAM por las siguientes razones de falla estructural severa: 
+1. Acumulación Extrema de Clasificaciones de Riesgo: Obtiene un conteo final de 5 
+Clasificaciones 'C' (el criterio para Tarjeta Roja es de 2 o más Clasificaciones 'C'). 
+2. Severidad en Elementos Verticales: Más del 30% de las 39 columnas exteriores y 36 columnas 
+interiores del nivel PB presentan daños de Grado IV (Grave). La acumulación de escombros en PB 
+impide la observación directa de las bases, con alta sospecha de fallas tipo Grado V (Crítico/Falla). 
+3. Inestabilidad por Cargas Severas: Edificio de 12 niveles con distorsión del 2% y compromiso 
+simultáneo de fachadas, escaleras, tanques en azotea y ascensores, lo que configura un riesgo 
+inminente de colapso global o local. 
+ 
+4.- PLAN DE ACCIÓN 
+  Fase Inmediata de Mitigación y Cierre de Emergencia: 
+ 
+Desalojo total del edificio y restricción de acceso a la zona. 
+ 
+Acordonamiento y vallado perimetral estricto (interior y exterior). 
+ 
+Apuntalamiento urgente de emergencia en toda la Planta Baja (PB) para estabilizar temporalmente 
+la estructura durante las labores iniciales. 
+ 
+Remoción prioritaria de escombros en la PB para despejar las bases de las columnas y facilitar el 
+diagnóstico de seguridad previo al derribo. 
+ 
+Demolición/retiro inmediato de elementos no estructurales inestables (plafones, elementos de 
+fachada sueltos). 
+
+  Fase de Ingeniería y Proyecto Ejecutivo de Demolición: 
+ 
+Canalización obligatoria para la elaboración del Proyecto de Demolición Controlada por etapas 
+para una estructura de gran altura (12 niveles). 
+ 
+Planificación de protección de vías circundantes e inmuebles vecinos en el sector Los Ramos. 
+ 
+Tramitación de permisos ambientales, civiles y municipales para el desmontaje del edificio. 
+  Fase de Ejecución y Remoción: 
+ 
+Demolición mecánica y secuencial de los 12 niveles superiores y la Planta Baja. 
+ 
+Saneamiento, recolección y acarreo de escombros hacia sitios de disposición final aprobados. 
+5.- ESTIMACIÓN DE CANTIDADES DE OBRA 
+ 
+  Seguridad y Cierre Perimetral: Suministro e instalación de vallado de protección perimetral (~150 m 
+lineales). 
+  Apuntalamiento de Emergencia: Suministro e instalación de sistema de puntales metálicos de alta carga 
+en el 100% de la Planta Baja (PB). 
+  Remoción Inicial de Escombros: Limpieza y despeje de escombros en PB para liberación de bases de 
+columnas. 
+  Demolición Estructural: Demolición total de edificio de 12 niveles de concreto armado (~10,236 m³ 
+o 853 m² por planta). 
+  Manejo y Transporte de Escombros: Carga y transporte de escombros (~12,000 a 14,000 
+toneladas). 
+ 
+6.- REGISTRO FOTOGRÁFICO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

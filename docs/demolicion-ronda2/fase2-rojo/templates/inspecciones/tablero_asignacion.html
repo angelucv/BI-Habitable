@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asignación de casos — CPEH Fase II</title>
+  <link rel="stylesheet" href="/static/css/cpeh_admin.css">
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f9; color: #1a2332; }
+    .cpeh-page-header {
+      background: #00247d; color: #fff; padding: 0.85rem 1.25rem;
+      border-bottom: 3px solid #ffcc00;
+    }
+    .cpeh-page-header h1 { font-size: 1.15rem; margin: 0 0 0.25rem; }
+    .cpeh-page-header p { margin: 0; font-size: 0.85rem; opacity: 0.92; }
+    .cpeh-toolbar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center;
+      padding: 0.65rem 1.25rem; background: #fff; border-bottom: 1px solid #d0d7e2;
+    }
+    .cpeh-toolbar a, .cpeh-toolbar button { font-size: 0.82rem; }
+    .cpeh-section { padding: 1rem 1.25rem; }
+    .cpeh-kpi-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.65rem; margin-bottom: 1rem;
+    }
+    .cpeh-kpi {
+      background: #fff; border: 1px solid #d0d7e2; border-radius: 6px;
+      padding: 0.65rem 0.85rem; text-align: center;
+    }
+    .cpeh-kpi strong { display: block; font-size: 1.35rem; color: #00247d; }
+    .cpeh-kpi span { font-size: 0.78rem; color: #475569; }
+    .cpeh-card {
+      background: #fff; border: 1px solid #d0d7e2; border-radius: 6px;
+      margin-bottom: 1rem; overflow: hidden;
+    }
+    .cpeh-card h2 {
+      margin: 0; padding: 0.65rem 1rem; font-size: 0.95rem;
+      background: #eef2f8; border-bottom: 1px solid #d0d7e2;
+    }
+    .cpeh-card-body { padding: 0.75rem 1rem; }
+    .cpeh-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .cpeh-table th, .cpeh-table td {
+      padding: 0.4rem 0.55rem; border-bottom: 1px solid #e8eef8; text-align: left;
+    }
+    .cpeh-table th { background: #f8fafc; font-weight: 600; }
+    .cpeh-table tr:hover td { background: #f8fbff; }
+    .cpeh-filtros label { font-size: 0.82rem; font-weight: 600; margin-right: 0.35rem; }
+    .cpeh-filtros select, .cpeh-filtros input[type=text], .cpeh-filtros input[type=number] {
+      font-size: 0.82rem; padding: 0.25rem 0.45rem; border: 1px solid #cbd5e1; border-radius: 4px;
+      margin-right: 0.65rem;
+    }
+    .cpeh-asign-bar {
+      display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center;
+      padding: 0.75rem 0; background: #fff8e6; border-bottom: 1px solid #f0d080;
+      margin-bottom: 0.75rem;
+    }
+    .cpeh-asign-bar select { min-width: 180px; font-size: 0.82rem; }
+    .cpeh-badge {
+      display: inline-block; padding: 0.1rem 0.45rem; border-radius: 999px;
+      font-size: 0.72rem; background: #e2e8f0; color: #334155;
+    }
+    .cpeh-badge-inspector { background: #dbeafe; color: #1e40af; }
+    .cpeh-badge-revisor { background: #dcfce7; color: #166534; }
+    .cpeh-badge-coord { background: #fef3c7; color: #92400e; }
+    .cpeh-msg { margin: 0 0 0.75rem; padding: 0.55rem 0.85rem; border-radius: 4px; font-size: 0.85rem; }
+    .cpeh-msg-success { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+    .cpeh-msg-warning { background: #fef9c3; color: #713f12; border: 1px solid #fde047; }
+    .cpeh-msg-error { background: #fee2e2; color: #7f1d1d; border: 1px solid #fca5a5; }
+    .cpeh-inline-form { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+    .cpeh-inline-form select { font-size: 0.78rem; max-width: 130px; }
+    .cpeh-pagination { padding: 0.65rem 1rem; font-size: 0.82rem; }
+    .cpeh-pagination a { margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="cpeh-page-header">
+    <h1>Tablero de asignación — casos ROJO</h1>
+    <p>Asigne inspectores y revisores de forma individual o masiva · solo coordinadores</p>
+  </div>
+
+  <div class="cpeh-toolbar">
+    <a href="/admin/" class="btn btn-secondary btn-sm">← Admin</a>
+    <a href="/admin/inspecciones/casorojo/" class="btn btn-outline-secondary btn-sm">Listado casos</a>
+    <a href="/mapa/" class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener">Mapa GPS</a>
+  </div>
+
+  {% if messages %}
+  <div class="cpeh-section" style="padding-bottom:0">
+    {% for msg in messages %}
+    <div class="cpeh-msg cpeh-msg-{{ msg.tags|default:'success' }}">{{ msg }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="cpeh-section" style="padding-bottom:0">
+    {% include "includes/cpeh_guia_roles_asignacion.html" %}
+  </div>
+
+  <div class="cpeh-section">
+    <div class="cpeh-kpi-row">
+      <div class="cpeh-kpi"><strong>{{ kpis.total }}</strong><span>Casos totales</span></div>
+      <div class="cpeh-kpi"><strong>{{ kpis.sin_inspector }}</strong><span>Sin inspector</span></div>
+      <div class="cpeh-kpi"><strong>{{ kpis.sin_revisor }}</strong><span>Sin revisor</span></div>
+      <div class="cpeh-kpi"><strong>{{ kpis.sin_ambos }}</strong><span>Sin ninguno</span></div>
+      <div class="cpeh-kpi"><strong>{{ kpis.con_ambos }}</strong><span>Con ambos</span></div>
+    </div>
+
+    <div class="cpeh-card">
+      <h2>Carga por usuario</h2>
+      <div class="cpeh-card-body" style="padding:0; overflow-x:auto">
+        <table class="cpeh-table">
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Rol(es)</th>
+              <th>Casos como inspector</th>
+              <th>Casos como revisor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for u in usuarios_tabla %}
+            <tr>
+              <td><strong>{{ u.nombre }}</strong><br><span class="cpeh-badge">{{ u.username }}</span></td>
+              <td>
+                {% for rol in u.roles %}
+                  {% if rol == "Inspector" %}<span class="cpeh-badge cpeh-badge-inspector">{{ rol }}</span>
+                  {% elif rol == "Revisor" %}<span class="cpeh-badge cpeh-badge-revisor">{{ rol }}</span>
+                  {% else %}<span class="cpeh-badge cpeh-badge-coord">{{ rol }}</span>{% endif %}
+                {% endfor %}
+              </td>
+              <td>{{ u.n_inspector }}</td>
+              <td>{{ u.n_revisor }}</td>
+              <td>
+                {% if u.n_inspector %}
+                <a href="?usuario={{ u.id }}&rol=inspector">Ver inspector</a>
+                {% endif %}
+                {% if u.n_inspector and u.n_revisor %} · {% endif %}
+                {% if u.n_revisor %}
+                <a href="?usuario={{ u.id }}&rol=revisor">Ver revisor</a>
+                {% endif %}
+                {% if not u.n_inspector and not u.n_revisor %}—{% endif %}
+              </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="5">No hay usuarios con rol inspector, revisor o coordinador. Ejecute <code>crear_roles_ejemplo</code>.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <form method="get" class="cpeh-filtros cpeh-section" style="padding-top:0">
+    <label>Estado</label>
+    <select name="estado">
+      <option value="">Todos</option>
+      {% for e in estados %}<option value="{{ e }}" {% if filtros.estado == e %}selected{% endif %}>{{ e }}</option>{% endfor %}
+    </select>
+    <label>Banda</label>
+    <select name="banda">
+      <option value="">Todas</option>
+      {% for b in bandas %}<option value="{{ b }}" {% if filtros.banda == b %}selected{% endif %}>{{ b }}</option>{% endfor %}
+    </select>
+    <label>Buscar</label>
+    <input type="text" name="q" value="{{ filtros.q|default:'' }}" placeholder="ID, nombre, dirección…">
+    <label><input type="checkbox" name="sin_inspector" value="1" {% if filtros.sin_inspector == '1' %}checked{% endif %}> Sin inspector</label>
+    <label><input type="checkbox" name="sin_revisor" value="1" {% if filtros.sin_revisor == '1' %}checked{% endif %}> Sin revisor</label>
+    <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
+    <a href="{% url 'tablero_asignacion' %}" class="btn btn-outline-secondary btn-sm">Limpiar</a>
+    <span style="font-size:0.82rem;color:#64748b;margin-left:0.5rem">{{ total_filtrado }} caso(s) en esta vista</span>
+  </form>
+
+  <div class="cpeh-section" style="padding-top:0">
+  <form method="post" id="form-masiva">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="masiva">
+    <input type="hidden" name="query_string" value="{{ request.GET.urlencode }}">
+    <div class="cpeh-asign-bar">
+      <strong>Asignación masiva:</strong>
+      <label>Inspector
+        <select name="inspector_id">
+          <option value="">— sin cambio —</option>
+          <option value="__clear__">Quitar inspector</option>
+          {% for u in inspectores %}
+          <option value="{{ u.pk }}">{{ u.get_full_name|default:u.username }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Revisor
+        <select name="revisor_id">
+          <option value="">— sin cambio —</option>
+          <option value="__clear__">Quitar revisor</option>
+          {% for u in revisores %}
+          <option value="{{ u.pk }}">{{ u.get_full_name|default:u.username }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('¿Aplicar asignación a los casos marcados?')">
+        Aplicar a seleccionados
+      </button>
+      <label style="font-weight:400"><input type="checkbox" id="sel-todos"> Seleccionar página</label>
+      <span style="margin-left:0.5rem">|</span>
+      <button type="button" class="btn btn-sm btn-outline-success" id="btn-export-lote" title="1 fila por caso">Excel lote</button>
+      <button type="button" class="btn btn-sm btn-outline-success" id="btn-export-informes" title="1 pestaña por caso">Excel informes</button>
+    </div>
+  </form>
+
+    <div class="cpeh-card" style="margin-bottom:0">
+      <h2>Casos — asignación uno a uno o por lote</h2>
+      <div style="overflow-x:auto">
+        <table class="cpeh-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="chk-header" aria-label="Seleccionar todos"></th>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Score</th>
+              <th>Estado</th>
+              <th>Inspector</th>
+              <th>Revisor</th>
+              <th>Asignar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for caso in casos %}
+            <tr>
+              <td><input type="checkbox" form="form-masiva" name="caso_ids" value="{{ caso.pk }}" class="chk-caso"></td>
+              <td><a href="/admin/inspecciones/casorojo/{{ caso.pk }}/change/">{{ caso.hab_id }}</a></td>
+              <td>{{ caso.nombre_conf|default:caso.nombre_hab|truncatechars:40 }}</td>
+              <td>{{ caso.score|default:"—" }}</td>
+              <td>{{ caso.estado_2da|default:"—" }}</td>
+              <td>{% if caso.inspector_asignado %}{{ caso.inspector_asignado.get_full_name|default:caso.inspector_asignado.username }}{% else %}<em>—</em>{% endif %}</td>
+              <td>{% if caso.revisor_asignado %}{{ caso.revisor_asignado.get_full_name|default:caso.revisor_asignado.username }}{% else %}<em>—</em>{% endif %}</td>
+              <td>
+                <form method="post" class="cpeh-inline-form">
+                  {% csrf_token %}
+                  <input type="hidden" name="action" value="uno">
+                  <input type="hidden" name="caso_id" value="{{ caso.pk }}">
+                  <input type="hidden" name="query_string" value="{{ request.GET.urlencode }}">
+                  <select name="inspector_id" title="Inspector">
+                    <option value="">Insp. —</option>
+                    {% for u in inspectores %}
+                    <option value="{{ u.pk }}" {% if caso.inspector_asignado_id == u.pk %}selected{% endif %}>{{ u.username }}</option>
+                    {% endfor %}
+                  </select>
+                  <select name="revisor_id" title="Revisor">
+                    <option value="">Rev. —</option>
+                    {% for u in revisores %}
+                    <option value="{{ u.pk }}" {% if caso.revisor_asignado_id == u.pk %}selected{% endif %}>{{ u.username }}</option>
+                    {% endfor %}
+                  </select>
+                  <button type="submit" class="btn btn-sm btn-outline-primary">OK</button>
+                </form>
+              </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="8">No hay casos con estos filtros.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if paginator.num_pages > 1 %}
+      <div class="cpeh-pagination">
+        {% if casos.has_previous %}
+        <a href="?{{ request.GET.urlencode }}&page={{ casos.previous_page_number }}">← Anterior</a>
+        {% endif %}
+        Página {{ casos.number }} de {{ paginator.num_pages }}
+        {% if casos.has_next %}
+        <a href="?{{ request.GET.urlencode }}&page={{ casos.next_page_number }}">Siguiente →</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var header = document.getElementById('chk-header');
+      var selTodos = document.getElementById('sel-todos');
+      var checks = function () { return document.querySelectorAll('.chk-caso'); };
+      function toggleAll(on) { checks().forEach(function (c) { c.checked = on; }); }
+      if (header) header.addEventListener('change', function () { toggleAll(header.checked); });
+      if (selTodos) selTodos.addEventListener('change', function () { toggleAll(selTodos.checked); });
+      function selectedIds() {
+        return Array.from(document.querySelectorAll('.chk-caso:checked')).map(function (c) { return c.value; });
+      }
+      function goExport(path) {
+        var ids = selectedIds();
+        if (!ids.length) { alert('Seleccione al menos un caso.'); return; }
+        window.location.href = path + '?ids=' + ids.join(',');
+      }
+      var btnLote = document.getElementById('btn-export-lote');
+      var btnInf = document.getElementById('btn-export-informes');
+      if (btnLote) btnLote.addEventListener('click', function () { goExport('/export/excel/lote/'); });
+      if (btnInf) btnInf.addEventListener('click', function () { goExport('/export/excel/informes/'); });
+    })();
+  </script>
+</body>
+</html>

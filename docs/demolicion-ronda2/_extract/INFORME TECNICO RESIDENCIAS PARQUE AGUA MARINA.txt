@@ -1,0 +1,100 @@
+____________________________________________________________________________________________ 
+INFORME TÉCNICO DE INSPECCIÓN 
+POST-SÍSMICA Y RECOMENDACIÓN DE DEMOLICIÓN 
+ 
+REFERENCIA: Inspección de Campo - Parque Residencial Agua Marina 
+DATOS GENERALES DE LA EDIFICACIÓN 
+Edificio / Complejo: Parque Residencial Agua Marina 
+ Ubicación: Avenida La Playa, Sector Quince Letras, Parroquia Macuto, Estado La Guaira. 
+ Coordenadas Geográficas: 
+ Latitud: 10.611311 
+ Longitud: -66.887579 
+RESPONSABLES DE LA INSPECCIÓN Y EL INFORME: 
+Este informe ha sido realizado y avalado por los siguientes inspectores técnicos: 
+1. Darían Alberti 
+2. Bernardo Pérez 
+______________________________________________________________________________ 
+ 
+ 1. DETALLES DE REFERENCIA TÉCNICA (DEFICIENCIAS CONSTRUCTIVAS) 
+Durante la inspección de campo, se identificaron deficiencias críticas en el detallado del acero de 
+refuerzo sísmico, las cuales contribuyeron significativamente a la falla estructural. Se tomaron 
+notas y diagramas de referencia (ver Anexo de Campo): 
+ Doble Sísmico Normativo (Gancho a 135°): Este detalle es el requerido por las normas 
+sismorresistentes para garantizar el confinamiento del concreto en columnas. 
+ Deficiencia Crítica Identificada (Gancho a 90° - NO NORMATIVO): La inspección visual 
+confirmó la presencia generalizada de estribos con ganchos a 90°. Esta práctica no es normativa 
+y reduce severamente la capacidad de la columna para soportar cargas sísmicas, permitiendo que 
+el núcleo de concreto se desintegre bajo presión. 
+ 
+ 2. DESCRIPCIÓN DE DAÑOS Y TIPOS DE FALLA 
+Se documentaron patologías estructurales extremas e irreversibles en los elementos verticales de 
+soporte (columnas), resultando en un estado de colapso y riesgo inminente: 
+
+ Falla Severa por Compresión y Corte en Columnas Principales: Los elementos han perdido su 
+integridad física y capacidad de carga. 
+ Deficiencia Crítica de Confinamiento: Confirmada por la presencia de estribos sin el doblez 
+sísmico normativo (ganchos a 90°). 
+ Deterioro Avanzado de Materiales: Se observa delaminación extensiva del concreto y corrosión 
+avanzada con óxido en las barras de acero de refuerzo expuestas. 
+ Colapso Total Progresivo: El colapso estructural es evidente y afecta de manera irreversible los 
+niveles Sótano 1, Planta Baja (Pb), y Pisos 1, 2 y 3. 
+ 
+3. JUSTIFICACIÓN TÉCNICA PARA LA DEMOLICIÓN 
+Dada la evaluación técnica detallada, la edificación "Parque Residencial Agua Marina" se 
+encuentra en un estado de ruina estructural. Se justifica la demolición bajo los siguientes 
+argumentos: 
+ Pérdida Total e Irreversible de la Capacidad Portante: El sistema estructural principal de 
+pórticos ha fallado. El colapso de las columnas principales ha generado un estado de 
+inestabilidad global. 
+ Inviabilidad de Reparación: No existen métodos de ingeniería viables ni económicos para 
+reparar o reforzar una estructura que ya ha sufrido un colapso de esta magnitud. 
+ Riesgo Inminente: La estructura representa un peligro extremo e inmediato para la seguridad 
+pública y las propiedades colindantes. 
+ 
+ 4. DICTAMEN FINAL 
+Con base en la inspección visual, las notas de campo y los principios de la ingeniería estructural, 
+los inspectores infraescritos emiten el siguiente dictamen: 
+RECOMENDACIÓN: Se ordena la DEMOLICIÓN TOTAL, INMEDIATA Y CONTROLADA 
+de la edificación Parque Residencial Agua Marina. 
+Se recomienda establecer de inmediato un perímetro de seguridad estricto y desarrollar un plan 
+de demolición especializado para minimizar riesgos durante los trabajos, debido al estado 
+precario de colapso existente. 
+Darían Alberti 
+Inspector Técnico 
+Bernardo Pérez 
+Inspector Técnico 
+
+Fecha de Emisión del Informe:11/08/2026 ________ 
+(Informe basado en la metodología ATC-20 y el manual de evaluación post-sísmica de la 
+UNAN). 
+5.- Anexo: Imágenes Fotográficas 
+ 
+ 
+Imagen 5.1.: Imagen Residencias Agua Marina antes del sismo 
+ 
+
+ 
+Imagen 5.2.: Sótano y zonas bajas del ediﬁcio Agua Marina fueron inundados con el deslave de 
+1999 y también en el desborde del rio El Cojo en 2022 como lo muestra la imagen. 
+ 
+ 
+ 
+
+ 
+Imagen 5.3.: Fotografía después de sismos del 24/06/2026 
+ 
+
+ 
+Imagen 5.4.: Fotografía después de sismos del 24/06/2026 
+ 
+ 
+
+ 
+Imagen 5.5.: Fotografía después de sismos del 24/06/2026 
+ 
+ 
+Imagen 5.6.: Fotografía después de sismos del 24/06/2026 donde se observan estribos doblados 
+indebidamente. 
+
+ 
+Imagen 5.7.: Infografía resumen de lo observado en residencias agua marina después de sismos del 24/06/2026 

@@ -1,0 +1,87 @@
+DGPS-002-11-08-2026 
+______________________________________________________________________ 
+ 
+INFORME TÉCNICO 
+Edificación Inspeccionada: Res. Camurí Beach 
+Ubicación: Av. La Costanera, Caraballeda, Estado La Guaira. Coordenadas GPS: 
+Latitud 10.610844°Longitud -66.868768°. 
+La Guaira, 11 de agosto de 2026 
+Ing. Evaluador 1: Eva Borges 
+Ing. Evaluador 1: Freddy Briceno  
+Ing. Evaluador 2: Egger Romero 
+Ing. Evaluador 2: Graciela Pieve 
+Ing. Supervisor: Aura Quintero  
+_____________________________________________________________________ 
+ 
+1. Datos Generales 
+Configuración Estructural: corresponde a una estructura de ocupación habitacional 
+(departamentos), ubicada en posición de esquina en la Av. La Costanera del sector 
+Caraballeda. La estructura está implantada sobre una zona de geotecnia no especificada 
+en el levantamiento primario. Cuenta con una geometría de 13 niveles sin sótano, con 
+una planta rectangular de dimensiones 12 m × 36 m, lo que totaliza un área construida 
+por planta de 432 m². El sistema estructural base está conformado por pórticos de 
+concreto armado diseñados y construido en 1996. 
+Condición Actual: En la inspección detallada se constató un severo nivel de degradación 
+en los elementos estructurales del entrepiso crítico (Nivel 1 / Planta Baja). Más del 30% 
+de las columnas (de un total de 29 columnas evaluadas) muestran desprendimiento total 
+del recubrimiento de concreto y pandeo evidente en las barras del acero de refuerzo 
+longitudinal (Figura 3). Asimismo, se identificaron fisuras y grietas por flexión en el tercio 
+central de la luz en vigas de entrepiso distribuidas en al menos 3 niveles de la edificación 
+(Figura 4). 
+Clasificación de riesgo: ALTO RIESGO / COLAPSO PARCIAL Y TOTAL E 
+INHABITABLE. 
+ 
+2. Inspección Visual y Análisis de Causa Raíz del Colapso 
+
+Falla por Aplastamiento y Compresión en Columnas de Planta Baja: se evidenció 
+una falla estructural severa por aplastamiento/compresión en las columnas exteriores del 
+primer nivel (PB). La falta de confinamiento adecuado, asociada a estribos con ganchos 
+a 90°, derivó en el pandeo del acero longitudinal bajo solicitaciones axiales y de 
+flexocompresión alternada. 
+Falla por Flexión en Vigas de Entrepiso: En al menos tres niveles de la edificación se 
+observaron agrietamientos en el tercio central de la luz de las vigas principales de 
+entrepiso. 
+Evaluación de Elementos No Estructurales y Riesgos Locales: Se evaluaron con 
+nivel de riesgo alto las fachadas, vidrios, acabados, balcones y antepechos. Las escaleras 
+y rutas de evacuación presentan un nivel de riesgo bajo, mientras que el riesgo por 
+colindancia (golpeteo con edificaciones adyacentes) se clasificó como medio. 
+3. Justificación Técnica 
+La edificación ha sido ratificada de forma definitiva con la etiqueta INSEGURO (Tarjeta 
+Roja). La estructura presenta entre 10%-30% de daño en columnas generando un riesgo 
+inminente de colapso local o global (Figura 3). La edificación no cumple con ningún criterio 
+para mantenerse en condición de uso restringido ni habitable, comprometiendo la vida 
+humana y las infraestructuras colindantes. 
+Condición de Reclasificación: La decisión inicial de etiqueta roja se debe mantener. 
+DICTAMEN TÉCNICO FINAL: DEMOLICIÓN RECOMENDADA (Opción principal según 
+dictamen unánime de evaluación). Como alternativa previa de verificación analítica 
+exhaustiva (Opción 1), se requeriría un estudio geotécnico y pedológico, ensayos no 
+destructivos (NDT) de materiales y un modelado numérico analítico avanzado; no 
+obstante, dada la gravedad de las fallas, la recomendación técnica definitiva apunta hacia 
+la demolición controlada de la estructura. 
+4. CONCLUSIONES Y RELEVANCIA COMO CASO DE ESTUDIO 
+El análisis postsísmico de Residencias CAMURÍ BEACH evidencia la alta vulnerabilidad 
+de edificaciones de concreto armado construidas bajo normativas previas a las revisiones 
+modernas de detallado sismorresistente, donde el uso de estribos con cierre a 90° e 
+insuficiente confinamiento en zonas de plastificación propició el pandeo del acero y el 
+colapso del núcleo de concreto. 
+Plan de Acción Inmediato: De manera urgente e imperativa se deben ejecutar las 
+siguientes acciones en sitio: 1) Acordonamiento y colocación de cinta de advertencia 
+perimetral en áreas interiores y exteriores; 2) Apuntalamiento urgente de elementos en 
+riesgo de colapso local en el Nivel 1 (Planta Baja); y 3) Demolición o retiro inmediato de 
+parapetos y elementos no estructurales inestables que representen peligro de caída sobre 
+la vía pública. 
+
+ 
+ 
+Figura 1. Ubicación 
+ 
+Figura 2. Fachada 
+
+ 
+ 
+Figura 3.  
+ 
+Figura 4 
+
+ 
+Figura 5 

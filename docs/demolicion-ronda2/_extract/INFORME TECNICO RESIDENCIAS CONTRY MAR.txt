@@ -1,0 +1,145 @@
+ 
+INFORME TÉCNICO DE EVALUACIÓN POSTSÍSMICA TIPO 2  
+ RESIDENCIAS COUNTRY MAR, AV. GRANADA, CARABALLEDA, LA GUAIRA 
+EDIFICACIÓN:
+Edificio Residencias Country Mar (Cinco pisos, un 
+penthouse dúplex y un sótano). 
+UBICACIÓN:
+Avenida Granada, sector de Caraballeda, parroquia 
+Caraballeda, municipio La Guaira, estado La Guaira, 
+Venezuela. 
+JUNTA DE CONDOMINIO:
+Lic. Eduardo Zambrano (Teléfono: 0414-5445425).
+ING. EVALUADORES:
+Ing. Graciela Pieve/ Ing. Fredy Jesús Briceño 
+ACOMPAÑANTE: 
+Michael Calma (PC -Aragua). 
+SUPERVISORA:
+Ing. Aura Quintero (CP-PNUD)
+FECHA DE INSPECCIÓN:
+Martes, 11 de agosto de 2026
+ 
+1. DATOS GENERALES. 
+ 
+1.1. CONFIGURACIÓN ESTRUCTURAL 
+El presente informe técnico ha sido elaborado por encargo de la Comisión Presidencial, a los fines de 
+evaluar formalmente el estado de vulnerabilidad, estabilidad y habitabilidad estructural de la edificación tras 
+los efectos de los sismos de gran magnitud registrados recientemente en el territorio nacional (Doble sismo 
+del 24 de junio de 2026). 
+La edificación objeto de estudio, denominada Residencias Country Mar, responde a una tipología 
+estructural de pórticos de concreto armado (vigas y columnas portantes) con losas de entrepiso nervadas. 
+Cuenta con una altura de cinco (5) niveles tipo destinados a vivienda multifamiliar, más un penthouse (PH) 
+dúplex de dos niveles en su azotea y un nivel de sótano destinado a estacionamiento y servicios generales. 
+Se encuentra emplazada en una zona de alta agresividad corrosiva marina y suelos sueltos aluviales 
+saturados. 
+ 
+1.2. CONDICIÓN ACTUAL Y JUSTIFICACION TECNICA. 
+La inspección patológica fue realizada aplicando la metodología del Método Observacional (Peck, 1969) 
+adaptado a estructuras siniestradas, permitiendo identificar y clasificar las fallas catastróficas y de servicio 
+en la superestructura y el suelo de fundación, las cuales se detallan a continuación: 
+ 
+Colapso Estructural Progresivo: La estructura experimentó una pérdida repentina de soporte rígido 
+en su base que inició el fallo de los nodos inferiores en sótano y planta baja, transmitiéndose en 
+cadena a los niveles superiores. 
+ 
+Falla Geotécnica Crítica y Socavación: Se observaron graves indicios de inestabilidad en el terreno. 
+Por la proximidad al litoral marino y el elevado nivel freático de la Avenida Granada, la escorrentía 
+subterránea post-sismo generó una socavación de finos en el suelo arenoso de soporte. Esto indujo 
+asentamientos diferenciales masivos e inclinaciones excesivas en los cimientos del edificio, induciendo 
+momentos flectores imprevistos que sobrepasaron los límites de diseño estructural de las columnas. 
+ 
+Falla Frágil por Cortante y Compresión en Columnas: Múltiples columnas del sótano y la planta 
+baja presentan una falla patológica severa caracterizada por aplastamiento total del núcleo de concreto 
+central y pandeo severo de las barras longitudinales de acero de refuerzo. Esto evidencia una falta de 
+confinamiento adecuado por escasez de acero transversal (estribos) en los nodos críticos de unión 
+viga-columna. 
+ 
+Patología por Corrosión en el Acero de Refuerzo: La exposición prolongada al ambiente salino y la 
+consecuente carbonatación del concreto debilitó con anterioridad la armadura de las columnas 
+perimetrales. El ingreso de iones de cloruro redujo la sección útil del acero de refuerzo hasta en un 
+
+40% en algunas secciones expuestas, perdiéndose la adherencia entre el concreto y el acero y 
+reduciendo drásticamente la capacidad de flexotracción residual de la estructura antes de la ocurrencia 
+del sismo. 
+ 
+Inhabitabilidad y Colocaciòn de ETIQUETA ROJA: El nivel de daños estructurales es calificado 
+como Severo/Completo. La estructura carece de ductilidad y capacidad de carga remanente. Debido al 
+peligro inminente de desplome incontrolado sobre la Avenida Granada y los predios colindantes, los 
+organismos de seguridad del Estado, de conjunto con la inspección técnica, han ratificado la 
+prohibición de ingreso total con la colocación del rótulo de ETIQUETA ROJA (Acceso No Permitido). 
+ 
+2. PLAN DE ACCIÓN. 
+A partir de las patologías mecánicas y geotécnicas detalladas, se concluye que el Edificio Residencias 
+Country Mar ha alcanzado un estado irreversible de ruina estructural por agotamiento resistente de sus 
+elementos de soporte vertical principales. En base a esto, el Plan de Acción se centra en justificar 
+técnicamente la demolición total y el posterior bote de escombros: 
+ 
+Inviabilidad de Reparación y Reforzamiento: Los asentamientos diferenciales y la socavación del 
+terreno de fundación han roto el plano de asentamiento monolítico del edificio. Un proyecto de recalce 
+de fundaciones y encamisado de columnas falladas en un suelo saturado y en una superestructura con 
+inclinaciones severas es técnicamente inviable. La estructura actual carece de la rigidez torsional 
+mínima para soportar trabajos de apuntalamiento. 
+ 
+Riesgo de Colapso Secundario: Varias losas de entrepiso y secciones del penthouse dúplex en la 
+azotea han quedado suspendidas en voladizo inestable debido a la falla de las columnas de soporte. 
+Cualquier sismo menor o vibración (tráfico vehicular en la Avenida Granada) podría desencadenar un 
+desplome repentino. 
+ 
+Mitigación de Riesgos a Terceros: La edificación colinda directamente con vías de tránsito principal y 
+estructuras residenciales y comerciales activas en Caraballeda. La demolición mecánica y controlada 
+de la edificación permite remover ordenadamente la carga muerta inestable bajo un plan seguro. 
+ 
+Saneamiento del Sitio mediante el Bote de Escombros: La remoción de escombros debe ser 
+ejecutada mediante maquinaria pesada para trasladar los desechos a botaderos oficiales autorizados 
+en La Guaira, permitiendo liberar el área para futuros estudios de estabilización de suelos y 
+saneamiento ambiental de la parcela. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+3. MEMORIA FOTOGRÁFICA. 
+A continuación, se presentan las cuatro (4) fotografías más representativas obtenidas durante la visita de 
+inspección técnica al Edificio Country Mar: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+FOTOGRAFÍA N° 1: Vista general panorámica del Edificio Residencias Country 
+Mar anterior al colapso. 
+ 
+FOTOGRAFÍA N° 2: Vista general panorámica del Edificio Residencias Country 
+Mar posterior al colapso progresivo total. Se observa el plano general del 
+derrumbe y la masa de escombros de la superestructura. 
+ 
+ 
+ 
+ 
+ 
+ 

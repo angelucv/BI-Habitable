@@ -1,0 +1,71 @@
+{% extends "registration/base.html" %}
+
+{% load i18n jazzmin static %}
+{% get_jazzmin_settings request as jazzmin_settings %}
+{% get_jazzmin_ui_tweaks as jazzmin_ui %}
+
+{% block content %}
+<div class="cpeh-auth-card">
+  <div class="ve-tricolor-bar" aria-hidden="true">
+    <span class="ve-amarillo"></span>
+    <span class="ve-azul"></span>
+    <span class="ve-rojo"></span>
+  </div>
+  <div class="cpeh-auth-header">
+    {% include "includes/cpeh_nombre_institucional.html" with compact=True %}
+    <p class="cpeh-auth-program mt-2 mb-0">Seguimiento inspecciones ROJO — Fase II</p>
+  </div>
+  <div class="cpeh-auth-body">
+    <p class="cpeh-auth-lead">
+      Acceso reservado al equipo de verificación detallada de edificaciones etiquetadas ROJO
+      (2.ª ronda), con registro digital de visitas, dictamen y control operativo.
+    </p>
+
+    {% if user.is_authenticated %}
+    <p class="alert alert-warning">
+      {% blocktrans trimmed %}
+      Ha iniciado sesión como {{ username }}, pero no tiene permiso para acceder a esta página.
+      ¿Desea usar otra cuenta?
+      {% endblocktrans %}
+    </p>
+    {% endif %}
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+      {% if form.username.errors %}
+      <div>{{ form.username.label }}: {{ form.username.errors|join:', ' }}</div>
+      {% endif %}
+      {% if form.password.errors %}
+      <div>{{ form.password.label }}: {{ form.password.errors|join:', ' }}</div>
+      {% endif %}
+      {% for error in form.non_field_errors %}
+      <div>{{ error }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <form action="{{ app_path }}" method="post">
+      {% csrf_token %}
+      <div class="input-group mb-3">
+        <input type="text" name="username" class="form-control" placeholder="{{ form.username.label }}" required autofocus>
+        <div class="input-group-append">
+          <div class="input-group-text"><span class="fas fa-user"></span></div>
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <input type="password" name="password" class="form-control" placeholder="{{ form.password.label }}" required>
+        <div class="input-group-append">
+          <div class="input-group-text"><span class="fas fa-lock"></span></div>
+        </div>
+      </div>
+      {% url 'admin_password_reset' as password_reset_url %}
+      {% if password_reset_url %}
+      <p class="mb-2">
+        <a href="{{ password_reset_url }}" class="cpeh-auth-link">{% trans "¿Olvidó su contraseña o usuario?" %}</a>
+      </p>
+      {% endif %}
+      <button type="submit" class="btn btn-primary btn-block cpeh-auth-btn">{% trans "Iniciar sesión" %}</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

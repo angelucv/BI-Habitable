@@ -1,0 +1,296 @@
+<details class="cpeh-accordion mb-4 cpeh-dev-accordion">
+  <summary class="cpeh-accordion-header">
+    <i class="fas fa-code" aria-hidden="true"></i>
+    Guía técnica para desarrolladores — stack, credenciales y comandos
+  </summary>
+  <div class="cpeh-accordion-body cpeh-dev-body">
+
+    <div class="cpeh-dev-alert">
+      <strong>⚠ Uso interno — equipo de desarrollo autorizado.</strong>
+      Esta sección contiene credenciales y rutas de infraestructura. No compartir fuera del equipo técnico
+      ni en correos/minutas a terceros. Si cambia una contraseña, actualice también el documento de credenciales del repositorio.
+    </div>
+
+    <h3 class="cpeh-about-heading">0. Cómo leer esta guía</h3>
+    <p class="cpeh-about-text">
+      Está pensada para quienes conocen Python básico (variables, funciones) y quieren entender <em>qué hay montado</em>,
+      <em>dónde está</em> y <em>qué comandos ejecutar</em>. No hace falta ser experto en Django: cada bloque explica
+      el concepto antes del comando.
+    </p>
+    <ul class="cpeh-about-list">
+      <li><strong>Operadores / campo</strong> — usen «Sobre esta fase», <strong>«Tutorial del sistema»</strong> y «Guía del informe».</li>
+      <li><strong>Desarrolladores junior</strong> — lean esta sección completa y practiquen los comandos en orden.</li>
+      <li><strong>Documento hermano</strong> — «Propuesta sistema seguimiento Fase II — guía equipo junior» (Word 27/08/2026): aquí está la misma línea con <strong>más detalle operativo</strong> del despliegue actual.</li>
+    </ul>
+
+    <h3 class="cpeh-about-heading">1. ¿Qué es este sistema?</h3>
+    <p class="cpeh-about-text">
+      Aplicación web interna (Django) para el <strong>seguimiento Fase II</strong> de edificaciones etiqueta ROJO:
+      una ficha por edificio con <strong>11 secciones numeradas</strong>, dictamen D1–D4, estados de revisión y exportación PDF.
+      Reemplaza hojas sueltas / Excel como registro maestro operativo (el Excel sigue siendo plantilla de referencia).
+    </p>
+    <p class="cpeh-about-text mb-0"><strong>Decisión de marco:</strong> Django porque el problema es CRUD + usuarios + workflow + PDF,
+      no un tablero BI. El equipo ya usa Python (Habitable, scripts Excel). Django Admin permite operar antes de tener un wizard bonito.</p>
+
+    <h3 class="cpeh-about-heading">2. Stack instalado (servidor producción)</h3>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Componente</th><th>Versión / nota</th><th>Para qué</th></tr></thead>
+        <tbody>
+          <tr><td>SO</td><td>Debian GNU/Linux (kernel 6.12 amd64)</td><td>Servidor base</td></tr>
+          <tr><td>Python</td><td>3.13 (venv en <code>~/apps/fase2-rojo/.venv</code>)</td><td>Runtime Django</td></tr>
+          <tr><td>Django</td><td>5.x / 6.x en venv</td><td>Framework web + ORM + Admin</td></tr>
+          <tr><td>PostgreSQL</td><td>17</td><td>Base de datos principal</td></tr>
+          <tr><td>Gunicorn</td><td>WSGI</td><td>Servidor de aplicación (puerto 8000)</td></tr>
+          <tr><td>Apache</td><td>Proxy reverso</td><td>Expone HTTP :80 → Gunicorn</td></tr>
+          <tr><td>django-jazzmin</td><td>3.x</td><td>Tema visual del Admin</td></tr>
+          <tr><td>WhiteNoise</td><td>6.x</td><td>Archivos estáticos (CSS, logos)</td></tr>
+          <tr><td>WeasyPrint</td><td>62+</td><td>Generación PDF del informe</td></tr>
+          <tr><td>psycopg2</td><td>—</td><td>Conector Python ↔ PostgreSQL</td></tr>
+          <tr><td>DRF + corsheaders</td><td>—</td><td>API futura (health ya expuesto)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">3. Arquitectura en 3 capas</h3>
+    <pre class="cpeh-dev-code">Navegador (Chrome/Edge)
+    ↓ HTTP :80
+Apache (proxy reverso en 190.169.110.9)
+    ↓
+Gunicorn → Django (config.wsgi) → vistas / admin / PDF
+    ↓
+PostgreSQL (tabla inspecciones_casorojo + tablas auth de Django)</pre>
+    <ul class="cpeh-about-list">
+      <li><strong>Capa datos:</strong> PostgreSQL — un registro por edificio en <code>inspecciones_casorojo</code>.</li>
+      <li><strong>Capa aplicación:</strong> Django — modelos, admin, export PDF, KPIs portada.</li>
+      <li><strong>Capa presentación:</strong> HTML + Jazzmin + Bootstrap (admin) y plantillas PDF.</li>
+    </ul>
+
+    <h3 class="cpeh-about-heading">4. Estructura del proyecto en servidor</h3>
+    <pre class="cpeh-dev-code">/home/cph/apps/fase2-rojo/
+├── .env                 ← secretos (NO subir a Git)
+├── .venv/               ← entorno Python
+├── config/              ← settings.py, urls.py, jazzmin_settings.py
+├── inspecciones/        ← app principal
+│   ├── models.py        ← CasoRojo (11 secciones numeradas del informe)
+│   ├── admin.py         ← pantallas Admin + enlace PDF
+│   ├── views.py         ← health + PDF
+│   ├── report_sections.py
+│   ├── admin_dashboard.py  ← KPIs portada
+│   └── management/commands/
+│       └── cargar_franco_mar.py
+├── templates/           ← portada admin, login, PDF HTML
+├── static/              ← logos CPEH
+├── staticfiles/         ← collectstatic (servidos por WhiteNoise)
+├── run/
+│   ├── ensure-running.sh   ← reinicia Gunicorn si cayó (503)
+│   └── start-gunicorn.sh
+└── manage.py</pre>
+    <p class="cpeh-about-text">
+      <strong>Código fuente en repo local:</strong> carpeta <code>fase2-rojo/</code> dentro del paquete de documentación demolición ronda 2.
+      Scripts de despliegue SSH: <code>server-bootstrap/deploy_dashboard.py</code>.
+    </p>
+
+    <h3 class="cpeh-about-heading">5. Base de datos — tabla principal</h3>
+    <p class="cpeh-about-text">
+      Django crea la tabla <code>inspecciones_casorojo</code> a partir del modelo <code>CasoRojo</code>.
+      Cada fila = un edificio ROJO en 2.ª ronda. Campo clave: <code>hab_id</code> (único, ID Habitable).
+    </p>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Sección</th><th>Campos (resumen)</th><th>Propósito</th></tr></thead>
+        <tbody>
+          <tr><td>1 Precarga</td><td>hab_id, nombre_hab, dirección, etiqueta_f1, inspector_f1, gps_hab…</td><td>Datos Fase I desde Habitable</td></tr>
+          <tr><td>2 Ranking</td><td>score, banda, puestos, score_detalle</td><td>Priorización operativa</td></tr>
+          <tr><td>3 Validación</td><td>val_edificio, val_etiqueta, val_geometria, correcciones…</td><td>Confirmar precarga en visita</td></tr>
+          <tr><td>4 Visita 2</td><td>nombre_conf, fecha_v2, evaluadores_v2, uso, sistema, ocupacion…</td><td>Identidad confirmada en campo</td></tr>
+          <tr><td>5–8 Daños</td><td>piso_crit_v2, columnas, vigas, mampostería, procedimientos…</td><td>Diagnóstico técnico</td></tr>
+          <tr><td>9 Decisión</td><td>estado_2da, decision_D, magnitud_M, prioridad, medidas</td><td>Dictamen y gobernanza</td></tr>
+          <tr><td>10 Evidencia</td><td>n_fotos, firmas</td><td>Anexos y responsables</td></tr>
+          <tr><td>11 Resumen</td><td>resumen_ejecutivo</td><td>Cierre para gerencia</td></tr>
+          <tr><td>Auditoría</td><td>created_at, updated_at</td><td>Automático Django</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cpeh-about-text mb-0">
+      Ver columnas exactas: <code>python manage.py shell</code> →
+      <code>from inspecciones.models import CasoRojo; [f.name for f in CasoRojo._meta.fields]</code>
+    </p>
+
+    <h3 class="cpeh-about-heading">6. Credenciales y URLs</h3>
+    <h4 class="cpeh-guide-title">6.1 Acceso web</h4>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <tbody>
+          <tr><th>Admin Django</th><td><a href="http://190.169.110.9/admin/" target="_blank" rel="noopener">http://190.169.110.9/admin/</a></td></tr>
+          <tr><th>Health API</th><td><a href="http://190.169.110.9/api/health/" target="_blank" rel="noopener">http://190.169.110.9/api/health/</a></td></tr>
+          <tr><th>Usuario admin</th><td><code>cph</code></td></tr>
+          <tr><th>Contraseña admin</th><td><code>CphAdmin2026</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="cpeh-guide-title">6.2 SSH (MobaXterm / terminal)</h4>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <tbody>
+          <tr><th>Host</th><td><code>190.169.110.9</code></td></tr>
+          <tr><th>Usuario</th><td><code>cph</code> (no usar otros alias)</td></tr>
+          <tr><th>Puerto</th><td><code>22</code></td></tr>
+          <tr><th>Llave</th><td>Archivo <code>.ppk</code> local del operador + frase clave en archivo local (no commitear)</td></tr>
+          <tr><th>Autenticación</th><td>Solo llave pública — el servidor no acepta contraseña SSH</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="cpeh-guide-title">6.3 PostgreSQL</h4>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <tbody>
+          <tr><th>Host / puerto</th><td><code>127.0.0.1:5432</code> (solo desde el servidor)</td></tr>
+          <tr><th>Base de datos</th><td><code>fase2_rojo</code></td></tr>
+          <tr><th>Usuario</th><td><code>fase2_app</code></td></tr>
+          <tr><th>Contraseña</th><td><code>IdVlX5yuYHJ6qTMdeftaa5h5</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre class="cpeh-dev-code">psql -h 127.0.0.1 -U fase2_app -d fase2_rojo</pre>
+
+    <h4 class="cpeh-guide-title">6.4 Variables Django (<code>/home/cph/apps/fase2-rojo/.env</code>)</h4>
+    <pre class="cpeh-dev-code">DATABASE_ENGINE=postgres
+DB_NAME=fase2_rojo
+DB_USER=fase2_app
+DB_PASSWORD=IdVlX5yuYHJ6qTMdeftaa5h5
+DB_HOST=127.0.0.1
+DB_PORT=5432
+SECRET_KEY=v7dCJydPeWP3e4UzRjYyq3dzfpOXhn5qh2L7jPuVGr20bbHJkUCr7qu_xSLEi_biiO4
+ALLOWED_HOSTS=190.169.110.9,localhost,127.0.0.1
+DEBUG=1</pre>
+
+    <h3 class="cpeh-about-heading">7. Comandos — guía por escenario</h3>
+
+    <h4 class="cpeh-guide-title">7.1 Primera conexión SSH (verificar que llegaste bien)</h4>
+    <pre class="cpeh-dev-code">pwd && whoami && hostname
+ls -la ~/
+ls -la ~/apps/fase2-rojo/
+python3 --version</pre>
+
+    <h4 class="cpeh-guide-title">7.2 Entrar al proyecto y activar Python virtual</h4>
+    <p class="cpeh-about-text">El venv aísla las librerías del proyecto. Siempre activarlo antes de <code>manage.py</code>.</p>
+    <pre class="cpeh-dev-code">cd ~/apps/fase2-rojo
+source .venv/bin/activate
+which python   # debe apuntar a .../fase2-rojo/.venv/bin/python</pre>
+
+    <h4 class="cpeh-guide-title">7.3 Comandos Django habituales</h4>
+    <pre class="cpeh-dev-code">python manage.py check              # ¿Configuración OK?
+python manage.py showmigrations     # migraciones aplicadas
+python manage.py migrate            # aplicar cambios de BD
+python manage.py createsuperuser    # nuevo admin (solo si hace falta)
+python manage.py cargar_franco_mar  # recargar caso ejemplo ID 171818
+python manage.py shell              # consola Python con Django cargado
+python manage.py collectstatic --noinput   # CSS/logos → staticfiles/</pre>
+
+    <h4 class="cpeh-guide-title">7.4 Si la web responde 503 (Gunicorn caído)</h4>
+    <pre class="cpeh-dev-code">~/apps/fase2-rojo/run/ensure-running.sh
+curl -s http://127.0.0.1:8000/api/health/</pre>
+    <p class="cpeh-about-text">Con sudo disponible: <code>sudo systemctl restart fase2-rojo</code></p>
+
+    <h4 class="cpeh-guide-title">7.5 Probar PDF de un caso</h4>
+    <pre class="cpeh-dev-code"># En navegador (logueado como admin):
+# http://190.169.110.9/admin/inspecciones/casorojo/1/pdf/
+# (1 = pk interno; hab_id puede ser 171818)</pre>
+
+    <h4 class="cpeh-guide-title">7.6 Desplegar cambios desde PC Windows (equipo con llave)</h4>
+    <pre class="cpeh-dev-code"># En la copia local del repo BI-Habitable:
+python docs/demolicion-ronda2/server-bootstrap/deploy_dashboard.py</pre>
+    <p class="cpeh-about-text">Ese script sube plantillas, CSS, admin, views y ejecuta <code>collectstatic</code> + reinicio Gunicorn.</p>
+
+    <h4 class="cpeh-guide-title">7.7 Consultas SQL útiles</h4>
+    <pre class="cpeh-dev-code">-- Conteo total
+SELECT COUNT(*) FROM inspecciones_casorojo;
+-- Casos con decisión D3 (demoler)
+SELECT hab_id, nombre_conf, decision_D FROM inspecciones_casorojo WHERE decision_D LIKE 'D3%';</pre>
+
+    <h3 class="cpeh-about-heading">8. MobaXterm — configuración correcta</h3>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Campo</th><th>Valor</th><th>Error común</th></tr></thead>
+        <tbody>
+          <tr><td>Remote host</td><td><code>190.169.110.9</code></td><td>IP incorrecta</td></tr>
+          <tr><td>Username</td><td><code>cph</code></td><td>Usar otro usuario → «Server refused our key»</td></tr>
+          <tr><td>Private key</td><td>Archivo <code>.ppk</code> del operador</td><td>Elegir MobaXterm.ini por error</td></tr>
+          <tr><td>Passphrase</td><td>Archivo local frase-clave.txt</td><td>No compartir por chat</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">9. Mapa de archivos que tocarás al programar</h3>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Si quieres…</th><th>Archivo</th></tr></thead>
+        <tbody>
+          <tr><td>Agregar campo al informe</td><td><code>inspecciones/models.py</code> → <code>makemigrations</code> → <code>migrate</code></td></tr>
+          <tr><td>Cambiar pantalla Admin</td><td><code>inspecciones/admin.py</code></td></tr>
+          <tr><td>Portada / KPIs</td><td><code>inspecciones/admin_dashboard.py</code>, <code>templates/admin/index.html</code></td></tr>
+          <tr><td>Estilos CPEH</td><td><code>inspecciones/static/css/cpeh_admin.css</code></td></tr>
+          <tr><td>PDF informe</td><td><code>inspecciones/views.py</code>, <code>templates/inspecciones/caso_rojo_informe_pdf.html</code></td></tr>
+          <tr><td>Import masivo Habitable</td><td><code>management/commands/importar_ranking.py</code></td></tr>
+          <tr><td>Import PDF cruce</td><td><code>import_informes_pdf.py</code>, <code>cargar_informes_demolicion</code></td></tr>
+          <tr><td>Export Excel plantilla</td><td><code>excel_plantilla.py</code>, <code>export_views.py</code></td></tr>
+          <tr><td>Tablero asignación</td><td><code>asignacion.py</code>, <code>asignacion_views.py</code></td></tr>
+          <tr><td>Despliegue</td><td><code>server-bootstrap/deploy_sprint_operativo.py</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">10. Implementado vs pendiente (roadmap)</h3>
+    <p class="small text-muted mb-2">
+      Manual ejecutivo completo (flujo, roles, catálogos, ranking nacional):
+      ver documento <strong>Manual ejecutivo — Sistema Fase II ROJO</strong> en el paquete de entregables demolición 2.ª ronda.
+    </p>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Estado</th><th>Funcionalidad</th></tr></thead>
+        <tbody>
+          <tr><td>✅</td><td>Modelo CasoRojo, Admin 11 secciones, caso Franco Mar (D3)</td></tr>
+          <tr><td>✅</td><td>Import masivo Excel Ranking — La Guaira, <strong>nacional</strong> y Top200 (<code>importar_ranking --todas-hojas</code>)</td></tr>
+          <tr><td>✅</td><td>Import enriquecido 36 PDFs cruce Habitable (<code>cargar_informes_demolicion --sobrescribir-campos</code>)</td></tr>
+          <tr><td>✅</td><td>Escala decisión <strong>D1–D4</strong> + complementos D1 (GEO…OTR) + validación al cerrar</td></tr>
+          <tr><td>✅</td><td>Roles inspector / revisor / coordinador + usuarios demo (<code>crear_roles_ejemplo</code>)</td></tr>
+          <tr><td>✅</td><td>Flujo revisión, historial, validación transiciones</td></tr>
+          <tr><td>✅</td><td>Catálogo procedimientos VIG/COL/MAM (<code>cargar_catalogo_procedimientos</code>)</td></tr>
+          <tr><td>✅</td><td>Mapa GPS (<a href="/mapa/" target="_blank" rel="noopener">/mapa/</a>) + API GeoJSON</td></tr>
+          <tr><td>✅</td><td>Tablero asignación (<a href="/asignacion/" target="_blank" rel="noopener">/asignacion/</a>) + KPIs</td></tr>
+          <tr><td>✅</td><td>Export Excel plantilla v1.1 (informe / lote / múltiple)</td></tr>
+          <tr><td>✅</td><td>Export PDF, fotos evidencia, guías + tutorial integrado</td></tr>
+          <tr><td>✅</td><td>systemd <code>fase2-rojo.service</code> + <code>deploy_sprint_operativo.py</code></td></tr>
+          <tr><td>⏳</td><td>HTTPS / dominio institucional</td></tr>
+          <tr><td>⏳</td><td>Import Excel inverso (subir plantilla → validar → cargar)</td></tr>
+          <tr><td>⏳</td><td>Asignación masiva a inspectores/revisores reales (~4 200 casos)</td></tr>
+          <tr><td>⏳</td><td>Selector UI checkboxes complementos D1; PDF informe incluir campos D1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">11. Usuarios demo (Fase II)</h3>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-dev-table mb-3">
+        <thead><tr><th>Usuario</th><th>Rol</th><th>Contraseña inicial</th></tr></thead>
+        <tbody>
+          <tr><td><code>inspector.demo</code></td><td>Inspector — campo y borrador</td><td><code>Inspector2026!</code></td></tr>
+          <tr><td><code>revisor.demo</code></td><td>Revisor — aprueba dictamen</td><td><code>Revisor2026!</code></td></tr>
+          <tr><td><code>coordinador.demo</code></td><td>Coordinador — asignación e import</td><td><code>Coordinador2026!</code></td></tr>
+          <tr><td><code>cph</code></td><td>Superusuario admin</td><td>(ver credenciales servidor)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">12. Comandos nuevos</h3>
+    <pre class="cpeh-dev-code">python manage.py importar_ranking --hoja Ranking_ROJO_nacional --solo-gps
+python manage.py importar_ranking --todas-hojas --solo-gps
+python manage.py cargar_informes_demolicion --reemplazar-pdf --sobrescribir-campos
+python manage.py crear_roles_ejemplo
+python manage.py cargar_catalogo_procedimientos</pre>
+
+  </div>
+</details>

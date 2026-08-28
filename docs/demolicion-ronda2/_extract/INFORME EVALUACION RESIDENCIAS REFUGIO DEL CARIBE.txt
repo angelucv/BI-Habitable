@@ -1,0 +1,128 @@
+DGPS-013-11-08-2026 
+______________________________________________________________________ 
+ 
+INFORME TÉCNICO 
+Edificación Inspeccionada: Refugio del Caribe 
+Ubicación: Tanaguarenas, Estado La Guaira (Vargas), Venezuela 
+La Guaira, 11 de agosto de 2026 
+Ing. Evaluador 1: Romme Rojas 
+Ing. Evaluador 2: Sergio Silva 
+_____________________________________________________________________ 
+ 
+1. Datos Generales 
+El presente documento corresponde al informe técnico de inspección estructural 
+de la edificación Refugio del Caribe, clasificada con Etiquetado de Riesgo Color 
+Rojo (Inhabitable / Alto Riesgo). La evaluación fue realizada el día 11 de agosto 
+de 2026 por los ingenieros inspectores responsables Romme Rojas y Sergio Silva, 
+con el objeto de evaluar los daños estructurales post-evento y definir las 
+recomendaciones de acción correspondientes. 
+La edificación se encuentra ubicada en Tanaguarena, Vargas, Estado La Guaira. 
+Se trata de una estructura con tipología de sistema aporticado, conformada por 9 
+niveles superiores y 1 nivel de sótano. Presenta unas dimensiones geométricas 
+en planta de 20,00 metros de frente por 50,00 metros de fondo, lo que representa 
+un área aproximada de 1.000,00 m² por planta. 
+Clasificación de riesgo: ALTO RIESGO / COLAPSO PARCIAL Y TOTAL E 
+INHABITABLE. 
+ 
+
+2. Inspección Visual y Análisis de Causa Raíz del Colapso 
+Inclinación y Desplome Global: La edificación presenta una inclinación general 
+orientada hacia el lado norte, con un desplazamiento horizontal remanente 
+importante. 
+Nodos Estructurales: Se observan fallas en las uniones viga-columna (nodos), 
+lo que compromete severamente la rigidez lateral, la capacidad de transferencia 
+de momentos y la estabilidad del sistema aporticado. 
+Módulo de Escalera: Presenta daños significativos, deformación y agrietamiento 
+en la estructura del núcleo de circulación vertical. 
+Losas de Entrepiso: Fracturas visibles y discontinuidades en la sección de las 
+losas correspondientes al piso 1, piso 2 y piso 3. 
+Columnas y Vigas: Desconchamiento y desprendimiento masivo del concreto de 
+recubrimiento, dejando expuesto el acero de refuerzo. 
+2.2. Elementos No Estructurales 
+Fachadas Este y Sur (Vista Principal): Caída y colapso parcial de mampostería 
+y paredes de cerramiento observables desde la perspectiva frontal/principal del 
+edificio. 
+3. Justificación Técnica 
+Efectos de Segundo Orden (P-\Delta): El desplazamiento remanente importante 
+genera momentos de vuelco insostenibles para la estructura en su condición 
+degradada. 
+Fallas Estructurales Severas: La pérdida de integridad en nodos y la fractura de 
+losas impiden cualquier alternativa de reparación. 
+Condición de Riesgo Inminente: La etiqueta de Color Rojo ratifica que la única 
+alternativa técnicamente viable y segura es la demolición controlada. 
+
+3.2. Evaluación del Entorno y Colindancias 
+Lado Norte: Parcela adyacente donde se ubica Residencias Venliv, edificación 
+que presenta colapso parcial con inclinación orientada hacia el lado norte. 
+Lado Sur: Parcela adyacente con una vivienda unifamiliar de dos niveles que 
+presenta colapso del techo superior y el tanque de agua inclinado. 
+3.3. Secuencia y Técnica de Demolición Recomendada 
+Secuencia de Intervención Prioritaria: 
+Paso 1: Ejecutar prioritariamente la demolición del edificio Residencias Venliv 
+(parcela norte) para habilitar el espacio de maniobra y eliminar riesgos cruzados. 
+Paso 2: Proceder posteriormente con la demolición del edificio Refugio del Caribe. 
+Consideraciones de Seguridad Especiales: Extremar precauciones debido a 
+que las edificaciones aledañas se encuentran igualmente en estado de colapso o 
+colapso parcial. 
+Método Principal de Demolición: Demolición Mecánica Top-Down (Progresiva 
+de arriba hacia abajo) mediante maquinaria pesada de gran alcance (brazo largo 
+con cizalla/martillo hidráulico). Queda descartado el uso de explosivos/implosión 
+por el riesgo de inducir el colapso de las estructuras adyacentes vulnerables. 
+Protección de Colindancias: Retiro previo y asistido de mampostería suelta en 
+fachadas este y sur mediante plataformas elevadoras, colocación de pantallas de 
+protección en los linderos e instalación de apuntalamiento/arriostramiento 
+temporal si fuese necesario. 
+4. CONCLUSIONES Y RELEVANCIA COMO CASO DE ESTUDIO 
+4.1. Conclusiones 
+
+Preservación de Vidas Humanas: A diferencia de otras edificaciones en el sector 
+que sufrieron colapso total (incluyendo el colapso completo de plantas bajas), el 
+edificio Refugio del Caribe mantuvo las vías de evacuación funcionales el tiempo 
+suficiente para que todos los habitantes desocuparan la edificación en su 
+totalidad, salvaguardando la vida de las personas. 
+Resistencia y Ductilidad Remanente: A pesar de presentar fallas graves en 
+nodos, losas de los pisos 1 a 3 y recubrimientos, la estructura no sufrió un colapso 
+frágil o catastrófico. 
+Tolerancia a Grandes Deformaciones: La edificación demostró una elevada 
+capacidad para admitir una deflexión y desplazamiento remanente considerable 
+manteniendo la estabilidad global residual. 
+Declaración de Inhabitabilidad: Aun cuando salvó vidas, la magnitud de los 
+daños e inclinación imponen la clasificación de Etiqueta Roja, exigiendo su 
+demolición. 
+4.2. Relevancia como Caso de Estudio 
+Desempeño de Estructuras Aporticadas: Ofrece un ejemplo real de gran valor 
+técnico para estudiar el comportamiento inelástico, la redundancia y los 
+mecanismos de redistribución de esfuerzos en sistemas de concreto armado bajo 
+demandas extremas. 
+Aporte al Diseño Sismorresistente: La respuesta post-falla de la edificación 
+provee evidencia cualitativa y cuantitativa para la calibración de modelos de 
+análisis no lineal y la evaluación de criterios de capacidad de deformación y 
+resiliencia 
+en 
+la 
+normativa 
+estructural. 
+ 
+
+ 
+Imagen 1. Edificio Refugio del Caribe 
+
+ 
+Imagen 2. Edificio Refugio del Caribe 
+
+ 
+Imagen 3. Edificio Refugio del Caribe 
+ 
+ 
+ 
+ 
+ 
+__________________________________________________ 
+Ing. Evaluador 1: Romme Rojas 
+ 
+ 
+ 
+ 
+ 
+______________________________________________ 
+Ing. Evaluador 2: Sergio Silva 

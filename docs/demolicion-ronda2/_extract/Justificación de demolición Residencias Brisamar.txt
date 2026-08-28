@@ -1,0 +1,131 @@
+ 
+ 
+DGPS-006-03-08-2026 
+ 
+                                                  INFORME TÉCNICO  
+ Residencias Brisamar 
+Av. Teleférico con Av. José María España, Parroquia Macuto, Estado La Guaira 
+                                                                                            La Guaira, 03 de agosto 2026 
+  
+1. Datos Generales  
+ 
+Configuración Estructural; Dos (2) torres (Torre A y Torre B), separadas por una 
+junta de dilatación sísmica. 
+ 
+Condición actual: Torre B con daño estructural severo, colapso parcial e 
+inclinación leve sentido norte. Torre A sin daños apreciables. Clasificación 
+externa: "Alto Riesgo 
+ 
+2. Inspección Visual y Descripción Técnica de Fallas 
+Con base en el análisis de las evidencias fotográficas suministradas sobre la 
+Torre B, se detallan las siguientes patologías y mecanismos de falla crítica: 
+● Falla por Compresión y Corte en Columnas (Planta Baja): Se evidencia la 
+destrucción total del núcleo de concreto en las columnas de la planta baja. 
+Ocurrió un colapso explosivo del material, resultando en la pérdida absoluta del 
+recubrimiento y exposición total de las armaduras. 
+● Pandeo de Armaduras Longitudinales (Buckling): El acero de refuerzo 
+longitudinal de las columnas de planta baja presenta un pandeo masivo. Esto 
+indica que la carga axial rebasó la capacidad límite del elemento tras la pérdida 
+de confinamiento de los estribos, llevando al aplastamiento de la sección. 
+● Falla de Diafragmas y Colapso Progresivo (Pancake): La fachada 
+oriental/lateral documenta un colapso en cascada de los diafragmas horizontales 
+(losas y balcones). Las imágenes muestran múltiples losas desprendidas de sus 
+apoyos y apiladas una sobre otra. 
+● Agrietamiento por Esfuerzos de Corte: Se observan grietas diagonales 
+profundas y pasantes a lo largo de las fachadas rígidas, derivadas del 
+desplazamiento vertical irregular (asentamiento diferencial extremo) tras la 
+claudicación de la planta baja. 
+1/4 
+ 
+
+ 
+● Destrucción de Elementos No Estructurales: Colapso total de paredes de 
+bloques de arcilla, desprendimiento de acabados, tuberías expuestas y rotas por 
+el aplastamiento de los niveles inferiores. 
+3. Justificación Técnica de Demolición (Torre B) 
+La condición actual de la Torre B demanda acciones inmediatas. La demolición 
+controlada se justifica técnica y legalmente bajo los siguientes argumentos: 
+● Pérdida Irreversible de Capacidad Portante: Los elementos verticales en planta 
+baja (soportes críticos) han perdido el 100% de su capacidad estructural. La 
+edificación se sostiene de forma precaria e inestable mediante la fricción de los 
+escombros y redistribución de cargas residuales. 
+  
+● Mecanismo de Colapso Activo: El nivel de deformación y las fracturas en los 
+nodos estructurales son irreparables. Resulta técnica y económicamente inviable 
+la implementación de métodos de reforzamiento (retrofitting), encamisado o 
+reparación de las columnas. 
+  
+● Riesgo Inminente de Pérdidas Humanas y Materiales: La estructura se 
+encuentra en el estado límite de agotamiento. Factores detonantes mínimos, 
+tales como ráfagas de viento o sismos de baja magnitud, pueden inducir el 
+colapso global instantáneo, poniendo en riesgo vital a los transeúntes y 
+afectando a la Torre A adyacente. 
+DICTAMEN FINAL: Inhabitabilidad permanente y orden perentoria de demolición 
+inmediata de la Torre B, previa aplicación de protocolos de seguridad del 
+perímetro. 
+  
+4. Conclusiones y Relevancia como Caso de Estudio 
+ 
+Más allá de la tragedia material, este evento representa un caso de estudio 
+fundamental para la ingeniería estructural y sismorresistente. El complejo 
+residencial, al estar compuesto por dos estructuras separadas por una junta de 
+dilatación, ofrece un laboratorio a escala real de incalculable valor científico. 
+El hecho de que la Torre A no presente daños severos mientras la Torre B 
+experimentó un colapso inminente, plantea un paradigma crítico. Este 
+comportamiento fuertemente asimétrico permite investigar y aislar variables 
+como: 
+● Discrepancias en la ejecución constructiva y control de calidad de materiales 
+(concreto y acero) entre ambas fases o frentes de obra. 
+2/4 
+ 
+
+ 
+● Efectos de sitio y micro-zonificación: Posibles variaciones en las propiedades 
+geotécnicas o fallas localizadas en el terreno bajo las fundaciones de la Torre B. 
+● 
+Análisis 
+de 
+vulnerabilidad 
+inducida 
+por 
+eventuales 
+intervenciones 
+arquitectónicas 
+o 
+remociones 
+de 
+paredes 
+estructurales 
+realizadas 
+exclusivamente en la planta baja de la Torre B a lo largo de los años. 
+● La efectividad de la junta de dilatación para evitar la transmisión de ondas de 
+choque de una torre fallando hacia la torre vecina estable. 
+  
+ 
+  
+ 
+ 
+3/4 
+ 
+
+ 
+
+ 
+ 
+____________________________ 
+Elaborado por 
+Ing. Johan Bellorin 
+Ingeniero Supervisor 
+CIV. 306.361 
+__________________________ 
+Revisado y aprobado por 
+Ing. Trino Baloa 
+CIV. 176.395  
+Director General de Planificación Sectorial  
+Vicepresidencia Sectorial de Obras Públicas y Servicios (VSOPS). 
+Gaceta Oficial Nª 43355 de fecha 15/04/2026 
+ 
+  
+TABM/gd 
+4/4 
+ 

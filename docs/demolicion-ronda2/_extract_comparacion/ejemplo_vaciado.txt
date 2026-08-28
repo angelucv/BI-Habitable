@@ -1,0 +1,88 @@
+SHEETS: ['Portada_uso', 'Vaciado_ejemplo_FrancoMar', 'Vaciado_plantilla_en_blanco', 'Resumen_ejecutivo_ejemplo', 'Listas_desplegables']
+
+=== SHEET Portada_uso rows=9 ===
+EJEMPLO DE VACIADO DIGITAL — INSPECCIÓN DETALLADA (2.ª RONDA) | 
+Para qué es este archivo | Demostrar cómo se llena el formato propuesto de segunda visita, con precarga de la inspección Habitable (Fase 1), ranking de prioridad y dictamen D1–D5 / M1–M4. Acompaña el documento Word explicativo del formato.
+Documento Word asociado | Formato propuesto inspeccion detallada verificacion ROJO.docx
+Qué NO es este archivo | No es el listado operativo de todos los ROJOS ni el cruce de informes PDF. Eso vive en el Excel de trabajo «cruce-informes-demolicion-habitable-…».
+Hojas de este libro | 1) Portada_uso (esta) · 2) Vaciado_ejemplo_FrancoMar (lleno) · 3) Vaciado_plantilla_en_blanco (para practicar) · 4) Resumen_ejecutivo_ejemplo · 5) Listas_desplegables (oculta).
+Caso de ejemplo | Edificio Franco Mar / Edif. Francomar (Caraballeda, La Guaira). ID Habitable 171818. Fase 1 ROJO 20/07/2026. Ranking score 51 (Media). Visita detallada 11/08/2026 → decisión D1 Demoler.
+Cómo leer los colores | Azul claro = dato precargado de Fase 1 / ranking (validar). Amarillo = campo de la visita 2 con lista desplegable. Blanco = texto libre o dato abierto.
+Uso sugerido | Abrir el Word para la lógica del formato; abrir esta hoja de ejemplo para ver el vaciado concreto; copiar la plantilla en blanco si se quiere ensayar otro caso.
+
+=== SHEET Vaciado_ejemplo_FrancoMar rows=63 ===
+VACIADO DIGITAL — EJEMPLO LLENO (Franco Mar) · Precarga Fase 1 + ranking + visita 11/08/2026 | 
+Campos grises = precarga Fase 1 / ranking (validar). Campos blancos = captura de la visita detallada. Use listas desplegables donde existan. | 
+A0 — PRECARGA FASE 1 | 
+ID Habitable | 171818
+Certificado | 73420200720261338
+Nombre (Habitable) | Edif. Francomar
+Etiqueta Fase 1 | ROJO
+Fecha inspección Fase 1 | 2026-07-20
+Inspector Fase 1 | Maria Mercedes Nieves Duarte
+Dirección Habitable | Calle Principal Boulevard Tanaguarenas. Caraballeda. La Guaira.
+Municipio / Parroquia | Vargas / Caraballeda
+Pisos / sótanos (Fase 1) | 12 / 1
+Riesgo externo / severo | Externo C / Severo A
+Colapso estructura (Fase 1) | C
+Piso crítico (Fase 1) | Planta baja, piso 1, 2, 3, 4
+Acciones Fase 1 | Acordonar
+Observaciones Fase 1 | Edificio a punto de colapso, se recomienda Desalojar
+GPS Habitable | 10.6123543, -66.8318071
+A0 — RANKING | 
+Score gravedad (0–100) | 51
+Banda prioridad | Media
+Puesto La Guaira / nacional | La Guaira ~115 / Nacional ~264
+Detalle del score | riesgo_externo+20; ext_colapso+15; acordonar+2; altura_10++6; piso_critico+3; sev_elementos+5
+Probabilidad relativa (texto) | Media — verificar; puede ser ROJO por riesgo localizado
+... (38 more rows)
+
+=== SHEET Vaciado_plantilla_en_blanco rows=63 ===
+VACIADO DIGITAL — PLANTILLA EN BLANCO · Pegue precarga Habitable/ranking y complete la visita 2 | 
+Campos grises = precarga Fase 1 / ranking (validar). Campos blancos = captura de la visita detallada. Use listas desplegables donde existan. | 
+A0 — PRECARGA FASE 1 | 
+ID Habitable | 
+Certificado | 
+Nombre (Habitable) | 
+Etiqueta Fase 1 | ROJO
+Fecha inspección Fase 1 | 
+Inspector Fase 1 | 
+Dirección Habitable | 
+Municipio / Parroquia | 
+Pisos / sótanos (Fase 1) | 
+Riesgo externo / severo | 
+Colapso estructura (Fase 1) | 
+Piso crítico (Fase 1) | 
+Acciones Fase 1 | 
+Observaciones Fase 1 | 
+GPS Habitable | 
+A0 — RANKING | 
+Score gravedad (0–100) | 
+Banda prioridad | 
+Puesto La Guaira / nacional | 
+Detalle del score | 
+Probabilidad relativa (texto) | 
+... (38 more rows)
+
+=== SHEET Resumen_ejecutivo_ejemplo rows=12 ===
+RESUMEN EJECUTIVO — EJEMPLO FRANCO MAR | 
+Edificación | Franco Mar / Edif. Francomar (Caraballeda, La Guaira)
+ID Habitable / certificado | 171818 / 73420200720261338
+Fase 1 | ROJO · 20/07/2026 · Inspector M. Nieves Duarte
+Ranking | Score 51 · Banda Media · ~puesto 115 La Guaira / 264 nacional
+Visita detallada | 11/08/2026 · Burgos / García · Supervisión A. Quintero
+Validación precarga | ROJO confirmado · Corrección sótanos 1→2 y GPS/dirección
+Hallazgo clave | Piso crítico Nivel 1 · >50% columnas graves · pérdida de verticalidad
+Decisión | D1 — Demoler · Prioridad inmediata · Magnitud M N/A
+Texto ejecutivo | Franco Mar (Caraballeda). Fase 1 ROJO 20/07/2026, score 51 (Media, ~puesto 115 La Guaira). Visita 11/08/2026: 12 pisos + 2 sótanos, piso crítico Nivel 1, >50% columnas graves, pérdida de verticalidad. Validación: ROJO confirmado; corrección sótanos y GPS. Decisión D1 demoler, prioridad inmediata.
+Próxima acción | Proyecto de demolición controlada; mantener exclusión y monitoreo de vecinos
+
+=== SHEET Listas_desplegables rows=8 ===
+si_no_parcial | si_no_insuf | estado_2da | decision_D | magnitud_M | prioridad | abc | ocupacion | sistema | pct_columnas | inclinacion | peligro_aledanos
+Sí | Sí | Pendiente verificación | D1 — Demoler | N/A (no es D2) | Inmediata | A | Desalojado | Pórticos concreto armado | No observable | No | Sí
+No | No | En visita | D2 — Reparar / reconstruir | M1 — Reparación pequeña / local | Alta | B | Ocupación parcial | Muros de concreto | <10% | Sí — cualitativa | No
+Parcial / corregir | Insuficiente evidencia | Borrador | D3 — Estudios complementarios | M2 — Reparación importante | Programable | C | Habitado irregularmente | Mixto | 10–30% | Sí — con medición Δ | No observable
+Pendiente | Pendiente | Revisado | D4 — Escombros / ya colapsado | M3 — Reconstrucción parcial | Pendiente | No observable | Escombros | Acero | >30% | No observable | Pendiente
+ |  | Aprobado | D5 — Inhabitabilidad + monitoreo | M4 — Reconstrucción / refuerzo mayor |  | Pendiente | Pendiente | Mampostería | >50% | Pendiente | 
+ |  | Publicado | Pendiente | Pendiente |  |  |  | Otro | Pendiente |  | 
+ |  |  |  |  |  |  |  | Pendiente |  |  | 

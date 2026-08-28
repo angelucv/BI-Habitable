@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras">
+  <circle cx="200" cy="200" r="200" fill="#00247D"/>
+  <polygon fill="#CF142B" points="62,118 66,128 77,128 68,135 72,146 62,139 52,146 56,135 47,128 58,128"/>
+  <text x="82" y="118" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Comisión</text>
+  <text x="82" y="156" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Presidencial</text>
+  <text x="82" y="192" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400">para la Evaluación</text>
+  <text x="82" y="220" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400">de Habitabilidad</text>
+  <text x="82" y="248" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400">de Infraestructuras</text>
+</svg>

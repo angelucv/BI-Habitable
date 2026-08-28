@@ -1,0 +1,71 @@
+______________________________________________________________________ 
+INFORME TÉCNICO ESTRUCTURAL 
+ 
+Justificación Técnica de Demolición por Daño Severo 
+ 
+● Proyecto: Residencia Dictis,  
+● Ubicación: Playa Grande, entre calle 6 y 7, parroquia Catia La Mar, Municipio 
+Vargas, Estado La Guaira, Venezuela 
+● Motivo: Riesgo y Vulnerabilidad 
+______________________________________________________________________ 
+ 
+1. Objeto del Informe 
+El presente documento expone la evaluación de los daños estructurales observados en 
+la edificación identificada como Residencias Dictis, ubicada entre la calle 6 y la calle 7 
+del sector Playa Grande, parroquia Catia La Mar, Municipio Vargas, Estado La Guaira, 
+Venezuela. El objetivo es proporcionar la justificación técnica que fundamenta la 
+necesidad inminente de proceder con la demolición total la estructura, priorizando la 
+salvaguarda de vidas humanas y la mitigación de riesgos en el entorno. 
+2. Hallazgos e Inspección Visual 
+A partir del levantamiento de campo y el registro fotográfico de la zona afectada, se ha 
+constatado un estado de falla en los elementos principales del sistema sismorresistente. 
+Las afectaciones son severas y generalizadas, destacando las siguientes patologías 
+críticas: 
+2.1. Pandeo y fractura en la losa del Piso 1: Se evidencia una pérdida de la 
+capacidad portante y deformación fuera del plano en la losa de entrepiso, lo que indica 
+sobreesfuerzos severos o fatiga del material en esta zona. 
+ 
+2.2. Desplazamiento en balcones (Pisos 1 y 2): Los volados de ambos niveles 
+presentan movimientos diferenciales y desplazamientos respecto a la línea de fachada, 
+evidenciando posibles fallas en el empotramiento o en el sistema de vigas en voladizo. 
+
+2.3. Falla por compresión en columnas: Se identifican columnas principales en el 
+nivel inferior y en el 1er piso que muestran síntomas claros de falla por compresión 
+(aplastamiento del concreto, agrietamiento horizontal o fisuras por pandeo del refuerzo 
+longitudinal), lo que representa una condición crítica para la estabilidad de todo el edificio. 
+2.4. Falla por cortante en vigas de carga: Se identifican patrones de fisuración 
+diagonal (con una inclinación aproximada de 45 grados) en las vigas del nivel inferior. 
+Este tipo de patrón es el indicador de falla por cortante, evidenciando que las vigas están 
+sometidas a fuerzas superiores a su capacidad de diseño. 
+2.5. Descubrimiento de acero de refuerzo: Se observa desprendimiento del 
+recubrimiento de concreto en elementos estructurales (vigas y/o columnas), lo que deja 
+expuesto el acero de refuerzo longitudinal y transversal. Esto acelera notablemente los 
+procesos de corrosión, reduciendo la sección útil del acero y debilitando aún más la 
+capacidad portante de la estructura.  
+2.6. Desaplome global de la edificación: Mediante la medición con el método de 
+plomada, se registra un desplazamiento vertical de 5 cm en una altura de 2 metros. 
+3. Desplome e Inclinación Global 
+Se registra una inclinación leve en sentido nor-oeste de la edificación. Esta pérdida 
+de verticalidad evidencia una falla asimétrica en la base y un desplazamiento permanente 
+del centro de masas. Esta condición genera esfuerzos adicionales por efectos de 
+segundo orden (Efectos P-Delta), los cuales las columnas gravemente fisuradas son 
+incapaces de resistir. 
+4. Justificación Técnica de Demolición 
+La magnitud y tipología del daño descrito invalidan técnica y financieramente cualquier 
+intento de rehabilitación o reforzamiento estructural (como, por ejemplo, el encamisado 
+tradicional de columnas o inyecciones epóxicas). A su vez presenta un riesgo con 
+respecto a las viviendas que se encuentran frente al edificio que presenta la falla. Por lo 
+cual se recomienda evaluar de forma prioritaria la demolición controlada del edificio, 
+
+dado que los costos, la complejidad y el riesgo de ejecutar reparaciones estructurales en 
+columnas con fallas a compresión y un desaplome de esta magnitud suelen hacer 
+inviable la rehabilitación. 
+ 
+  
+  
+ 
+ 
+  
+  
+ 
+ 

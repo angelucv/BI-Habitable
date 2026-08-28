@@ -1,0 +1,125 @@
+CRITERIOS DEL SCORE DE GRAVEDAD (ETIQUETAS ROJAS)
+Guía didáctica · Priorización para verificación detallada
+y probabilidad relativa de recomendación de demolición
+Documento de trabajo · 20/08/2026 · Basado en campos de la planilla Habitable (Fase 1 / ANIH). Versión ampliada con ejemplos numéricos.
+1. Idea en una frase
+Cada inspección ya marcada ROJO recibe un número de 0 a 100. Ese número no dice «demoler» o «no demoler»: dice «qué tan urgente parece, con lo que ya llenó el inspector en Fase 1, revisar este caso en una segunda ronda detallada».
+Piense el score como una nota de prioridad en una cola de emergencia: 100 = atender primero; 20 = sigue siendo ROJO, pero con menos señales de colapso/demolición en los campos capturados.
+2. Qué NO es este score
+No es un dictamen de ingeniería estructural.
+No es una orden de demolición ni un permiso municipal.
+No sustituye la inspección detallada ni el proyecto ejecutivo.
+Sí es un ranking operativo revisable para adelantar trabajo (cuadrillas, mesas técnicas, listados cortos).
+3. Cómo se lee la planilla (A / B / C)
+En Habitable, varios bloques de la ANIH usan letras. En este score las interpretamos así (simplificado para priorizar):
+A — condición favorable / sin el daño o riesgo de ese ítem (aporta 0 o muy poco).
+B — condición intermedia (aporta puntos medios).
+C — condición adversa / daño o riesgo alto en ese ítem (aporta el máximo del ítem).
+Vacío (sin dato) — no suma. Por eso un ROJO «poco llenado» puede quedar con score bajo aunque el edificio sea grave en la realidad.
+Regla práctica: dos letras C en los riesgos principales (externo + severo) ya empujan el caso hacia la zona Alta / Muy alta.
+4. Tabla de puntos (máximo 100)
+Los aportes se suman. Si la suma supera 100, se deja en 100. En el Excel, la columna score_detalle muestra exactamente qué sumó (ejemplo: riesgo_externo+20; ext_colapso+15; altura_10++6).
+riesgo_externo: B = 8 · C = 20  (peligro hacia afuera / entorno).
+riesgo_severo: B = 8 · C = 20  (daño severo estructural en planilla).
+ext_colapso_estructura: B = 6 · C = 15.
+ext_peligro_aledanos: B = 4 · C = 10.
+ext_inclinacion: B = 3 · C = 8.
+ext_asentamiento: B = 2 · C = 5.
+ext_peligro_geologico: B = 2 · C = 5.
+acc_medidas: si aparece DEMOLER → +8; si apuntalar y acordonar → +4; si solo una de esas → +2.
+emergencia_gas = sí → +3.
+Altura (num_pisos): 1–2 → +1; 3–5 → +3; 6–9 → +5; 10 o más → +6.
+piso_critico informado (cualquier valor) → +3.
+Conteos sev_* (columnas/vigas/muros): hasta +5 según cuántos elementos severos se registraron.
+riesgo_componentes / riesgo_moderado en C → hasta +2 cada uno.
+5. Bandas: qué significa el número
+80–100 · Muy alta — varias señales graves a la vez; máxima prioridad de verificación detallada; fuerte probabilidad relativa de que el dictamen posterior oriente a demolición.
+60–79 · Alta — priorizar en la cola de segunda ronda.
+40–59 · Media — verificar; puede ser ROJO por riesgo importante pero no necesariamente demolición inmediata.
+20–39 · Baja-media — menor señal acumulada en Fase 1; no excluir sin revisión (a veces falta llenado).
+0–19 · Baja / datos incompletos — pocos campos de gravedad marcados en C, o edificio alto con poca señal estructural en planilla.
+6. Ejemplos didácticos (cómo se arma el valor)
+Los ejemplos siguientes son ilustrativos: muestran la lógica aritmética. Los nombres y puntajes se alinean con el tipo de casos que aparecen en Ranking_ROJO_nacional del Excel (corte Habitable 20/08/2026).
+Ejemplo A — Score ≈ 86 (banda Muy alta)
+Perfil: edificio de varios pisos, riesgos externos y severos en C, colapso estructural en C, acción con DEMOLER y algo de peligro a vecinos.
+riesgo_externo C → +20
+riesgo_severo C → +20
+ext_colapso_estructura C → +15
+ext_peligro_aledanos B → +4
+ext_inclinacion B → +3
+ext_peligro_geologico B → +2
+acc_medidas con DEMOLER → +8
+altura 6–9 pisos → +5
+piso_critico informado → +3
+Suma ≈ 20+20+15+4+3+2+8+5+3 = 80 (puede llegar a 86 si hay más ítems B/C o sev_*).
+Lectura: casi todos los «interruptores» graves están encendidos. En la cola, este caso va primero. La segunda ronda debe confirmar si procede demolición controlada.
+Ejemplo B — Score ≈ 81 (Muy alta) aunque sea 1 piso
+Perfil: vivienda o edificación baja, pero con colapso + riesgos C + peligro aledaños C.
+riesgo_externo C → +20
+riesgo_severo C → +20
+ext_colapso C → +15
+peligro_aledanos C → +10
+inclinación B → +3
+asentamiento B → +2
+altura 1–2 → +1
+Suma ≈ 71; con DEMOLER (+8) u otros C llega a ~80+.
+Lectura didáctica: la altura suma poco, pero el daño/riesgo suma mucho. Un caso de 1 piso puede superar a un edificio alto «poco documentado».
+Ejemplo C — Score ≈ 77 (banda Alta)
+Perfil: torre o bloque alto (p. ej. 14 pisos), riesgo externo C, colapso C, aledaños C, inclinación C, acción DEMOLER — pero riesgo_severo aún en A (no aporta).
+riesgo_externo C → +20
+riesgo_severo A → +0
+ext_colapso C → +15
+peligro_aledanos C → +10
+inclinación C → +8
+asentamiento B → +2
+peligro geológico C → +5
+DEMOLER → +8
+altura 10+ → +6
+Suma ≈ 74–77.
+Lectura: sigue siendo prioridad alta. Falta el «doble C» de riesgos ANIH, por eso no cruza fácilmente a 80+, pero el paquete exterior + DEMOLER + altura lo mantiene arriba en la cola.
+Ejemplo D — Score ≈ 59 (banda Media)
+Perfil: casa de 1–2 pisos con varios exteriores en C, pero sin el paquete completo (p. ej. sin DEMOLER o sin riesgo_severo C).
+riesgo_externo C → +20
+ext_colapso C → +15
+peligro_aledanos C → +10
+inclinación / asentamiento / geológico (mezcla B/C) → +8 a +13
+altura 1–2 → +1
+Suma típica ≈ 54–59.
+Lectura: hay daño serio registrado, pero el score no alcanza la franja Alta. Conviene verificación; la demolición no es la única hipótesis (puede ser estabilización, remoción parcial, etc.).
+Ejemplo E — Score ≈ 39 (banda Baja-media) en torre alta
+Perfil: edificio de 15–16 pisos, riesgo_severo C y quizá DEMOLER, pero riesgo_externo A/B y sin colapso exterior en C.
+riesgo_severo C → +20
+DEMOLER → +8
+altura 10+ → +6
+piso_critico → +3
+algo de componentes/moderado → +1 a +2
+Suma ≈ 38–39.
+Lectura didáctica clave: ser alto no basta. Sin C en externo/colapso/aledaños, el score se queda en Baja-media. Puede ser un ROJO «real» con planilla incompleta: por eso no se descarta, se revisa el llenado antes de bajarlo de la cola.
+Ejemplo F — Score ≈ 19 (Baja / datos incompletos)
+Perfil: torre alta (15–18 pisos) con pocos C; a veces solo DEMOLER o un riesgo B, más altura y piso crítico.
+DEMOLER → +8
+altura 10+ → +6
+piso_critico → +3
+riesgo_componentes C → +2
+Suma ≈ 19.
+Lectura: el sistema «no ve» gravedad estructural en los campos A/B/C. Puede ser subregistro. Acción sugerida: no usar este score para cerrar el caso; pedir completar planilla o inspección detallada si hay alerta territorial.
+7. Comparación rápida (para interiorizar la escala)
+Casa baja + colapso C + externo C + aledaños C → puede ser Muy alta (~80).
+Torre 14 pisos + externo C + colapso C + DEMOLER + inclinación C → Alta (~75).
+Casa con varios C exteriores pero sin DEMOLER/severo C → Media (~55–59).
+Torre alta + severo C + DEMOLER pero externo A y sin colapso C → Baja-media (~39).
+Torre alta casi sin C → Baja / incompleta (~15–20).
+8. Cómo usarlo mañana en el Excel
+Abrir Ranking_ROJO_LaGuaira (o nacional).
+Filtrar banda_prioridad = Muy alta o Alta (score ≥ 60) para la primera ola.
+Mirar score_detalle para explicar en mesa técnica por qué subió.
+Usar en_lote_informes_pdf = Sí para ver si ese id ya tiene informe del lote actual.
+Bajar a Media solo cuando la ola Alta esté cubierta o haya criterio territorial.
+Tratar Baja / incompleta como «curar dato», no como «edificio sano».
+9. Limitaciones (para no sobreinterpretar)
+Depende de la calidad del llenado en Fase 1.
+No analiza fotos ni el texto de observaciones de forma semántica.
+estatus_demolicion en el export puede venir vacío aunque el caso ya tenga informe PDF.
+Cuando existan dictámenes detallados sí/no demolición, el score debe recalibrarse (pesos A/B/C y umbrales de banda).
+10. Cierre
+El valor del score es una suma transparente de señales ya capturadas. Úselo para ordenar el trabajo; valide siempre con inspección detallada antes de cualquier decisión de demolición.

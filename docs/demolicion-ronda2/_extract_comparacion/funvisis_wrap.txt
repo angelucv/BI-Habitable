@@ -1,0 +1,298 @@
+GUÍA PRACTICA PARA LA ELABORACIÓN DE INFORME DE INSPECCIÓN DETALLADO DE LA FASE II DEBIDO A LOS SISMOS OCURRIDOS EL PASADO 24 DE JUNIO DE 2026
+Elaborado por los ingenieros:
+Henry Zambrano
+William Ascanio
+Jorge González
+Mario Rendón
+Francisco Artigas
+Caracas, agosto de 2026
+PRÓLOGO
+La evaluación de la seguridad estructural de las edificaciones tras un evento sísmico es uno de los desafíos más complejos y críticos para la ingeniería civil y la gestión de riesgos. A raíz de los eventos sísmicos del 24 de junio de 2026, y una vez superada la primera fase de inspección de edificaciones definida por la Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras, la respuesta técnica entra en una etapa (segunda fase) de diagnóstico detallado. Sin embargo, la efectividad de esta evaluación puede verse comprometida, no por la falta de capacidad técnica de los inspectores, sino por la inconsistencia en el levantamiento de datos en el terreno, la falta de homogeneidad en la redacción de los informes escritos o la incoherencia en el desarrollo de las ideas y conclusiones técnicas.
+Frecuentemente, los ingenieros civiles, arquitectos y técnicos evalúan los daños desde interpretaciones particulares, lo que se traduce en documentos heterogéneos y dispersos. Un mismo nivel de daño en la mampostería o en los elementos estructurales puede ser descrito con terminologías contradictorias, justificaciones sin respaldo o argumentos que carecen de un hilo conductor lógico. Esta falta de uniformidad en el informe de campo genera ambigüedad, lo que obliga a validar o hacer una segunda inspección en el sitio para resolver las incongruencias, retrasando el inicio de las actividades de la segunda fase de las edificaciones evaluadas.
+Por ello, unificar los criterios de levantamiento y estandarizar la descripción técnica es una necesidad operativa. Esta Guía Rápida de Recomendaciones para Rehabilitación y/o Reparaciones Estructurales nace con el propósito de centralizar y homologar la identificación de las fallas típicas que sufren los elementos estructurales (columnas, vigas, nodos, muros estructurales, etc.) y la mampostería (paredes y elementos arquitectónicos).
+Este documento se constituye como un instrumento diseñado específicamente para utilizarse en esta segunda fase de abordaje técnico, orientada a ejecutar revisiones estructurales detalladas en las edificaciones previamente catalogadas en colores amarillo o rojo. Al implementar las acciones descritas y complementarlas con los criterios del Semáforo de Evaluación Post-Sísmica, se obtiene una herramienta útil de normalización documental. Su aplicación busca garantizar que cada informe de inspección sea un documento técnico fluido, coherente y homogéneo, transformando la disparidad de criterios individuales en una narrativa unificada bajo los lineamientos de la Comisión Presidencial, velando siempre por la preservación de la vida humana.
+OBJETIVOS
+Estandarizar los criterios técnicos y el informe de campo para la identificación de fallas en elementos estructurales y de mampostería afectados por los eventos sísmicos del 24 de junio de 2026, mediante la matriz del Semáforo de Evaluación Post-Sísmica, a fin de erradicar la ambigüedad en la segunda fase de abordaje técnico y guiar las acciones de rehabilitación, reparación o mitigación avaladas por la Comisión Presidencial para garantizar la preservación de la vida humana.
+ALCANCE
+Esta guía es de aplicación obligatoria para todos los ingenieros estructurales, arquitectos y técnicos autorizados que ejecutan labores de inspección técnica detallada en el terreno. Su rango de acción operativa comprende exclusivamente:
+Delimitación temporal y geográfica: revisión técnica de las edificaciones afectadas en el territorio nacional a consecuencia de los eventos sísmicos del 24 de junio de 2026.
+Fase de aplicación: la ejecución técnica de la segunda fase de diagnóstico detallado. No contempla la inspección visual primaria ni la emisión de etiquetas preliminares de habitabilidad.
+Inmuebles a inspeccionar: aquellas edificaciones civiles, residenciales, comerciales o de uso público que hayan sido previamente catalogadas con el código de color amarillo (acceso restringido) o rojo (inseguro) durante la primera fase de inspección visual rápida.
+Sistemas a evaluar: la identificación unificada de fallas en elementos estructurales (columnas, vigas, nodos, muros estructurales, etc.) y en la mampostería (paredes y elementos arquitectónicos)
+Documento esperado: la estandarización y presentación de un documento técnico fluido, coherente y homogéneo de campo para validar si la edificación requiere acciones de mitigación inmediata, reparación o rehabilitación estructural definitiva, bajo las directrices de la Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras.
+Esta versión no contempla las estructuras de acero.
+REFERENCIAS NORMATIVAS
+Las normativas que se detallan a continuación establecen pautas de cumplimiento obligatorio para la presente guía al momento de ser referenciadas. Para su correcta aplicación, se exigirá siempre el uso de su edición más reciente.
+Lineamientos técnicos: Evaluación y reparación de elementos de concreto armado con daño leve y moderado por sismo.
+Lineamientos técnicos: Evaluación, reparación y restitución de paredes de mampostería dañadas por sismo.
+Lineamientos técnicos: Apuntalamiento de columnas, vigas y losas de concreto armado afectadas por sismo.
+Evaluación rápida de daños en edificaciones.
+TÉRMINOS Y DEFINICIONES
+Apuntalamiento temporal: Estructura provisoria diseñada e instalada para transferir cargas y brindar soporte a vigas, columnas o losas afectadas, garantizando la estabilidad operacional durante las labores de intervención.
+Desplazamiento fuera del plano: Mecanismo de falla en elementos de mampostería caracterizado por la pérdida de verticalidad (superior al 1 % de la altura del muro), lo que induce un riesgo inminente de volcamiento debido a acciones sísmicas perpendiculares a su superficie.
+Escarificar: Acción de raspar o volver rugosa la superficie de un sustrato de concreto endurecido para remover capas débiles y optimizar la adherencia mecánica de los materiales de reparación.
+Inyección estructural: Procedimiento de reparación que consiste en introducir a presión continua (sea baja o moderada) resinas epóxicas de baja viscosidad o lechadas cementicias fluidas dentro de grietas y fisuras, con la finalidad de restaurar el monolitismo del elemento.
+Llaveado / Rajueleo: Técnica de reconstrucción localizada en muros de mampostería consistente en el reemplazo manual de piezas fracturadas por unidades nuevas del mismo tipo y resistencia, trabándolas y acuñándolas de forma adecuada con mortero de pega.
+Mampostería confinada: Sistema constructivo compuesto por muros de bloques o ladrillos enmarcados y acoplados dinámicamente por elementos de concreto armado (columnas y vigas de amarre).
+Mecanismo de falla: Patrón dinámico o manifestación física de degradación (por flexión, corte, compresión, tracción o pérdida de adherencia) que experimenta un elemento estructural o no estructural al superar su límite de resistencia bajo demandas sísmicas.
+Microconcreto autocompactante / Grout: Material cementicio fluido de alta resistencia, libre de retracción y con capacidad de flujo, empleado para el llenado de secciones estructurales complejas o confinadas sin requerir compactación vibratoria.
+Mortero tixotrópico: Mortero de reparación estructural diseñado para poseer alta viscosidad en reposo y fluidez bajo esfuerzo, lo que permite su aplicación en superficies verticales o sobre cabeza sin descolgarse ni deslizarse.
+Puente de adherencia: Sustancia epóxica o ligante sintético aplicado sobre la superficie de concreto existente o acero de refuerzo para asegurar la unión química y mecánica con el nuevo material de aportación.
+Rótula plástica: Zona delimitada de un elemento estructural de concreto armado donde se concentran deformaciones inelásticas severas bajo cargas sísmicas, manifestada por la pérdida de recubrimiento, agrietamiento severo o aplastamiento del núcleo.
+Semáforo de evaluación post-sísmica: Matriz normada de categorización que permite calificar la habitabilidad e inspección de inmuebles mediante un código cromático (verde: habitable; amarillo: acceso restringido; rojo: inseguro).
+Sistema de construcción en seco (Tabiquería liviana): Cerramiento interior no estructural conformado por perfilería de acero galvanizado, aislamiento térmico-acústico (como lana mineral) y placas cementicias o de yeso Tipo X, diseñado para admitir deformaciones del marco estructural sin colapsar frágilmente.
+Unión telescópica: Conexión flotante ejecutada mediante perforaciones ovaladas en la perfilería de acero de un tabique liviano, la cual permite absorber las deflexiones verticales de la losa superior sin transmitir cargas adicionales a la mampostería.
+FORMATO DE INFORME
+REPÚBLICA BOLIVARIANA DE VENEZUELA
+COMISIÓN PRESIDENCIAL PARA LA EVALUACIÓN DE HABITABILIDAD DE INFRAESTRUCTURAS
+INSPECCIONES POST-SÍSMICA FASE II
+INSPECCIÓN DETALLADA FASE II DEL EDIFICIO “NOMBRE DE LA EDIFICACIÓN INSPECCIONADA” DEBIDO A LOS EVENTOS SÍSMICOS DEL 24 DE JUNIO DE 2026 OCURRIDO EN SAN FELIPE Y LA GUAIRA
+Inspector:
+Ing. Ascanio Pérez Ricardo
+CI: V-50.000.000
+CIV: 147.331
+Arq. Mario Antonio González
+CI: V-60.000.000
+CIV: 865.231
+Caracas, agosto de 2026
+DATOS DEL INMUEBLE
+Información del Inmueble
+USO DE LA EDIFICACIÓN:
+DESCRIPCIÓN ESTRUCTURAL DEL INMUEBLE
+AÑO DE CONSTRUCCIÓN
+NÚMERO DE NIVELES
+NÚMERO DE APARTAMENTOS O LOCALES POR NIVELES (PLANTA TIPO)
+ÁREA DE PLANTA TIPO
+GEOMETRÍA EN PLANTA Y EN ELEVACIÓN
+IRREGULARIDADES
+CANTIDAD DE VIGAS, COLUMMNAS Y MUROS ESTRUCTURALES EN LA PLANTA TIPO
+DIMENSIONES DE COLUMNAS Y MUROS ESTRUCTURAL EN PLANTA TIPO DE CONCRETO ARMADO
+Dimensión de columnas
+DIMENSIONES DE VIGAS EN PLANTA TIPO DE CONCRETO ARMADO
+Dimensión de Vigas
+CLASIFICACIÓN Y DIAGNÓSTICO DEL DAÑO ESTRUCTURAL
+Identificación del mecanismo de fallas en miembros estructurales principales
+Ubicación de los elementos que presentan daños, Descripción del daño en vigas, columnas, muros de carga, losas y conexiones (grietas, fisuras, desconchamiento de concreto, pandeo de acero). Identificar el tipo de falla.
+Mecanismo de fallas en vigas de concreto armado
+Nivel del daño estructural en vigas de concreto armado
+Imágenes del mecanismo de fallas en vigas y del nivel de daño estructural
+Deben incluirse imágenes (fotos) que ilustren de manera apropiada el mecanismo de fallas encontrado en las vigas y su nivel de daño estructural, colocar al menos una imagen que muestre toda la viga y una que detalle la situación.
+Mecanismo de fallas en columnas de concreto armado
+Nivel del daño estructural en columnas de concreto armado
+Imágenes del mecanismo de fallas en columnas y del nivel de daño estructural
+Deben incluirse imágenes (fotos) que ilustren de manera apropiada el mecanismo de fallas encontrado en las columnas y su nivel de daño estructural, colocar al menos una imagen que muestre toda la columna y una que detalle la situación.
+Mecanismo de fallas en muros o pantallas de concreto armado
+Nivel del daño estructural en muros o pantallas de concreto armado
+Imágenes del mecanismo de fallas en muros o pantallas de concreto armado y del nivel de daño estructural
+Deben incluirse imágenes (fotos) que ilustren de manera apropiada el mecanismo de fallas encontrado en los muros y en las pantallas de concreto armado y su nivel de daño estructural, colocar al menos una imagen que muestre toda la columna y una que detalle la situación.
+Diagnóstico del daño estructural de la edificación
+Redactar de manera clara, concisa e indicar daños, fallas o riesgos en los elementos columnas, vigas, uniones y losas para indicar las reparaciones.
+Diagnósticos de daños de escaleras (Vías de Evacuación)
+Redactar de manera clara, concisa e indicar daños, fallas o riesgos en los elementos de escaleras y vías de evacuación, para indicar las reparaciones.
+Daños de la edificación preexistentes o anteriores a los sismos
+Redactar de manera clara, concisa e indicar daños estructurales, filtraciones, corrosión o cualquier riesgo en los elementos columnas, vigas, uniones y muros anteriores a los sismos ocurridos el 24 de junio de 2026
+CLASIFICACIÓN Y DIAGNÓSTICO DEL DAÑO EN MAMPOSTERIA
+Identificación del mecanismo de falla en mampostería
+Tipos de fallas estructurales en muros de mampostería. Fuente: Tomado de Lineamientos Técnicos de Reparación de Mampostería Post-Sismo, por Coronel, G. y Fernández, N. (2026).
+Selección de la falla encontrada
+Nivel del daño en mampostería
+Imágenes del mecanismo de falla y del nivel de daño en mampostería
+Deben incluirse imágenes que ilustren de manera apropiada el mecanismo de fallas encontrado en la mampostería y su nivel de daño estructural, colocar al menos una imagen que muestre toda la fachada o pared y una que detalle la situación.
+Diagnóstico del daño en mampostería
+Redactar de manera clara, concisa e indicar daños, fallas o riesgos en la mampostería para indicar las reparaciones.
+MÉTODOS DE REHABILITACIÓN Y/O REPARACIÓN ESTRUCTURAL SUGERIDOS
+Procedimientos para vigas de concreto armado.
+Marque con una equis (X) conforme a los hallazgos encontrados (diagnóstico) los recuadros de la lista de verificación, para seleccionar la alternativa de intervención propuesta, que corresponda.
+Alternativa 1: inyección estructural de fisuras (Procedimiento VIG-01).
+Grietas por flexión sismorresistente (verticales en zona de máximo momento flector).
+Aberturas de grieta inferiores a 5.0 mm sin desprendimiento de concreto.
+Ausencia de grietas diagonales críticas por corte cerca de los apoyos.
+Especificación técnica: Diseñar el nivel de descarga provisional e inyectar con resina de baja viscosidad o lechada cementicia fluida para recuperar el monolitismo.
+Alternativa 2: reparación localizada de recubrimiento en vigas (Procedimiento VIG-02)
+Desprendimiento del concreto en la cara inferior o laterales de la viga.
+Núcleo superior e inferior estable; estribos cerrados intactos.
+Especificación técnica: Instalar apuntalamiento temporal en las vigas y losas tributarias. Cortar bordes a 20 mm, limpiar cabillas, aplicar puente de adherencia y restituir la sección mediante mortero tixotrópico o bombeo de microconcreto en encofrados estancos con venteos.
+Alternativa 3: reconstrucción equivalente de rótulas plásticas o núcleo (Procedimiento VIG-03 / VIG-04).
+Formación de rótula plástica con pérdida total del recubrimiento.
+Aplastamiento del núcleo de concreto o pérdida de la altura efectiva de la viga.
+Grietas diagonales severas por corte (grietas > 2 mm con afectación del núcleo central.
+Especificación técnica: Apuntalar de forma sismorresistente la viga y las losas a ambos lados. Instalar conectores de corte de 9 mm en forma de bastón anclados al núcleo con resina epóxica (cada 40 cm). Vaciar la sección con microconcreto autocompactante o mortero cementicio fluido industrial sin contracción.
+Procedimientos para columnas de concreto armado
+Marque con una equis (X) conforme a los hallazgos encontrados (diagnóstico) los recuadros de la lista de verificación, para seleccionar la alternativa de intervención propuesta, que corresponda.
+Alternativa 1: sellado y protección superficial (Procedimiento COL-01)
+Grietas superficiales o de retracción térmica/hidráulica.
+Sin patrón sísmico (ni diagonales, ni de aplastamiento). No hay variaciones en el ancho de la fisura bajo cargas de servicio.
+El acero de refuerzo transversal y longitudinal no está expuesto.
+Especificación técnica: Aplicar puente de adherencia y sellador elastomérico industrial. No atribuir recuperación de capacidad estructural en el informe.
+Alternativa 2: inyección estructural de resina o lechada (Procedimiento COL-02)
+Grietas transversales u horizontales asociadas a flexión por sismo.
+Abertura visible de la grieta en el concreto entre 0.05 mm y 5.0 mm.
+El núcleo de concreto confinado está intacto (sin trituración ni desprendimiento).
+El acero longitudinal y los estribos están rectos, competentes y alineados.
+Especificación técnica: Inyección continua a baja presión (de abajo hacia arriba) con resina epóxica de baja viscosidad (grietas < 2 mm) o lechada cementicia con superplastificante (5 mm ≥ grietas ≥ 2 mm)
+Alternativa 3: Reparación localizada de recubrimientos (Procedimiento COL-03)
+Desprendimiento o desconchamiento del concreto de recubrimiento del elemento.
+El núcleo de concreto confinado se observa sano y sin fisuras profundas.
+Los estribos y barras longitudinales están expuestos, pero sin deformación ni pandeo.
+La pérdida de sección transversal por corrosión o daño en las barras es menor al 25%.
+Especificación técnica: Delimitar con corte de disco a 20 mm, escarificar sustrato, limpiar acero, llevar a condición saturada-superficialmente-seca, aplicar puente de adherencia epóxico y reponer la sección con mortero estructural tixotrópico reforzado con fibras.
+Alternativa 4: reconstrucción equivalente bajo descarga diseñada (Procedimiento COL-04 / COL-05)
+Aplastamiento localizado o trituración del concreto del núcleo confinado.
+Presencia de barras longitudinales pandeadas, deformadas o estribos abiertos.
+Pérdida severa de la sección transversal o barras de refuerzo fracturadas.
+Especificación técnica: Instalar apuntalamiento estructural y transferir cargas antes de intervenir. Demoler concreto dañado, sustituir tramos de cabilla mediante conectores mecánicos o solapes normados, reponer estribos a 135° y vaciar con grout fluido de retracción compensada f’c = 300 kgf/cm2.
+Condición crítica: fuera del alcance
+.
+Gran acortamiento del miembro, desplome.
+Daño severo generalizado.
+Especificación técnica: el elemento no es reparable por métodos simples
+MÉTODOS DE REHABILITACIÓN Y/O REPARACIÓN DE MAMPOSTERIA SUGERIDOS
+Marque con una equis (X) conforme a los hallazgos encontrados en el diagnóstico de campo, según los recuadros de la lista de verificación, y seleccione la alternativa de intervención propuesta, que corresponda:
+Alternativa 1: Reparación no estructural de fisuras leves (Procedimiento MAM-01)
+Criterios de diagnóstico: Presencia de microfisuras o fisuras finas superficiales aisladas e inactivas con un ancho máximo < 0.5 mm Las fisuras se ubican únicamente sobre el acabado (recubrimiento, friso) o en las juntas de mortero, sin rotura ni trituración de bloques. No existen desalineaciones ni desplazamientos en el paño.
+Especificación técnica: Retirar por completo el friso suelto o fisurado en una franja perimetral mínima de 10 cm a cada lado de la discontinuidad. Limpiar el interior de la abertura mediante el uso de aire comprimido o chorro de agua a presión para eliminar partículas sueltas. Sellar de forma continua utilizando masilla o sellador elastomérico de poliuretano de alta resistencia (evitar el uso de siliconas, si la superficie va a ser pintada posteriormente). Reponer el acabado final mediante mortero base y estuco compatible.
+Alternativa 2: Inyección estructural de fisuras y grietas moderadas (Procedimiento MAM-02)
+Criterios de diagnóstico: Grietas definidas, provocadas por tracción o flexión con anchos comprendidos en el rango entre 0.5 mm y 5.0mm. Mortero de juntas agrietado sin trituración de las piezas cerámicas o bloques de concreto. Aplica tanto para mampostería de relleno (No separada) como para tabiques independientes (separada) siempre que no exista desplome apreciable.
+Especificación técnica: Remover el acabado en una franja de entre 10 cm y 30 cm a cada lado del eje de la grieta. Perforar e instalar puertos plásticos de inyección (boquillas) a lo largo de la grieta espaciados a una distancia equivalente al espesor del muro (típicamente entre 12 cm y 15 cm). Sellar mecánicamente la cara externa expuesta entre las boquillas con resina epóxica de fraguado rápido para contener la presión.
+Para piezas sólidas: Inyectar de forma continua de abajo hacia arriba resina epóxica de baja viscosidad (presión típica de 0.05 a 0.1 MPa). En caso de usar lechada o micromortero cementicio, fluido, sin contracción, saturar previamente el sustrato con agua durante 24 horas.
+Para piezas huecas: Realizar la inyección a muy baja presión para evitar el llenado involuntario e innecesario de las celdas internas de los bloques.
+Alternativa 3: Reconstrucción localizada mediante llaveado y costura (Procedimiento MAM-03)
+Criterios de diagnóstico: Daño clasificado como severo con grietas diagonales o en "X" producidas por corte o tensión diagonal con anchos de grieta entre 5.0 mm y 15.0 mm. Presencia de piezas localmente fracturadas o roturas secundarias en esquinas, pero sin comprometer la estabilidad global del paño frente al volcamiento (desplome (< 1% h).
+Especificación técnica:
+Costura (Grapado): Rebajar mecánicamente las juntas de mortero horizontales que intersectan la grieta principal a una distancia de 40 cm a 60 cm a cada lado. Insertar grapas metálicas o barras helicoidales de acero de refuerzo de diámetro 6 mm, embebidas en mortero estructural de alta adherencia, para restablecer la continuidad a tracción.
+Llaveado/Rajueleo: Retirar las piezas cerámicas o de concreto que se encuentren fracturadas, utilizando exclusivamente herramientas manuales, prohibiéndose el uso de rotomartillos pesados, que transmitan vibraciones perjudiciales al resto de la estructura. Humedecer la cavidad resultante e integrar piezas nuevas de reposición del mismo tipo, densidad y resistencia original, acuñándolas y trabándolas con las piezas existentes. Asentar con mortero de pega equivalente (cemento COVENIN 28 Tipo I) adicionado con estabilizador de volumen. Efectuar curado húmedo constante por un periodo de 3 a 5 días.
+Alternativa 4: Sustitución por tabiquería liviana sismorresistente en rutas de evacuación (Procedimiento MAM-04)
+Criterios de diagnóstico: Todo paño de mampostería tradicional pesada colindante con escaleras, pasillos o rutas de escape que haya sufrido daño moderado a severo (requiriendo intervenciones tipo RL o D). Queda estrictamente prohibida su reconstrucción con bloques de arcilla o concreto debido al riesgo latente de colapso frágil o volcamiento sobre los ocupantes ante réplicas.
+Especificación técnica: Demoler de forma controlada el paño afectado de arriba hacia abajo, hilada por hilada. Instalar un sistema de construcción en seco liviano con certificación de resistencia al fuego RF-120. La estructura portante constará de perfiles de acero galvanizado (parantes de espesor ≥ 0,90 mm, dispuestos a cada 40 o 60 cm) fijados a las losas mediante canales con perforaciones ovaladas (unión telescópica) para permitir la deflexión estructural, sin transmitir cargas verticales al tabique. El núcleo se rellenará con lana de roca mineral (densidad ≥ 40 kg/m³). La cara interna orientada a la ruta de evacuación se conformará por una base de placa cementicia de alta densidad de 12 mm (resistente a impactos) más una placa de yeso Tipo X de 15.9 mm. La cara opuesta se cerrará con doble placa de yeso Tipo X de 15.9 mm con juntas trabadas y masilla cortafuego.
+CONSIDERACIONES Y RECOMENDACIONES GENERALES
+Con el propósito de garantizar la seguridad estructural de la edificación tras el evento sísmico del 24 de junio de 2026, se recomienda ejecutar una caracterización de las propiedades mecánicas reales de sus materiales mediante ensayos in situ y de laboratorio. Por consiguiente, a partir de estos insumos se deberán desarrollar modelos matemáticos que permitan evaluar rigurosamente la respuesta no lineal del sistema estructural ante solicitaciones dinámicas. Finalmente, este diagnóstico y modelaje numérico servirán de fundamento metodológico para proyectar un esquema de reforzamiento estructural óptimo, con el fin de que la edificación cumpla con la normativa sismorresistente vigente.
+REFERENCIAS
+Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras. (2026). Lineamientos técnicos: Evaluación y reparación de elementos de concreto armado con daño leve y moderado por sismo (Revisión 5). Presidencia de la República Bolivariana de Venezuela.
+Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras. (2026). Lineamientos técnicos: Evaluación, reparación y restitución de paredes de mampostería dañadas por sismo (Documento de emergencia, Rev. 4). Presidencia de la República Bolivariana de Venezuela.
+Comisión Presidencial para la Evaluación de Habitabilidad de Infraestructuras. (2026). Lineamientos técnicos: Apuntalamiento de columnas, vigas y losas de concreto armado afectadas por sismo (Revisión 3). Presidencia de la República Bolivariana de Venezuela.
+Fierro, F., López, O. A., Ginés, C. Z., Coronel D., G., Urich, A., & Marinilli, A. (2022). Evaluación rápida de daños en edificaciones (Versión 02-05-2022) (Informe Técnico N.º FUN-001-2022). Fundación Venezolana de Investigaciones Sismológicas (FUNVISIS).
+López, O. A., Coronel, G., Ascanio, W., Rojas, R., Páez, V., Olbrich, F., Rengel, J., & González, J. (2014). Índices de priorización de edificios para la gestión del riesgo sísmico (3.ª vers., Informe Técnico No. FUN-002, 2014). Fundación Venezolana de Investigaciones Sismológicas (FUNVISIS).
+
+--- TABLA 1 ---
+Nombre de la edificación: |  | 
+Dirección: |  | 
+Coordenadas UTM (Este , Norte): (Uso 19 P) |  | 
+Fecha y hora de inicio de inspección: |  | 
+Fecha y hora de culminación de la Inspección: |  | 
+Dictamen de habitabilidad: |  | 
+Número de personas que ocupan el inmueble: |  | 
+Persona contacto: |  | 
+Contacto: |  | 
+
+--- TABLA 2 ---
+Vivienda Unifamiliar |  | Comercial/oficina |  | Gubernamental | 
+Vivienda Multifamiliar |  | Medico/Asistencial |  | Seguridad | 
+Vivienda Popular |  | Cultural/Recreativo |  | Religioso | 
+Educativa |  | Militar |  | Bomberos | 
+Industrial |  | Policial |  | Protección Civil | 
+Otros (especifique) |  |  |  |  | 
+
+--- TABLA 3 ---
+Pórticos de concreto armado. |  | Sistemas pre-fabricados a base de grandes paneles o de pórticos. | 
+Pórticos de concreto armado rellenos con paredes de bloques de arcilla o de concreto. |  | Sistemas cuyos elementos portantes sean muros de mampostería confinada. | 
+Muros de concreto armado en dos direcciones horizontales. |  | Sistemas cuyos elementos portantes sean muros de mampostería no confinada. | 
+Sistemas con muros de concreto armado de poco espesor, dispuestos en una sola dirección (algunos sistemas. tipo túnel). |  | Sistemas mixtos de pórticos y de mampostería de baja calidad de construcción. | 
+Pórticos de acero. |  | Viviendas de bahareque de un piso. | 
+Pórticos de acero diagonalizados. |  | Otros ______________________________ | 
+
+--- TABLA 4 ---
+Antes de 1939 |  | Entre 1956 y 1967 |  | Entre 1999 y 2001 | 
+Entre 1939 y 1947 |  | Entre 1968 y 1982 | X | Entre 2002 y 2021 | 
+Entre 1948 y 1955 |  | Entre 1983 y 1998 |  | Después del 2022 | 
+
+--- TABLA 5 ---
+N° Pisos | 7 | N° semisótano | 1 | N° sótano | 0
+
+--- TABLA 6 ---
+N° de apartamento planta tipo | 4 | N° apartamento PH | 1 | N° de apartamento total | 0
+N° de Locales planta tipo | 4 | N° apartamento PB | 1 | N° de Locales total | 0
+
+--- TABLA 7 ---
+Área de planta tipo (m2) | 203,56 | Área PB (m2) | 356,12
+Área total de construcción (m2) | Área total de construcción (m2) | 8567,32 | 8567,32
+
+--- TABLA 8 ---
+Esquema en planta | Esquema en planta | Esquema en planta | Esquema en planta
+“H” |  | Cajón | 
+“T” |  | Regular | 
+“U” ó “C” | X | Esbeltez horizontal | 
+“L” |  | Ninguno | 
+
+--- TABLA 9 ---
+Esquema en Elevación | Esquema en Elevación | Esquema en Elevación | Esquema en Elevación
+“T” |  | “L” | 
+Pirámide invertida |  | Rectangular | X
+Piramidal |  | Esbeltez vertical | 
+“U” |  | Ninguno | 
+
+--- TABLA 10 ---
+Ausencia de vigas altas en una o dos direcciones | X | Aberturas significativas en losas | 
+Ausencia de muros en una dirección |  | Fuerte asimetría de masas o rigideces en planta | 
+Presencia de al menos un entrepiso débil ó blando |  | Adosamiento: Losa contra losa | X
+Presencia de columnas cortas |  | Adosamiento: Losa contra columna | 
+Discontinuidad de ejes de columnas o paredes portantes |  | Separación entre edificios (cm): | 5
+
+--- TABLA 11 ---
+Vigas | 
+Columnas | 
+Muros estructurales | 
+
+--- TABLA 12 ---
+Eje | A(cm) | B(cm)
+A-1 | 30 | 35
+A-2 | 40 | 50
+
+--- TABLA 13 ---
+EJES | A a B | B a C | C a D | D a E
+1 | 30X50 | 30X50 | 25X30 | 30X40
+2 |  |  |  | 
+3 |  |  |  | 
+4 |  |  |  | 
+
+--- TABLA 14 ---
+EJES | 1 a 2 | 2 a 3 | 3 a 4
+A | 30X50 | 30X50 | 25X30
+B |  |  | 
+C |  |  | 
+D |  |  | 
+E |  |  | 
+
+--- TABLA 15 ---
+Flexión | X | Corte | 
+Corte y flexión |  | Adherencia | 
+
+--- TABLA 16 ---
+grietas ˂ 1 mm | grietas ˂ 1 mm | 1 mm ≥ grietas ˂ 2 mm | 1 mm ≥ grietas ˂ 2 mm | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual. | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual.
+Sin daño o leve |  | Moderado |  | Severo | 
+
+--- TABLA 17 ---
+Compresión |  | Corte |  | Flexión |  | Adherencia | 
+
+--- TABLA 18 ---
+grietas ˂ 1 mm | grietas ˂ 1 mm | 1 mm ≥ grietas ˂ 2 mm | 1 mm ≥ grietas ˂ 2 mm | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual
+Sin daño o leve |  | Moderado |  | Severo | 
+
+--- TABLA 19 ---
+Compresión | Corte | Flexión | Adherencia
+
+--- TABLA 20 ---
+grietas ˂ 1 mm | grietas ˂ 1 mm | 1 mm ≥ grietas ˂ 2 mm | 1 mm ≥ grietas ˂ 2 mm | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual | Grietas ≥ 2 mm, caída de recubrimiento, fractura de barras desplazamiento residual
+Sin daño o leve |  | Moderado |  | Severo | 
+
+--- TABLA 21 ---
+Tracción o flexión |  | Desplazamiento fuera del plano | 
+Corte |  | Compresión | 
+
+--- TABLA 22 ---
+grietas ˂ 0,5 mm | grietas ˂ 0,5 mm | 0,5 mm ≤ grietas ˂ 5 mm | 0,5 mm ≤ grietas ˂ 5 mm | grietas ≥ 5 mm. | grietas ≥ 5 mm.
+Sin daño o leve |  | Moderado |  | Severo | 
+
+--- TABLA 23 ---
+ | Evacuar la edificación inmediatamente
+ | Requiere un proyecto formal de reforzamiento sismorresistente global
+ | Demolición estructural

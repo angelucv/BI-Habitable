@@ -1,0 +1,146 @@
+pages=8
+
+--- PAGE 1 ---
+DGPS_INF-F2-Tanaguarena /11/08/2026-001 
+____________________________________________________________________________ 
+INFORME TÉCNICO DE INGENIERÍA ESTRUCTURAL 
+EVALUACIÓN POSTSÍSMICA DETALLADA  
+Edificación Inspeccionada: EDIFICIO FRANCO MAR  
+Ubicación: Avenida José María España, Vargas, Estado La Guaira  
+Coordenadas GPS de Control: Latitud N 10.489497, Longitud W-66.899001 
+Evaluación: 11 de agosto de 2026. 
+Equipo de Ingenieros Evaluadores:  
+Ing. Luis Burgos (C.I 4357927)  
+Ing. José García (C.I 6913241) 
+Ingeniero Supervisor Institucional: Ing. Aura Quintero. 
+ 
+ 
+1. Datos Generales 
+El presente informe de inspección técnica de nivel 2 detalla el estado actual de vulnerabilidad y 
+daño estructural en el Edificio Franco Mar, luego del severo movimiento telúrico registrado el 
+pasado 24 de junio de 2026. La evaluación in situ fue efectuada por el equipo de ingeniería el 
+día 11 de agosto de 2026, con el fin de cuantificar las patologías estructurales y dictaminar las 
+medidas necesarias para garantizar la seguridad pública de la zona. 
+Configuración Estructural: Estructura compuesta por pórticos de concreto armado 
+diseñados de forma ortogonal. Posee un total aproximado 
+de veintidós (22) columnas perimetrales y dieciocho (18) 
+columnas interiores. 
+Dimensiones y Niveles: Área de planta aproximada de 780 metros cuadrados (780 
+m²). Consta de doce (12) pisos de altura y dos (2) niveles de 
+sótano destinados a estacionamiento. 
+Condición Actual: Daño estructural severo extremo. El primer nivel (Nivel 1) ha 
+sufrido un colapso parcial de altura útil y aplastamiento de 
+apoyos debido a fallas catastróficas por compresión en 
+columnas, catalogándolo formalmente como "Piso Crítico". 
+Se evidencia pérdida de la verticalidad global y severas 
+fallas de corte en vigas de enlace. 
+
+--- PAGE 2 ---
+Clasificación Externa: ALTO RIESGO DE COLAPSO INMINENTE. Estructura 
+completamente inestable, inhabitable, con alto riesgo de 
+desplome y peligro de afectación crítica a las edificaciones y 
+vías públicas adyacentes. 
+ 
+2. Inspección Visual y Análisis de Causa Raíz de los Daños. 
+Durante la inspección de nivel 2 detallada y sistemática del Edificio Franco Mar, se detectaron 
+fallas estructurales graves que comprometen de manera directa el equilibrio estático de la 
+edificación. Las observaciones más críticas se detallan a continuación: 
+ Falla por Compresión en Piso Crítico (Nivel 1): Se constató que en más del 50% de las 
+columnas (tanto perimetrales como interiores) del nivel crítico (Nivel 1 / Planta Baja de 
+transición) se produjeron roturas, agrietamientos explosivos y grietas severas de más de 10 
+cm. Se observa un desprendimiento superior al 50% de la sección transversal del núcleo de 
+concreto armado, lo cual ha dejado expuestas las barras de refuerzo longitudinal y 
+provocado el pandeo severo del acero ante la pérdida de confinamiento lateral. 
+ Reducción de Altura de Entre-piso: Como consecuencia de la plastificación y 
+aplastamiento de las columnas del primer nivel, el edificio sufrió una notable reducción de la 
+altura del entrepiso en dicho nivel. La pérdida de altura útil ha transferido cargas directas no 
+previstas a elementos no estructurales (paredes de cerramiento y tabiquería de 
+mampostería), causando su compresión violenta, fractura y colapso parcial. 
+ Pérdida de Verticalidad Estructural: Las múltiples e intensas fallas por compresión 
+sufridas de manera asimétrica en los soportes verticales del piso crítico han originado una 
+visible pérdida de verticalidad (inclinación lateral) en la estructura. Este desalineamiento 
+introduce efectos de segundo orden (P-Delta) de magnitud incalculable para los que el 
+edificio no cuenta con rigidez remanente, amenazando de forma inminente a las 
+edificaciones residenciales y comerciales colindantes. 
+ Agrietamiento por Esfuerzo de Corte en Vigas: Se evidenció la presencia de grietas 
+diagonales severas por esfuerzo cortante (falla por tensión diagonal) en las vigas 
+principales de enlace a lo largo de un rango de hasta cinco (5) niveles del edificio. Estas 
+fallas demuestran la masiva redistribución de esfuerzos y la sobrecarga dinámica 
+experimentada durante el sismo del 24 de junio de 2026. 
+ Fallas en Sótanos y Elementos de Conexión: A nivel de los dos sótanos del edificio, se 
+detectaron fracturas de compresión severas en columnas de soporte e importantes fisuras 
+en los arranques de la losa de escalera del primer piso, indicando una distorsión de 
+entrepiso extrema en la base de la estructura. 
+ Durante la inspección de nivel 2, de carácter analítico y detallado, se detectaron fallas 
+estructurales catastróficas localizadas principalmente en la parte inferior de la edificación, 
+las cuales comprometen de forma directa e irreversible la capacidad de la estructura para 
+sostener su propio peso y responder ante cualquier carga lateral dinámica adicional. Los 
+hallazgos más determinantes se listan a continuación: 
+
+--- PAGE 3 ---
+3. Justificación Técnica de Demolición 
+ 
+Desde la perspectiva de la ingeniería estructural y la seguridad sismorresistente, la demolición 
+acelerada y controlada del Edificio Franco Mar se justifica de manera rigurosa bajo los 
+siguientes fundamentos: 
+ Inviabilidad de Reparación y Reforzamiento: La pérdida de más del 50% de la sección 
+transversal del núcleo de concreto en más del 50% de las columnas del piso crítico (Nivel 1) 
+es una patología irreversible. La capacidad de carga vertical residual de estos apoyos es 
+prácticamente nula. Apuntalar o recalzar una estructura de 12 pisos bajo estas condiciones 
+dinámicas de inestabilidad representa un riesgo inaceptable para el personal técnico y los 
+operarios. 
+ Efectos P-Delta y Excentricidad Gravitacional: La pérdida de verticalidad ha desplazado 
+de forma permanente el centro de gravedad del edificio. Las cargas gravitacionales de los 
+12 pisos superiores generan un momento volcador continuo sobre la base debilitada. 
+Cualquier réplica sísmica menor o incluso ráfagas de viento sostenidas podrían actuar 
+como desencadenantes de un colapso total imprevisto. 
+ Riesgo a Terceros y Entorno Urbano: El edificio está ubicado en la Avenida José María 
+España de Tanaguarenas, una arteria de alto tránsito vehicular y peatonal. Un desplome 
+descontrolado impactaría directamente sobre las vías públicas y causaría la destrucción 
+total de las edificaciones residenciales vecinas, con consecuencias fatales para la 
+comunidad. 
+4. Conclusiones y Plan de Acción 
+1. Se concluye que el Edificio Franco Mar presenta una condición de colapso potencial 
+inminente, catalogada de extremo riesgo estructural debido al colapso por compresión de sus 
+columnas de soporte en el Nivel 1 (piso crítico), la notable reducción de su entrepiso, la pérdida 
+irreparable de su verticalidad y las fallas por corte en vigas en 5 niveles de la edificación. 
+2. Como RECOMENDACIÓN ÚNICA E INMEDIATA se establece la DEMOLICIÓN RÁPIDA Y 
+CONTROLADA de la estructura. Esta acción debe ser coordinada bajo estrictos protocolos de 
+ingeniería de demolición, procediendo de arriba hacia abajo para mitigar las vibraciones y el 
+riesgo de volcamiento lateral, con el fin de proteger las zonas residenciales aledañas de 
+Tanaguarenas. 
+ 
+  
+
+--- PAGE 4 ---
+5. Registro Fotográfico 
+A continuación, se detalla el catálogo de evidencias fotográficas capturadas en la inspección 
+del 11 de agosto de 2026. Se incluyen recuadros guía que señalan de forma precisa dónde 
+debe insertarse cada imagen de la base de datos para la conformación del archivo definitivo de 
+obra: 
+ 
+FOTO 1: Vista panorámica frontal de la fachada del Edificio Franco Mar en Tanaguarenas. Se aprecian las 
+dimensiones generales de la torre de 12 niveles y los primeros indicios de daños exteriores. 
+ 
+FOTO 2: Vista de la fachada trasera del inmueble. Permite observar las deformaciones de los niveles 
+intermedios y el agrietamiento severo de las paredes de mampostería. 
+
+
+--- PAGE 5 ---
+ 
+ 
+ 
+FOTO 3: Evidencia de la notable reducción de la altura de entrepiso en la planta baja/primer nivel. Las 
+columnas falladas a compresión generaron un descenso violento de la losa superior. 
+ 
+
+
+--- PAGE 6 ---
+FOTO 4: Falla catastrófica por compresión en columna principal del piso crítico (Planta Baja). Se evidencia el 
+desprendimiento total del recubrimiento, la trituración del concreto y la pérdida de sección portante. 
+ 
+FOTO 5: Fractura severa por compresión en columna a nivel de sótano, mostrando agrietamiento profundo 
+que atraviesa diagonalmente el elemento estructural. 
+ 
+FOTO 6: Detalle de falla por compresión pura en un elemento vertical de soporte. Se observa la exposición 
+masiva del refuerzo de acero y el desprendimiento de más del 50% del núcleo de concreto. 

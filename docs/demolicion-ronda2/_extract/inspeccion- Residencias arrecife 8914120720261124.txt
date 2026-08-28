@@ -1,0 +1,143 @@
+ROJO — NO HABITABLE
+1. INFORMACIÓN GENERAL
+Inspector
+Yohandy Alexi Miquilena Toyo
+Cédula
+V22760047
+Teléfono
+584121754982
+Institución / Ente
+MPPOP
+Estado
+LA GUAIRA
+Municipio
+VARGAS
+Parroquia
+CARABALLEDA
+Dirección
+Avenida la playa, tanaguarenas
+Coordenadas
+10.6124794, -66.8270985
+Nombre / Nº
+Residencias arrecife 
+Uso predominante
+Vivienda Edificio
+Material predominante
+Concreto
+Nº de pisos
+8
+Semi-sótanos
+0
+Sótanos
+1
+Nº de personas
+25
+Año de construcción
+2000
+Evento sísmico
+Sismo
+Fecha del evento
+23/06/2026
+Certificado Nº 8914120720261124
+
+2. INSPECCIÓN EXTERNA
+Aspecto
+Nivel
+Riesgo
+Colapso de la estructura
+Bajo
+Peligro por edificios aledaños
+Bajo
+Peligro geológico o geotécnico
+Bajo
+Asentamiento del edificio
+Bajo
+Inclinación del edificio
+Alto
+RIESGO EXTERNO: Alto (C)
+3. PISO CRÍTICO Y DAÑO SEVERO/COMPLETO
+Pisos inspeccionados
+1
+Piso crítico
+N/D
+Acceso a miembros estructurales
+N/D
+Tipo de elemento
+Nº con daño severo/completo
+Columna o Unión
+0
+Muro de concreto
+0
+Muro de mampostería
+0
+Vigas y arriostramientos
+0
+RIESGO ESTRUCTURAL (SEVERO): Bajo (A)
+4. DAÑO MODERADO EN PISO CRÍTICO
+Tipo de elemento
+Examinados
+Moderados
+% Moderado
+Columna o unión
+0
+0
+0.0%
+Muro de concreto
+0
+0
+0.0%
+Muro de mampostería
+0
+0
+0.0%
+Viga de arriostramiento
+0
+0
+0.0%
+RIESGO POR DAÑO MODERADO: Bajo (A)
+5. COMPONENTES NO ESTRUCTURALES
+Componente
+Nivel
+RIESGO DE COMPONENTES: Bajo (A)
+Certificado Nº 8914120720261124
+
+6. RESUMEN DE RIESGO Y ACCESO
+Riesgo Externo (P2)
+Alto (C)
+Riesgo Estructural Severo (P3)
+Bajo (A)
+Riesgo Daño Moderado (P4)
+Bajo (A)
+Riesgo Componentes (P5)
+Bajo (A)
+RESULTADO: ROJO — NO HABITABLE
+8. ESTATUS DE SERVICIOS
+Electricidad
+Con falla
+Gas
+Con falla
+CANTV
+Con falla
+CERTIFICADO VERIFICABLE — COMISIÓN PRESIDENCIAL PARA EVALUAR 
+HABITABILIDAD Y ESTADO ESTRUCTURAL DE LAS VIVIENDAS E 
+INFRAESTRUCTURAS
+Certificado Nº
+8914120720261124
+Escanea el QR o entra a la dirección para 
+verificarlo.
+EVALUACIÓN RÁPIDA DE DAÑOS EN EDIFICACIONES
+Etiqueta ROJO
+Acceso No Permitido
+Edificación: Residencias arrecife 
+Dirección: Avenida la playa, tanaguarenas
+Fecha: 12/07/2026
+Inspector: Yohandy Alexi Miquilena Toyo (C.I. V22760047)
+CERTIFICADO Nº
+8914120720261124
+Escanea para verificar este certificado.
+Evaluación #68099 — Generado 10/08/2026, 10:52 p. m.
+Triaje preliminar FUNVIS / ATC-20. No constituye dictamen oficial de ingeniería. Las condiciones de estabilidad pueden cambiar.
+Certificado Nº 8914120720261124
+
+REGISTRO FOTOGRÁFICO
+Certificado Nº 8914120720261124

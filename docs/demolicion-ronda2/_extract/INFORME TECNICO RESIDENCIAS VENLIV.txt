@@ -1,0 +1,100 @@
+______________________________________________________________________________ 
+INFORME TÉCNICO DE INSPECCIÓN ESTRUCTURAL 
+ Evaluadores: Romme Rojas y Sergio Silva  
+Nombre edificio: Residencias Venliv 
+Dirección y coordenadas:  Calle la Playa Tanaguarenas, 10,612255; -66,826946 
+Etiqueta previa: Color Rojo 
+______________________________________________________________________________ 
+1. Datos Generales 
+El presente documento corresponde al informe técnico de inspección estructural de la edificación 
+Residencias Venliv, clasificada con Etiquetado de Riesgo Color Rojo (Inhabitable / Alto Riesgo). 
+La evaluación fue realizada el día 11 de agosto de 2026 por los ingenieros inspectores responsables 
+Romme Rojas y Sergio Silva, con el objeto de evaluar los daños estructurales post-evento y definir 
+las acciones de mitigación y demolición correspondientes. 
+La edificación se encuentra ubicada en Tanaguarena, Vargas, Estado La Guaira, dispuesta en una 
+esquina con la calle La Playa y en la parcela colindante al lado sur del edificio Refugio del Caribe. 
+Corresponde a una estructura de sistema aporticado en concreto armado que consta de 7 pisos y 1 
+nivel de sótano, la cual presenta un estado de colapso parcial con pérdida severa de su estabilidad 
+global. 
+2. Inspección Visual y Descripción de Fallas 
+Debido a las condiciones de alto riesgo e inestabilidad que presenta la edificación, no se logró el 
+acceso al interior de las instalaciones, por lo que la evaluación fue realizada  exclusivamente desde 
+el exterior 
+Durante la inspección en sitio se registraron los siguientes hallazgos y anomalías principales: 
+2.1. Comportamiento Global y Elementos Estructurales 
+
+Colapso de Planta Baja: Se constató la falla catastrófica y el colapso total del nivel de planta baja 
+(mecanismo de piso blando), lo que provocó el asentamiento y descenso violento de todo el 
+volumen de los pisos superiores hacia el nivel de terreno. 
+Inclinación y Desplazamiento Horizontal: La falla del nivel inferior generó un desplome severo 
+con un desplazamiento horizontal importante, comprometiendo drásticamente el equilibrio y la 
+estabilidad global de la estructura. 
+Compromiso del Núcleo de Circulación: El colapso del nivel base inhabilitó por completo las vías 
+de acceso, módulo de escaleras y ascensores, bloqueando de manera permanente la circulación 
+interna. 
+2.2. Elementos No Estructurales y Fachadas 
+Mampostería y Cerramientos: Se aprecia agrietamiento severo, desprendimiento masivo y fractura 
+de las paredes de fachada en los niveles inferiores y medios debido a la redistribución abrupta de 
+cargas y al impacto por el descenso del edificio. 
+3. Justificación y Técnica de Demolición 
+3.1. Justificación Técnica 
+Colapso del Nivel Soporte (Planta Baja): El colapso total de la planta baja elimina la capacidad 
+portante de la base, dejando la masa de los 7 pisos superiores apoyada de forma precaria sobre 
+escombros y elementos severamente fracturados. 
+Efectos de Segundo Orden (P-\Delta): Un desplazamiento remanente de importante sobre una base 
+colapsada genera momentos de vuelco extremos e insostenibles, imposibilitando cualquier técnica 
+de renivelación, apuntalamiento o reforzamiento estructural. 
+Condición de Riesgo Inminente: La estructura representa una amenaza directa para la seguridad 
+pública, la vía adyacente (calle La Playa) y las parcelas colindantes, ratificando su clasificación de 
+Etiqueta Roja (Inhabitable / Alto Riesgo). 
+ 
+
+3.2. Evaluación del Entorno y Colindancias 
+Lado Sur: Parcela adyacente donde se ubica el edificio Refugio del Caribe (igualmente afectado 
+con inclinación importante hacia el norte y en condición de alto riesgo). 
+Frente / Esquina: Colindancia directa con la calle La Playa, lo que exige el cierre total del tránsito 
+vehicular y peatonal durante las maniobras por el riesgo de proyección de escombros. 
+3.3. Secuencia y Técnica de Demolición Recomendada 
+Prioridad Operativa en el Sector: La demolición de Residencias Venliv debe ejecutarse de manera 
+prioritaria y en primer lugar, ya que su colapso en la base y su ubicación en esquina la convierten 
+en la estructura de mayor inestabilidad inmediata, liberando además el espacio necesario para 
+abordar posteriormente la demolición de la parcela adyacente (Refugio del Caribe). 
+Método Mecánico Top-Down Progresivo: Implementación de demolición de arriba hacia abajo 
+mediante maquinaria pesada de gran alcance (brazo largo equipado con cizalla o martillo 
+hidráulico) posicionada estratégicamente sobre la calle La Playa y áreas despejadas. Queda 
+totalmente descartada la demolición por implosión con explosivos para evitar inducir la falla de 
+las estructuras colindantes. 
+Perímetro de Exclusión y Control de Polvo: Establecer un radio de seguridad estricto que abarque 
+la calle La Playa y la intersección. Implementar irrigación continua de agua para la supresión de 
+material particulado y pantallas de contención de escombros en los linderos adyacentes. 
+4. Conclusiones y Relevancia como Caso de Estudio 
+4.1. Conclusiones 
+Condición de Riesgo Crítico: El colapso del nivel de planta baja combinado con el desplazamiento 
+horizontal importante ratifica la condición de Etiqueta Roja (Inhabitable / Alto Riesgo) y la 
+urgencia de su demolición. 
+
+Inestabilidad Inminente: La masa de los 7 pisos superiores apoyada precariamente sobre la base 
+fallada convierte a la edificación en la estructura de mayor vulnerabilidad e inestabilidad inmediata 
+del sector. 
+4.2. Relevancia como Caso de Estudio 
+Falla por Piso Blando: Representa un caso de estudio altamente ilustrativo sobre el mecanismo de 
+colapso por rigidez e hiperestaticidad discontinua en planta baja (piso blando) en sistemas 
+aporticados de concreto armado. 
+Desempeño bajo Inclinaciones Severas: Proporciona información técnica valiosa sobre la 
+capacidad límite de equilibrio estático de edificaciones multinivel tras sufrir desplazamientos 
+laterales extremos. 
+4.3. Recomendaciones Operativas Finales 
+Ejecución Prioritaria: Iniciar las labores de demolición de forma prioritaria en este inmueble antes 
+de intervenir las parcelas colindantes, operando desde la calle La Playa mediante demolición 
+mecánica top-down. 
+Zona de Exclusión Extendida: Ampliar el radio del perímetro de seguridad considerando el 
+desplazamiento importante y la altura de la edificación ante un potencial desprendimiento de la 
+fachada 
+ 
+ 
+ 
+
+5. Registro fotográfico 
+ 
+ 
+ 

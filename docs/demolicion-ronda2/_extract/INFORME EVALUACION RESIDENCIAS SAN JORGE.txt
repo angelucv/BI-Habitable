@@ -1,0 +1,101 @@
+DGPS-013-11-08-2026 
+______________________________________________________________________ 
+ 
+INFORME TÉCNICO 
+Edificación Inspeccionada: Edificio San Jorge (Torre separada con junta de dilatación 
+colapsada totalmente) 
+Ubicación: Tanaguarenas, Estado La Guaira (Vargas), Venezuela 
+La Guaira, 11 de agosto de 2026 
+Ing. Evaluador 1: Patricia Alvarez 
+Ing. Evaluador 2: Laura Bracamonte 
+Ing. Supervisor: Werner Faro 
+_____________________________________________________________________ 
+ 
+1. Datos Generales 
+Configuración Estructural: El conjunto residencial Edificio San Jorge presenta una 
+configuración en planta con forma de "C", constituida por 1 edificios el cual se encuentra 
+separado por una junta de dilatación, con un sótano y un semi sótano donde se puede 
+observar una planta libre. La estructura se basa en un sistema aporticado de concreto 
+armado fachada continua con cerramientos y balcones.  
+Condición Actual: Colapso total de una sección de la torre y severo daño en columnas 
+de la planta libre, ocasionado por la falla frágil de sus columnas de soporte, es importante 
+resaltar que la torre se encuentra inclinada hacia el área posterior y lateral izquierdo, 
+ocasionando alto riesgo de colapso.  
+Clasificación de riesgo: ALTO RIESGO / COLAPSO PARCIAL Y TOTAL E 
+INHABITABLE. 
+ 
+2. Inspección Visual y Análisis de Causa Raíz del Colapso 
+Falla por Compresión y Corte en Planta Baja (Piso Blando): Se evidencia la 
+destrucción total del núcleo de concreto en las columnas principales de la planta baja. 
+Ocurrió un colapso explosivo del material, resultando en la pérdida absoluta del 
+recubrimiento y la exposición total de las armaduras.  
+Pandeo de Armaduras Longitudinales: Las barras de acero de refuerzo longitudinal de 
+las columnas de planta baja presentan un pandeo masivo hacia el exterior, confirmando 
+
+que la carga axial y los esfuerzos cortantes rebasaron la capacidad crítica tras la pérdida 
+de confinamiento.  
+Deficiencias de Confinamiento (Estribos con Ganchos a 90°): Se observo 
+explícitamente que los estribos presentan ganchos doblados a 90°, una práctica 
+constructiva deficiente para zonas de alta sismicidad que propició su apertura prematura, 
+acelerando la pérdida de confinamiento y el fallo frágil del núcleo.  
+Corrosión y Oxidación en Columnas Perimetrales: Se detectaron procesos avanzados 
+de oxidación y corrosión en el acero de refuerzo de las columnas perimetrales. Esta 
+patología reduce de forma significativa la sección útil del acero y la adherencia con el 
+concreto, mermando de manera crítica la capacidad resistente residual de los elementos.  
+Torre Colapsada: Durante la inspección visual de campo, se constató que la edificación 
+está dividida por una junta de dilatación y una de las secciones colapso totalmente. 
+Asimismo, se aprecian evidencias físicas de impacto dinámico en los elementos 
+perimetrales adyacentes a la junta, producto del desplazamiento diferencial entre ambas 
+estructuras durante el evento sísmico. 
+ 
+3. Justificación Técnica 
+El comportamiento observado en la torre del Edificio San Jorge confirma que la causa 
+aparente de la falla podría radicar en la geometría de la edificación y la planta libre 
+incluyendo el semisótano, donde se puede observar columnas y geometría de distintas 
+longitudes adaptándose al diseño arquitectónico y a las fuerzas del evento sísmico del 24 
+de junio de 2026 en la región. 
+Pérdida Irreversible de Capacidad Portante: Los soportes verticales de la planta baja 
+han perdido más del 90% de su capacidad estructural, encontrándose en un estado 
+inestable y con gran riesgo de colapso.  
+Amenaza Inminente: La estructura se encuentra en el límite de agotamiento resistente; 
+cualquier réplica sísmica o carga imprevista puede inducir el colapso global instantáneo, 
+poniendo en peligro extremo la vida de transeúntes y comunidades vecinas. 
+ 
+DICTAMEN TÉCNICO FINAL: DECLARATORIA DE INHABITABILIDAD PERMANENTE 
+Y DEMOLICIÓN TÉCNICA CONTROLADA DE LA TORRE SAN JORGE. Se mantiene la 
+evacuación hasta tanto se concluya la demolición controlada. 
+ 
+4. CONCLUSIONES Y RELEVANCIA COMO CASO DE ESTUDIO 
+El Edificio San Jorge ha sufrido un daño estructural severo e irreversible como 
+consecuencia directa del sismo del 24 de junio de 2026 en La Guaira.  
+
+Plan de Acción Inmediato: Acordonamiento estricto del perímetro y ejecución de 
+inmediato 
+de 
+Demolición 
+Controlada 
+de 
+la 
+totalidad 
+de 
+la 
+estructura. 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+     
+ 
+ 
+
+ 
+ 
+ 
+ 

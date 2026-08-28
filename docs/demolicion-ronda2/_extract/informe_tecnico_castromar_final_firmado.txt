@@ -1,0 +1,103 @@
+INFORME TÉCNICO DE EVALUACIÓN POSTSÍSMICA | RESIDENCIAS CASTROMAR
+ESTADO DE RIESGO: INHABITABLE / INSEGURO (ETIQUETA ROJA)
+Página 1 de 2
+INFORME TÉCNICO DE EVALUACIÓN PATOLÓGICA Y ESTRUCTURAL
+POSTSÍSMICA
+CLASIFICACIÓN DE RIESGO: INHABITABLE / INSEGURO (ETIQUETA ROJA)
+1. DATOS GENERALES
+Edificación: Residencias Castromar
+Ubicación: Urbanización Tanaguarena, Estado La Guaira, Venezuela
+Fecha de Inspección: Agosto, 2026 | Estado de Acceso: Restringido (Inspección Visual Externa)
+Tipología Estructural: Edificación aporticada de seis (6) niveles sobre un (1) nivel de sótano, construida en concreto armado.
+Configuración Geométrica: Planta en forma de 'H' (aprox. 18 m × 18 m) con simetría teórica bidentral original y volados de 1,50 m en
+fachadas anterior y posterior.
+Continuidad: Dos módulos habitacionales paralelos acoplados rígidamente por un núcleo central de circulación vertical, sin juntas de
+dilatación ni juntas sísmicas entre ellos, conformando una sola unidad estructural monolítica.
+2. INSPECCIÓN VISUAL Y DESCRIPCIÓN DE FALLAS
+La evaluación física externa detectó un colapso estructural focalizado e inversión de cargas críticas. A pesar de la simetría geométrica
+teórica del diseño original, la estructura experimentó una severa respuesta torsional durante el evento sísmico. Esta respuesta fue detonada
+por una degradación de rigidez asimétrica preexistente, causada por la acción heterogénea de cloruros (corrosión marina) que afectó de
+forma desigual a las columnas de la Planta Baja, rompiendo la coincidencia entre el Centro de Masa (CM) y el Centro de Rigidez (CR). Al
+recibir la onda sísmica, las masas de los bloques paralelos pivotaron asincrónicamente contra el núcleo central rígido sin juntas, induciendo
+esfuerzos de desgarro que provocaron el colapso destructivo del nivel inmediatamente superior.
+Elemento / Nivel
+Daño Físico Detectado
+Mecanismo de Falla Asociado
+Clasificación Riesgo
+Segundo Nivel
+(Piso 2)
+Colapso completo, aplastamiento dinámico y
+pérdida total de la altura útil del entrepiso.
+Planta regular destruida.
+Piso blando / débil intermedio. Concentración
+desproporcionada de demandas de deriva sísmica e
+inercia inelástica.
+CRÍTICO / COLAPSO
+Primer Nivel
+(Piso 1 / PB)
+En pie, pero con agrietamiento generalizado y
+severo. Columnas estables bajo equilibrio
+límite precario.
+Falla frágil por corte (tracción diagonal) debido a
+sobresolicitación por transferencia de carga del nivel
+superior.
+MUY ALTO / INESTABLE
+Columnas de PB
+(Patología)
+Desprendimiento de concreto de
+recubrimiento (spalling), exposición de
+armadura longitudinal y transversal.
+Corrosión avanzada por cloruros. Reducción de
+sección neta de estribos, pérdida de confinamiento y
+pandeo de barras.
+CRÍTICO /
+PREEXISTENTE
+Vigas de PB / Piso
+1
+Fallas severas por flexión, grietas
+transversales críticas y desgarro en
+conexiones con el núcleo central.
+Impacto dinámico vertical generado por la caída libre
+del Piso 2. Inversión violenta de momentos de diseño.
+MUY ALTO
+Evidencias fotográficas requeridas para el archivo definitivo:
+• [Insertar Foto 1: Vista panorámica del colapso y aplastamiento del Segundo Nivel / Piso 2]
+• [Insertar Foto 2: Detalle de grietas a 45° por corte en columnas de Planta Baja / Piso 1]
+• [Insertar Foto 3: Acero transversal expuesto con pérdida de sección y proceso avanzado de corrosión]
+• [Insertar Foto 4: Fracturas por flexión e impacto en vigas del techo del primer nivel]
+3. JUSTIFICACIÓN DE LA DEMOLICIÓN
+La demolición total de las Residencias Castromar es la única medida de mitigación técnicamente viable y legalmente justificable por las
+siguientes razones institucionales:
+• Pérdida Irreversible de la Estabilidad Mecánica: La destrucción total del Piso 2 interrumpió la continuidad del sistema de resistencia
+sísmica y de transferencia de cargas gravitacionales de los 4 niveles superiores.
+• Inviabilidad Absoluta de Reparación o Apuntalamiento: Las columnas remanentes del Piso 1 se encuentran agrietadas por corte y
+debilitadas crónicamente por corrosión. Cualquier intento de apuntalamiento manual o rigidización interna expone al personal obrero a un
+riesgo inminente de muerte por aplastamiento ante un colapso súbito.
+• Riesgo para el Entorno Urbano: Al encontrarse la base en un equilibrio precario no lineal, la estructura representa una amenaza de
+seguridad pública para las edificaciones colindantes y los ejes viales de la urbanización Tanaguarena.
+
+INFORME TÉCNICO DE EVALUACIÓN POSTSÍSMICA | RESIDENCIAS CASTROMAR
+ESTADO DE RIESGO: INHABITABLE / INSEGURO (ETIQUETA ROJA)
+Página 2 de 2
+4. CONCLUSIÓN TÉCNICA Y RECOMENDACIÓN
+Conclusiones: 1) Se ratifica la declaración de la estructura como INSEGURO / INHABITABLE, manteniéndose la restricción absoluta
+mediante Etiqueta Roja. 2) La simetría teórica original del diseño fue anulada por la degradación patológica asimétrica de las columnas de
+la base, induciendo la torsión catastrófica. 3) Existe peligro inminente de colapso progresivo (efecto dominó) disparado por réplicas menores
+(aftershocks), asentamientos diferenciales o vibraciones de tránsito.
+Recomendaciones Inmediatas:
+1. Establecimiento de Zona de Exclusión Total: Restringir de inmediato el acceso peatonal y vehicular en un radio de 22 metros a la
+redonda (equivalente a 1,2 veces la altura total expuesta de los 6 niveles y sótano, estimada en 18 m) para resguardar la vida en las
+áreas circundantes.
+2. Monitoreo Remoto de Desplomes: Prohibir el ingreso de inspectores y utilizar exclusivamente estaciones totales láser a larga distancia
+o vehículos aéreos no tripulados (drones) para verificar la evolución de las deformaciones.
+3. Ejecución de Demolición Mecánica Externa: Coordinar de forma urgente con los entes municipales el derribo controlado de la
+edificación utilizando cizallas hidráulicas de largo alcance o grúas telescópicas operadas estrictamente fuera de la zona de exclusión,
+evitando métodos de impacto que induzcan vibraciones severas en las fundaciones.
+_______________________________________
+Ing. María Alejandra Camargo Mora
+Ingeniero Civil / Evaluador Estructural
+C.I.V. [Insertar N°]
+_______________________________________
+Ing. Milagros Lara
+Ingeniero Civil / Evaluador Estructural
+C.I.V. [Insertar N°]

@@ -1,0 +1,131 @@
+DGPS-013-11-08-2026 
+______________________________________________________________________ 
+ 
+INFORME TÉCNICO 
+Edificación Inspeccionada: Edificio Ibiza (Sección Colapsada y Secciones Adyacentes) 
+Ubicación: Tanaguarenas, Caraballeda, Parroquia Central, Estado La Guaira / Caracas 
+La Guaira, 11 de agosto de 2026 
+Ing. Evaluador 1: Vladimir Martínez 
+Ing. Evaluador 2: Roberto Padilla 
+Ing. Supervisor: Werner Faro 
+_____________________________________________________________________ 
+ 
+1. Datos Generales 
+Configuración Estructural: El conjunto residencial Edificio Ibiza presenta una 
+configuración en planta con forma de "L", constituida por alas o secciones dispuestas de 
+manera angular. La estructura se basa en un sistema aporticado de concreto armado con 
+diafragmas horizontales rígidos. Durante la inspección técnica se evidenció una 
+discrepancia crítica en la orientación de las columnas rectangulares entre los distintos 
+tramos que conforman la geometría en L de la edificación. 
+Condición Actual: Colapso total y severo de una de las alas o secciones del edificio en 
+L, ocasionado por la falla frágil de sus columnas de soporte. La otra sección del edificio 
+no experimentó el colapso, lo que evidencia un comportamiento estructural altamente 
+asimétrico ante la acción del evento sísmico. Clasificación de riesgo de la sección 
+colapsada: ALTO RIESGO / COLAPSO PARCIAL E INHABITABLE 
+ 
+2. Inspección Visual y Análisis de Causa Raíz del Colapso 
+La evaluación patológica de campo en el Edificio Ibiza permite explicar formalmente las 
+razones del colapso localizado en una sola sección de la planta en L: 
+
+• Efectos de la Geometría en Planta en Forma de L: Las edificaciones con planta 
+irregular en L presentan de origen una vulnerabilidad por excentricidad entre el centro de 
+masa y el centro de rigidez, lo que induce efectos torsionales acoplados ante movimientos 
+telúricos. En este caso, dicho efecto se vio agravado por la distribución de rigideces de 
+sus elementos verticales. 
+• Orientación Desfavorable de Columnas Rectangulares en el Eje Débil: En la sección 
+o ala del edificio que sufrió el colapso, las columnas rectangulares se encontraban 
+orientadas de modo que la dirección principal sacudida por el sismo incidió directamente 
+sobre el eje débil de su sección transversal (menor momento de inercia, En contraste, en 
+la otra sección de la L que se mantuvo en pie, las columnas rectangulares tenían su eje 
+fuerte (mayor momento de inercia) dispuesto en la dirección principal de la aceleración 
+sísmica. 
+• Falla Frágil por Corte y Cizallamiento: Al actuar el vector de carga sísmica sobre el 
+eje de menor rigidez e inercia de las columnas en la sección afectada, la capacidad de 
+resistencia al cortante fue superada en los niveles inferiores. Se desencadenó una falla 
+frágil por corte directo (agrietamiento diagonal masivo), con pérdida súbita de la 
+capacidad resistente y trituración del núcleo de concreto. 
+• Mecanismo de Colapso Progresivo de Losas (Tipo Pancake): La falla súbita por 
+corte de las columnas en la sección afectada provocó la pérdida total del apoyo vertical 
+para los niveles superiores. Esto originó un colapso en cascada de los diafragmas 
+horizontales, donde las losas de entrepiso cayeron secuencialmente e impactaron 
+dinámicamente piso tras piso, apilándose una sobre otra sin dejar altura libre entre ellas.  
+ 
+3. Justificación Técnica y Dictamen de Seguridad 
+El comportamiento diferencial observado en las dos secciones del Edificio Ibiza confirma 
+que la causa determinante de la falla radica en la conjunción de la geometría en planta 
+en L y la orientación desfavorable del eje débil de las columnas rectangulares en el tramo 
+afectado frente a la componente principal de la fuerza sísmica. 
+
+• Incapacidad de Rehabilitación en la Sección Afectada: La sección colapsada del 
+edificio registra una pérdida del 100% de su estabilidad y capacidad portante. No existe 
+factibilidad de refuerzo o intervención estructural debido al apilamiento total de las losas. 
+• Evaluación Necesaria en la Sección Remanente: Aunque el tramo adyacente no 
+colapsó debido a la orientación favorable de sus columnas en el eje fuerte para la 
+dirección sísmica principal, es indispensable realizar una verificación analítica rigurosa de 
+su respuesta ante componentes ortogonales del sismo y posibles daños en la zona del 
+encuentro de la L. 
+ 
+DICTAMEN TÉCNICO FINAL: DECLARATORIA DE INHABITABILIDAD PERMANENTE 
+Y DEMOLICIÓN TÉCNICA CONTROLADA DE LA SECCIÓN COLAPSADA DEL 
+EDIFICIO IBIZA. Se mantiene la evacuación preventiva del ala adyacente de la L hasta 
+tanto se concluya la evaluación de vulnerabilidad sísmica correspondiente. 
+4. CONCLUSIONES Y RELEVANCIA COMO CASO DE ESTUDIO 
+Más allá de la pérdida material y del impacto funcional, el colapso del ala correspondiente 
+al Edificio Ibiza constituye un caso de estudio de singular valor para la ingeniería 
+estructural y sismorresistente, al condensar múltiples factores de vulnerabilidad que, 
+actuando sinérgicamente, derivaron en un mecanismo de falla catastrófico. El análisis 
+integrado de la evidencia disponible permite extraer las siguientes conclusiones técnicas: 
+• 4.1. Irregularidad geométrica y efectos torsionales: La configuración en planta tipo 
+"L" del conjunto residencial generó una excentricidad significativa entre el centro de 
+masas y el centro de rigidez, lo que indujo momentos torsores de piso bajo la acción 
+sísmica. Esta condición, inherente a la morfología de la edificación, amplificó las 
+demandas de deformaciones en las columnas perimetrales y esquineras, especialmente 
+en el vértice interior de la L, creando una condición de vulnerabilidad previa que agravó 
+el resto de los factores concurrentes. 
+• 4.2. Orientación diferencial de columnas rectangulares: Se confirmó que el ala 
+colapsada presentaba sus columnas rectangulares orientadas con su eje débil (menor 
+inercia) en la dirección Este–Oeste, coincidente con la componente principal de la 
+aceleración sísmica registrada. En contraste, el ala que se mantuvo en pie tenía sus 
+
+columnas orientadas con su eje fuerte (mayor inercia) en la dirección Norte–Sur, lo que 
+le confirió una rigidez lateral sustancialmente mayor y una capacidad de disipación de 
+energía más eficiente. Esta diferencia de orientación, resultó ser un factor relevante del 
+comportamiento observado. 
+• 4.3. Insuficiencia del confinamiento en columnas: La inspección visual y el análisis 
+patológico revelaron indicios de confinamiento insuficiente en las columnas del ala 
+afectada, particularmente en la zona de los nodos y en los extremos de los elementos. La 
+separación entre estribos y la ausencia de ganchos sísmicos adecuados redujeron la 
+ductilidad disponible, impidiendo que las columnas desarrollaran deformaciones 
+inelásticas controladas. Esta carencia favoreció la transición hacia una falla frágil por 
+corte, sin capacidad de redistribución de esfuerzos hacia elementos adyacentes. 
+• 4.4. Efectos de sitio por condiciones del terreno: El análisis de la respuesta sísmica 
+debe considerar, además, los efectos de sitio asociados a las características geotécnicas 
+del terreno de fundación. La zona de implantación del edificio, ubicada en el Estado La 
+Guaira, presenta suelos de origen aluvial y coluvial con potencial de amplificación de 
+ondas sísmicas, especialmente en el rango de frecuencias cercanas al período 
+fundamental de la estructura. Este fenómeno pudo haber incrementado la aceleración 
+efectiva en la base del edificio, superando los valores de diseño y contribuyendo a la 
+sobre solicitación de los elementos verticales en su eje menos resistente. 
+• 4.5. Mecanismo de colapso progresivo: La conjunción de los factores anteriores 
+desencadenó una falla por corte directo en los niveles inferiores del ala afectada, seguida 
+de un colapso progresivo tipo "panqueque", con apilamiento secuencial de los diafragmas 
+horizontales. Este mecanismo, una vez iniciado, resultó irreversible y provocó la pérdida 
+total de la capacidad portante de dicha sección. 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 

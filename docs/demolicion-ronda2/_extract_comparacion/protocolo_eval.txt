@@ -1,0 +1,373 @@
+pages=12
+
+--- PAGE 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+PROTOCOLO TÉCNICO 
+EVALUACIÓN Y REHABILITACIÓN DE EDIFICACIONES 
+LUEGO DEL TERREMOTO                            
+ 
+FASES 1, 2, 3 y 4 
+ 
+ 
+ 
+ 
+Documento de emergencia elaborado con motivo del sismo del 24 de junio de 2026 
+
+
+--- PAGE 2 ---
+Página 2 de 12 
+ 
+ 
+ 
+ 
+PROTOCOLO TÉCNICO 
+EVALUACIÓN Y REHABILITACIÓN DE EDIFICACIONES 
+LUEGO DEL TERREMOTO                            
+ 
+FASES 1, 2, 3 y 4 
+ 
+Documento de emergencia elaborado con motivo del sismo del 24 de junio de 2026 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Revisión Fecha Descripción Páginas 
+6 18/08/2026 Incorporación de ajustes sugeridos por el comité técnico asesor 12 
+5 09/08/26 Incorporación de comentarios de comité técnico de redacción 12 
+4 07/08/2026 Incorporación de imágenes, ajuste al formato y referencias 11 
+3 18/08/2026 Incorporación de comentarios de comité técnico asesor 5 
+2 16/07/2026 Incorporación de comentarios de comité técnico de redacción  5 
+1 08/07/2026 Borrador preliminar para revisión del comité 3 
+
+--- PAGE 3 ---
+Página 3 de 12 
+ 
+ 
+ 
+COMITÉ TÉCNICO DE REDACCIÓN 
+El presente documento fue elaborado por el comité técnico que se detalla a continuación. 
+ 
+N.º Nombre y 
+Apellido Profesión Grado Académico Institución 
+1 Oscar A. López Ingeniero Civil PhD en Ingeniería Estructural Universidad Central 
+de Venezuela, VE 
+2 Gustavo Coronel 
+Delgado Ingeniero Civil Magíster en Ingeniería 
+Sismorresistente 
+Universidad Central 
+de Venezuela, VE 
+3 Ángelo Marinilli Ingeniero Civil Doctor en Ingeniería Universidad Central 
+de Venezuela, VE 
+4 José Jacome Ingeniero Civil Magíster en Ingeniería 
+Sismorresistente CENVIH 
+ 
+Coordinador del Comité Técnico de Redacción: 
+Dr. Oscar A. López, IMME, FI-UCV, VE
+
+--- PAGE 4 ---
+Página 4 de 12 
+ 
+ 
+ 
+COMITÉ TÉCNICO ASESOR DEL TERREMOTO 
+M.Sc. Gustavo Coronel Delgado — CISIS-IMME, Universidad Central de Venezuela, VE 
+M.Sc. Norberto Fernández —  IMME, Universidad Central de Venezuela, VE                       
+Dr. Francisco Garcés — IMME, Universidad Central de Venezuela, VE                               
+M.Sc. Ahmad Idrees — Universidad de Carabobo, VE 
+M.Sc. José Jácome— CENVIH, VE 
+Dr. Óscar A. López — IMME, Universidad Central de Venezuela, VE 
+Dr. Duilio Marcial — IMME, Universidad Central de Venezuela, VE 
+Dr. Ángelo Marinilli — IMME, Universidad Central de Venezuela, VE / Universidad Católica Andrés Bello, VE 
+Dr. Ramón Mata — Universidad San Sebastián, CH 
+Dr. Eduardo Nuñez — Universidad Católica de la Santísima Concepción, CH 
+M.Sc. Valentina Páez — IMME, Universidad Central de Venezuela, VE 
+M.Sc. José Rengel — IMME, Universidad Central de Venezuela, VE 
+Dr. Michael Schmitz— IMME, Universidad Central de Venezuela, VE 
+Dr. Ronald Torres — IMME, Universidad Central de Venezuela, VE 
+M.Sc. Alfredo Urich — ALCONPAT, VE 
+ 
+Coordinador del Comité Técnico Asesor del Terremoto: 
+Dr. Óscar A. López — IMME, Universidad Central de Venezuela, VE 
+ 
+Presidente de la Comisión Presidencial para Evaluación de la Habitabilidad de la 
+Insfraestrucrtura: 
+Dr. Francisco Garcés — IMME, Universidad Central de Venezuela, VE    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 5 ---
+Página 5 de 12 
+ 
+ 
+ 
+ 
+ 
+ÍNDICE DE CONTENIDO 
+ 
+ 
+COMITÉ TÉCNICO DE REDACCIÓN .............................................................................................................. 3 
+COMITÉ TÉCNICO ASESOR DEL TERREMOTO .......................................................................................... 4 
+ÍNDICE DE CONTENIDO ................................................................................................................................ 5 
+INTRODUCCION............................................................................................................................................. 6 
+1. FASE 1: EVALUACIÓN RÁPIDA .............................................................................................................. 7 
+2. FASE 2: EVALUACIÓN DETALLADA ....................................................................................................... 7 
+3. FASE 3: PROYECTO DE REPARACIÓN, REFORZAMIENTO O DEMOLICIÓN ..................................... 8 
+4. FASE 4. EJECUCIÓN, INSPECCIÓN Y SUPERVISIÓN DE OBRAS ..................................................... 11 
+5. DIFUSIÓN Y CAPACITACIÓN TÉCNICA DE CADA FASE .................................................................... 11 
+BIBLIOGRAFÍA ............................................................................................................................................. 11 
+ 
+
+--- PAGE 6 ---
+Página 6 de 12 
+ 
+ 
+INTRODUCCION 
+ 
+El terremoto del 24 de junio de 2026 provocó el derrumbe de muchas edificaciones; se estiman en varios 
+miles de estructuras con daños significativos que han dejado a decenas de miles de personas sin poder 
+volver a sus hogares. El Protocolo de Evaluación y Rehabilitación de Estructuras que aquí se presenta 
+tiene como primera finalidad permitir la toma de decisiones para definir el grado de habitabilidad de un 
+edificio o casa, definir si es posible habi tarla garantizando la seguridad del usuario o si debe ser 
+desalojada para proteger la vida de sus habitantes. Como segunda finalidad se presentan lineamientos 
+para la reparación, el reforzamiento o la demolición de las edificaciones dañadas, teniendo como meta 
+fundamental la seguridad de la población. La Figura 1 resume el Protocolo de Evaluación y 
+Rehabilitación y las fases que lo constituyen. 
+FASE 1.
+EVALUACIÓN RÁPIDA
+FASE 2.
+EVALUACIÓN DETALLADA
+    
+FASE 3.
+REPARACIÓN, REFORZAMIENTO  
+o DEMOLICIÓN 
+App H abi t abl e y Et i quet a
+Ro j a A m a rilla Ver de
+Exam en del  Especi al i st a
+2.1.
+Evaluación de Control 
+de Casos Críticos
+2.3.
+Apuntalamiento 
+Preventivo
+2.2.
+Evaluación Detallada 
+Especializada
+R ecom endaci ón Técni ca
+D e m o lic ió nR ecuper abl e
+3.1.
+Reparación de Daños 
+No Estructurales
+3.2.
+Reparación de Daños 
+Estructurales Moderados
+3.3.
+Reparación de Daños 
+Estructurales Severos
+3.4.
+Reforzamiento 
+Sismorresistente
+3.5.
+Colapsos y 
+Demolición
+Ro j a
+A m a rilla
+Ver de
+ 
+Figura 1. Diagrama de Flujo General de las Fases del Protocolo de Evaluación y Rehabilitación 
+Luego del Terremoto. Elaboración Propia (2026) basado en López et al (2023). 
+
+--- PAGE 7 ---
+Página 7 de 12 
+ 
+ 
+1. FASE 1: EVALUACIÓN RÁPIDA 
+ 
+Son inspecciones de corta duración con la finalidad de decidir si la edificación es habitable o debe ser 
+desalojada. Cada Brigada de inspección, está conformada por tres personas:1) Inspector 
+Especialista,2) Inspector Nivel I, 3) Inspector Nivel II. 
+ Luego de la inspección se le coloca una Etiqueta Verde si la edificación es habitable, una Etiqueta 
+Amarilla si la edificación es habitable con restricciones o una Etiqueta Roja si no es habitable y debe 
+ser desalojada. Las inspecciones serán ejecutadas c on el uso de la aplicación móvil HABITABILIDAD  
+(Figura 2). Las edificaciones con Etiqueta Amarilla y Roja pasan a la Fase 2. 
+ 
+Figura 2. Planilla Física y Aplicación Móvil HABITABLE. Elaboración Propia (2026). 
+ 
+ 
+2. FASE 2: EVALUACIÓN DETALLADA 
+ 
+Fase 2.1: Evaluación de Control de Casos Críticos : Se realizará una nueva Inspección Rápida para 
+constatar la calificación de Etiqueta Amarilla o Roja en un grupo seleccionado de edificaciones. Se 
+
+
+--- PAGE 8 ---
+Página 8 de 12 
+ 
+ 
+priorizan edificaciones escolares, centros de salud, bomberos y protección civil, organismos de 
+seguridad, edificaciones de carácter repetitivo y cualquier edificación en donde se puedan tener dudas 
+de los resultados de la Inspección Rápida hecha previamente. La inspección será realizada por un 
+equipo que incluya al menos una persona del nivel Inspector Especialista. A la edificación se le puede 
+confirmar la Etiqueta previamente establecida o se le puede cambiar la misma. Las edificaciones que 
+se les ratifique la Etiqueta Amarilla o Roja, pasarán a la Fase 2.2. 
+ 
+Fase 2.2: Evaluación Detallada Especializada: Las edificaciones cuya etiqueta Amarilla o Roja se haya 
+ratificado serán sometidas a una inspección detallada que deberá ser hecha por un equipo de al 
+menos dos inspectores del nivel Inspector Especialista, definido de acuerdo con la sección 1.8.h de la 
+Norma Venezolana Covenin 1756-1:2019. Los inspectores deberán tomar la decisión entre Reparar, 
+Reforzar o Demoler la edificación. Los inspectores colocarán en la entrada a la edificación la Etiqueta 
+correspondiente al resultado de esta evaluación. Todas las edificaciones pasan a la Fase 3 en el 
+apartado que le corresponda. 
+ 
+Fase 2. 3: Apuntalamiento Preventivo:  El objetivo del apuntalamiento preventivo es mejorar las 
+condiciones de seguridad de la edificación que presenta daños estructurales. En la Figura 3 se definen 
+lineamientos para la determinación de tipo, cantidad y ubicación del sistema de apuntalamiento requerido 
+en cada caso, elaborados para ser distribuidos a profesionales y público en general. 
+ 
+3. FASE 3: PROYECTO DE REPARACIÓN, REFORZAMIENTO O DEMOLICIÓN  
+ 
+Como criterio general se recomienda que las edificaciones que entran en la categoría de Reforzar, donde 
+sea factible pasen inicialmente a la Fase 3.1 o 3.2 de Reparación a fin de recuperar la habitabilidad antes 
+de ir al reforzamiento estructural, que conlleva un tiempo mayor de estudios, proyecto y construcción.  
+La Reparación permitirá a los habitantes volver a ocupar sus viviendas, mientras se desarrolla el 
+Proyecto de Reforzamiento en los casos en los que se requiere. En esos casos, la reparación es para 
+permitir la Habitabilidad Temporal del edificio, pero una decisión de Habitabilidad Permanente dependerá 
+del reforzamiento del edificio. 
+ 
+Fase 3. 1 Proyecto de Reparación de Edificaciones con Daños No Estructurales : El objetivo de la 
+Reparación es restituir a los componentes no estructurales  (paredes, equipos, cielo raso, lámparas, 
+
+--- PAGE 9 ---
+Página 9 de 12 
+ 
+ 
+ornamentos, fachadas, etc.) la estabilidad que se requiere para no poner en riesgo a los usuarios. Con 
+esta finalidad se prepararon los  lineamientos que se indican en la Figura 3 para ser distribuidos a 
+profesionales y público en general. El proyecto de reparación será entregado a la ingeniería municipal 
+para obtener su aprobación. 
+ 
+Fase 3.2 Proyecto de Reparación de Daños Estructurales Leves y Moderados : El objetivo de la 
+Reparación es restituir a los elementos estructurales (vigas, columnas, muros, nodos) la capacidad que 
+tenían antes del terremoto, así como estabilizar los componentes no estructurales afectados. Puede 
+que se requiere de un apuntalamiento preventivo antes de proceder a la reparación. Para su difusión, 
+se prepararon los lineamientos técnicos que se muestran en la Figura 3 para ser distribuidos a 
+profesionales y público en general.  El proyecto de reparación será entregado a la ingeniería municipal 
+para obtener su aprobación. 
+ 
+   
+Figura 3. Lineamientos Técnicos Elaborados por el Comité Técnico disponibles en: 
+https://habitable.gob.ve/reparaciones/  
+ 
+ 
+ 
+Fase 3.3 Proyecto de Reparación de Daños Estructurales Severos : El objetivo de la Reparación es 
+restituir a los elementos estructurales (vigas, columnas, muros, nodos) la capacidad que tenían antes 
+
+
+--- PAGE 10 ---
+Página 10 de 12 
+ 
+ 
+del terremoto, así como estabilizar a los componentes no estructurales afectados. Estos edificios deben 
+prioritariamente ser apuntalados en todas la áreas y pisos que presenten daños significativos o riesgos 
+para la ejecución de las obras de reparación. El proyecto de reparación será entregado a la ingeniería 
+municipal para obtener su aprobación. 
+ 
+Fase 3.4 Evaluación Estructural y Proyecto de Reforzamiento: El proyecto de reforzamiento del edificio 
+tiene como finalidad cumplir con la seguridad estipulada en la Norma Venezolana COVENIN 1756-
+1:2019 y las disposiciones transitorias que se dicten al respecto. El estudio detallado debe contemplar 
+cuando menos lo siguiente: 
+• Localización de planos originales o levantamiento de información para desarrollar nuevos 
+planos. 
+• Pruebas de materiales de la estructura existente. 
+• Modelo matemático y determinación del desempeño sísmico de la estructura original. 
+• Diseño de la estructura de refuerzo. 
+• Modelo matemático y determinación del desempeño sísmico de la estructura reforzada. 
+• Verificación del cumplimiento con las normas nacionales. 
+• El estudio detallado debe ser hecho por un ingeniero estructural y deberá ser revisado y 
+aprobado por un Especialista en Ingeniería Sismorresistente, definido de acuerdo con la sección 
+1.8.h de la Norma Venezolana Covenin 1756-1:2019. Ambos asumirán en conjunto la 
+responsabilidad del proyecto. 
+• El proyecto de reforzamiento será entregado a la ingeniería municipal para obtener su 
+aprobación. 
+• Una vez construido el reforzamiento sísmico, se le otorga Habitabilidad Permanente. 
+ 
+Fase 3.5 Evaluación Estructural de Edificaciones con Daño Irreparable, a Demoler y/o Colapsadas: 
+Para edificaciones con daños muy severos considerados irreparables  y que deban ser demolidas se 
+generarán lineamientos para garantizar la seguridad de la demolición. Para el caso de edificaciones 
+colapsadas de especial interés por su tipología, repetitividad o antigüedad, se generarán lineamientos 
+que permitan identificar el tipo de información que debe recopilarse antes de la demolición, que permita 
+extraer conocimiento y lecciones para el mejoramiento de futuras construcciones.  
+ 
+
+--- PAGE 11 ---
+Página 11 de 12 
+ 
+ 
+4. FASE 4. EJECUCIÓN, INSPECCIÓN Y SUPERVISIÓN DE OBRAS 
+ 
+Las labores de Reparación, Reforzamiento o Demolición serán inspeccionadas por un equipo de 
+inspectores quienes asumirán,  en conjunto con el ingeniero responsable, la responsabilidad de los 
+trabajos ejecutados.  
+Los trabajos podrán ser supervisados por los ingenieros encargados del proyecto o de la revisión. 
+El Acta de Finalización de las obras será firmada por el ingeniero responsable y los inspectores.  
+5. DIFUSIÓN Y CAPACITACIÓN TÉCNICA DE CADA FASE 
+ 
+Se elaborará material didáctico como videos, m anuales y t alleres de evaluación y r eparación de 
+Edificaciones Afectadas por el Terremoto. 
+ 
+La reparación de la edificación dañada será efectuada por ingenieros civiles que hayan asistido al Taller 
+de Reparación de Edificaciones Afectadas por el Terremoto. Para ello, la Comisión Presidencial invitará, 
+convocará y creará un listado de ingenieros que estarán a cargo de las reparaciones. 
+ 
+El taller será dictado por especialistas en técnicas de reparación post terremoto, acreditados por la 
+Comisión Presidencial, ya sean especialistas venezolanos o invitados internacionales, de manera 
+presencial o de manera virtual. 
+ 
+ 
+BIBLIOGRAFÍA 
+ 
+[1] COVENIN 1756-1:2019. (2019). Construcciones Sismorresistentes. Parte 1: Requisitos. Caracas: 
+FONDONORMA / SENCAMER. 
+[2] López O. A., Coronel D., G., Ginés, C., Fierro, F., Marinilli, A. y Urich, A. (2023). Evaluación rápida 
+de daños en edificaciones. Boletín de la Academia de la Ingeniería y el Hábitat, No. 61, p.p. 8-31. 
+[3] Coronel D. G., López  O. A., G., Ginés, C., Fierro, F., Marinilli, A., Urich, A. Rojas, R. (2024). 
+Metodología para la Evaluación Rápida de Daños y su Aplicación. VI CONPAT-Ve, 25 y 26 de octubre 
+de 2024, Caracas, Venezuela. 
+[4] SENCAMER (2021). GUI -DNO-001, Rev. 0: Estructura y presentación de los documentos 
+normativos. Caracas: Dirección de Normalización, Servicio Autónomo Nacional de Normalización, 
+
+--- PAGE 12 ---
+Página 12 de 12 
+ 
+ 
+Calidad, Metrología y Reglamentos Técnicos. https://www.sencamer.gob.ve 
+ 
+[5] COMISIÓN PRESIDENCIAL PARA LA EVALUACIÓN DE HABITABILIDAD DE 
+INFRAESTRUCTURAS (2026). Lineamientos técnicos. Evaluación, reparación y restitución de paredes 
+de mampostería dañadas por sismo. https://habitable.gob.ve/reparaciones/ 
+[6] COMISIÓN PRESIDENCIAL PARA LA EVALUACIÓN DE HABITABILIDAD DE 
+INFRAESTRUCTURAS (2026). Lineamientos Técnicos. Apuntalamiento de columnas, vigas y losas de 
+concreto armado afectadas por sismo. https://habitable.gob.ve/reparaciones/ 
+[7] COMISIÓN PRESIDENCIAL PARA LA EVALUACIÓN DE HABITABILIDAD DE 
+INFRAESTRUCTURAS (2026). Lineamientos Técnicos. Evaluación y reparación de elementos de 
+concreto armado con daño leve y moderado por sismo. https://habitable.gob.ve/reparaciones/ 

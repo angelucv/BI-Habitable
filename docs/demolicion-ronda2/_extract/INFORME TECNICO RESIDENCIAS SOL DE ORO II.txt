@@ -1,0 +1,152 @@
+INFORME TÉCNICO DE EVALUACIÓN PRELIMINAR Y EVALUACIÓN DE HABITABILIDAD 
+1. DATOS GENERALES DE LA EDIFICACIÓN Y ANTECEDENTES 
+Nombre de la 
+Ediﬁcación: 
+Residencias Sol de Oro II
+Ubicación:
+Av. Principal de La Llanada, Parroquia Caraballeda, Municipio Vargas, 
+Estado La Guaira 
+Uso de la Ediﬁcación: Residencial Multifamiliar
+Estatus 
+Administrativo: 
+Etiqueta Roja de Control de Riesgo (Comisión Presidencial para la 
+Evaluación de Habitabilidad de Infraestructuras) 
+Condición Observada 
+en Sitio: 
+Estructura principal en pie sin pérdida de verticalidad general; ausencia 
+de columnas o vigas en estado de colapso/desplomo. 
+Evaluadores: 
+1. Darían Alberti 
+2. Bernardo Pérez 
+ 
+Antecedentes: A raíz de inspecciones de evaluación rápida de riesgo sísmico/estructural, la 
+ediﬁcación fue señalizada preventivamente con la etiqueta de "PELIGRO - NO ENTRE NI OCUPE". 
+No obstante, se aclara explícitamente que dicha etiqueta es una medida de resguardo de vidas 
+humanas y no representa una orden de demolición. 
+ 
+2. CONSTATACIÓN TÉCNICA DE CAMPO Y ACLARATORIA SOBRE EL ESTADO ESTRUCTURAL 
+De la revisión de campo realizada en Residencias Sol de Oro II, se señalan los siguientes 
+hallazgos clave: 
+ 
+Integridad del Sistema Estructural Primario: No se evidencian colapsos parciales ni 
+totales de elementos portantes verticales (columnas/muros) ni horizontales (vigas/losas). 
+La ediﬁcación conserva su alineación, aplomo y geometría global. 
+ 
+Diferenciación de Registros Fotográﬁcos: Se deja constancia de que cualquier registro 
+visual donde se aprecien estructuras colapsadas corresponde a ediﬁcaciones colindantes 
+o antecedentes de inspecciones en otras estructuras del sector, y no a la estructura 
+principal de Residencias Sol de Oro II. 
+ 
+Daños Visibles: Los daños presentes corresponden principalmente a elementos no 
+estructurales (tabiquería, frisos, cerramientos) y grietas que requieren caracterización 
+analítica mediante ensayos no destructivos para determinar si comprometen la capacidad 
+resistente remanente. 
+
+ 
+3. JUSTIFICACIÓN TÉCNICA Y NORMATIVA DE LA EVALUACIÓN DIAGNÓSTICA 
+Emitir una orden de demolición sin un diagnóstico cuantitativo riguroso contraviene los principios 
+de la ingeniería estructural y la normativa venezolana (Normas COVENIN 1756 de Ediﬁcaciones 
+Sismorresistentes y COVENIN 1753 de Estructuras de Concreto Armado). La decisión de demoler 
+solo es justiﬁcable cuando se demuestra fehacientemente que: 
+1. El costo de adecuación y refuerzo estructural supera el valor de reposición de la obra 
+nueva. 
+2. La capacidad portante del sistema remanente es irrecuperable mediante técnicas de 
+ingeniería o encamisados estructurales. 
+3. Existe un riesgo inminente de inestabilidad global en el terreno de fundación que no admita 
+obras de consolidación geotécnica. 
+ 
+4. PROGRAMA RECOMENDADO DE ENSAYOS Y DIAGNÓSTICO ESTRUCTURAL DETALLADO 
+Antes de tomar una decisión deﬁnitiva sobre el destino del inmueble, se recomienda formalmente 
+la ejecución de un **Estudio de Evaluación de Seguridad Estructural y Vulnerabilidad Sísmica**, el 
+cual debe comprender el siguiente alcance: 
+Fase / Ensayo
+Descripción del Procedimiento
+Objetivo Técnico
+  
+Extracción de 
+Núcleos (Core 
+Drilling) 
+Toma de testigos de concreto 
+endurecido en elementos 
+representativos según norma 
+COVENIN. 
+Determinar la resistencia real a la 
+compresión actual ($f'c$) del 
+concreto en columnas y vigas. 
+Esclerometría y 
+Ultrasonido 
+Ensayos no destructivos de 
+rebote y velocidad de pulso 
+ultrasónico. 
+Mapear la homogeneidad y 
+detectar grietas internas o vacíos 
+no visibles en la masa de 
+concreto. 
+Pachometría / 
+Ferroscopia 
+Escaneo electromagnético del 
+acero de refuerzo. 
+Veriﬁcar diámetros de cabillas, 
+cuantías existentes, separación 
+de estribos y espesor de 
+recubrimiento. 
+
+Fase / Ensayo
+Descripción del Procedimiento
+Objetivo Técnico
+  
+Exploración 
+Geotécnica 
+Realización de calicatas o 
+sondeos en la base de la 
+ediﬁcación. 
+Veriﬁcar la integridad física de los 
+elementos de cimentación y la 
+capacidad portante del suelo. 
+Modelación 
+Numérica e 
+Inspección Sísmica 
+Análisis estructural 
+tridimensional por software 
+especializado (ETABS / 
+SAP2000). 
+Veriﬁcar el comportamiento ante 
+acciones sísmicas reglamentarias 
+y evaluar la factibilidad de 
+refuerzo. 
+ 
+5. CONCLUSIONES Y RECOMENDACIONES 
+1. Desestimar la Demolición Inmediata: No existen criterios técnicos o mecánicos que 
+justiﬁquen una demolición inmediata de Residencias Sol de Oro II, al no presentar colapso 
+de elementos portantes principales ni desplomo generalizado. 
+2. Condicionar la Decisión Final a los Resultados del Estudio: Mantener la ediﬁcación bajo 
+estatus de resguardo (desocupada preventivamente) mientras se realiza el programa de 
+ensayos y modelación estructural detallado. 
+3. Elaborar Proyecto de Rehabilitación/Refuerzo: Si los resultados analíticos conﬁrman la 
+viabilidad técnica y económica, desarrollar el proyecto de ingeniería para la adecuación 
+sísmica y restauración de la ediﬁcación, permitiendo el retorno seguro de los habitantes. 
+ 
+6. Anexo fotográﬁco 
+
+ 
+Imagen 6.1.: Se observa la afectación de la mampostería de forma severa hasta al menos el cuarto 
+piso. 
+ 
+ 
+Imagen 6.2.: Se observa la afectación de viga en primer piso. 
+ 
+
+ 
+Imagen 6.3.: Algunos daños de la mampostería de forma severa hasta al menos el cuarto piso. 
+ 
+ 
+ 
+Imagen 6.4.: Afectación en columna en primer piso. 
+ 
+ 
+
+ 
+Imagen 6.5.: Afectación severa en mampostería en primer piso. 
+ 
+ 
+ 

@@ -30,3 +30,8 @@ data/raw/*
 # Extracciones documentales voluminosas / temporales
 data/processed/doc_extract/
 *.log
+
+# Fase II ROJO — secretos servidor (no versionar)
+docs/demolicion-ronda2/server-bootstrap/CREDENCIALES-ADMIN-SERVIDOR-FASE2.md
+docs/demolicion-ronda2/**/__pycache__/
+docs/demolicion-ronda2/**/*.pyc

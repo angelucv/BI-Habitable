@@ -1,0 +1,166 @@
+<details class="cpeh-accordion cpeh-guia-tutorial mb-3" id="tutorial-sistema" open>
+  <summary class="cpeh-accordion-header">
+    <i class="fas fa-route" aria-hidden="true"></i>
+    Tutorial del sistema — flujo, roles y funciones
+  </summary>
+  <div class="cpeh-accordion-body">
+    <p class="cpeh-about-text">
+      Esta guía describe <strong>cómo funciona el sistema de punta a punta</strong>: desde la precarga
+      de casos ROJO hasta la publicación del dictamen. Está pensada para coordinadores, inspectores
+      y revisores que usan el panel por primera vez o necesitan recordar el circuito completo.
+      Para el detalle campo a campo del informe, abra la sección
+      <strong>«Guía de secciones del informe»</strong> más abajo.
+    </p>
+
+    <h3 class="cpeh-about-heading">Panorama general — las cinco etapas</h3>
+    <div class="cpeh-tutorial-phases">
+      <div class="cpeh-tutorial-phase">
+        <span class="cpeh-tutorial-phase-num">A</span>
+        <div>
+          <strong>Precarga e ingreso</strong>
+          <p>Los casos ROJO entran con datos de Habitable (Fase I) y score CPEH. El coordinador verifica el universo en el panel y el mapa.</p>
+        </div>
+      </div>
+      <div class="cpeh-tutorial-phase">
+        <span class="cpeh-tutorial-phase-num">B</span>
+        <div>
+          <strong>Asignación de equipo</strong>
+          <p>Cada edificio recibe un inspector (campo) y un revisor (control técnico). Sin asignación, el caso queda en cola operativa.</p>
+        </div>
+      </div>
+      <div class="cpeh-tutorial-phase">
+        <span class="cpeh-tutorial-phase-num">C</span>
+        <div>
+          <strong>Visita y levantamiento</strong>
+          <p>El inspector confirma datos, documenta daños (secciones 3–10), adjunta evidencia y prepara el dictamen preliminar.</p>
+        </div>
+      </div>
+      <div class="cpeh-tutorial-phase">
+        <span class="cpeh-tutorial-phase-num">D</span>
+        <div>
+          <strong>Revisión y aprobación</strong>
+          <p>El revisor valida coherencia técnica; el coordinador confirma y publica cuando el caso está listo para reportes.</p>
+        </div>
+      </div>
+      <div class="cpeh-tutorial-phase">
+        <span class="cpeh-tutorial-phase-num">E</span>
+        <div>
+          <strong>Salida institucional</strong>
+          <p>PDF del informe, datos en mapa/tablers y, cuando aplique, plantilla Excel archivada como respaldo de la visita.</p>
+        </div>
+      </div>
+    </div>
+
+    {% include "includes/cpeh_guia_flujo_core.html" %}
+
+    <h3 class="cpeh-about-heading cpeh-mt-lg">Tutorial paso a paso por rol</h3>
+    <p class="cpeh-about-text">
+      Siga la ruta que corresponda a su perfil. Los enlaces abren en la misma ventana salvo mapa y asignación.
+    </p>
+
+    <div class="cpeh-tutorial-paths">
+      <details class="cpeh-tutorial-path cpeh-tutorial-path-coord">
+        <summary><i class="fas fa-user-tie" aria-hidden="true"></i> Si usted es <strong>coordinador</strong></summary>
+        <ol class="cpeh-about-list cpeh-about-ordered">
+          <li>Ingrese al <strong>panel de inicio</strong> y revise los indicadores (total, D1–D4, pendientes, prioridad inmediata).</li>
+          <li>Abra el <a href="/mapa/" target="_blank" rel="noopener">mapa GPS</a> para ubicar casos por zona, estado o banda de score.</li>
+          <li>Entre al <a href="/asignacion/" target="_blank" rel="noopener">tablero de asignación</a>: filtre casos sin inspector o sin revisor y asigne en lote o fila a fila.</li>
+          <li>Desde <strong>Inspecciones → Casos ROJO</strong>, seleccione casos y use las acciones masivas para descargar <strong>Excel lote</strong> (una fila por edificio) o <strong>Excel informe</strong> (una pestaña por edificio) y entregárselos al equipo.</li>
+          <li>Monitoree el avance por estado (<em>En visita</em>, <em>Borrador</em>, <em>Revisado</em>…) con filtros del listado admin.</li>
+          <li>Cuando un revisor deje un caso en <em>Aprobado</em>, revíselo y pase a <em>Publicado</em> para cerrarlo operativamente.</li>
+          <li>Adjunte informes PDF históricos (1.ª ronda) en la ficha del caso si aún no están vinculados.</li>
+        </ol>
+      </details>
+
+      <details class="cpeh-tutorial-path cpeh-tutorial-path-insp">
+        <summary><i class="fas fa-hard-hat" aria-hidden="true"></i> Si usted es <strong>inspector</strong></summary>
+        <ol class="cpeh-about-list cpeh-about-ordered">
+          <li>Inicie sesión y vaya a <strong>Inspecciones → Casos ROJO</strong>. Verá preferentemente los casos donde usted figura como inspector asignado.</li>
+          <li>Abra la ficha del edificio. Revise la <strong>precarga</strong> (secc. 1–2): no re-digite salvo error evidente.</li>
+          <li>Descargue la <strong>plantilla Excel informe</strong> (botón verde en la ficha) si va a trabajar offline; o complete directamente en el admin web.</li>
+          <li>Al salir a campo, cambie el estado a <strong>En visita</strong> (acción masiva o campo «Estado 2.ª ronda»).</li>
+          <li>Complete las secciones <strong>3 a 11</strong> según lo observado: validación, identidad, daños, mampostería, procedimientos, decisión D/M, evidencia y resumen ejecutivo.</li>
+          <li>Suba <strong>fotografías</strong> en el bloque de evidencia y, si aplica, referencia el número de anexo en secc. 10.</li>
+          <li>Previsualice el <strong>PDF</strong> desde la ficha antes de enviar.</li>
+          <li>Cuando el informe esté completo, pase el estado a <strong>Revisado</strong> para que entre al revisor asignado.</li>
+          <li>Si el revisor devuelve el caso a <strong>Borrador</strong>, corrija según observaciones y vuelva a enviar.</li>
+        </ol>
+      </details>
+
+      <details class="cpeh-tutorial-path cpeh-tutorial-path-rev">
+        <summary><i class="fas fa-clipboard-check" aria-hidden="true"></i> Si usted es <strong>revisor</strong></summary>
+        <ol class="cpeh-about-list cpeh-about-ordered">
+          <li>Filtre casos en estado <strong>Revisado</strong> donde usted sea el revisor asignado.</li>
+          <li>Abra la ficha y recorra las secciones 3–11: valide que la decisión <strong>D1–D4</strong> sea coherente con los daños descritos.</li>
+          <li>Si la decisión es <strong>D1</strong>, verifique códigos de complemento, plazo, medidas y detalle (cierre provisional explícito).</li>
+          <li>Si la decisión es <strong>D2</strong>, confirme que la magnitud <strong>M1–M4</strong> esté indicada y sea proporcional al daño.</li>
+          <li>Revise medidas inmediatas, justificación y resumen ejecutivo (debe ser comprensible para gerencia).</li>
+          <li>Genere el <strong>PDF</strong> de vista previa y verifique formato y completitud.</li>
+          <li>Si está conforme, apruebe → estado <strong>Aprobado</strong>. Si no, devuelva a <strong>Borrador</strong> con nota clara para el inspector.</li>
+          <li>El coordinador publicará el caso cuando corresponda; usted no necesita publicarlo salvo que también tenga rol de coordinador.</li>
+        </ol>
+      </details>
+    </div>
+
+    <h3 class="cpeh-about-heading cpeh-mt-lg">Herramientas del sistema</h3>
+    <div class="table-responsive">
+      <table class="table table-sm cpeh-tutorial-table mb-3">
+        <thead>
+          <tr>
+            <th>Herramienta</th>
+            <th>Para qué sirve</th>
+            <th>Quién la usa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Panel de inicio</strong></td>
+            <td>Indicadores, casos recientes y acceso a guías.</td>
+            <td>Todos</td>
+          </tr>
+          <tr>
+            <td><a href="/admin/inspecciones/casorojo/">Casos ROJO Fase II</a></td>
+            <td>Ficha completa del informe (11 secciones), PDF, Excel, fotos y PDFs adjuntos.</td>
+            <td>Inspector, revisor, coordinador</td>
+          </tr>
+          <tr>
+            <td><a href="/asignacion/" target="_blank" rel="noopener">Tablero asignación</a></td>
+            <td>Distribuir inspector y revisor; exportar Excel de casos seleccionados.</td>
+            <td>Coordinador</td>
+          </tr>
+          <tr>
+            <td><a href="/mapa/" target="_blank" rel="noopener">Mapa GPS</a></td>
+            <td>Ubicación geográfica, filtros por estado y banda de prioridad.</td>
+            <td>Coordinador, planificación</td>
+          </tr>
+          <tr>
+            <td><strong>Plantilla Excel</strong></td>
+            <td>Trabajo offline: informe vertical (1 edificio) o lote (1 fila por edificio). Precarga en azul, listas en amarillo.</td>
+            <td>Inspector (completa), coordinador (distribuye y recibe)</td>
+          </tr>
+          <tr>
+            <td><strong>PDF informe</strong></td>
+            <td>Salida formal del dictamen Fase II para archivo y mesas de trabajo.</td>
+            <td>Revisor, coordinador</td>
+          </tr>
+          <tr>
+            <td>Catálogo de procedimientos</td>
+            <td>Referencia VIG/COL/MAM para códigos en secc. 8.</td>
+            <td>Inspector</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="cpeh-about-heading">Plantillas Excel — flujo recomendado</h3>
+    <ol class="cpeh-about-list cpeh-about-ordered">
+      <li><strong>Coordinador</strong> selecciona casos en admin o tablero y descarga Excel <em>informe</em> (campo individual) o <em>lote</em> (varios edificios en una hoja).</li>
+      <li><strong>Inspector</strong> completa la visita en Excel (campos amarillos = listas; azules = validar precarga) o en el admin web.</li>
+      <li><strong>Devolución</strong> — el inspector remite el archivo al coordinador (correo, drive institucional o canal acordado).</li>
+      <li><strong>Carga al sistema</strong> — por ahora el coordinador traslada los datos a la ficha web; la <strong>carga automática desde Excel</strong> está prevista en una fase siguiente.</li>
+      <li><strong>Cierre</strong> — revisión, PDF y publicación siguen el flujo normal de estados.</li>
+    </ol>
+
+    {% include "includes/cpeh_guia_decisiones_d.html" %}
+  </div>
+</details>

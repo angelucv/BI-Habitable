@@ -1,0 +1,70 @@
+______________________________________________________________________________ 
+INFORME TÉCNICO DE INSPECCIÓN ESTRUCTURAL 
+ Evaluadores: Romme Rojas y Sergio Silva  
+Nombre edificio: Residencias Los Tamarindos 2 
+Dirección y coordenadas: Calle Guacaipuro, Caraballeda,  10,6105053; -66,84094 
+Etiqueta previa: Color Rojo 
+______________________________________________________________________________ 
+1. Datos Generales 
+Nombre de la edificación: Los Tamarindos 2 
+Ubicación / Dirección: Calle Guaicaipuro, Caraballeda, Estado La Guaira, Venezuela 
+Fecha y hora de la inspección: 11 de agosto de 2026 
+Inspectores / Equipo responsable: Romme Rojas y Sergio Silva 
+Tipo de edificación / Uso: Residencial 
+Configuración: Un solo módulo estructural 
+Número de niveles: Siete (7) niveles superiores más un (1) nivel de sótano 
+Sistema estructural: Sistema aporticado (pórticos de concreto armado) 
+Clasificación de riesgo / Evaluación: Etiqueta Roja (Inhabitable / Alto Riesgo) 
+ 2. Inspección Visual y Descripción de la Falla 
+Condición de Inspección: La evaluación se realizó exclusivamente desde el exterior del inmueble, 
+debido a la imposibilidad de acceder al interior de la estructura por condiciones de seguridad. 
+
+Localización y Severidad de los Daños: Falla estructural total concentrada en el piso 3 de la 
+edificación, con una severa concentración de daños en los nodos columna-viga de dicho nivel. 
+Mecanismo de Piso Débil / Blando: El nivel correspondiente al piso 3 actuó como un entrepiso 
+débil, sufriendo la falla generalizada de todas sus columnas. 
+Desplazamiento Dinámico: La falla del piso 3 ocasionó el colapso del bloque superior de la 
+edificación (pisos 4 al 7) y su desplazamiento lateral hacia el sector norte respecto a la base. 
+Daños en Elementos No Estructurales y Secundarios: 
+Agrietamientos y colapsos parciales en paredes y muros de cerramiento (mampostería). 
+Severa afectación y daños visibles en las losas correspondientes al núcleo de escaleras. 
+3. Justificación de la Demolición 
+Colapso del Bloque Superior: La falla del piso 3 como entrepiso débil derivó en el colapso e 
+inclinación del bloque superior (pisos 4 al 7), destruyendo de forma irreversible la estabilidad 
+global del sistema estructural. 
+Estado de Equilibrio Inestable y Riesgo Inminente: La masa colapsada del bloque superior ejerce 
+sobrecargas asimétricas sobre la base, manteniendo la estructura en un estado crítico con riesgo 
+directo de desplome no controlado. 
+Vulnerabilidad Perimetral: Presencia de edificaciones colapsadas en los linderos laterales (derecho 
+e izquierdo), lo que incrementa el riesgo de colapsos en cadena en caso de una falla no controlada. 
+Espacio de Despeje: Colindancia posterior con el campo de golf, lo que brinda una zona de 
+amortiguación abierta. 
+Ejecución Asistida: Resulta imperativo ejecutar una demolición técnica con criterio, direccionando 
+el abatimiento y los escombros hacia la parte posterior (campo de golf) para evitar impactos a las 
+estructuras colindantes y la Calle Guaicaipuro. 
+Sección 4: Conclusiones y Relevancia de Casos de Estudio 
+
+Conclusiones Técnicas del Caso: 
+Dictamen de Habitabilidad: Se ratifica la clasificación de Etiqueta Roja (Inhabitable / Alto 
+Riesgo). 
+Recomendación Final: Demolición técnica y controlada direccionada hacia la zona posterior 
+(campo de golf). 
+Acciones Preventivas Inmediatas: Acordonamiento del perímetro y restricción total del paso 
+peatonal y vehicular. 
+Relevancia como Caso de Estudio: 
+Falla Localizada de Entrepiso: Constituye un caso de estudio de alto valor técnico debido a que la 
+falla se concentró exclusivamente en el piso 3, manteniéndose los demás niveles aparentemente 
+en buen estado. 
+Ensayos e Investigación de Materiales: Se recomienda realizar estudios destructivos y no 
+destructivos en el concreto (resistencia a la compresión, petrografía) y en las barras de acero de las 
+columnas (tracción, ductilidad y detallado de armado) para comprender las causas raíz del 
+comportamiento del nivel afectado. 
+Aporte a la Ingeniería Símica: Permite enriquecer la base de datos sobre fragilidad de nodos y 
+discontinuidad de rigidez vertical en estructuras aporticadas de concreto armado 
+ 
+5. Registro fotográfico 
+ 
+
+  
+  
+ 

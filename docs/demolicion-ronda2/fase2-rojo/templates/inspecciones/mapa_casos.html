@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa casos ROJO — CPEH Fase II</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="/static/css/cpeh_admin.css">
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f9; color: #1a2332; }
+    .cpeh-mapa-header {
+      background: #00247d;
+      color: #fff;
+      padding: 0.85rem 1.25rem;
+      border-bottom: 3px solid #ffcc00;
+    }
+    .cpeh-mapa-header h1 { font-size: 1.15rem; margin: 0 0 0.25rem; }
+    .cpeh-mapa-header p { margin: 0; font-size: 0.85rem; opacity: 0.92; }
+    .cpeh-mapa-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      padding: 0.65rem 1.25rem;
+      background: #fff;
+      border-bottom: 1px solid #d0d7e2;
+    }
+    .cpeh-mapa-toolbar label { font-size: 0.82rem; font-weight: 600; }
+    .cpeh-mapa-toolbar select, .cpeh-mapa-toolbar input {
+      font-size: 0.82rem;
+      padding: 0.25rem 0.45rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+    #map { height: calc(100vh - 180px); min-height: 420px; }
+    .cpeh-mapa-leyenda {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.78rem;
+      background: #fff;
+      border-top: 1px solid #e8eef8;
+    }
+    .cpeh-mapa-flujo {
+      padding: 0.65rem 1.25rem;
+      background: #eef2f8;
+      font-size: 0.78rem;
+      border-top: 1px solid #d0d7e2;
+    }
+    .cpeh-mapa-flujo ol { margin: 0.35rem 0 0; padding-left: 1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="cpeh-mapa-header">
+    <h1>Mapa operativo — casos ROJO Fase II</h1>
+    <p>{{ total_mapa }} edificaciones con GPS en el sistema{% if caso_foco %} · foco ID {{ caso_foco }}{% endif %}</p>
+  </div>
+
+  <div class="cpeh-mapa-toolbar">
+    <label>Estado <select id="filtro-estado"><option value="">Todos</option>{% for e in estados %}<option value="{{ e }}">{{ e }}</option>{% endfor %}</select></label>
+    <label>Banda <select id="filtro-banda"><option value="">Todas</option>{% for b in bandas %}<option value="{{ b }}">{{ b }}</option>{% endfor %}</select></label>
+    <label>Score mín. <input type="number" id="filtro-score" min="0" max="100" placeholder="0"></label>
+    <button type="button" id="btn-aplicar" class="btn btn-primary btn-sm">Aplicar filtros</button>
+    <a href="/admin/" class="btn btn-secondary btn-sm">← Admin</a>
+    <a href="/admin/inspecciones/casorojo/" class="btn btn-outline-secondary btn-sm">Listado casos</a>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="cpeh-mapa-leyenda">
+    <strong>Leyenda:</strong> azul D1 complementos · naranja D2 reparar · rojo D3/D4 demoler/escombros · gris = sin decisión / otros estados
+  </div>
+
+  <details class="cpeh-mapa-flujo">
+    <summary><strong>Flujo de revisión (estados)</strong></summary>
+    <ol>{% for paso in flujo_pasos %}<li>{{ paso }}</li>{% endfor %}</ol>
+  </details>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+    const map = L.map('map').setView([10.60, -66.90], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    let layer = L.layerGroup().addTo(map);
+    const focoId = {{ caso_foco|default:"null" }};
+
+    function colorMarcador(props) {
+      const d = (props.decision || '').slice(0, 2);
+      if (d === 'D4') return '#7f1d1d';
+      if (d === 'D3') return '#cf142b';
+      if (d === 'D2') return '#e85d04';
+      if (d === 'D1') return '#2a6f97';
+      if ((props.estado || '').includes('Pendiente')) return '#e67e22';
+      if ((props.estado || '').includes('visita') || (props.estado || '').includes('Borrador')) return '#2a6f97';
+      if ((props.estado || '').includes('Aprobado') || (props.estado || '').includes('Publicado')) return '#2d6a4f';
+      return '#6c757d';
+    }
+
+    function popupHtml(p) {
+      return `<strong>${p.nombre}</strong><br>ID Habitable: ${p.hab_id}<br>Score: ${p.score ?? '—'} · ${p.banda || '—'}<br>Estado: ${p.estado || '—'}<br>Decisión: ${p.decision || '—'}<br><a href="${p.admin_url}" target="_blank">Abrir ficha</a>`;
+    }
+
+    async function cargar() {
+      const params = new URLSearchParams();
+      const est = document.getElementById('filtro-estado').value;
+      const banda = document.getElementById('filtro-banda').value;
+      const score = document.getElementById('filtro-score').value;
+      if (est) params.set('estado', est);
+      if (banda) params.set('banda', banda);
+      if (score) params.set('min_score', score);
+      const res = await fetch('/api/casos/geojson/?' + params.toString(), { credentials: 'same-origin' });
+      const geo = await res.json();
+      layer.clearLayers();
+      const bounds = [];
+      geo.features.forEach(f => {
+        const [lng, lat] = f.geometry.coordinates;
+        bounds.push([lat, lng]);
+        const m = L.circleMarker([lat, lng], {
+          radius: focoId && f.properties.hab_id == focoId ? 10 : 6,
+          color: '#fff',
+          weight: 1,
+          fillColor: colorMarcador(f.properties),
+          fillOpacity: 0.85,
+        }).bindPopup(popupHtml(f.properties));
+        layer.addLayer(m);
+        if (focoId && f.properties.hab_id == focoId) {
+          map.setView([lat, lng], 16);
+          m.openPopup();
+        }
+      });
+      if (bounds.length && !focoId) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 13 });
+    }
+
+    document.getElementById('btn-aplicar').addEventListener('click', cargar);
+    cargar();
+  </script>
+</body>
+</html>

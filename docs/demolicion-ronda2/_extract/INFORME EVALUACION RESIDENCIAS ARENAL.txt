@@ -1,0 +1,101 @@
+DGPS-009-11-08-2026 
+Página 1 
+INFORME TÉCNICO DE EVALUACIÓN ESTRUCTURAL POSTSÍSMICA 
+Documento N°
+DGPS-009-11-08-2026
+Edificación
+Residencias Arenal
+Ubicación
+Calle La Playa, Sector Caraballeda, Edo. La Guaira
+Coordenadas GPS / Fecha de Inspección
+N 10.612760°, W 66.834652°  |  11 de agosto de 2026
+ 
+1. OBJETIVO Y DATOS DE LA EDIFICACIÓN 
+El presente informe consolida la evaluación patológica e inspección física del edificio Residencias Arenal tras el 
+evento sísmico del 24 de junio de 2026, con el fin de dictaminar la estabilidad global de la estructura a partir de 
+los daños observados en elementos principales y cerramientos. 
+Uso y Configuración: Residencial Multifamiliar. Consta de dos (2) torres integradas por un núcleo central de 
+circulación vertical (escaleras tipo tijera y ascensor). 
+Niveles: Doce (12) niveles sobre rasante (Planta Baja + 11 pisos) y un (1) nivel de sótano para estacionamiento, 
+más un anexo posterior independiente de dos (2) niveles. 
+2. LEVANTAMIENTO PATOLÓGICO Y ESTADO DE ELEMENTOS 
+2.1. Elementos horizontales: vigas y losas 
+Deformación apreciable en vigas: 
+Se observa en distintos sectores de las fachadas la presencia de vigas con deformación descendente apreciable 
+respecto de su geometría esperada. En algunos de estos elementos se identifican además pérdida localizada del 
+recubrimiento de concreto, exposición de armaduras y fisuración. La magnitud y distribución de estas 
+deformaciones constituyen indicios de afectación estructural; no obstante, mediante la inspección visual realizada 
+no es posible establecer de manera concluyente si las armaduras alcanzaron la fluencia ni cuantificar la pérdida 
+de capacidad resistente de los elementos. 
+Pérdida de horizontalidad en losas y volados: 
+En diferentes niveles se observan losas de entrepiso y elementos en volado con deformaciones descendentes y 
+pérdida apreciable de su geometría original. Estas condiciones, consideradas conjuntamente con los daños 
+observados en vigas y otros elementos de concreto armado, evidencian una afectación que excede el daño de 
+los cerramientos y elementos no estructurales. 
+2.2. Elementos verticales: columnas y muros 
+Se observan elementos verticales de concreto armado con pérdida del recubrimiento, exposición de armaduras y 
+deterioro localizado. En particular, las fotografías de los niveles inferiores muestran sectores en los que la 
+armadura transversal queda visible como consecuencia de la pérdida del concreto de recubrimiento. 
+En el nivel de sótano se observan además manifestaciones de humedad y deterioro superficial en elementos de 
+concreto. Estas condiciones constituyen antecedentes de deterioro que deben diferenciarse de los daños 
+directamente atribuibles al evento sísmico. 
+2.3. Cerramientos y elementos no estructurales 
+Existe pérdida extensa de mampostería y cerramientos en múltiples niveles de ambas fachadas, con exposición 
+del sistema de pórticos. El daño de los cerramientos es generalizado y no se limita a un apartamento o nivel 
+particular. 
+El cuerpo cilíndrico correspondiente al núcleo de circulación presenta pérdida parcial de su cerramiento y 
+fisuración visible en sectores de conexión con el resto de la edificación. Estas observaciones se consideran como 
+parte del patrón general de daño, sin atribuir por inspección visual un mecanismo estructural específico. 
+
+DGPS-009-11-08-2026 
+Página 2 
+3. MATRIZ DE EVIDENCIA FOTOGRÁFICA 
+Las fotografías siguientes fueron seleccionadas por mostrar, de manera complementaria, la extensión general del 
+daño y la afectación visible de elementos de concreto armado. La evidencia fotográfica se utiliza como soporte 
+de las observaciones de campo y no sustituye ensayos, levantamientos geométricos ni verificaciones analíticas. 
+ 
+Fotografía 1. Vista general de Residencias Arenal. Se aprecia la extensión del daño en la fachada, con pérdida generalizada 
+de cerramientos en múltiples niveles y exposición del sistema estructural. 
+ 
+Fotografía 2. Vista general de varios niveles. Se observa pérdida extensa de cerramientos y exposición de vigas y columnas, 
+evidenciando que la afectación no se limita a un sector aislado de la edificación. 
+ 
+Fotografía 3. Vista del núcleo de circulación y de los pórticos adyacentes. Se observa pérdida de cerramientos en varios 
+niveles y daño importante en el cerramiento del cuerpo de escaleras. 
+ 
+Fotografía 4. Daño en elemento horizontal de concreto armado, con pérdida importante del recubrimiento y exposición de 
+armadura transversal. La imagen documenta afectación directa de un elemento estructural y no únicamente de la 
+mampostería. 
+
+DGPS-009-11-08-2026 
+Página 3 
+ 
+Fotografía 5. Elemento vertical de concreto armado con pérdida del recubrimiento y exposición localizada de armaduras, 
+acompañado de fisuración y deterioro superficial. La condición observada constituye evidencia de daño en un elemento 
+resistente. 
+4. DICTAMEN TÉCNICO Y CONCLUSIONES 
+Evaluación de Riesgo: INSEGURO (Tarjeta Roja) — CONFIRMADO 
+La inspección evidencia daños de carácter estructural en elementos de concreto armado, incluyendo pérdida 
+localizada y extensa del recubrimiento, exposición de armaduras y deterioro en elementos verticales y 
+horizontales. Estas condiciones se presentan conjuntamente con deformaciones descendentes apreciables y 
+pérdida de la geometría original en vigas, losas y elementos en volado de diferentes sectores de la edificación. 
+La extensión y distribución de los daños observados indican que la afectación no se limita a componentes no 
+estructurales ni a sectores aislados del inmueble. No obstante, con base únicamente en la inspección visual y las 
+fotografías disponibles, no se considera técnicamente sustentado atribuir de manera concluyente mecanismos 
+tales como fluencia o elongación del acero interno, superación del rango elástico de elementos específicos o 
+formación de un piso blando. 
+Considerando la magnitud, extensión y distribución de los daños observados, particularmente la afectación de 
+elementos de concreto armado, las deformaciones apreciables en elementos horizontales y la condición general 
+de la edificación, se considera técnicamente procedente mantener su condición de inhabitabilidad y proceder con 
+su demolición controlada, mediante un procedimiento previamente planificado que garantice la seguridad de las 
+edificaciones y áreas circundantes. 
+5. RECOMENDACIONES INMEDIATAS 
+Exclusión Permanente: Mantener la prohibición absoluta de ingreso al inmueble y delimitar el perímetro de 
+seguridad en la vía pública. 
+Acceso excepcional: Cualquier ingreso temporal indispensable deberá limitarse a personal autorizado, previa 
+evaluación de las condiciones del sector a intervenir y con las medidas de protección y estabilización temporal 
+que correspondan. 
+Demolición Controlada: Tramitar la orden formal de demolición técnica asistida ante los organismos 
+competentes (Protección Civil y Alcaldía). La demolición deberá ejecutarse mediante un procedimiento específico 
+previamente planificado, considerando la configuración y condición actual de la edificación, la protección de las 
+construcciones vecinas, los equipos y medios de protección requeridos y los perímetros de seguridad. 

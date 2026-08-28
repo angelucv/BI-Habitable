@@ -1,0 +1,284 @@
+COMISIÓN PRESIDENCIAL PARA LA EVALUACIÓN DE HABITABILIDAD
+GUÍA DEL FORMATO DE INSPECCIÓN DETALLADA
+(Segunda visita a edificios con etiqueta ROJA)
+Precarga de la inspección previa + ranking de prioridad + decisión demoler / reparar
+Versión didáctica ampliada · 20/08/2026 · Incluye explicaciones por sección y Anexo 1 (Franco Mar) con inspección previa Habitable, ranking y visita detallada.
+1. ¿Qué problema resuelve este formato?
+Hoy ya existen muchos informes buenos, pero cada uno se escribe distinto. Eso dificulta saber, en una sola lista: cuántos van a demolición, cuántos a reparación y qué tan grande es esa reparación.
+Además, la primera inspección (Habitable / planilla rápida) ya dejó datos y un ranking de gravedad para priorizar visitas. Este segundo informe no parte de cero: recibe esa información, la valida o corrige, profundiza el daño y cierra una decisión de control.
+En conjunto, el segundo informe debe poder responder con claridad:
+1) ¿Confirmamos que sigue siendo ROJO / inhabitable?
+2) ¿La decisión es demoler, reparar/reconstruir, pedir más estudios, tratar escombros, o solo vigilar?
+3) Si se repara: ¿la intervención es pequeña, mediana, grande o casi total?
+4) ¿Qué traía la inspección previa y el ranking, y qué se corrigió en campo?
+5) ¿Qué medidas inmediatas hay que mantener (perímetro, desalojo, etc.)?
+2. Dos tipos de información en el formato
+El formato combina campos estructurados (comparables entre edificaciones y aptos para tableros o sistemas) con secciones de análisis libre, donde el ingeniero documenta su criterio técnico con libertad profesional.
+3. Cómo se parece a los informes que ya tienen
+No se descarta lo ya elaborado. Se homologa al mismo molde de captura:
+4. Mapa mental: las partes del segundo informe
+A0 — Precarga: inspección previa Habitable + ranking (validar / corregir).
+A — Identidad confirmada del edificio.
+B — Cómo es el edificio (pisos, uso, estructura, ocupación).
+C — Qué daño se vio en detalle + texto libre del ingeniero.
+D — Decisión demoler / reparar / … + tamaño si repara + justificación libre.
+E — Fotos y firmas.
+Resumen ejecutivo — párrafo corto para mesa de trabajo.
+Abajo, cada parte se explica con: para qué sirve, qué preguntas contesta y qué datos conviene llenar.
+5. Parte A0 — Precarga de la inspección previa + ranking
+El inspector de la segunda visita no parte de una hoja en blanco. El sistema (o el Excel de trabajo) le entrega lo ya conocido de la inspección rápida y el ranking que ordena la cola de visitas.
+Preguntas que contesta esta parte:
+¿Qué dijo Habitable de este edificio (etiqueta, riesgos, acciones)?
+¿Qué tan prioritario era según el score (0–100) y su banda?
+¿En qué puesto de la cola nacional / La Guaira estaba?
+¿El inspector confirma, corrige o rechaza esos datos al llegar al sitio?
+Qué suele venir ya cargado:
+ID / certificado Habitable, nombre, dirección, GPS, municipio/parroquia.
+Etiqueta ROJA, fecha e inspector de Fase 1, riesgos A/B/C, piso crítico, acciones.
+Ranking: score, banda (Muy alta / Alta / Media…), puesto, detalle de puntos, texto de probabilidad relativa.
+Observaciones cortas de la primera inspección (si existen).
+Importante: el ranking prioriza; no es el dictamen final. Un caso en banda Media puede terminar en demolición tras la visita detallada (ver Anexo 1).
+6. Parte A — Identificación confirmada
+Después de validar la precarga, se deja fija la identidad del caso para trazabilidad (mismo certificado Habitable, mismo edificio).
+Preguntas que contesta:
+¿De qué edificio exacto estamos hablando (nombre oficial + alias)?
+¿Dónde está (dirección, GPS de control de esta visita)?
+¿Quién inspeccionó en la segunda visita y quién supervisa?
+¿Cuándo se hizo la visita detallada?
+Datos típicos: nombre, dirección, GPS de control, fecha/hora, equipo evaluador (C.I., CIV, ente), supervisor, vínculo al certificado.
+7. Parte B — Cómo es el edificio
+Describe la «ficha técnica» del inmueble. Sirve para entender la consecuencia del daño (no es lo mismo 2 pisos que 12) y para comparar casos.
+Preguntas que contesta:
+¿Para qué se usa (vivienda, hotel, comercio, en construcción…)?
+¿Cuántos pisos, semisótanos y sótanos tiene realmente?
+¿De qué está hecho el sistema que lo sostiene (pórticos, muros, mixto…)?
+¿Está desalojado, con gente, o ya en escombros?
+¿Hay vecinos o vías que se verían afectados si colapsa?
+8. Parte C — Qué daño se vio (matriz + texto libre)
+Aquí se homologa lo que ya escriben los informes tipo Capri, Franco Mar, OPPPE o Arenal: piso crítico, porcentaje de columnas graves, inclinación, vigas, peligro a vecinos. Las casillas permiten comparar; el texto libre permite al ingeniero explicar el mecanismo del daño y lo que no pudo ver.
+Preguntas que contesta:
+¿Cuál es el piso / entrepiso más crítico?
+¿Qué tan afectadas están las columnas (exteriores e interiores)?
+¿Hay daño relevante en vigas, losas, muros o núcleo de escaleras?
+¿El edificio perdió verticalidad / se inclinó? ¿Se midió?
+¿Los elementos no estructurales (fachada, tanques, gas) agregan riesgo?
+¿Hay peligro claro para aledaños o la vía pública?
+¿Qué interpreta el ingeniero (causa probable, límites de la inspección visual)?
+Casillas sugeridas (cerradas / semi):
+Piso crítico (nivel).
+% aproximado de columnas en daño grave (grados III / IV / V o equivalente).
+Inclinación: sí/no + Δ (cm por metro) si se midió.
+Riesgos no estructurales A/B/C (fachada, escaleras, ascensores, tanques, gas).
+Peligro aledaños / vía: sí/no (+ distancia aproximada).
+Caja libre (obligatoria, al menos un párrafo): análisis del evaluador — mecanismo probable, incertidumbre, disenso entre ingenieros si lo hay.
+9. Parte D — Decisión de control (el corazón del informe)
+Esta es la salida que permite gobernar el proceso: no basta con narrar el daño; hay que elegir un código de decisión comparable entre todos los casos ROJOS.
+Preguntas que contesta:
+¿Demolemos, reparamos, pedimos más estudios, son escombros, o solo vigilamos?
+Si reparamos: ¿qué tan grande es la intervención (M1–M4)?
+¿Es viable reparar en sitio con seguridad, o no?
+¿Qué prioridad operativa tiene (inmediata / alta / programable)?
+¿Qué medidas inmediatas hay que mantener?
+¿Por qué el ingeniero eligió esa decisión (texto libre)?
+9.1 Si es D2: tamaño de la reparación (M1–M4)
+Cuando no se demuele, el control necesita saber si hablamos de un arreglo local o de una obra enorme. Escala cerrada propuesta:
+Campos adicionales útiles si D2: % aproximado de planta afectada; niveles a intervenir; ¿requiere refuerzo sísmico global?; plazo orientativo. Y siempre una caja libre: «por qué no demolición» / alcance de la reparación.
+9.2 Si es D1: demolición
+Marcar inviabilidad de reparación en sitio (sí).
+Motivos tipificados (multi-selección): piso crítico masivo; pérdida de verticalidad; peligro aledaños; alto % de columnas graves; otro.
+Prioridad y medidas inmediatas (acordonar, excluir, apuntalar temporal, monitorear vecinos).
+Texto libre de justificación (como en Capri / Franco Mar / Samantha).
+9.3 Contraste rápido: ¿más demoler o más reparar?
+Son orientaciones. El ingeniero puede discrepar: por eso existe el texto libre. Lo que no puede faltar es el código D1–D5 (y M1–M4 si D2).
+10. Parte E — Evidencia y firmas
+Preguntas que contesta:
+¿Hay prueba fotográfica de lo afirmado?
+¿Quién elaboró, revisó y aprobó (CIV)?
+Mínimo sugerido: 6 fotos con descripción (vista general, piso crítico, columnas, vigas/losas, aledaños, etiqueta).
+Croquis de planta con marca del piso crítico (recomendado).
+Firmas: elaboró / revisó / aprobó.
+11. Resumen ejecutivo (salida corta)
+Pregunta que contesta: ¿qué le digo a la mesa técnica en un párrafo? Al cierre, 8–12 líneas: edificio, qué traía Fase 1/ranking, qué se validó, qué se vio, decisión D (y M si aplica), prioridad y próxima acción.
+12. Libertad del ingeniero (dónde escribe con libertad)
+Los códigos estructurados organizan el control y la comparabilidad entre casos; el texto libre documenta el análisis de ingeniería.
+En C: mecanismo del daño, límites de lo observado, dudas.
+En D: por qué demoler o reparar; por qué el ranking no basta solo.
+Observaciones abiertas: acceso impedido, seguridad del equipo, hallazgos no tipificados.
+Disenso: si hay discrepancia entre evaluadores, se registra y el supervisor fija el código final.
+13. Tabla ejemplo — datos que se pueden levantar
+Vista rápida de cómo se ve una ficha (mezcla de precarga + visita). El Anexo 1 desarrolla un caso real completo.
+14. Niveles para el sistema digital (A–F)
+Nivel A — Identidad Habitable + precarga ranking (bloquea inicio sin id/certificado).
+Nivel B — Geometría y configuración.
+Nivel C — Matriz de daño + texto libre.
+Nivel D — Decisión D1–D5 (+ M1–M4 si D2) + medidas + justificación.
+Nivel E — Evidencia y firmas.
+Nivel F — Estado del flujo (borrador / revisado / aprobado / publicado).
+15. Nota final
+Este formato no reemplaza el proyecto ejecutivo de demolición ni el diseño de refuerzo. Estandariza la segunda ronda para que demolición y reconstrucción queden como estados controlables, usando lo ya capturado en Fase 1 y el ranking como punto de partida. El Anexo 1 muestra el flujo completo con un caso real.
+ANEXO 1 — EJEMPLO DE INFORME YA LLENADO
+Edificio Franco Mar (La Guaira)
+Con inspección previa Habitable + ranking de prioridad + visita detallada
+Este anexo usa datos reales del export Habitable (corte 20/08/2026), del ranking de gravedad del Excel de trabajo y del informe técnico detallado del 11/08/2026. Es un modelo de cómo se verá la ficha cuando el sistema precargue la Fase 1.
+A0 — Lo que el sistema ya le muestra al inspector (precarga)
+Bloque de solo lectura al abrir la ficha. El inspector no lo inventa: lo recibe. Contesta: ¿qué sabemos antes de llegar? ¿por qué este caso está en la cola?
+A0.1 Inspección previa (Habitable / Fase 1)
+A0.2 Ranking de prioridad (ejemplo real)
+Contesta: ¿qué tan urgente parecía este ROJO solo con la planilla Fase 1?
+A0.3 Validación del inspector (casillas)
+Contesta: ¿qué de la precarga se sostiene y qué hay que corregir?
+A/B — Identidad y edificio confirmados en la visita detallada
+Contesta: ¿quién es el edificio «en limpio» después de validar?
+C — Daño en la visita detallada (casillas)
+Contesta: ¿qué tan grave está, con el detalle que Fase 1 no alcanza a mostrar?
+C — Texto libre del ingeniero (ejemplo)
+«Se confirma el carácter crítico del Nivel 1: gran parte de las columnas perimetrales e interiores fallaron por compresión, bajó el entrepiso y la torre perdió verticalidad. Hay daño en vigas en varios niveles y afectación en sótanos. Respecto a la precarga Habitable: la etiqueta ROJA y el aviso de desalojo eran correctos; el ranking Media (51) no alcanza a reflejar la gravedad vista en sitio. No se considera viable una reparación segura bajo 12 pisos con los apoyos del piso crítico en ese estado.»
+D — Decisión de control (cierre)
+Contesta: ¿demoler o reparar? ¿qué prioridad? ¿qué medidas?
+D — Justificación libre (ejemplo)
+«Aunque el ranking de Fase 1 ubicaba el caso en banda Media, la inspección detallada muestra piso crítico masivo, pérdida de verticalidad y peligro a colindantes. Se recomienda demolición controlada. El valor del ranking fue traer el caso a la cola de verificación; el valor de esta ficha es cerrar el control D1 con evidencia.»
+E — Evidencia y firmas
+Fotos del informe detallado: piso crítico, columnas, verticalidad, entorno.
+Elaboraron: equipo de la visita 11/08/2026.
+Supervisión: Ing. Aura Quintero.
+Queda vinculado el certificado Habitable 73420200720261338 / id 171818.
+Resumen ejecutivo (para mesa de trabajo)
+Franco Mar (Caraballeda, La Guaira). Fase 1: ROJO (20/07/2026), score 51 (banda Media; puesto ~115 en La Guaira). Visita detallada 11/08/2026: 12 pisos + 2 sótanos, piso crítico en Nivel 1 con >50% columnas graves, pérdida de verticalidad, riesgo a vecinos. Validación: se confirma ROJO; se corrigen sótanos y se precisa GPS/dirección de control. Decisión: D1 demoler, prioridad inmediata. Aprendizaje: el ranking prioriza; la segunda visita decide.
+Cómo se usaría esto el día de campo (paso a paso)
+1) Abrir ficha → ver A0 (Habitable + ranking).
+2) Llegar al sitio → validar o corregir casillas de A0.3.
+3) Completar daño (C) y fotos (E).
+4) Elegir D1–D5 (y M1–M4 si repara).
+5) Escribir el párrafo ejecutivo.
+6) Firmar → el caso sale de la cola de «pendiente de verificación».
+Mini-contraste: ¿y si fuera reparación?
+Para enseñar D2/M (no es el caso Franco Mar): si el daño fuera grave pero localizado, sin pérdida de plomo de toda la torre y con reparación viable, la ficha cerraría D2 + M2 o M3, con texto libre explicando por qué no demoler. Franco Mar, con la evidencia real, cierra en D1.
+
+--- TABLA 1 ---
+Tipo | Descripción | Ejemplo
+Casillas cerradas | Respuestas cortas, comparables entre edificios | 14 pisos · Demoler · Prioridad inmediata
+Semi-cerradas (escalas) | A/B/C o grados de daño con definición escrita | Riesgo fachada C · columnas grado IV
+Referencia precargada | Viene de Habitable / ranking; se valida | ID 171818 · score 51 · banda Media
+Texto libre del ingeniero | Explicación técnica con libertad profesional | «Fallaron las columnas del nivel 1…»
+Fotos / croquis | Prueba visual de lo dicho | Foto del piso crítico + etiqueta
+
+--- TABLA 2 ---
+Tipo de informe actual | Qué aporta | Dónde cae en este formato
+Ficha PNUD / ATC-20 (p. ej. OPPPE30) | GPS, geometría, % columnas, inclinación, riesgos A/B/C | Precarga + Partes B y C
+Informe técnico nivel 2 (p. ej. Capri / Franco Mar) | Piso crítico, falla por compresión, inviabilidad de reparación, fotos | Partes C y D + textos libres
+Evaluación patológica (p. ej. Arenal) | Daño en vigas/losas/cerramientos y dictamen | Matriz C + decisión D
+Justificación corta (p. ej. Samantha, Brisamar) | Conclusión demoler + firmas | Al menos A0/A + D + firmas; conviene completar C
+Recolección de escombros (p. ej. Fioremar) | Ya colapsó; volumen a retirar | Decisión D4 + magnitud de remoción
+
+--- TABLA 3 ---
+Acción del inspector | En la práctica
+Validar | Marca «Correcto» si nombre, pisos, dirección y riesgos coinciden
+Corregir | Si había errores (pisos, GPS, sótanos…), los enmenda en la ficha
+Confirmar etiqueta | ¿Sigue ROJO / inhabitable? Sí / No / Aún no se puede decir
+Usar el ranking como guía | Sirve de referencia de prioridad; el dictamen lo define la visita detallada
+
+--- TABLA 4 ---
+Código | Decisión (lenguaje simple) | ¿Qué sigue?
+D1 | Se recomienda DEMOLER | Proyecto de demolición controlada + perímetro
+D2 | Se recomienda REPARAR / RECONSTRUIR | Obligatorio marcar tamaño M1–M4
+D3 | Hacen falta MÁS ESTUDIOS | No decidir demoler ni reparar todavía
+D4 | Ya está en ESCOMBROS / colapsó | Control de remoción (no es demoler torre en pie)
+D5 | Seguir inhabitado y VIGILAR | Perímetro + monitoreo; sin demolición aún
+
+--- TABLA 5 ---
+Código | Tamaño | Definición operativa
+M1 | Reparación pequeña / local | Intervención en elementos puntuales; obra acotada
+M2 | Reparación importante | Varios elementos o un nivel; requiere apuntalamiento
+M3 | Reconstrucción parcial | Rehacer zonas amplias (p. ej. un piso crítico)
+M4 | Reconstrucción / refuerzo mayor | Intervención sobre gran parte del sistema resistente
+
+--- TABLA 6 ---
+Señal en campo | Más compatible con D1 (demoler) | Más compatible con D2 (reparar)
+Piso crítico | Aplastamiento / gran % de columnas graves en un nivel | Daño concentrado reparable; bases inspeccionables
+Verticalidad | Pérdida de plomo / torre desalineada | Sin desplome global relevante
+Reparar en sitio | Inviable o riesgo inaceptable para operarios | Viabilidad técnica argumentada
+Aledaños | Alto riesgo si cae de forma descontrolada | Riesgo controlable con perímetro / apuntalamiento
+Magnitud M | No aplica | Obligatorio M1–M4 + texto de alcance
+
+--- TABLA 7 ---
+Campo | Ejemplo | Para qué sirve
+ID / certificado Habitable | 171818 / 73420… | Trazabilidad Fase 1
+Score / banda / puesto ranking | 51 / Media / ~115 La Guaira | Prioridad de visita
+Validación precarga | ROJO confirmado; corrige sótanos | Calidad del dato
+Pisos confirmados | 12 + 2 sótanos | Consecuencia
+Piso crítico | Nivel 1 | Foco de daño
+% columnas graves | >50% en piso crítico | Severidad
+Decisión | D1 demoler | Control maestro
+Magnitud M | N/A (si fuera D2: M2/M3…) | Alcance si se repara
+Texto libre | Párrafo del ingeniero | Juicio profesional
+Fotos | 6+ | Evidencia
+
+--- TABLA 8 ---
+Dato precargado | Valor que trae Habitable
+ID Habitable | 171818
+Certificado | 73420200720261338
+Nombre en sistema | Edif. Francomar
+Etiqueta Fase 1 | ROJO
+Fecha de la inspección previa | 20/07/2026 (registro 13:44)
+Inspector Fase 1 | Maria Mercedes Nieves Duarte
+Ente | Comisión Nacional de Ingenieros — CPEHI
+Dirección en Habitable | Calle Principal Boulevard Tanaguarenas. Caraballeda. La Guaira.
+Estado / Municipio / Parroquia | La Guaira / Vargas / Caraballeda
+Uso / material | Vivienda Edificio / Concreto
+Pisos / sótanos (Fase 1) | 12 / 1
+Año construcción (Fase 1) | 1980
+GPS Habitable | 10.6123543 , -66.8318071
+Riesgo externo / severo | C / A
+Colapso estructura (exterior) | C
+Piso crítico declarado en Fase 1 | Planta baja, piso 1, 2, 3, 4
+Acciones sugeridas Fase 1 | Acordonar
+Observación Fase 1 | «Edificio a punto de colapso, se recomienda Desalojar»
+
+--- TABLA 9 ---
+Indicador de ranking | Valor en este ejemplo
+Score de gravedad (0–100) | 51
+Banda de prioridad | Media
+Puesto nacional (entre todos los ROJO) | 264 de ~9.270
+Puesto en La Guaira / Vargas | 115 de ~4.247
+Probabilidad relativa (texto del ranking) | Media — verificar; puede ser ROJO por riesgo localizado
+Por qué sumó puntos (score_detalle) | riesgo_externo+20; ext_colapso+15; acordonar+2; altura_10++6; piso_critico+3; sev_elementos+5
+Lectura para el inspector | No es de los peores del país en la planilla Fase 1, pero sí prioritario en el litoral. La visita detallada debe confirmar si demoler o reparar.
+
+--- TABLA 10 ---
+Pregunta de validación | Respuesta en este ejemplo (tras la visita)
+¿El edificio precargado es el correcto? | Sí — es Franco Mar / Francomar
+¿La etiqueta ROJA se mantiene? | Sí — confirmada
+¿Los pisos de Fase 1 son correctos? | Parcial — se confirman 12 pisos; en detalle se observan 2 sótanos (Fase 1 decía 1)
+¿El GPS / dirección son útiles? | Sí, con matiz — la visita usó también Av. José María España / Tanaguarena; GPS de control de campo distinto al de Habitable
+¿El ranking Media refleja lo que vio? | El ranking ayudó a priorizar; el daño detallado es más grave de lo que sugiere solo el score 51
+¿Corrige algún dato de Fase 1? | Sí — sótanos 2; precisar dirección/GPS de control; reforzar acciones (no solo acordonar)
+
+--- TABLA 11 ---
+Dato | Valor tras validar / completar
+Nombre confirmado | Edificio Franco Mar
+Fecha visita detallada | 11 de agosto de 2026
+Código informe detallado | DGPS_INF-F2-Tanaguarena /11/08/2026-001
+GPS de control (visita) | Lat 10.489497 · Lon -66.899001
+Pisos / sótanos confirmados | 12 pisos + 2 sótanos (estacionamiento)
+Área planta aprox. | 780 m²
+Sistema | Pórticos de concreto armado (~22 columnas perimetrales + 18 interiores)
+Evaluadores visita 2 | Ing. Luis Burgos; Ing. José García
+Supervisor | Ing. Aura Quintero
+
+--- TABLA 12 ---
+Dato | Valor
+Piso crítico | Nivel 1 / planta baja de transición
+Columnas en piso crítico | Más del 50% con falla grave / aplastamiento
+Verticalidad | Pérdida visible de plomo / inclinación
+Vigas | Grietas fuertes por corte en hasta 5 niveles
+Sótanos | Daño en columnas y conexiones de escalera
+Peligro a vecinos / vía | Sí — alto
+Riesgo declarado en visita 2 | Colapso inminente / inhabitable
+
+--- TABLA 13 ---
+Campo | Valor
+Decisión | D1 — Se recomienda DEMOLER
+Tamaño de reparación M1–M4 | No aplica (no es D2)
+¿La precarga/ranking cambian la decisión? | No — la visita detalla y confirma demolición
+Prioridad operativa | Inmediata
+Medidas | Exclusión total, acordonar, no ingreso; preparación de demolición controlada; monitoreo de vecinos

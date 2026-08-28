@@ -1,0 +1,199 @@
+Residencias Sol de Oro IV Informe técnico de inspección 
+INFORME TÉCNICO DE INSPECCIÓN 
+ 
+Edificación Inspeccionada: Residencias Sol de Oro IV 
+Edificación Inspeccionada: vivienda multifamiliar  
+Ubicación/ Sector: Av. Principal Urbanización la Llanada, Parroquia Caraballeda, Municipio Vargas. 
+La Guaira, 11/08/2026 
+ 
+Ingenieros:  
+Ing. Edinson Stand  
+Ing. Crisbelys Caraballo 
+Ing. Supervisor: Jorge Medina  
+ 
+1. Datos Generales   
+ 
+Configuración Estructural:  Edificación de concreto armado constituida por pórticos de columnas y vigas, 
+con sistema de losas de entrepiso y cerramientos de mampostería (bloques de arcilla). Adicionalmente, posee 
+muros en concreto armado en los niveles de sótano, con respecto a un corte del terreno. 
+Condición Actual: Crítica, con daños estructurales severos en elementos de soporte vertical en niveles 
+inferiores y daños moderados en cerramientos no estructurales en niveles superiores. 
+Clasificación de riesgo: Alto (Posible Riesgo de colapso parcial en niveles inferiores, referente al módulo de 
+escalera y un tramo del pórtico correspondiente a la fachada principal). 
+ 
+ 
+2. Inspección Visual y Descripción Técnica de Fallas. 
+ 
+Durante la inspección visual se identificaron seis (6) columnas con daños, distribuidas de la siguiente manera: 
+cuatro (4) en la planta baja (P.B.) y dos (2) en el sótano 1. En este último nivel también se evidenciaron grietas 
+moderadas en las vigas. Por otra parte, las fachadas y paredes internas construidas con bloques de arcilla 
+presentan daños moderados desde la P.B. hasta el piso 4. A partir de dicho nivel, la severidad de los daños 
+disminuye progresivamente a leves en los pisos superiores. 
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+Falla por Cortante en Nudos y Columnas: La presencia de grietas a 45° en los nudos y la desintegración 
+del concreto en columnas indican una falla frágil inducida por altos esfuerzos de corte que excedieron la 
+resistencia del concreto confinado. 
+Deficiencia en el Confinamiento del Núcleo: El desprendimiento del recubrimiento y la exposición del acero 
+deformado evidencian una falla de confinamiento en el núcleo de las columnas de Planta Baja y Sótano 1, 
+impidiendo el desarrollo de la capacidad de deformación inelástica esperada ante eventos sísmicos.  
+Irregularidad en la Distribución de Rigidez: La concentración de daños severos en los niveles inferiores 
+(Sótano 1 y P.B.) comparado con la disminución de severidad en pisos superiores, sugiere una posible 
+configuración de "piso blando" o una irregularidad geométrica que concentró la demanda de ductilidad en las 
+plantas más vulnerables. 
+Interacción Estructura-Mampostería: La distribución y magnitud de las fisuras en los cerramientos de 
+bloques de arcilla sugieren una interacción no controlada entre la tabiquería y el sistema de pórticos, la cual 
+pudo haber generado restricciones locales que alteraron la respuesta dinámica del edificio, aumentando los 
+momentos flectores y cortantes en las columnas afectadas. Posiblemente, pero es comentado para 
+posibles estudios más desarrollado. 
+Posible Desviación en la Calidad del Material: La necesidad de ensayos de esclerometría y ultrasonido 
+(mencionada en el plan de acción) obedece a la sospecha técnica de que la resistencia real del concreto (fc) 
+podría ser inferior a los 250 kg/cm² estipulados en los planos originales, lo que reduciría la capacidad portante 
+de diseño y explicaría la magnitud de los daños ante un sismo de magnitud moderada-alta.  
+ 
+Riesgo Inminente y Condiciones Críticas 
+ 
+Puntos de Atención Prioritaria: Pérdida de sección y confinamiento en elementos de columna críticos 
+ubicados en Planta Baja y Sótano 1, comprometiendo la capacidad portante vertical de la torre 
+residencial. Se verifico que un elemento estructural no poseía continuidad en el acero de refuerzo. 
+ 
+Restricciones de Acceso: Prohibición absoluta de ingreso y ocupación de la edificación, manteniendo 
+el acordonamiento perimetral con cinta de advertencia.   
+ 
+3. Justificación Técnica  
+Edificación residencial afectada por evento sísmico el 24/06/2026, presentando fallas por corte, 
+desprendimiento de concreto y exposición de acero en elementos portantes críticos. 
+ 
+Elementos Verticales (Columnas): Se evidencia pérdida de sección transversal, desprendimiento del 
+recubrimiento y exposición de acero de refuerzo deformado, comprometiendo seriamente la capacidad 
+portante vertical. 
+Elementos Horizontales (Vigas y Nudos): Presencia de grietas moderadas y fisuras a 45° en nudos, indicando 
+esfuerzos de corte excesivos durante el evento sísmico.  
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+ 
+Tabiquería y Mampostería: Daños moderados (fisuras y desprendimiento) en cerramientos de bloques 
+de arcilla desde planta baja hasta el nivel 4. 
+ 
+Entrepisos: Sin evidencia de falla en losas, no obstante, requiere evaluación detallada posterior a la 
+rehabilitación de los elementos de soporte.  
+ 
+Pérdida Irreversible de Capacidad Portante: Identificada en las seis (6) columnas críticas ubicadas en 
+Planta Baja y Sótano 1 debido a la degradación severa del concreto y deformación del acero. 
+Amenaza Inminente: Riesgo de colapso progresivo de la torre residencial por la incapacidad de los elementos 
+críticos (columnas P.B. y Sótano 1) para soportar las cargas gravitacionales y sísmicas. 
+ 
+DICTAMEN TÉCNICO FINAL: ESTRUCTURA CON DAÑOS ESTRUCTURALES SEVEROS EN NIVELES 
+INFERIORES. SE CONSIDERA HABITABILIDAD RESTRINGIDA POR RIESGO INMINENTE DE COLAPSO. 
+SE 
+REQUIERE 
+INTERVENCIÓN 
+ESTRUCTURAL 
+URGENTE 
+MEDIANTE 
+APUNTALAMIENTO 
+PREVENTIVO Y POSTERIOR REHABILITACIÓN PARA RESTAURAR LA CAPACIDAD PORTANTE DE LA 
+EDIFICACIÓN. 
+ 
+4. CONCLUSIONES Y PLAN DE ACCIÓN TÉCNICO – FASE DE MITIGACIÓN Y REHABILITACIÓN 
+ESTRUCTURAL. 
+Se concluye que la edificación ha sufrido daños estructurales en elementos, lo que reduce drásticamente su 
+factor de seguridad ante cargas gravitacionales y fuerzas sísmicas remanentes. De esta manera, la 
+combinación de la pérdida de sección en columnas, la presencia de grietas en nudos a 45° y la degradación 
+de vigas en niveles inferiores, confirma que la estabilidad vertical de la torre se encuentra comprometida. Por 
+otro lado, la insuficiencia de Elementos No Estructurales producto a los daños generalizados en la tabiquería 
+de mampostería hasta el piso 4 evidencian que los elementos no estructurales han actuado como elementos 
+rígidos ante la deriva, absorbiendo energía para la cual no fueron diseñados, lo cual es indicativo de una alta 
+demanda de deformación en la estructura durante el evento sísmico del 24/06/2026. 
+Necesidad de Intervención Inmediata: La edificación no cumple con los niveles de seguridad mínimos para su 
+ocupación. La rehabilitación requiere obligatoriamente una fase de estabilización provisional antes de 
+cualquier intervención mayor de refuerzo estructural. 
+El plan de acción ante las condiciones críticas de las Residencias Sol de Oro IV se estructura en las 
+siguientes fases operativas:  
+4.1. Seguridad inmediata y control perimetral 
+ 
+Restricción de Acceso: Mantener la prohibición absoluta de ingreso y ocupación de la torre residencial 
+por el peligro inminente de colapso en niveles inferiores.  
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+ 
+Control Físico: Reforzar el acordonamiento perimetral con cinta de advertencia.  
+ 
+Apuntalamiento: Instalar soportes temporales de emergencia en Planta Baja y Sótano 1 para estabilizar 
+las columnas con daño severo.  
+4.2. Evaluación especializada 
+ 
+Ingeniería Especializada (Estructural): Incorporar a un ingeniero estructural para el análisis de 
+vulnerabilidad y diseño de rehabilitación.  
+4.3. Proyecto y ejecución de reparación estructural 
+ 
+Diagnóstico Estructural: Desarrollar el modelo matemático y la ingeniería de detalle para el refuerzo de 
+columnas, vigas y nodos afectados.  
+ 
+Obras de Rehabilitación: Ejecutar las reparaciones estructurales (recomendades por el ingeniero 
+especialista en conformidad a los estudios previos), y la sustitución controlada de mampostería 
+dañada.  
+4.4. Verificación y cierre 
+ 
+Inspección Final: Realizar una evaluación posterior a las obras para certificar la recuperación de la 
+capacidad portante de la edificación. 
+ 
+Habitabilidad: Proceder al retiro de restricciones y de la etiqueta roja una vez garantizada la seguridad 
+de los residentes. 
+5. Memoria Fotográfica. 
+ 
+ 
+Fotografía 1: Fachada Principal. 
+Fotografía 2: Fachada Lateral Izquierdo. 
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+ 
+ 
+Fotografía 3: Nodos con grietas a 45° 
+Fotografía 4: Discontinuidad del acero de refuerzo 
+en columna del eje 7. 
+ 
+ 
+ 
+Fotografía 3: Desprendimiento del recubrimiento y 
+exposición de acero deformado en columna nivel 
+P.B. 
+Fotografía 4: Desprendimiento del recubrimiento y 
+exposición de acero en columna nivel P.B. 
+ 
+ 
+ 
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+Fotografía 5: Grietas en vigas nivel sótano 1. 
+Fotografía 6: Grietas en vigas nivel sótano 1. 
+ 
+ 
+ 
+Fotografía 7: Daños en cerramientos de la fachada 
+lateral derecha. 
+Fotografía 8: Daños en cerramientos de la fachada 
+principal. 
+ 
+Fotografía 9: Daños en paredes de mamposterías 
+internas piso1. 
+Fotografía 10: Daños en paredes de mamposterías 
+internas p.b. 
+ 
+6. Planos:  
+a. Sótano N°1 y Planta Baja. 
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+ 
+Muestra de Elementos Estructurales con daños. Caso de Vigas y Nodos en nivel de Sótano 1 
+ 
+b. Planta Tipo. Referencial para identificar la ubicación de las columnas afectadas. 
+ 
+Muestra de Elementos Estructurales con daños. Caso de Columnas en nivel de planta baja.  
+
+Residencias Sol de Oro IV Informe técnico de inspección 
+c. Planta Tipo. Referencia de ubicación de mampostería afectada en planta baja 
+Muestra de Elementos no Estructurales con daños. Caso de Mampostería afectada en nivel de planta 
+baja. Casos parecidos a los niveles N1, N2 y N3. 
+ 
+ 

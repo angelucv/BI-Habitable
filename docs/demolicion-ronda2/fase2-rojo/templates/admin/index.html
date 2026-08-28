@@ -1,0 +1,86 @@
+{% extends "admin/index.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div class="cpeh-dashboard-wrap">
+  <div class="cpeh-hero-card card shadow-sm border-0 mb-4">
+    <div class="ve-tricolor-bar" aria-hidden="true">
+      <span class="ve-amarillo"></span>
+      <span class="ve-azul"></span>
+      <span class="ve-rojo"></span>
+    </div>
+    <div class="ve-hero-stars" aria-hidden="true">★ ★ ★ ★ ★ ★ ★ ★</div>
+    <div class="card-body cpeh-hero-body">
+      <div class="cpeh-hero-brand">
+        {% include "includes/cpeh_nombre_institucional.html" %}
+        <div class="cpeh-hero-program">
+          <h2 class="cpeh-hero-title mb-1">Seguimiento inspecciones ROJO — Fase II</h2>
+          <p class="cpeh-hero-sub mb-0">
+            Panel de control para la 2.ª ronda de verificación de edificaciones con etiqueta ROJO
+            tras el sismo del 24-jun-2026.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/cpeh_guia_fase.html" %}
+  {% include "includes/cpeh_guia_tutorial_sistema.html" %}
+  {% include "includes/cpeh_guia_informe.html" %}
+  {% include "includes/cpeh_guia_desarrolladores.html" %}
+
+  <div class="cpeh-kpi-strip mb-3">
+    {% for kpi in dashboard_kpis %}
+    <a href="{{ kpi.url }}" class="cpeh-kpi-chip {{ kpi.class }} text-decoration-none" title="{{ kpi.label }}">
+      <i class="{{ kpi.icon }} cpeh-kpi-chip-icon" aria-hidden="true"></i>
+      <span class="cpeh-kpi-chip-value">{{ kpi.value }}</span>
+      <span class="cpeh-kpi-chip-label">{{ kpi.label }}</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  {% if dashboard_recientes %}
+  <div class="card shadow-sm border-0 mb-4">
+    <div class="card-header cpeh-card-header">
+      <i class="fas fa-list mr-2"></i> Casos recientes
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0 cpeh-recent-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Edificio</th>
+              <th>Score</th>
+              <th>Decisión</th>
+              <th>Estado</th>
+              <th>Visita</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for caso in dashboard_recientes %}
+            <tr>
+              <td><a href="{% url 'admin:inspecciones_casorojo_change' caso.pk %}">{{ caso.hab_id }}</a></td>
+              <td>{{ caso.nombre_conf|default:caso.nombre_hab }}</td>
+              <td>{{ caso.score|default:"—" }}</td>
+              <td>
+                {% with d=caso.decision_D|default:"Pendiente" %}
+                <span class="badge badge-cpeh{% if d|slice:':2' == 'D1' %} badge-cpeh-d1{% elif d|slice:':2' == 'D2' %} badge-cpeh-d2{% elif d|slice:':2' == 'D3' %} badge-cpeh-d3{% elif d|slice:':2' == 'D4' %} badge-cpeh-d4{% elif d == 'Pendiente' %} badge-cpeh-pending{% endif %}">{{ d }}</span>
+                {% endwith %}
+              </td>
+              <td>{{ caso.estado_2da|default:"—" }}</td>
+              <td>{{ caso.fecha_v2|date:"d/m/Y"|default:"—" }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="cpeh-admin-modules">
+{{ block.super }}
+</div>
+{% endblock %}

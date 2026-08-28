@@ -1,0 +1,158 @@
+______________________________________________________________________ 
+ 
+INFORME TÉCNICO 
+Edificación Inspeccionada: Residencia Alto Mar 
+Edificación Inspeccionada: vivienda multifamiliar  
+Ubicación/ Sector: Av. Norte 1 y calle 1, Urbanización Playa Grande (Catia La Mar) 
+Municipio Vargas, La Guaira. 
+La Guaira, 11 de agosto de 2026 
+Ing. Edinson Stand  
+Ing. Crisbelys Caraballo 
+Ing. Supervisor: Jorge medina  
+_____________________________________________________________________ 
+ 
+1. Datos Generales   
+ 
+Configuración Estructural:  La edificación de uso vivienda multifamiliar con un sistema 
+estructural en pórticos de concreto armado con muros de mampostería confinada, con 
+disposición en planta definida por ejes longitudinales (A, B, C) y transversales (1 al 6), 
+abarcando crujías de dimensiones variables (ej. tramos de aprox. 3.00 m, aprox. 4.00 m 
+y de aprox. 6.00 m en fachada principal). Su regularidad se clasifica con regularidad 
+vertical mala (presencia de columna corta) y regularidad mala en planta, por tener volados 
+irregulares en tres de sus cuatros fachadas (asimétrica). 
+Condición Actual: Debido al alto riesgo de colapso inminente y la inestabilidad global 
+observada, no fue posible ingresar al interior de la edificación, limitándose la inspección 
+visual perimetral y el registro fotográfico desde el exterior. 
+Clasificación de riesgo: ALTO RIESGO DE COLAPSO   
+ 
+2. Inspección Visual y Análisis de Causa Raíz del Colapso 
+Elementos Críticos: Daños generalizados en columnas principales (solo se pudo 
+verificar columnas de exteriores), nudos y compromiso estructural severo en fachadas, 
+entrepisos y balcones. 
+
+Configuración estructural e irregularidades: La edificación presenta una mala 
+regularidad vertical debido a la presencia de columnas cortas, así como una regularidad 
+deficiente en planta producto de volados irregulares y asimétricos en tres de sus cuatro 
+fachadas.   
+Vicios constructivos en elementos verticales: Se evidenciaron deficiencias en la 
+colocación del acero de refuerzo en las columnas, tales como la carencia de continuidad 
+y la falta de empalmes adecuados.  
+Comportamiento frágil de la mampostería: Se registró un colapso generalizado de la 
+mampostería en los primeros niveles debido a una interacción no deseada con el sistema 
+de pórticos, la cual actuó de manera frágil.  
+Agotamiento por demanda sísmica: Como consecuencia directa del sismo ocurrido el 
+24 de junio de 2026 en La Guaira, los elementos estructurales sufrieron daños 
+acumulados severos (incluyendo la formación de rótulas plásticas, fisuras por cortante, 
+pérdida de confinamiento en nudos y pandeo del acero) que llevaron a la estructura al 
+límite de su agotamiento resistente. 
+ 
+3. Justificación Técnica 
+El comportamiento observado en la torre del Edificio San Jorge confirma que la causa 
+aparente de la falla podría radicar en la geometría de la edificación y la planta libre 
+incluyendo el semisótano, donde se puede observar columnas y geometría de distintas 
+longitudes adaptándose al diseño arquitectónico y a las fuerzas del evento sísmico del 24 
+de junio de 2026 en la región. 
+ 
+Elementos Verticales (Columnas): Se registran columnas con desprendimiento 
+total del recubrimiento, agrietamiento diagonal severo y pandeo del acero 
+longitudinal. Asimismo, se evidencia la presencia de vicios constructivos en la 
+colocación del acero, tales como falta de empalmes adecuados y carencia de 
+continuidad. 
+ 
+Elementos Horizontales (Vigas y Nudos): Presencia de rótulas plásticas, fisuras 
+por cortante y pérdida de confinamiento en nudos viga-columna. 
+ 
+Tabiquería y Mampostería: Colapso generalizado de la mampostería en los 
+primeros niveles, evidenciando un comportamiento frágil e interacción no deseada 
+con el pórtico. 
+ 
+Entrepisos: Rotura de losa en los primeros niveles, específicamente en el módulo 
+de escalera. 
+ 
+Pérdida Irreversible de Capacidad Portante: Los nudos de los primeros niveles han 
+perdido un porcentaje alto de su capacidad estructural, encontrándose en un estado 
+inestable y con gran riesgo de colapso. 
+
+Amenaza Inminente: La estructura se encuentra en el límite de agotamiento resistente; 
+cualquier réplica sísmica o carga imprevista puede inducir el colapso global instantáneo, 
+poniendo en peligro extremo la vida de sus ocupantes o personal de seguridad. 
+ 
+DICTAMEN TÉCNICO FINAL: DECLARATORIA DE INHABITABILIDAD PERMANENTE 
+Y DEMOLICIÓN TÉCNICA CONTROLADA DE LA EDIFICACIÓN. 
+ 
+4. CONCLUSIONES Y RELEVANCIA COMO CASO DE ESTUDIO 
+La edificación ha sufrido un daño estructural severo e irreversible como consecuencia del 
+directa del sismo del 24 de junio de 2026 en La Guaira.  
+Desde el punto de vista de la ingeniería estructural y la gestión de riesgos post-sísmicos: 
+ 
+Pérdida de Capacidad Resistente: Los daños severos en columnas esquineras y nudos 
+comprometen la estabilidad global y la capacidad de soportar cargas gravitacionales y 
+sísmicas futuras (vulnerabilidad extrema ante réplicas). 
+Costo-Eficiencia de la Rehabilitación: En estructuras con daños generalizados en 
+elementos principales de soporte (como los observados en múltiples niveles de la 
+fachada), los costos, tiempos y riesgos asociados a un apuntalamiento y reforzamiento 
+estructural suelen superar el costo de demolición y reconstrucción. 
+Seguridad Humana: La prioridad inmediata es salvaguardar la vida de los habitantes y 
+transeúntes, por lo que una estructura con tal nivel de inestabilidad debe mantenerse 
+restringida y bajo estricta evaluación de riesgo de colapso inminente. 
+ 
+Plan de Acción Inmediato: Acordonamiento estricto del perímetro y demolición 
+controlada de la edificación. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Memoria fotográfica y croquis de la inspección realizada 
+ 
+ 
+Fotografía 1: Fachada Lateral Derecha/ 
+Principal. Se evidenciando daños 
+acumulados en los pórticos de concreto 
+armado y mampostería. 
+Fotografía 2: Fachada Lateral 
+Principal / Izquierdo. Daños severos y 
+falla por cortante con exposición y 
+pandeo del acero de refuerzo 
+Fotografía 3: Fachada Principal. Se muestra 
+daños estructurales severos, colapso parcial 
+de entrepisos y afectación generalizada en 
+los pórticos y núcleo central. 
+Fotografía 4: Croquis (referencial no 
+exacto) de ubicación de vigas y nudos 
+afectados y evidenciados desde el 
+perímetro, donde se afectaron los 
+primeros 4 niveles. 
+ 
+
+Fotografía 4: Croquis (referencial no exacto) 
+de plano de planta, donde se ubica el 
+perímetro de mampostería afectada en 3 de 
+sus 4 fachadas. La fachada trasera no se tuvo 
+acceso.  
+Fotografía 
+5: 
+Detalle 
+de 
+daños 
+severos por flexión y cortante en losas 
+de entrepiso y vigas perimetrales 
+ 
+ 
+  
+ 
+  
+  
+  
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

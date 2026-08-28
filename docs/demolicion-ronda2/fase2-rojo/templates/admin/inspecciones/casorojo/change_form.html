@@ -1,0 +1,85 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n admin_urls %}
+
+
+
+{% block object-tools-items %}
+
+  {% if original.pk %}
+  <li>
+    <a href="{% url 'export_excel_informe' original.pk %}" class="historylink" target="_blank" rel="noopener">
+      <i class="fas fa-file-excel"></i> {% trans "Excel plantilla informe" %}
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'admin:inspecciones_casorojo_pdf' original.pk %}" class="historylink" target="_blank" rel="noopener">
+
+      <i class="fas fa-file-pdf"></i> {% trans "PDF generado (sistema)" %}
+
+    </a>
+
+  </li>
+
+  {% endif %}
+
+  {{ block.super }}
+
+{% endblock %}
+
+
+
+{% block submit_buttons_bottom %}
+
+{% if original.pk %}
+
+<div class="form-group mb-2">
+  <a href="{% url 'export_excel_informe' original.pk %}" class="btn btn-outline-success mr-2" target="_blank" rel="noopener">
+    <i class="fas fa-file-excel"></i> {% trans "Descargar plantilla Excel informe" %}
+  </a>
+  <a href="{% url 'admin:inspecciones_casorojo_pdf' original.pk %}" class="btn btn-outline-danger" target="_blank" rel="noopener">
+
+    <i class="fas fa-file-pdf"></i> {% trans "Descargar informe PDF (sistema)" %}
+
+  </a>
+
+</div>
+
+{% if original.informes_pdf.all %}
+
+<div class="alert alert-info cpeh-informes-pdf-list mb-3">
+
+  <strong>{% trans "Informes PDF originales (formato libre)" %}:</strong>
+
+  <ul class="mb-0 mt-1">
+
+    {% for doc in original.informes_pdf.all %}
+
+    <li>
+
+      <a href="{% url 'ver_informe_pdf_adjunto' doc.pk %}" target="_blank" rel="noopener">
+
+        {{ doc.titulo|default:doc.nombre_archivo_origen }}
+
+      </a>
+
+      {% if doc.tipo_informe %}<span class="text-muted"> — {{ doc.tipo_informe }}</span>{% endif %}
+
+    </li>
+
+    {% endfor %}
+
+  </ul>
+
+  <small class="text-muted">También puede adjuntar más PDFs en la sección «Informes PDF adjuntos» más abajo.</small>
+
+</div>
+
+{% endif %}
+
+{% endif %}
+
+{{ block.super }}
+
+{% endblock %}
+

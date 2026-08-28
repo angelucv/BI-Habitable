@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Informe Fase II — {{ caso.hab_id }} — {{ nombre_display }}</title>
+  <style>
+    @page { size: A4; margin: 1.4cm 1.2cm; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.5pt;
+      color: #1a2332;
+      line-height: 1.35;
+    }
+    .barra-tricolor { display: flex; height: 5px; margin-bottom: 6px; }
+    .barra-tricolor span { flex: 1; }
+    .ve-amarillo { background: #ffcc00; }
+    .ve-azul { background: #00247d; }
+    .ve-rojo { background: #cf142b; }
+    .header {
+      border-bottom: 2px solid #00247d;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .org { font-size: 8.5pt; color: #00247d; font-weight: 700; line-height: 1.25; }
+    .org-sm { font-size: 8pt; font-weight: 500; }
+    h1 {
+      font-size: 13pt;
+      color: #001a5c;
+      margin: 6px 0 2px;
+    }
+    .meta { font-size: 8.5pt; color: #555; margin-bottom: 4px; }
+    h2 {
+      font-size: 10pt;
+      background: #00247d;
+      color: #fff;
+      padding: 4px 8px;
+      margin: 12px 0 0;
+      border-left: 4px solid #ffcc00;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 4px;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #c8d0dc;
+      padding: 4px 6px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      width: 34%;
+      background: #eef2f8;
+      font-weight: 600;
+      color: #001a5c;
+    }
+    td { background: #fff; }
+    .resumen td { min-height: 48px; }
+    .footer {
+      margin-top: 14px;
+      font-size: 7.5pt;
+      color: #666;
+      border-top: 1px solid #ccc;
+      padding-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="barra-tricolor">
+    <span class="ve-amarillo"></span>
+    <span class="ve-azul"></span>
+    <span class="ve-rojo"></span>
+  </div>
+  <div class="header">
+    <div class="org">★ Comisión Presidencial</div>
+    <div class="org org-sm">para la Evaluación de Habitabilidad de Infraestructuras</div>
+    <h1>Informe verificación ROJO — Fase II</h1>
+    <div class="meta">
+      <strong>ID Habitable:</strong> {{ caso.hab_id }} ·
+      <strong>Edificio:</strong> {{ nombre_display }} ·
+      <strong>Decisión:</strong> {{ caso.decision_D|default:"Pendiente" }} ·
+      <strong>Estado:</strong> {{ caso.estado_2da|default:"—" }}
+    </div>
+  </div>
+
+  {% for section in sections %}
+  <h2>{{ section.title }}</h2>
+  <table class="{% if 'Resumen' in section.title %}resumen{% endif %}">
+    {% for row in section.rows %}
+    <tr>
+      <th>{{ row.label }}</th>
+      <td>{{ row.value|linebreaksbr }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endfor %}
+
+  <div class="footer">
+    Generado el {{ generado|date:"d/m/Y H:i" }} · CPEH Fase II ROJO · Uso institucional
+  </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+SHEETS: ['Indice', 'Resumen', 'Cruce_informes', 'Ranking_ROJO', 'Control_2da_ronda', 'Catalogo_campos', 'Listas_desplegables']
+
+=== SHEET Indice rows=10 ===
+LIBRO OPERATIVO — 2.ª RONDA ROJO / DEMOLICIÓN |  | 
+Índice. El vaciado tipo informe está en el Excel ejemplo Franco Mar (acompaña el Word). |  | 
+Hoja | Contenido | Uso
+Indice | Guía del libro operativo. | Empezar aquí.
+Resumen | Indicadores del lote PDF y del universo ROJO. | Vista ejecutiva rápida.
+Cruce_informes | Informes detallados del lote PDF cruzados con Habitable. | Seguimiento del lote ya visitado en detalle.
+Ranking_ROJO | Todos los ROJO con score, banda y flags de filtro (La Guaira, Top200, Prioridad_visita, En_lote_PDF). | Usar Autofiltro: Prioridad_visita=Priorizar; Es_La_Guaira=Sí; Es_Top200=Sí.
+Control_2da_ronda | Cola de trabajo 2.ª visita: validación, decisión D1–D5, magnitud M. | Actualizar estado y dictamen; listas desplegables en columnas de control.
+Catalogo_campos | Campos del formato de inspección detallada (A0–F). | Referencia de diseño / sistema.
+(archivo aparte) Ejemplo vaciado… Franco Mar.xlsx | Vaciado digital tipo informe; acompaña el Word de formato. | Capacitación / propuesta metodológica.
+
+=== SHEET Resumen rows=18 ===
+RESUMEN EJECUTIVO | 
+Indicadores del lote PDF y del universo ROJO (corte Habitable 20/08/2026). | 
+metrica | valor
+Informes PDF | 36
+Con texto usable | 36
+Recomienda demolición (detectado) | 25
+Match alto con Habitable | 36
+Match medio / a revisar | 0
+Match bajo / sin match | 0
+Habitable total filas | 60035
+Habitable etiqueta ROJO | 9270
+Corte Habitable | 2026-08-20 12:02:48
+Priorizar (banda Alta/Muy alta) | 154
+ROJO total (Ranking_ROJO) | 9270
+ROJO La Guaira (filtro Es_La_Guaira=Sí) | 4247
+Priorizar (Alta/Muy alta) | 154
+Top200 | 200
+Casos en Control_2da_ronda | 244
+
+=== SHEET Cruce_informes rows=39 ===
+CRUCE — INFORMES DETALLADOS × HABITABLE |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Una fila por PDF del lote. Revisar Calidad_cruce_Habitable. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Archivo_informe | Tipo_informe | Edificacion_informe | Ubicacion_informe | Fecha_informe | Senal_demolicion_en_PDF | Dictamen_en_PDF | Calidad_cruce_Habitable | match_score | ID_Habitable | Certificado | Etiqueta_Habitable | Edificacion_Habitable | Municipio | Parroquia | Pisos_Habitable | Direccion_Habitable | Evaluadores_PDF | Pisos_informe | match_alternativos
+fioremar.pdf | Recolección de escombros / post-colapso | Hotel Fioremar |  | 15/04/2026 | No detectado en texto | Colapso / escombros | Alto | 0.9 | 203552 | 6.599342907202605e+17 | ROJO | Residencias or | LIBERTADOR | SAN JOSE | 17 | Avenida panteón, San joe, San Juan, Libertador, Caracas, Distrito Capital | Johan Bellorin Ingeniero Supervisor CIV; Trino Baloa CIV | 12 | A (ROJO, score=0.9, id=195108)
+informe demolicion samantha.pdf | Justificación técnica de demolición | Residencias Samantha, Torre 1 y Torre 2 | Calle 9 del sector Playa Grande, parroquia Catia La Mar, Municipio |  | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto (alias manual) | 1 | 195050 | 2.392424072026235e+16 | ROJO | Res. Samantha Torre 1 | VARGAS | URIMARE | 11 | Caracas, Distrito Capital, 10, Venezuela | Johan Bellorin CIV; Trino Baloa CIV |  | Res. Samantha Torre 2 (ROJO, score=0.9, id=195008) | Torre 1 (ROJO, score=0.9, id=178527)
+INFORME EVALUACION RESIDENCIAS ARENAL.pdf | Informe técnico estructural | Residencias Arenal | Calle La Playa, Sector Caraballeda, Edo. La Guaira | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 77330 | 4321120720261628 | ROJO | Residencias Arenal | VARGAS | CARABALLEDA | 12 | Vargas, La Guaira, 11, Venezuela |  |  | Arenal  (ROJO, score=1.0, id=76612)
+INFORME EVALUACION RESIDENCIAS EL MAMON.pdf | Justificación técnica de demolición | RESIDENCIAS EL MAMON |  |  | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 170487 | 3.999118072026193e+16 | ROJO | Residencias El Mamon | VARGAS | CARABALLEDA | 5 | Caracas, Distrito Capital, 10, Venezuela |  |  | Residencia el mamon (ROJO, score=1.0, id=161868) | Res. El mamón  (ROJO, score=0.95, id=32691)
+INFORME EVALUACION RESIDENCIAS NEWPORT.pdf | Justificación técnica de demolición | Residencias New Port | Av. La Playa, Urb. Caribe, Caraballeda, Estado La Guaira. | 11 de agosto de 2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto | 1 | 70980 | 8919120720261325 | NEGRO | Residencias Newport | VARGAS | CARABALLEDA | 1 | Calle la playa, tanaguarenas, la Guaira  | Evaluador |  | 
+INFORME EVALUACION RESIDENCIAS REFUGIO DEL CARIBE.pdf | Justificación técnica de demolición | Refugio del Caribe | Tanaguarenas, Estado La Guaira (Vargas), Venezuela | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 170205 | 3.939118072026143e+16 | ROJO | Residencias Refugio del Caribe | VARGAS | CARABALLEDA | 7 | Tanaguarenas, avenida jardin botanico residencias Refugio del Caribe | Evaluador | 9 | Refugio del caribe (ROJO, score=1.0, id=170193) | Refugio del Caribe  (ROJO, score=1.0, id=71687)
+INFORME EVALUACION RESIDENCIAS SAN JORGE.pdf | Justificación técnica de demolición | Edificio San Jorge (Torre separada con junta de dilatación | Tanaguarenas, Estado La Guaira (Vargas), Venezuela | 11 de agosto de 2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto | 1 | 2105 | 2311070720261057 | ROJO | Edificio San Jorge | VARGAS | CATIA LA MAR | 8 | Vargas, La Guaira, 11, Venezuela | Evaluador; Supervisor |  | Res. San Jorge (ROJO, score=0.9, id=169875) | Torre S (ROJO, score=0.9, id=79553)
+INFORME TECNICO EDIFICIO CAPRI XVI.pdf | Justificación técnica de demolición | EDIFICIO CAPRI CLUB XVI | Avenida Costanera La Llanada, Mun. Vargas Caraballeda, Estado La Guaira | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto | 0.9 | 180607 | 6.659222072026165e+16 | ROJO | Edificio Capri | Libertador |  | 8 | Callejón San Pedro, Callejón San Pedro, Altagracia, Libertador, Caracas, Distrito Capital | Luis Burgos; José García; Daniel Arana; Antonio de Nicolo; Aura Quintero | 14 | EDIFICIO CAPRI (ROJO, score=0.9, id=108676) | capri  (ROJO, score=0.9, id=2434)
+INFORME TECNICO EDIFICIO FRANCO MAR.pdf | Justificación técnica de demolición | EDIFICIO FRANCO MAR | Avenida José María España, Vargas, Estado La Guaira | 11 de agosto de 2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto (alias manual) | 1 | 171818 | 7.342020072026134e+16 | ROJO | Edif. Francomar | VARGAS | CARABALLEDA | 12 | Calle Principal Boulevard Tanaguarenas. Caraballeda. La Guaira. | Luis Burgos; José García; Aura Quintero | 5 | Franco mar (ROJO, score=1.0, id=139455) | Franco Mar (ROJO, score=1.0, id=139403)
+INFORME TECNICO OPPPE30.pdf | Ficha PNUD / ATC-20 detallada | OPPPE30 – TORRE A Y TORRE B | Calle/No/Sector OPPPE30, Los Ramos, Caraballeda, | [ 11 / 08 / 2026 ] | Sí | INSEGURO (Rojo) — confirmado/citado | Alto | 0.95 | 158585 | 3623160720261340 | ROJO | Edificio la llamada, torre 2 | VARGAS | CARABALLEDA | 5 | La llamada |  | 12 | Oppp30 (ROJO, score=0.95, id=158241) | Oppep30 (ROJO, score=0.95, id=158103)
+INFORME TECNICO RESIDENCIAS AGUAMARINA.pdf | Justificación técnica de demolición | Residencias Aguamarina | Calle Guaicaipuro, Caraballeda, estado La Guaira, Venezuela | 11-08-2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto | 0.95 | 190153 | 2.282572007202613e+17 | ROJO | Edif.Sol del caribe | VARGAS | CARABALLEDA | 13 | Av guicamacuto | Evaluador | 5 | Residencia agua marina (ROJO, score=0.95, id=173716) | Vallcarca (ROJO, score=0.95, id=172924)
+INFORME TECNICO RESIDENCIAS ALTOMAR.pdf | Justificación técnica de demolición | Residencia Alto Mar |  | 11 de agosto de 2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto (alias manual) | 1 | 114439 | 1.914214072026124e+16 | ROJO | Altomar | VARGAS | URIMARE | 8 | Caracas, Distrito Capital, 10, Venezuela | Edinson Stand Ing. Crisbelys Caraballo Ing | 4 | Alto mar (ROJO, score=1.0, id=120239) | Hotel y restaurante Alto Mar (ROJO, score=0.9, id=171786)
+INFORME TECNICO RESIDENCIAS CAMURI BEACH.pdf | Justificación técnica de demolición | Res. Camurí Beach | Av. La Costanera, Caraballeda, Estado La Guaira. Coordenadas GPS: | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 95703 | 5064130720261313 | ROJO | Camuri beach  | VARGAS | CARABALLEDA | 12 | Caraballeda, camurichico | Evaluador; Supervisor | 13 | RESIDENCIA CAMIRI BEACH (ROJO, score=0.95, id=92223) | Cimas del Mar (ROJO, score=0.75, id=3438)
+INFORME TECNICO RESIDENCIAS CONTRY MAR.pdf | Ficha PNUD / ATC-20 detallada | Residencias Country Mar (Cinco pisos, un | Avenida Granada, sector de Caraballeda, parroquia | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 162009 | 3467170720261333 | ROJO | Edificio country mar  | VARGAS | MACUTO | 10 | Av  la playa  | Graciela Pieve; Fredy Jesús Briceño ACOMPAÑANTE; Aura Quintero | 5 | residencias caraballeda country mar (ROJO, score=0.4, id=121115) | Residencias, carabelleda, country-mar  (ROJO, score=0.4, id=69546)
+INFORME TECNICO RESIDENCIAS DICTIS.pdf | Justificación técnica de demolición | Residencia Dictis, | Playa Grande, entre calle 6 y 7, parroquia Catia La Mar, Municipio |  | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto (alias manual) | 1 | 157349 | 3.157115072026131e+16 | ROJO | Residencias Dictis | VARGAS | URIMARE | 6 | CALLE ENTRE NORTE Y OCHO. MANZANA C. PARCELAS 3 Y 7 EDIF RESIDENCIAS DICTIS PISO 6 APT 6-B URB PLAYA GRANDE CATIA LA MAR (CAPITAL) LA GUAIRA ZONA POSTAL 1162 |  |  | Dictis (ROJO, score=1.0, id=175560) | Residencias Dictis  (ROJO, score=1.0, id=161236)
+INFORME TECNICO RESIDENCIAS DOÑA HILDA.pdf | Justificación técnica de demolición | Doña Hilda Av. Central, Parroquia Macuto, Estado La Guaira | Avenida Central. Año de Construcción Estimado: Circa 1981 (~45 años de | 10 de agosto de 2026 | Sí | Colapso / escombros | Alto | 0.9 | 399098 | 3.614114082026181e+16 | ROJO | Edificio macuto | VARGAS | MAIQUETIA | 3 | La Guaira, Venezuela | Rene Nouel |  | Macuto (ROJO, score=0.9, id=171137) | Av Central (ROJO, score=0.9, id=170672)
+INFORME TECNICO RESIDENCIAS IBIZA.pdf | Justificación técnica de demolición | Edificio Ibiza (Sección Colapsada y Secciones Adyacentes) | Tanaguarenas, Caraballeda, Parroquia Central, Estado La Guaira / Caracas | 11 de agosto de 2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto (alias manual) | 1 | 159293 | 1.692101607202615e+17 | ROJO | Edificio Ibiza | VARGAS | CARABALLEDA | 11 | Vargas, La Guaira, 11, Venezuela | Evaluador; Supervisor |  | Ibiza (ROJO, score=1.0, id=1692) | Ibiza  (ROJO, score=1.0, id=154)
+INFORME TECNICO RESIDENCIAS LOS TAMARINDOS 2.pdf | Justificación técnica de demolición | Los Tamarindos 2 |  | 11 de agosto de 2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto | 0.9 | 97301 | 1.692713072026145e+16 | NEGRO | Los tamarindos | VARGAS | CARABALLEDA | 7 | Vargas, La Guaira, 11, Venezuela |  |  | Tamarindos II (NEGRO, score=0.5, id=201337)
+INFORME TECNICO RESIDENCIAS MEDUSA.pdf | Justificación técnica de demolición | Residencias Medusa |  | 11/08/2026 | Sí | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 70266 | 8917120720261302 | ROJO | Residencias medusa  | VARGAS | CARABALLEDA | 1 | Vargas, La Guaira, 11, Venezuela, avenida la playa  |  | 10 | 
+INFORME TECNICO RESIDENCIAS PARQUE AGUA MARINA.pdf | Ficha PNUD / ATC-20 detallada | Edificio / Complejo: Parque Residencial Agua Marina | Avenida La Playa, Sector Quince Letras, Parroquia Macuto, Estado La Guaira. | 11/08/2026 | Sí | Dictamen orientado a demolición (sin etiqueta explícita en texto) | Alto | 0.9 | 220019 | 1.061012907202613e+17 | ROJO | residencial | VARGAS | LA GUAIRA | 1 | Caracas, Distrito Capital, 10, Venezuela |  |  | Residencia agua marina (ROJO, score=0.9, id=173716) | Res parque del caribe  (ROJO, score=0.75, id=387555)
+INFORME TECNICO RESIDENCIAS PARQUE AZUL.pdf | Justificación técnica de demolición | Parque Azul presenta un colapso parcial severo que compromete | Avenida La Playa con Calle Jardín Botánico, Sector Tanaguarenas / | 17/07/2026 | Parcial/implícito | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 161871 | 1.526131707202613e+17 | ROJO | Parque azul | VARGAS | CARABALLEDA | 8 | Avenida la playa | Frank Rojas | 9 | Res. Parque azul (ROJO, score=0.9, id=32672) | RESIDENCIAS PARQUE ANTILLANO (ROJO, score=0.5, id=454484)
+INFORME TECNICO RESIDENCIAS SOL DE ORO II.pdf | Justificación técnica de demolición | RESIDENCIAS SOL DE ORO II | Av. Principal de La Llanada, Parroquia Caraballeda, Municipio Vargas, |  | Parcial/implícito | INSEGURO (Rojo) — confirmado/citado | Alto (alias manual) | 1 | 140599 | 4563130720260225 | ROJO | Edif. Sol de Oro II | VARGAS | CARABALLEDA | 13 | Av ppal La Llanada, caraballeda 1165, municipal Vargas, edo La Guaira. |  |  | Resd Sol de Oro III (ROJO, score=0.9, id=261409) | Residencias Sol de Oro (ROJO, score=0.9, id=190094)
+... (14 more rows)
+
+=== SHEET Ranking_ROJO rows=9273 ===
+RANKING ROJO — UNIVERSO COMPLETO |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+FILTRAR: Prioridad_visita=Priorizar | Es_La_Guaira=Sí | Es_Top200=Sí | En_lote_PDF=Sí | Banda=Alta o Muy alta. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Puesto_nacional | Score | Banda | Prioridad_visita | Es_La_Guaira | Puesto_LaGuaira | Es_Top200 | En_lote_PDF | Edificacion | Municipio | Parroquia | Estado | Direccion | Pisos | Piso_critico_F1 | Riesgo_externo | Riesgo_severo | Colapso_estructura | Acciones_Fase1 | Probabilidad_relativa
+1 | 86 | Muy alta | Priorizar | No |  | Sí | No | Edificio paris | LIBERTADOR | CANDELARIA | DISTRITO CAPITAL | Avenida norte 15, La candelaria, Candelaria, Libertador, Caracas, Distrito Capital | 9 | 1 | C | C | c | Acordonar; Desconectar gas; Desconectar agua; Desconectar electricidad; Apuntalar; Demoler elementos a colapsar; Evaluar o evacuar edificio vecino; Cerrar calles | Muy alta probabilidad relativa de recomendación de demolición
+2 | 81 | Muy alta | Priorizar | No |  | Sí | No | Urbanización Escalonada | JIMENEZ | DIEGO DE LOZADA | LARA | Jiménez, Lara, 30, Venezuela | 1 |  | C | C | c |  | Muy alta probabilidad relativa de recomendación de demolición
+3 | 80 | Muy alta | Priorizar | Sí | 1 | Sí | No | Bloque 1 de la paez | VARGAS | CATIA LA MAR | LA GUAIRA | Avenida el ejército, La paez, Catia La Mar, Vargas, Catia la mar, La Guaira | 14 |  | C | A | c | Acordonar; Cerrar calles; Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar; Manejo de sustancias peligrosas; Evaluar o evacuar edificio vecino | Muy alta probabilidad relativa de recomendación de demolición
+4 | 80 | Muy alta | Priorizar | Sí | 2 | Sí | No | Bloque 2 de la Paez | VARGAS | CATIA LA MAR | LA GUAIRA | Calle principal real, La paez, Catia La Mar, Vargas, Catia la mar, La Guaira | 14 |  | C | A | c | Acordonar; Cerrar calles; Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar; Manejo de sustancias peligrosas; Evaluar o evacuar edificio vecino | Muy alta probabilidad relativa de recomendación de demolición
+5 | 77 | Alta | Priorizar | Sí | 3 | Sí | No | Bloque 3 de la paez | VARGAS | CATIA LA MAR | LA GUAIRA | Calle principal real, La paez, Catia La Mar, Vargas, Catia la mar, La Guaira | 14 |  | C | A | c | Acordonar; Cerrar calles; Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar; Manejo de sustancias peligrosas; Evaluar o evacuar edificio vecino | Alta probabilidad relativa — priorizar verificación detallada
+6 | 77 | Alta | Priorizar | No |  | Sí | No | Edif Meteor | LIBERTADOR | SAN BERNARDINO | DISTRITO CAPITAL | Av Altamira, San Bernardino, San Bernardino, Libertador, Caracas, Distrito Capital | 5 |  | C | A | c | Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar; Evaluar o evacuar edificio vecino | Alta probabilidad relativa — priorizar verificación detallada
+7 | 76 | Alta | Priorizar | No |  | Sí | No | Pañol del Estado Mayor | LIBERTADOR | SANTA ROSALIA | DISTRITO CAPITAL | La Guaira, Establecimiento Naval General Simón Bolívar | 2 | 1 | C | C | c | Acordonar | Alta probabilidad relativa — priorizar verificación detallada
+8 | 75 | Alta | Priorizar | No |  | Sí | No | Quinta Los Morochos | LIBERTADOR | SAN BERNARDINO | DISTRITO CAPITAL | Av. López Méndez (al final del callejón), Urb. San Bernardino, San Bernardino, Libertador, Caracas, Distrito Capital | 2 |  | C | A | c | Acordonar; Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar | Alta probabilidad relativa — priorizar verificación detallada
+9 | 75 | Alta | Priorizar | No |  | Sí | No | 13-01 16-08 | LIBERTADOR | EL PARAISO | DISTRITO CAPITAL | Avenida este 14, 13-01 16-08, Santa Rosalía, Libertador, Caracas, Distrito Capital | 1 |  | C | A | c | Desconectar gas; Acordonar; Desconectar electricidad; Evaluar o evacuar edificio vecino; Demoler elementos a colapsar | Alta probabilidad relativa — priorizar verificación detallada
+10 | 74 | Alta | Priorizar | No |  | Sí | No | Las Ruinas | LIBERTADOR | SAN JOSE | DISTRITO CAPITAL | Avenida Panteón, San José, San José, Libertador, Caracas, Distrito Capital | 4 |  | C | A | c | Demoler elementos a colapsar | Alta probabilidad relativa — priorizar verificación detallada
+11 | 74 | Alta | Priorizar | No |  | Sí | No | Edf. 31-1 | LIBERTADOR | SANTA ROSALIA | DISTRITO CAPITAL | Caracas, Santa Rosa Sarria | 1 | 1 | C | C | c | Est. de mamposteria no confinada y ladrillo | Alta probabilidad relativa — priorizar verificación detallada
+12 | 72 | Alta | Priorizar | No |  | Sí | No | Atalaya | LIBERTADOR | EL RECREO | DISTRITO CAPITAL | Caracas, Guaicaipuro | 10 | 4 | C | C | c |  | Alta probabilidad relativa — priorizar verificación detallada
+13 | 72 | Alta | Priorizar | No |  | Sí | No | Edf. María Isabel | LIBERTADOR | SAN PEDRO | DISTRITO CAPITAL | Caracas, Av. Roosevelt | 7 |  | C | A | c | Acordonar; Apuntalar | Alta probabilidad relativa — priorizar verificación detallada
+14 | 72 | Alta | Priorizar | No |  | Sí | No | Caripito | SUCRE | LEONCIO MARTINEZ | MIRANDA | Avenida  principal la carlota, La carlota, Leoncio Martínez, Sucre, Caracas, Miranda | 4 | Terraza | C | C | c | Acordonar; Demoler elementos a colapsar | Alta probabilidad relativa — priorizar verificación detallada
+15 | 72 | Alta | Priorizar | No |  | Sí | No | Casa 22 | LIBERTADOR | CANDELARIA | DISTRITO CAPITAL | Santa Rosa, Sarria, Candelaria, Libertador, Caracas, Distrito Capital | 2 | 1 | C | C | c | Demoler elementos a colapsar; Apuntalar | Alta probabilidad relativa — priorizar verificación detallada
+16 | 72 | Alta | Priorizar | No |  | Sí | No | 40 | LIBERTADOR | ALTAGRACIA | DISTRITO CAPITAL | Calle Real Caraballo, Sector Caraballo, Altagracia, Libertador, Caracas, Distrito Capital | 2 |  | C | A | c | Acordonar; Apuntalar; Demoler elementos a colapsar; Evaluar o evacuar edificio vecino | Alta probabilidad relativa — priorizar verificación detallada
+17 | 72 | Alta | Priorizar | No |  | Sí | No | Casa1803 | Libertador |  | Distrito Capital | Calle miranda  barrio sucre, 23 de enero, 23 de enero, Libertador, Caracas, Distrito Capital | 2 |  | C | A | c | Desconectar gas; Desconectar electricidad; Desconectar agua; Demoler elementos a colapsar; Evaluar o evacuar edificio vecino; Acordonar; Apuntalar; Cerrar calles | Alta probabilidad relativa — priorizar verificación detallada
+18 | 72 | Alta | Priorizar | No |  | Sí | No | Samuel villamizar | JUAN JOSE MORA | URAMA | CARABOBO | Carretera Urama Canoabo sector los robalos | 1 |  | C | C | c | Acordonar | Alta probabilidad relativa — priorizar verificación detallada
+19 | 71 | Alta | Priorizar | Sí | 5 | Sí | No | Urb. Paez bloque 2 | VARGAS | CATIA LA MAR | LA GUAIRA | La guaira, Calle principal paez | 14 |  | C | A | c | Acordonar; Cerrar calles; Desconectar electricidad; Desaconectar Gas | Alta probabilidad relativa — priorizar verificación detallada
+20 | 71 | Alta | Priorizar | Sí | 6 | Sí | No | Urb. Tcnel Eliezer Otaiza (OPPE34) TORRE A | VARGAS | CARABALLEDA | LA GUAIRA | Tabaguarenas, Avenida José María españa | 12 |  | C | A | c | Acordonar; Cerrar calles; Desconectar electricidad; Desaconectar Gas | Alta probabilidad relativa — priorizar verificación detallada
+21 | 71 | Alta | Priorizar | Sí | 4 | Sí | No | Ibiza | VARGAS | CARABALLEDA | LA GUAIRA | Tanaguarena, Av. La Playa | 10 |  | C | A | c | Acordonar; Cerrar calles | Alta probabilidad relativa — priorizar verificación detallada
+22 | 71 | Alta | Priorizar | No |  | Sí | No | 9-1 | LIBERTADOR | SAN JOSE | DISTRITO CAPITAL | Callejon cujicito, Cotiza, San José, Libertador, Caracas, Distrito Capital |  |  | C | A | c | Demoler elementos a colapsar | Alta probabilidad relativa — priorizar verificación detallada
+... (9248 more rows)
+
+=== SHEET Control_2da_ronda rows=247 ===
+CONTROL 2.ª RONDA — COLA DE TRABAJO |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Actualizar Estado, Validación, Decisión D y Magnitud M (listas). Franco Mar = ejemplo D1. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+Puesto_LaGuaira | Puesto_nacional | Score | Banda | En_lote_PDF | Estado_2da_ronda | Validacion_precarga | Etiqueta_roja_confirmada | Decision_D | Magnitud_M | Prioridad_operativa | Edificacion | Municipio | Parroquia | Pisos | Fecha_visita_2 | Evaluador_visita_2 | Supervisor_visita_2 | Resumen_ejecutivo | Correcciones_precarga
+1 | 3 | 80 | Muy alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Bloque 1 de la paez | VARGAS | CATIA LA MAR | 14 |  |  |  |  | 
+2 | 4 | 80 | Muy alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Bloque 2 de la Paez | VARGAS | CATIA LA MAR | 14 |  |  |  |  | 
+3 | 5 | 77 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Bloque 3 de la paez | VARGAS | CATIA LA MAR | 14 |  |  |  |  | 
+4 | 19 | 71 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Urb. Paez bloque 2 | VARGAS | CATIA LA MAR | 14 |  |  |  |  | 
+5 | 20 | 71 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Urb. Tcnel Eliezer Otaiza (OPPE34) TORRE A | VARGAS | CARABALLEDA | 12 |  |  |  |  | 
+6 | 21 | 71 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Ibiza | VARGAS | CARABALLEDA | 10 |  |  |  |  | 
+7 | 23 | 70 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | sin nombre | VARGAS | CATIA LA MAR | 4 |  |  |  |  | 
+8 | 26 | 69 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Residencias Ceibamar | VARGAS | MACUTO | 13 |  |  |  |  | 
+9 | 27 | 69 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | CARABALLEDA | VARGAS | CARABALLEDA | 12 |  |  |  |  | 
+10 | 28 | 69 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | OPPPE 22 | VARGAS | CARABALLEDA | 12 |  |  |  |  | 
+11 | 29 | 69 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | MONTMAR | VARGAS | CARABALLEDA | 11 |  |  |  |  | 
+12 | 30 | 69 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Residencias Belair | VARGAS | CARABALLEDA | 10 |  |  |  |  | 
+13 | 33 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Edif. Costa Adriatica | VARGAS | CARABALLEDA | 7 |  |  |  |  | 
+14 | 34 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Residencias Judimar | VARGAS | CARABALLEDA | 6 |  |  |  |  | 
+15 | 35 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Res. El Parque | VARGAS | CARABALLEDA | 5 |  |  |  |  | 
+16 | 37 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | 25-07 | VARGAS | CATIA LA MAR | 3 |  |  |  |  | 
+17 | 38 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Alba Cedeño | VARGAS | CATIA LA MAR | 3 |  |  |  |  | 
+18 | 39 | 68 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | 14 | VARGAS | CATIA LA MAR | 3 |  |  |  |  | 
+19 | 47 | 66 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Bloque 3 | VARGAS | CATIA LA MAR | 4 |  |  |  |  | 
+20 | 52 | 66 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | 10-18 | VARGAS | LA GUAIRA | 3 |  |  |  |  | 
+21 | 54 | 66 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | S/N | VARGAS | URIMARE | 3 |  |  |  |  | 
+22 | 55 | 66 | Alta | No | Pendiente verificación | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | 06 | VARGAS | CATIA LA MAR | 3 |  |  |  |  | 
+... (222 more rows)
+
+=== SHEET Catalogo_campos rows=31 ===
+CATÁLOGO DE CAMPOS — FORMATO 2.ª RONDA |  |  | 
+Referencia de niveles A0–F alineada al Word de formato. |  |  | 
+nivel | campo | obligatorio | origen
+A | habitable_id / certificado | Sí | Habitable
+A | nombre_edificacion + alias | Sí | Campo / informe
+A | direccion / municipio / parroquia | Sí | Habitable + campo
+A | lat / lng GPS control | Sí | Campo
+A | fecha_inspeccion_detallada | Sí | Campo
+A | evaluadores / supervisor / ente | Sí | Campo
+A | etiqueta_fase1 + fecha_fase1 | Sí | Habitable
+B | uso / año construcción / n_torres | Sí | Campo
+B | num_pisos / sotanos / area_planta_m2 | Sí | Campo
+B | sistema_estructural | Sí | Campo
+B | ocupacion_actual | Sí | Campo
+B | colindancias_criticas | Recomendado | Campo
+C | piso_critico (nivel) | Sí | Campo
+C | % columnas grado III/IV/V | Sí | Campo
+C | dano_vigas_losas (flags + texto) | Sí | Campo
+C | inclinacion / verticalidad | Sí | Campo
+C | riesgo_no_estructural A/B/C | Sí | Campo
+C | peligro_aledanos | Sí | Campo
+A0 | validacion_precarga (Sí/No/Parcial) | Sí | Visita 2
+A0 | score / banda / puesto ranking | Sí | Sistema
+D | decision_D (D1–D5) | Sí | Dictamen
+D | magnitud_M (M1–M4 o N/A) | Sí si D2 | Dictamen
+... (6 more rows)
+
+=== SHEET Listas_desplegables rows=8 ===
+si_no_parcial | si_no_insuf | estado_2da | decision_D | magnitud_M | prioridad | abc | ocupacion | sistema | pct_columnas | inclinacion | peligro_aledanos
+Sí | Sí | Pendiente verificación | D1 — Demoler | N/A (no es D2) | Inmediata | A | Desalojado | Pórticos concreto armado | No observable | No | Sí
+No | No | En visita | D2 — Reparar / reconstruir | M1 — Reparación pequeña / local | Alta | B | Ocupación parcial | Muros de concreto | <10% | Sí — cualitativa | No
+Parcial / corregir | Insuficiente evidencia | Borrador | D3 — Estudios complementarios | M2 — Reparación importante | Programable | C | Habitado irregularmente | Mixto | 10–30% | Sí — con medición Δ | No observable
+Pendiente | Pendiente | Revisado | D4 — Escombros / ya colapsado | M3 — Reconstrucción parcial | Pendiente | No observable | Escombros | Acero | >30% | No observable | Pendiente
+ |  | Aprobado | D5 — Inhabitabilidad + monitoreo | M4 — Reconstrucción / refuerzo mayor |  | Pendiente | Pendiente | Mampostería | >50% | Pendiente | 
+ |  | Publicado | Pendiente | Pendiente |  |  |  | Otro | Pendiente |  | 
+ |  |  |  |  |  |  |  | Pendiente |  |  | 

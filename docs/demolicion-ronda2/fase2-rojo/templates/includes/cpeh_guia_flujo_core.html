@@ -1,0 +1,109 @@
+{# Fragmento reutilizable: roles, flujograma y devoluciones #}
+<div class="cpeh-guide-grid">
+  <div class="cpeh-role-card cpeh-role-coord">
+    <h3 class="cpeh-about-heading">Coordinador</h3>
+    <p class="cpeh-about-text">Supervisa la operación regional o nacional de la Fase II. Organiza al equipo y cierra el ciclo operativo.</p>
+    <ul class="cpeh-about-list">
+      <li><strong>Asigna</strong> inspector y revisor a cada caso (tablero de asignación o ficha individual).</li>
+      <li><strong>Prioriza</strong> según score, banda y urgencia; usa mapa y filtros del listado.</li>
+      <li><strong>Distribuye plantillas Excel</strong> (informe o lote) al equipo de campo cuando aplique.</li>
+      <li><strong>Importa</strong> precargas, informes PDF adjuntos y actualizaciones masivas.</li>
+      <li><strong>Publica</strong> casos <em>Aprobado → Publicado</em> para reportes y tableros externos.</li>
+      <li><strong>Puede mover</strong> el caso entre estados válidos; no sustituye la visita ni la revisión técnica.</li>
+    </ul>
+  </div>
+
+  <div class="cpeh-role-card cpeh-role-insp">
+    <h3 class="cpeh-about-heading">Inspector</h3>
+    <p class="cpeh-about-text">Profesional en campo responsable del levantamiento técnico detallado (visita 2).</p>
+    <ul class="cpeh-about-list">
+      <li><strong>Recibe</strong> casos asignados; solo edita los suyos si no tiene rol de coordinador.</li>
+      <li><strong>Marca «En visita»</strong> al salir a campo; registra GPS, fotos y secciones 4–11.</li>
+      <li><strong>Valida la precarga</strong> (secc. 3) y documenta daños estructurales, mampostería y procedimientos.</li>
+      <li><strong>Puede trabajar</strong> en el admin web o completar la plantilla Excel y devolverla al coordinador.</li>
+      <li><strong>Elabora borrador</strong> con decisión D1–D4, medidas y resumen ejecutivo.</li>
+      <li><strong>Envía a revisión</strong> (estado <em>Revisado</em>) cuando el informe está listo.</li>
+    </ul>
+  </div>
+
+  <div class="cpeh-role-card cpeh-role-rev">
+    <h3 class="cpeh-about-heading">Revisor</h3>
+    <p class="cpeh-about-text">Referente técnico que valida calidad y coherencia del dictamen antes de la aprobación final.</p>
+    <ul class="cpeh-about-list">
+      <li><strong>Recibe</strong> casos en estado <em>Revisado</em> donde figura como revisor asignado.</li>
+      <li><strong>Verifica</strong> decisión D, complementos (si D1), magnitud M (si D2 reparar), medidas y resumen ejecutivo.</li>
+      <li><strong>Aprueba</strong> → <em>Aprobado</em>, o <strong>devuelve</strong> a <em>Borrador</em> con observaciones.</li>
+      <li><strong>Previsualiza PDF</strong> desde la ficha del caso antes de aprobar.</li>
+      <li><strong>No realiza</strong> la visita salvo que también tenga rol inspector.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 class="cpeh-about-heading cpeh-mt-lg">Flujograma — estados del caso</h3>
+<p class="cpeh-about-text">
+  Cada edificio avanza por una secuencia trazable. Las flechas indican el camino normal;
+  revisor o coordinador pueden devolver un caso para corrección.
+</p>
+
+<div class="cpeh-flowchart" role="img" aria-label="Flujograma de estados del caso ROJO Fase II">
+  <div class="cpeh-flow-step cpeh-flow-precarga">
+    <span class="cpeh-flow-num">0</span>
+    <strong>Precarga</strong>
+    <small>Habitable + ranking CPEH</small>
+    <span class="cpeh-flow-actor">Sistema / coordinador</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-asign">
+    <span class="cpeh-flow-num">★</span>
+    <strong>Asignación</strong>
+    <small>Inspector + revisor</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-coord">Coordinador</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step">
+    <span class="cpeh-flow-num">1</span>
+    <strong>Pendiente verificación</strong>
+    <small>Sin visita detallada</small>
+    <span class="cpeh-flow-actor">Coordinador</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-insp">
+    <span class="cpeh-flow-num">2</span>
+    <strong>En visita</strong>
+    <small>Levantamiento en campo</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-insp">Inspector</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-insp">
+    <span class="cpeh-flow-num">3</span>
+    <strong>Borrador</strong>
+    <small>Informe en elaboración</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-insp">Inspector</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-rev">
+    <span class="cpeh-flow-num">4</span>
+    <strong>Revisado</strong>
+    <small>Control técnico</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-rev">Revisor</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-coord">
+    <span class="cpeh-flow-num">5</span>
+    <strong>Aprobado</strong>
+    <small>Decisión confirmada</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-coord">Coordinador</span>
+  </div>
+  <div class="cpeh-flow-arrow" aria-hidden="true">→</div>
+  <div class="cpeh-flow-step cpeh-flow-final">
+    <span class="cpeh-flow-num">6</span>
+    <strong>Publicado</strong>
+    <small>Caso cerrado operativo</small>
+    <span class="cpeh-flow-actor cpeh-flow-actor-coord">Coordinador</span>
+  </div>
+</div>
+
+<div class="cpeh-flow-return">
+  <strong>Devoluciones (corrección):</strong>
+  Revisado → Borrador (revisor) · Aprobado → Revisado (revisor/coordinador) · Borrador → En visita (inspector).
+</div>
